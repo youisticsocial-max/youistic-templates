@@ -1,0 +1,704 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CLINIC_NAME}} - Traditional Rajasthani & North Indian Dhaba & Fine Dining</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{{CLINIC_NAME}} in Jodhpur offers authentic Rajasthani & North Indian culinary heritage. Taste our signature Dal Baati Churma and slow-cooked Laal Maas. Dine-in, delivery, and catering.">
+  <meta name="keywords" content="Rajasthani restaurant, Jodhpur dhaba, {{CLINIC_NAME}} Jodhpur, Dal Baati Churma Jodhpur, Laal Maas, North Indian food, catering Jodhpur">
+  <meta name="author" content="{{CLINIC_NAME}}">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating WhatsApp Chat -->
+  <a href="https://wa.me/{{PHONE}}" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" id="floating-whatsapp" aria-label="Order on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Today's Special Announcement Banner -->
+  <div class="special-banner" id="special-banner">
+    <span><i class="fas fa-bullhorn animate-pulse"></i> <strong>Today's Royal Special:</strong> Order a Rajasthani Royal Thali & get a complementary Kesar Lassi!</span>
+    <a href="#menu" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.75rem; border-width: 1px; margin-left: 8px;">Order Now</a>
+    <button class="special-banner-close" id="close-banner-btn" aria-label="Close Announcement">&times;</button>
+  </div>
+
+  <!-- Header Section -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div>
+          <span class="logo-text">{{CLINIC_NAME}}</span>
+          <span class="logo-tag">Royal Rajasthani</span>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#specials">Signature</a></li>
+          <li><a href="#gallery">Ambience</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reservations">Reservations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-cta">
+        <a href="#reservations" class="btn btn-primary" id="header-reserve-btn">Book Table</a>
+      </div>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">
+          <i class="fas fa-utensils"></i> Rajasthani & North Indian Dhaba
+        </div>
+        <h1>Taste the <span>Royal Tradition</span></h1>
+        <p class="hero-tagline">Where Every Meal is a Memory</p>
+        <p class="hero-desc">Experience heritage culinary dining in the heart of Jodhpur. We serve authentic Rajasthani delicacies, tandoor favorites, and signature slow-cooked classics passed down through generations.</p>
+        <div class="hero-actions">
+          <a href="#reservations" class="btn btn-primary"><i class="far fa-calendar-alt"></i> Reserve a Table</a>
+          <a href="https://wa.me/{{PHONE}}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    
+    <a href="#about" class="scroll-indicator" aria-label="Scroll Down">
+      <span></span>
+      Scroll
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-subtitle">Since 2012</span>
+          <h3>A Legacy of Flavour, Spices & Tradition</h3>
+          <p>Founded in 2012, {{CLINIC_NAME}} has been serving authentic Rajasthani and North Indian delicacies to the food lovers of Jodhpur for over 14 years. What started as a modest local dhaba has grown into a beloved fine casual dining destination, keeping our roots firmly anchored in traditional culinary craft.</p>
+          <p>Our secret lies in our adherence to ancient cooking methods: hand-grinding local Mathania chilies, slow-cooking in copper handis, and baking breads in traditional clay tandoors. Every recipe has been passed down through our family, guaranteeing an aromatic trip down memory lane with every single bite.</p>
+          
+          <div class="about-features">
+            <div class="about-feature-item">
+              <i class="fas fa-mortar-pestle"></i>
+              <div>
+                <h4>Hand-Ground Spices</h4>
+                <p>No packaged masalas. We dry-roast and blend spices manually.</p>
+              </div>
+            </div>
+            <div class="about-feature-item">
+              <i class="fas fa-fire-alt"></i>
+              <div>
+                <h4>Clay Tandoor Oven</h4>
+                <p>Traditional wood and charcoal tandoors for unmatched smoky flavors.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-images">
+          <img src="{{LOGO_URL}}" alt="Heritage Dining Courtyard at {{CLINIC_NAME}}" class="about-img-large">
+          <img src="{{LOGO_URL}}" alt="Authentic Rajasthani Dal Baati Churma" class="about-img-small">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section" id="menu" style="background-color: var(--color-bg-pure);">
+    <div class="container">
+      <h2 class="section-title">Explore Our Royal Menu</h2>
+      <p class="section-subtitle">Prepared fresh, spiced perfectly</p>
+      
+      <!-- Menu Controls: Tabs & Veg Toggle -->
+      <div class="menu-controls">
+        <div class="menu-tabs" id="menu-tabs">
+          <button class="tab-btn active" data-category="starters">Starters</button>
+          <button class="tab-btn" data-category="main-course">Main Course</button>
+          <button class="tab-btn" data-category="breads">Tandoor Breads</button>
+          <button class="tab-btn" data-category="rice-biryani">Rice & Biryani</button>
+          <button class="tab-btn" data-category="desserts">Desserts</button>
+          <button class="tab-btn" data-category="beverages">Beverages</button>
+          <button class="tab-btn" data-category="thali">Royal Thalis</button>
+        </div>
+        
+        <div class="filter-switch">
+          <span class="switch-label label-veg">Veg <span class="veg-dot" style="margin-left: 2px;"></span></span>
+          <label class="switch-btn">
+            <input type="checkbox" id="veg-toggle">
+            <span class="slider"></span>
+          </label>
+          <span class="switch-label label-nonveg"><span class="nonveg-dot" style="margin-right: 2px;"></span> Non-Veg</span>
+        </div>
+      </div>
+      
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menu-grid">
+        <!-- Rendered Dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef's Specials / Signature Dishes -->
+  <section class="section section-dark" id="specials">
+    <div class="container">
+      <h2 class="section-title" style="color: var(--color-bg-pure);">Chef's Signature Creations</h2>
+      <p class="section-subtitle">Heirloom recipes & local pride</p>
+      
+      <div class="specials-grid">
+        <!-- Special 1 -->
+        <div class="special-item">
+          <div class="special-img-wrap">
+            <img src="{{LOGO_URL}}" alt="Royal Dal Baati Churma Platter" class="special-img">
+            <span class="special-badge">Heritage King</span>
+          </div>
+          <div class="special-content">
+            <div class="special-item-header">
+              <h3 class="special-title">Dal Baati Churma</h3>
+              <span class="special-price">₹220</span>
+            </div>
+            <p class="special-story">Our signature platter features three golden wheat baatis baked over wood fire, cracked open and soaked in pure cow ghee, served with panchmel dal and organic wheat churma.</p>
+            <button class="special-order-btn add-to-wa-order" data-name="Dal Baati Churma" data-price="220"><i class="fab fa-whatsapp"></i> Quick WhatsApp Order</button>
+          </div>
+        </div>
+        
+        <!-- Special 2 -->
+        <div class="special-item">
+          <div class="special-img-wrap">
+            <img src="{{LOGO_URL}}" alt="Spicy Rajasthani Laal Maas" class="special-img">
+            <span class="special-badge">Fiery Legend</span>
+          </div>
+          <div class="special-content">
+            <div class="special-item-header">
+              <h3 class="special-title">Rajasthani Laal Maas</h3>
+              <span class="special-price">₹380</span>
+            </div>
+            <p class="special-story">A slow-cooked, fiery mutton curry prepared with garlic, yogurt, and authentic red Mathania chilies from Rajasthan. Cooked for 4 hours until the meat falls off the bone.</p>
+            <button class="special-order-btn add-to-wa-order" data-name="Rajasthani Laal Maas" data-price="380"><i class="fab fa-whatsapp"></i> Quick WhatsApp Order</button>
+          </div>
+        </div>
+        
+        <!-- Special 3 -->
+        <div class="special-item">
+          <div class="special-img-wrap">
+            <img src="{{LOGO_URL}}" alt="Grand Rajasthani Royal Thali" class="special-img">
+            <span class="special-badge">Royal Platter</span>
+          </div>
+          <div class="special-content">
+            <div class="special-item-header">
+              <h3 class="special-title">Royal Rajasthani Thali</h3>
+              <span class="special-price">₹550</span>
+            </div>
+            <p class="special-story">Experience true Rajasthani hospitality. A magnificent platter of 12+ items including Dal, Baati, Churma, Gatte ki Sabzi, Ker Sangri, Kadhi, Missi Roti, Rice, Lassi, and local sweets.</p>
+            <button class="special-order-btn add-to-wa-order" data-name="Royal Rajasthani Thali" data-price="550"><i class="fab fa-whatsapp"></i> Quick WhatsApp Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambience Gallery -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Our Heritage Ambience</h2>
+      <p class="section-subtitle">Dine amidst royal Jodhpur architecture</p>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item colspan-2 rowspan-2">
+          <img src="{{LOGO_URL}}" alt="Grand Dining Room and Bar Area" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Royal Feast Atmosphere</h4>
+            <p>Main Hall</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{{LOGO_URL}}" alt="Freshly Prepared Dal Baati" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Traditional Kitchens</h4>
+            <p>Fresh Cooking</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{{LOGO_URL}}" alt="Mouthwatering Laal Maas Close Up" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Fiery Specialties</h4>
+            <p>Signature Dishes</p>
+          </div>
+        </div>
+        <div class="gallery-item colspan-2">
+          <img src="{{LOGO_URL}}" alt="Outdoor Courtyard under Lantern Lights" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Heritage Courtyard Seating</h4>
+            <p>Outdoor Ambience</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{{LOGO_URL}}" alt="Royal Indian Platter Presentation" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Thali Experience</h4>
+            <p>Royal Presentation</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{{LOGO_URL}}" alt="Cozy Dining Table Set with Candles" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Romantic Candle-Lit Corners</h4>
+            <p>Fine Dining</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Gallery -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img src="" alt="" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section class="section" id="services" style="background-color: var(--color-bg-pure);">
+    <div class="container">
+      <h2 class="section-title">Our Culinary Services</h2>
+      <p class="section-subtitle">Crafting memories beyond dining</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-store"></i></div>
+          <h3>Dine-In</h3>
+          <p>Immerse yourself in our cozy, lantern-lit heritage interiors and enjoy warm hospitality with active table service.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-shopping-bag"></i></div>
+          <h3>Takeaway</h3>
+          <p>Order ahead via WhatsApp or phone and collect your freshly packed, tandoor-hot delicacies at your convenience.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-truck"></i></div>
+          <h3>Home Delivery</h3>
+          <p>Get {{CLINIC_NAME}}'s iconic dishes delivered directly to your doorstep. Order via our official Zomato and Swiggy links.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-holly-berry"></i></div>
+          <h3>Royal Catering</h3>
+          <p>From elegant weddings to corporate gatherings, we provide curated live counters and traditional Rajasthani buffets.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-birthday-cake"></i></div>
+          <h3>Private Gatherings</h3>
+          <p>Book our heritage outdoor courtyard for birthdays, anniversaries, or pre-wedding functions for up to 100 guests.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fas fa-briefcase"></i></div>
+          <h3>Corporate Lunches</h3>
+          <p>Premium customized Thali combos and box lunch packages delivered straight to your office premises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="section section-dark" id="reviews">
+    <div class="container">
+      <h2 class="section-title" style="color: var(--color-bg-pure);">Customer Reviews</h2>
+      <p class="section-subtitle">Real experiences from local and global diners</p>
+      
+      <div class="reviews-container">
+        <div class="reviews-slider-track" id="reviews-slider-track">
+          <!-- Slide 1 -->
+          <div class="review-slide">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"{{CLINIC_NAME}} is a culinary gem in Jodhpur! The Dal Baati Churma is absolute perfection, dripping in pure ghee. The courtyard ambiance is so cozy under the lanterns. Will definitely visit again!"</p>
+            <h4 class="review-author">Rajesh Sharma</h4>
+            <div class="review-source"><i class="fab fa-google"></i> Google Local Guide • 2 weeks ago</div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="review-slide">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"If you want authentic Laal Maas in Jodhpur, this is the place. It's properly spicy with local Mathania chilies, yet so balanced. The tandoori missi roti was extremely soft."</p>
+            <h4 class="review-author">Priyanka Mehta</h4>
+            <div class="review-source"><i class="fab fa-google"></i> Google Local Guide • 1 month ago</div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="review-slide">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+            <p class="review-text">"We hosted a corporate catering dinner with {{CLINIC_NAME}} for 70 guests. The team set up beautiful live counters with wood-fire tandoors. Excellent food, polite staff, highly recommended!"</p>
+            <h4 class="review-author">Vikram Rathore</h4>
+            <div class="review-source"><i class="fab fa-google"></i> Google Local Guide • 3 weeks ago</div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="review-slide">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Such a premium, royal feeling. The Royal Thali has a massive variety of items, and each bowl had distinct flavors. Kesar Lassi was incredibly thick and delicious."</p>
+            <h4 class="review-author">Elena Rostova</h4>
+            <div class="review-source"><i class="fab fa-google"></i> TripAdvisor Reviewer • 2 months ago</div>
+          </div>
+        </div>
+        
+        <div class="reviews-nav">
+          <button class="reviews-nav-btn" id="review-prev" aria-label="Previous Review"><i class="fas fa-chevron-left"></i></button>
+          <button class="reviews-nav-btn" id="review-next" aria-label="Next Review"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <div class="reviews-dots" id="reviews-dots">
+          <!-- Dots rendered dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Online Ordering & WhatsApp Delivery -->
+  <section class="section" id="order">
+    <div class="container">
+      <div class="delivery-grid">
+        <div class="delivery-text">
+          <span class="section-subtitle">Instant Delivery</span>
+          <h3>Craving Royal Flavors at Home?</h3>
+          <p>Get {{CLINIC_NAME}} delivered straight to your door step. Choose from your favorite food delivery apps, or order directly from our tandoor to your home via WhatsApp for exclusive discounts.</p>
+          
+          <div class="delivery-partners">
+            <a href="https://www.zomato.com" target="_blank" rel="noopener noreferrer" class="partner-btn partner-btn-zomato">
+              <i class="fas fa-motorcycle"></i> Order on Zomato
+            </a>
+            <a href="https://www.swiggy.com" target="_blank" rel="noopener noreferrer" class="partner-btn partner-btn-swiggy">
+              <i class="fas fa-motorcycle"></i> Order on Swiggy
+            </a>
+          </div>
+        </div>
+        
+        <div class="wa-direct-order">
+          <h4><i class="fab fa-whatsapp"></i> Direct WhatsApp Order</h4>
+          <p>Create a custom order list below and click to directly send it to our kitchen on WhatsApp. Free delivery on orders above ₹500!</p>
+          
+          <!-- Order List Box -->
+          <div id="wa-order-cart" style="margin-bottom: 16px;">
+            <p style="font-style: italic; color: var(--color-gray);" id="empty-cart-msg">Your order list is empty. Click "+ Add to WhatsApp Order" on menu items above.</p>
+            <ul id="cart-items-list" style="list-style: none; padding: 0; margin-bottom: 12px; display: none;">
+              <!-- Items go here -->
+            </ul>
+            <div id="cart-summary" style="display: none; justify-content: space-between; border-top: 1px solid var(--color-bg-cream); padding-top: 10px; font-weight: 700;">
+              <span>Total Amount:</span>
+              <span id="cart-total-price">₹0</span>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary" style="width: 100%;" id="send-wa-order-btn" disabled>
+            <i class="fab fa-whatsapp"></i> Send Order to WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservations & Catering Enquiry Section -->
+  <section class="section" id="reservations" style="background-color: var(--color-bg-pure);">
+    <div class="container">
+      <div class="forms-grid">
+        <!-- Table Reservation Form -->
+        <div class="form-wrapper">
+          <h3>Reserve a Table</h3>
+          <p>Skip the waiting queue. Reserve your table in advance and let us prepare for your royal arrival.</p>
+          
+          <form id="reservation-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="res-name" class="form-label">Full Name</label>
+                <input type="text" id="res-name" class="form-control" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="res-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="res-phone" class="form-control" placeholder="Enter phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+              </div>
+              <div class="form-group">
+                <label for="res-date" class="form-label">Select Date</label>
+                <input type="date" id="res-date" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="res-time" class="form-label">Select Time</label>
+                <input type="time" id="res-time" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="res-guests" class="form-label">Number of Guests</label>
+                <select id="res-guests" class="form-control" required>
+                  <option value="" disabled selected>Select guests</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 Persons</option>
+                  <option value="3">3 Persons</option>
+                  <option value="4">4 Persons</option>
+                  <option value="5">5 Persons</option>
+                  <option value="6">6 Persons</option>
+                  <option value="7">7 Persons</option>
+                  <option value="8">8+ Persons</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="res-request" class="form-label">Special Requests</label>
+                <select id="res-request" class="form-control">
+                  <option value="None" selected>None</option>
+                  <option value="Birthday Celebration">Birthday Celebration</option>
+                  <option value="Anniversary">Anniversary Celebration</option>
+                  <option value="Romantic Setup">Romantic Candle Light Setup</option>
+                  <option value="Window Seat">Window/Courtyard Seating</option>
+                </select>
+              </div>
+              <div class="form-group colspan-2">
+                <label for="res-comments" class="form-label">Additional Notes</label>
+                <textarea id="res-comments" class="form-control" rows="3" placeholder="Tell us if you have any allergies or requests..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px; width: 100%;">Confirm Table Reservation</button>
+          </form>
+        </div>
+        
+        <!-- Catering Info & Quick Enquiry -->
+        <div class="catering-card">
+          <div>
+            <h3>Grand Event Catering</h3>
+            <p>From intimate birthday parties to grand weddings, make your events historic with {{CLINIC_NAME}}'s royal menus.</p>
+            
+            <ul class="catering-features">
+              <li><i class="fas fa-check-circle"></i> Minimum: 50 persons</li>
+              <li><i class="fas fa-check-circle"></i> Live Wood-Fire Tandoor counters</li>
+              <li><i class="fas fa-check-circle"></i> Traditional brass servers & setups</li>
+              <li><i class="fas fa-check-circle"></i> Cuisines: Rajasthani, North Indian, Chinese</li>
+              <li><i class="fas fa-check-circle"></i> Fully customizable menu templates</li>
+            </ul>
+          </div>
+          
+          <button class="btn btn-secondary" style="width: 100%;" id="open-catering-modal-btn">Get Catering Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catering Enquiry Modal -->
+  <div class="modal-overlay" id="catering-modal">
+    <div class="modal-content" style="max-width: 550px; text-align: left;">
+      <h3 style="text-align: center; margin-bottom: 20px;">Catering Enquiry Form</h3>
+      <form id="catering-form">
+        <div class="form-group">
+          <label for="cat-name" class="form-label">Your Name</label>
+          <input type="text" id="cat-name" class="form-control" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="cat-phone" class="form-label">Phone Number</label>
+          <input type="tel" id="cat-phone" class="form-control" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+          <div class="form-group">
+            <label for="cat-guests" class="form-label">Approx. Guests (Min 50)</label>
+            <input type="number" id="cat-guests" class="form-control" min="50" placeholder="e.g. 75" required>
+          </div>
+          <div class="form-group">
+            <label for="cat-date" class="form-label">Event Date</label>
+            <input type="date" id="cat-date" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Cuisines Required</label>
+          <div style="display: flex; gap: 15px; margin-top: 5px;">
+            <label style="font-size: 0.9rem; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+              <input type="checkbox" name="cuisine" value="Rajasthani" checked> Rajasthani
+            </label>
+            <label style="font-size: 0.9rem; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+              <input type="checkbox" name="cuisine" value="North Indian"> North Indian
+            </label>
+            <label style="font-size: 0.9rem; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+              <input type="checkbox" name="cuisine" value="Chinese"> Chinese
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cat-event" class="form-label">Event Type</label>
+          <select id="cat-event" class="form-control" required>
+            <option value="" disabled selected>Select event type</option>
+            <option value="Wedding">Wedding Celebration</option>
+            <option value="Corporate Event">Corporate Dinner / Lunch</option>
+            <option value="Birthday Party">Birthday Bash</option>
+            <option value="Anniversary">Anniversary Banquet</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        
+        <div style="display: flex; gap: 15px; margin-top: 20px;">
+          <button type="button" class="btn btn-secondary" style="flex: 1;" id="close-catering-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Quote Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Toast Modal -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-content">
+      <div class="modal-success-icon">
+        <i class="fas fa-check"></i>
+      </div>
+      <h3 id="success-modal-title">Reservation Success!</h3>
+      <p id="success-modal-message">Your table has been reserved successfully. A confirmation message has been prepared for you.</p>
+      <button class="btn btn-primary" id="success-modal-close-btn" style="width: 100%;">Close</button>
+    </div>
+  </div>
+
+  <!-- Location & Parking Map Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="map-grid">
+        <div class="map-info">
+          <span class="section-subtitle">Find Us</span>
+          <h3>Visit Our Royal Court</h3>
+          <p>We are situated in the vibrant heart of the heritage walled city of Jodhpur, right near the historic Clock Tower (Ghantaghar). Drop by for a sensory trip through Rajasthani flavors.</p>
+          
+          <div class="contact-cards-grid">
+            <div class="contact-detail-card">
+              <i class="fas fa-map-marked-alt"></i>
+              <h4>Address</h4>
+              <p>Near Clock Tower, Sardar Market, {{ADDRESS}} - 342001</p>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fas fa-clock"></i>
+              <h4>Timings</h4>
+              <p>11:00 AM – 11:00 PM<br>All Days Open</p>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fas fa-phone-alt"></i>
+              <h4>Phone Call</h4>
+              <p>+91 98765 43210</p>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fab fa-whatsapp"></i>
+              <h4>WhatsApp Support</h4>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+          
+          <div class="parking-badge">
+            <i class="fas fa-parking"></i>
+            <div>
+              <p><strong>Valet & Parking Info:</strong> Complementary valet parking is available right at Sardar Market entry. Dedicated parking spaces are available for dine-in guests.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="map-iframe-wrap">
+          <!-- Google Maps Embed for Clock Tower Jodhpur -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.4697241285223!2d73.02101131502476!3d26.29520008340089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c39e246be69%3A0xe54e6628cb39d2c2!2sGhantaghar%2C%20Jodhpur%2C%20Rajasthan%20342001!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="{{CLINIC_NAME}} Restaurant Location Map Jodhpur">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>{{CLINIC_NAME}}</h3>
+          <p>Serving traditional Rajasthani and North Indian meals with royal hospitality since 2012 in the blue city of Jodhpur.</p>
+          <div class="footer-fssai">
+            <div class="fssai-icon">fssai</div>
+            <div class="fssai-text">
+              FSSAI License Number
+              <span class="fssai-num">12345678901234</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Royal Menu</a></li>
+            <li><a href="#specials">Chef's Specials</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-hours">
+          <h4>Working Hours</h4>
+          <ul class="footer-hours-list">
+            <li>Monday <span>11:00 AM - 11:00 PM</span></li>
+            <li>Tuesday <span>11:00 AM - 11:00 PM</span></li>
+            <li>Wednesday <span>11:00 AM - 11:00 PM</span></li>
+            <li>Thursday <span>11:00 AM - 11:00 PM</span></li>
+            <li>Friday - Sunday <span>11:00 AM - 11:00 PM</span></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Get In Touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Near Clock Tower, Sardar Market, {{ADDRESS}} - 342001</span>
+            </li>
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>dine@{{CLINIC_NAME}}jodhpur.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 {{CLINIC_NAME}} Jodhpur. All Rights Reserved. Crafted with royal care.</p>
+        
+        <div class="footer-socials">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script File -->
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+

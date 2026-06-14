@@ -1,0 +1,28 @@
+/* Custom Trip page styling */
+.custom-trip-section {
+  background-color: var(--bg-secondary);
+}
+
+.custom-trip-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-main);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.custom-trip-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.custom-trip-form .form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 576px) {
+  .custom-trip-form .form-row {
+    flex-direction: column;
+  }
+}

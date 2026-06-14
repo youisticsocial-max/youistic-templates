@@ -1,0 +1,160 @@
+/* Achievements metrics */
+.achievements-stats-grid {
+  gap: var(--space-xl);
+}
+
+.ach-stat-card {
+  padding: var(--space-xl) var(--space-md);
+  border: 1px solid var(--gray-200);
+}
+
+.ach-stat-icon {
+  font-size: var(--fs-3xl);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.ach-stat-card h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--blue-800);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+
+.ach-stat-card p {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Filters */
+.toppers-filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-3xl);
+}
+
+/* Toppers Listings page style */
+.toppers-listing-grid {
+  gap: var(--space-xl);
+}
+
+.topper-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topper-avatar-fallback-page {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.topper-year-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.topper-details {
+  padding: var(--space-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.topper-metric-badge {
+  background: var(--saffron-100);
+  color: var(--saffron-700);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-xs);
+  box-shadow: 0 2px 6px rgba(245, 107, 0, 0.1);
+}
+
+.topper-name-page {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--blue-900);
+}
+
+.topper-exam-name {
+  font-size: 11px;
+  color: var(--blue-600);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.topper-dest {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+}
+
+/* Scholarship CTA */
+.scholarship-cta-inner {
+  padding: var(--space-3xl);
+  background: linear-gradient(135deg, var(--white) 0%, var(--saffron-50) 100%);
+  border: 1px solid var(--saffron-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.scholar-icon {
+  font-size: var(--fs-4xl);
+}
+
+.scholarship-cta-inner h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--blue-900);
+  max-width: 500px;
+}
+
+.scholarship-cta-inner p {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  max-width: 600px;
+}
+
+.scholar-buttons {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .scholar-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+}

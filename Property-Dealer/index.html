@@ -1,0 +1,1166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{CLINIC_NAME}} - Premium Real Estate Agent in Jodhpur. Find residential apartments, villas, commercial shops, and plots for sale or rent. Trusted RERA Registered Agency.">
+    <meta name="keywords" content="Real Estate Jodhpur, Property Dealer Jodhpur, {{CLINIC_NAME}}, Buy Property Jodhpur, Rent Flat Jodhpur, Plots in Jodhpur, Manish Jodhpur Property">
+    <meta name="author" content="{{CLINIC_NAME}}">
+    <title>{{CLINIC_NAME}} | Find Your Dream Property in Jodhpur</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header" id="navbar-header">
+        <div class="header-container">
+            <a href="#" class="logo-link" id="nav-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="gold-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-title">ASHAPURA</span>
+                    <span class="logo-subtitle">BUILDCON</span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu-id">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-item active-nav">Home</a></li>
+                    <li><a href="#properties-section" class="nav-item">Properties</a></li>
+                    <li><a href="#categories-section" class="nav-item">Categories</a></li>
+                    <li><a href="#services-section" class="nav-item">Services</a></li>
+                    <li><a href="#projects-section" class="nav-item">New Launches</a></li>
+                    <li><a href="#emi-section" class="nav-item">EMI Calculator</a></li>
+                    <li><a href="#about-section" class="nav-item">About Us</a></li>
+                    <li><a href="#contact-section" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="nav-phone-link">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="gold-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>{{PHONE}}</span>
+                </a>
+                <button class="btn btn-gold btn-navbar-cta" id="btn-navbar-valuation">Get Free Valuation</button>
+                
+                <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-overlay">
+        <ul class="mobile-nav-list">
+            <li><a href="#home" class="mobile-nav-item">Home</a></li>
+            <li><a href="#properties-section" class="mobile-nav-item">Properties</a></li>
+            <li><a href="#categories-section" class="mobile-nav-item">Categories</a></li>
+            <li><a href="#services-section" class="mobile-nav-item">Services</a></li>
+            <li><a href="#projects-section" class="mobile-nav-item">New Launches</a></li>
+            <li><a href="#emi-section" class="mobile-nav-item">EMI Calculator</a></li>
+            <li><a href="#about-section" class="mobile-nav-item">About Us</a></li>
+            <li><a href="#contact-section" class="mobile-nav-item">Contact</a></li>
+            <li><button class="btn btn-gold w-full mt-4" id="mobile-btn-valuation">Get Free Valuation</button></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-background-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge-tag">
+                    <span class="badge-dot"></span> RERA REGISTERED AGENCY (RAJ/A/2023/2456)
+                </div>
+                <h1 class="hero-headline">Find Your Perfect Property in <span class="text-gold">Jodhpur</span></h1>
+                <p class="hero-tagline">{{CLINIC_NAME}}: Find Your Dream Property. Residential plots, luxury apartments, premium villas, commercial spaces, and rental properties in the Sun City.</p>
+            </div>
+
+            <!-- Search Console -->
+            <div class="search-console-container" id="search-console">
+                <div class="search-tabs">
+                    <button class="search-tab active-tab" data-purpose="buy" id="tab-buy">Buy Property</button>
+                    <button class="search-tab" data-purpose="rent" id="tab-rent">Rent Property</button>
+                    <button class="search-tab" data-purpose="sell" id="tab-sell">Sell Property</button>
+                </div>
+                
+                <div class="search-form-grid">
+                    <!-- Tab-specific message for 'Sell' -->
+                    <div id="sell-form-notice" class="search-notice-hidden">
+                        <p>Looking to sell your property? Submit your details directly to Manish, our head agent, for a premium listing and valuation.</p>
+                        <a href="#enquiry-section" class="btn btn-gold">List Property with Us</a>
+                    </div>
+                    
+                    <div class="search-form-inputs" id="search-inputs-wrap">
+                        <div class="search-input-group">
+                            <label for="search-location" class="search-label">Location</label>
+                            <div class="input-with-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" class="input-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <select id="search-location" class="search-select">
+                                    <option value="">All Localities</option>
+                                    <option value="Sardarpura">Sardarpura</option>
+                                    <option value="Shastri Nagar">Shastri Nagar</option>
+                                    <option value="Pal Road">Pal Road</option>
+                                    <option value="Circuit House Road">Circuit House Road</option>
+                                    <option value="Chopasni Housing Board">Chopasni Housing Board</option>
+                                    <option value="Ratanada">Ratanada</option>
+                                    <option value="Uchiyarda">Uchiyarda</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-input-group">
+                            <label for="search-type" class="search-label">Property Type</label>
+                            <div class="input-with-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" class="input-icon-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                                <select id="search-type" class="search-select">
+                                    <option value="">All Types</option>
+                                    <option value="Residential">Residential</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Plot">Plots / Land</option>
+                                    <option value="Rental">Rental Properties</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-input-group">
+                            <label for="search-budget" class="search-label">Max Budget</label>
+                            <div class="input-with-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" class="input-icon-svg"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                <select id="search-budget" class="search-select">
+                                    <option value="">No Max Budget</option>
+                                    <option value="2000000">₹20 Lakhs</option>
+                                    <option value="5000000">₹50 Lakhs</option>
+                                    <option value="10000000">₹1 Crore</option>
+                                    <option value="20000000">₹2 Crores</option>
+                                    <option value="50000000">₹5 Crores</option>
+                                    <option value="999999999">₹5 Crores +</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-gold btn-search-submit" id="btn-search-trigger">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Bar -->
+    <section class="stats-bar-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">RERA Registered</h3>
+                    <p class="stat-label">RAJ/A/2023/2456</p>
+                </div>
+            </div>
+            <div class="stat-item-divider"></div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">500+ Properties</h3>
+                    <p class="stat-label">Verified Listings</p>
+                </div>
+            </div>
+            <div class="stat-item-divider"></div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">10+ Years</h3>
+                    <p class="stat-label">Industry Experience</p>
+                </div>
+            </div>
+            <div class="stat-item-divider"></div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number">100% Trust</h3>
+                    <p class="stat-label">Transparent Dealings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties-section" id="properties-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Exquisite Handpicked Properties</span>
+                <h2 class="section-title">Featured Listings in <span class="text-gold">Jodhpur</span></h2>
+                <div class="section-separator"></div>
+            </div>
+            
+            <!-- Filter Console -->
+            <div class="filter-console" id="filter-console-area">
+                <div class="filter-row filter-main-row">
+                    <div class="filter-group flex-1">
+                        <label class="filter-label">Search Keywords</label>
+                        <div class="input-with-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" class="input-icon-svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input type="text" id="filter-keyword" placeholder="Search by name, area, specs..." class="filter-input">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Property Type</label>
+                        <select id="filter-type" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Plot">Plot / Land</option>
+                            <option value="Rental">Rental</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">BHK / Configuration</label>
+                        <select id="filter-bhk" class="filter-select">
+                            <option value="">All Configurations</option>
+                            <option value="1">1 BHK</option>
+                            <option value="2">2 BHK</option>
+                            <option value="3">3 BHK</option>
+                            <option value="4+">4+ BHK / Villa</option>
+                            <option value="Villa">Villa Only</option>
+                            <option value="Studio">Studio</option>
+                            <option value="Plot">Plots (No BHK)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Budget Range</label>
+                        <select id="filter-budget" class="filter-select">
+                            <option value="">All Budgets</option>
+                            <option value="10L-20L">₹10L - ₹20L</option>
+                            <option value="20L-50L">₹20L - ₹50L</option>
+                            <option value="50L-1Cr">₹50L - ₹1Cr</option>
+                            <option value="1Cr-2Cr">₹1Cr - ₹2Cr</option>
+                            <option value="2Cr-5Cr">₹2Cr - ₹5Cr</option>
+                            <option value="5Cr+">₹5Cr +</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Location</label>
+                        <select id="filter-location" class="filter-select">
+                            <option value="">All Localities</option>
+                            <option value="Sardarpura">Sardarpura</option>
+                            <option value="Shastri Nagar">Shastri Nagar</option>
+                            <option value="Pal Road">Pal Road</option>
+                            <option value="Circuit House Road">Circuit House Road</option>
+                            <option value="Chopasni Housing Board">Chopasni Housing Board</option>
+                            <option value="Ratanada">Ratanada</option>
+                            <option value="Uchiyarda">Uchiyarda</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filter-actions-row">
+                    <div class="active-filters-count" id="active-filters-text">Showing all properties</div>
+                    <button class="btn btn-outline" id="btn-clear-filters">Reset Filters</button>
+                </div>
+            </div>
+
+            <!-- Listings Grid -->
+            <div class="listings-grid" id="properties-grid-container">
+                <!-- Dynamically generated via JS -->
+            </div>
+            
+            <!-- Fallback empty state -->
+            <div class="listings-empty-state hidden" id="empty-listings-state">
+                <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" class="text-gold mb-4"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                <h3>No Matching Properties Found</h3>
+                <p>Try resetting your filters or search terms, or fill in our enquiry form to get custom matches.</p>
+                <button class="btn btn-gold mt-4" id="btn-reset-empty-search">Show All Listings</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Category Section -->
+    <section class="categories-section" id="categories-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Property Types We Deal In</span>
+                <h2 class="section-title">Property <span class="text-gold">Categories</span></h2>
+                <div class="section-separator"></div>
+                <p class="section-desc max-w-2xl mx-auto">Explore a wide portfolio of verified property options tailored to your family's lifestyle or business requirements.</p>
+            </div>
+
+            <div class="categories-grid">
+                <!-- 1. Residential Plots -->
+                <div class="category-card" data-category="Plot">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <h3 class="category-name">Residential Plots</h3>
+                    <p class="category-desc">Premium plots in emerging localities with full legal clearance and boundary markers.</p>
+                </div>
+
+                <!-- 2. Apartments -->
+                <div class="category-card" data-category="Residential" data-bhk="2">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M8 6h2v2H8zm6 0h2v2h-2zm-6 4h2v2H8zm6 0h2v2h-2z"></path></svg>
+                    </div>
+                    <h3 class="category-name">Apartments</h3>
+                    <p class="category-desc">Modern 2BHK, 3BHK and penthouse units in gated townships with state-of-the-art amenities.</p>
+                </div>
+
+                <!-- 3. Villas -->
+                <div class="category-card" data-category="Residential" data-bhk="Villa">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline><path d="M18 10h-3v4h3v-4z"></path></svg>
+                    </div>
+                    <h3 class="category-name">Villas</h3>
+                    <p class="category-desc">Luxury independent bungalows and villas featuring premium layouts, private lawns, and elegant designs.</p>
+                </div>
+
+                <!-- 4. Commercial Shops -->
+                <div class="category-card" data-category="Commercial">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><rect x="3" y="11" width="18" height="2" rx="1"></rect></svg>
+                    </div>
+                    <h3 class="category-name">Commercial Shops</h3>
+                    <p class="category-desc">Retail storefronts in high-footfall commercial zones, perfect for businesses and showrooms.</p>
+                </div>
+
+                <!-- 5. Office Space -->
+                <div class="category-card" data-category="Commercial">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <h3 class="category-name">Office Space</h3>
+                    <p class="category-desc">Fully-equipped corporate offices, coworking spaces, and consultation suites in premier centers.</p>
+                </div>
+
+                <!-- 6. Agricultural Land -->
+                <div class="category-card" data-category="Plot">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3 class="category-name">Agricultural Land</h3>
+                    <p class="category-desc">Fertile agricultural plots and lands around Jodhpur with clear titles and water connectivity.</p>
+                </div>
+
+                <!-- 7. Industrial Plot -->
+                <div class="category-card" data-category="Plot">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="16"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                    </div>
+                    <h3 class="category-name">Industrial Plot</h3>
+                    <p class="category-desc">Plots in government-designated industrial areas, equipped for factories and warehouses.</p>
+                </div>
+
+                <!-- 8. Farmhouse -->
+                <div class="category-card" data-category="Residential">
+                    <div class="category-icon-wrap">
+                        <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none" class="category-svg"><path d="M12 2L2 22h20L12 2zm0 3.8L19.2 19H4.8L12 5.8z"></path></svg>
+                    </div>
+                    <h3 class="category-name">Farmhouse</h3>
+                    <p class="category-desc">Luxury weekend retreats in calm, green suburbs away from the city bustle, with private pools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-section">
+        <div class="why-choose-overlay"></div>
+        <div class="container">
+            <div class="why-choose-layout">
+                <div class="why-choose-content">
+                    <span class="section-subtitle gold-text">A Decade of Trust</span>
+                    <h2 class="section-title text-white">Why Choose <span class="text-gold">{{CLINIC_NAME}}</span></h2>
+                    <div class="section-separator left-aligned"></div>
+                    <p class="why-desc">We are Jodhpur's premier property advisors, combining deep local insights, RERA-compliant systems, and legal transparency to offer an outstanding buying and selling experience.</p>
+                    
+                    <div class="why-features">
+                        <div class="why-feature-item">
+                            <div class="why-icon-wrap">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div class="why-feature-text">
+                                <h4>RERA Registered & Compliant</h4>
+                                <p>Every listed project matches RERA benchmarks, protecting your hard-earned investments.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-feature-item">
+                            <div class="why-icon-wrap">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            </div>
+                            <div class="why-feature-text">
+                                <h4>Legal & Documentation Clearance</h4>
+                                <p>Our legal partners conduct rigorous title verification, mutation status check, and loan eligibility pre-checks.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-feature-item">
+                            <div class="why-icon-wrap">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div class="why-feature-text">
+                                <h4>Transparent Dealings Only</h4>
+                                <p>Zero hidden brokerages, direct interactions with owners, and completely fair market pricing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-image-panel">
+                    <div class="why-badge">
+                        <span class="why-badge-num">10+</span>
+                        <span class="why-badge-txt">Years of Excellence in Rajasthan</span>
+                    </div>
+                    <div class="why-experience-card">
+                        <div class="exp-quote">"Finding properties is easy. Finding the right investment with clear titles is where we bring value."</div>
+                        <div class="exp-author">- Manish, Founder</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Tailored Solutions for Property Buyers</span>
+                <h2 class="section-title">Our Professional <span class="text-gold">Services</span></h2>
+                <div class="section-separator"></div>
+                <p class="section-desc max-w-2xl mx-auto">From virtual site visits to complex registrations and housing loan assistance, we hold your hand at every step.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    </div>
+                    <h3 class="service-title">Property Buying</h3>
+                    <p class="service-desc">Tailored property match-making based on budget, layout preference, Vaastu compliance, and family requirements.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                    </div>
+                    <h3 class="service-title">Property Selling</h3>
+                    <p class="service-desc">Comprehensive staging, high-quality photography, list placement on major portals, and active buyer outreach.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h3 class="service-title">Renting & Leasing</h3>
+                    <p class="service-desc">Connecting dependable tenants with owners, establishing lease agreements, and managing security deposits.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                    </div>
+                    <h3 class="service-title">Accurate Valuation</h3>
+                    <p class="service-desc">Detailed market comparative evaluations to calculate the exact, fair market valuation of your plots or buildings.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    </div>
+                    <h3 class="service-title">Legal Documentation</h3>
+                    <p class="service-desc">Assistance in preparing registry drafts, sale agreements, stamp duties, power of attorney, and registry clearances.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3 class="service-title">Loan Assistance</h3>
+                    <p class="service-desc">Tie-ups with leading public and private banks (SBI, HDFC, ICICI, BOB) to secure competitive home loan rates and quick approval.</p>
+                </div>
+            </div>
+
+            <!-- Dedicated NRI Services Section -->
+            <div class="nri-services-box" id="nri-services">
+                <div class="nri-header">
+                    <div class="nri-badge">GLOBAL SERVICE</div>
+                    <h3 class="nri-title">Dedicated NRI Services</h3>
+                    <div class="section-separator left-aligned"></div>
+                </div>
+                <div class="nri-grid">
+                    <div class="nri-intro">
+                        <p>We understand that managing real estate in Jodhpur while living abroad requires exceptional trust, speed, and standard operational support. {{CLINIC_NAME}} offers specialized NRI property management services.</p>
+                        <a href="#enquiry-section" class="btn btn-gold btn-nri-inquire">Request NRI Consultation</a>
+                    </div>
+                    <ul class="nri-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" class="gold-svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Virtual Site Inspections:</strong> HD video walk-throughs and live video calls from the plots or project sites.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" class="gold-svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Power of Attorney Support:</strong> Assisting in legally drafting POA parameters for smooth transactions in Jodhpur.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" class="gold-svg"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Taxation & Remittance:</strong> Guiding you on Capital Gains tax, TDS settings, and NRE/NRO account pathways.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Free Property Valuation CTA Section -->
+    <section class="valuation-cta-section">
+        <div class="valuation-cta-bg"></div>
+        <div class="container">
+            <div class="valuation-cta-card">
+                <div class="val-cta-text">
+                    <h2 class="text-white">Curious About Your Property's Current Value?</h2>
+                    <p class="text-slate-300">Get an expert property valuation analysis of your residential plot, apartment, or shop in Jodhpur within 48 hours. Completely free, transparent, and backed by recent sales data.</p>
+                </div>
+                <div class="val-cta-action">
+                    <button class="btn btn-gold btn-large" id="btn-trigger-valuation-modal">Get Free Valuation Now</button>
+                    <span class="val-cta-helper">Takes less than 2 minutes • No obligation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Projects / Launches Section -->
+    <section class="projects-section" id="projects-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Exquisite Developer Launches</span>
+                <h2 class="section-title">New Projects & <span class="text-gold">Launches</span></h2>
+                <div class="section-separator"></div>
+                <p class="section-desc max-w-2xl mx-auto">Explore RERA-compliant premier housing societies and commercials shaping Jodhpur's skyline.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Ashapura Heritage Jodhpur" class="project-image">
+                        <span class="project-status-badge">New Launch</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-rera">RERA No: RAJ/P/2024/7654</span>
+                        <h3 class="project-title">Ashapura Heritage</h3>
+                        <div class="project-location-row">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>{{ADDRESS}}</span>
+                        </div>
+                        <div class="project-info-grid">
+                            <div class="p-info-item">
+                                <span class="p-info-lbl">Starting Price</span>
+                                <span class="p-info-val">₹48 Lakhs*</span>
+                            </div>
+                            <div class="p-info-item">
+                                <span class="p-info-lbl">Possession Date</span>
+                                <span class="p-info-val">December 2027</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <span class="project-type-tag">2 & 3 BHK Apartments</span>
+                            <a href="#enquiry-section" class="btn btn-gold btn-sm project-inquire-btn" data-project="Ashapura Heritage">Get Brochure</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hanwant Heights Jodhpur" class="project-image">
+                        <span class="project-status-badge">Under Construction</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-rera">RERA No: RAJ/P/2023/5231</span>
+                        <h3 class="project-title">Hanwant Heights</h3>
+                        <div class="project-location-row">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>Circuit House Road, Jodhpur</span>
+                        </div>
+                        <div class="project-info-grid">
+                            <div class="p-info-item">
+                                <span class="p-info-lbl">Starting Price</span>
+                                <span class="p-info-val">₹1.5 Crores*</span>
+                            </div>
+                            <div class="p-info-item">
+                                <span class="p-info-lbl">Possession Date</span>
+                                <span class="p-info-val">Immediate / Ready</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <span class="project-type-tag">4BHK Ultra-Luxury Villas</span>
+                            <a href="#enquiry-section" class="btn btn-gold btn-sm project-inquire-btn" data-project="Hanwant Heights">Get Brochure</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMI Calculator Section -->
+    <section class="emi-section" id="emi-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Financial Planning Made Simple</span>
+                <h2 class="section-title">Home Loan <span class="text-gold">EMI Calculator</span></h2>
+                <div class="section-separator"></div>
+                <p class="section-desc max-w-2xl mx-auto">Drag the sliders below to estimate your monthly installment details. Rate of interest varies based on bank tie-ups.</p>
+            </div>
+
+            <div class="emi-calculator-card">
+                <div class="emi-inputs-panel">
+                    <div class="calculator-slider-group">
+                        <div class="slider-label-row">
+                            <span>Loan Amount</span>
+                            <span class="slider-val-box" id="lbl-loan-amount">₹50,00,000</span>
+                        </div>
+                        <input type="range" id="input-loan-amount" min="1000000" max="20000000" step="100000" value="5000000" class="calculator-slider">
+                        <div class="slider-limits">
+                            <span>₹10 Lakhs</span>
+                            <span>₹2 Crores</span>
+                        </div>
+                    </div>
+
+                    <div class="calculator-slider-group">
+                        <div class="slider-label-row">
+                            <span>Interest Rate (p.a.)</span>
+                            <span class="slider-val-box" id="lbl-interest-rate">8.5%</span>
+                        </div>
+                        <input type="range" id="input-interest-rate" min="7.0" max="12.0" step="0.1" value="8.5" class="calculator-slider">
+                        <div class="slider-limits">
+                            <span>7.0%</span>
+                            <span>12.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="calculator-slider-group">
+                        <div class="slider-label-row">
+                            <span>Tenure (Years)</span>
+                            <span class="slider-val-box" id="lbl-tenure">20 Years</span>
+                        </div>
+                        <input type="range" id="input-tenure" min="5" max="30" step="1" value="20" class="calculator-slider">
+                        <div class="slider-limits">
+                            <span>5 Years</span>
+                            <span>30 Years</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emi-results-panel">
+                    <div class="result-box-highlight">
+                        <span class="result-lbl">Estimated Monthly EMI</span>
+                        <h2 class="result-val text-gold" id="lbl-result-emi">₹43,391</h2>
+                    </div>
+                    
+                    <div class="result-breakdown-details">
+                        <div class="breakdown-item">
+                            <span class="breakdown-dot bg-gold"></span>
+                            <div class="breakdown-info">
+                                <span>Principal Amount</span>
+                                <h4 id="lbl-breakdown-principal">₹50,00,000</h4>
+                            </div>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-dot bg-navy"></span>
+                            <div class="breakdown-info">
+                                <span>Total Interest Payable</span>
+                                <h4 id="lbl-breakdown-interest">₹54,13,889</h4>
+                            </div>
+                        </div>
+                        <div class="breakdown-divider"></div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-info w-full">
+                                <span class="font-medium">Total Amount Payable</span>
+                                <h3 class="text-white" id="lbl-breakdown-total">₹1,04,13,889</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Bar Graph of Principal vs Interest -->
+                    <div class="breakdown-progress-bar">
+                        <div class="progress-segment principal-segment" id="bar-principal" style="width: 48%;"></div>
+                        <div class="progress-segment interest-segment" id="bar-interest" style="width: 52%;"></div>
+                    </div>
+                    <div class="progress-bar-legend">
+                        <span>Principal (<span id="lbl-pct-principal">48%</span>)</span>
+                        <span>Interest (<span id="lbl-pct-interest">52%</span>)</span>
+                    </div>
+                    
+                    <a href="#enquiry-section" class="btn btn-gold btn-block mt-4 text-center">Apply Loan Pre-Approval</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Real Words from Real Clients</span>
+                <h2 class="section-title">Success Stories & <span class="text-gold">Testimonials</span></h2>
+                <div class="section-separator"></div>
+            </div>
+
+            <div class="testimonial-slider-container">
+                <div class="testimonial-slider" id="testimonial-slider-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-quote">"Manish made buying our residential plot in Jodhpur completely stress-free. As an NRI residing in London, we were extremely worried about land titles, but {{CLINIC_NAME}} took care of every legal verification and documentation. Exceptional transparency!"</p>
+                            <div class="testimonial-client">
+                                <h4 class="client-name">Mr. Rajesh Purohit</h4>
+                                <span class="client-info">NRI Client (UK) • Bought Plot in Uchiyarda</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-quote">"Searching for commercial shop space in Jodhpur is tough due to footfall calculations. Manish provided detailed comparative options and secured a shop in Sardarpura with ready rental yields. Truly the best agent service in town."</p>
+                            <div class="testimonial-client">
+                                <h4 class="client-name">Mrs. Sunita Gehlot</h4>
+                                <span class="client-info">Business Owner • Bought Commercial Shop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-quote">"Rented a beautiful 3BHK flat on Pal Road through {{CLINIC_NAME}}. The rental lease contract was prepared within a day. No extra charges, transparent dealings, and highly supportive behaviors. Highly recommended!"</p>
+                            <div class="testimonial-client">
+                                <h4 class="client-name">Dr. Amit Vyas</h4>
+                                <span class="client-info">Resident Doctor • Rented 3BHK Flat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <button class="t-nav-btn" id="btn-t-prev" aria-label="Previous Testimonial">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </button>
+                    <div class="testimonial-dots" id="testimonial-dots-wrap">
+                        <span class="t-dot active-dot" data-index="0"></span>
+                        <span class="t-dot" data-index="1"></span>
+                        <span class="t-dot" data-index="2"></span>
+                    </div>
+                    <button class="t-nav-btn" id="btn-t-next" aria-label="Next Testimonial">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Agent / Firm Section -->
+    <section class="about-section" id="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-column">
+                    <div class="about-image-frame">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Manish - Real Estate Agent Jodhpur" class="agent-photo">
+                    </div>
+                    <div class="agent-badge-info">
+                        <h3>Manish</h3>
+                        <p>Principal Agent & Founder</p>
+                        <div class="agent-badge-line"></div>
+                        <span class="agent-badge-num">10+ Yrs Exp</span>
+                    </div>
+                </div>
+
+                <div class="about-text-column">
+                    <span class="section-subtitle">The Face Behind {{CLINIC_NAME}}</span>
+                    <h2 class="section-title">About the Agent & <span class="text-gold">Firm</span></h2>
+                    <div class="section-separator left-aligned"></div>
+                    <p class="about-desc-p">Founded and led by <strong>Manish</strong>, {{CLINIC_NAME}} has grown into one of Jodhpur's most trusted boutique real estate consultancies. We specialize in residential plots, premium apartments, luxury farmhouses, and industrial plot clearances across the Jodhpur district.</p>
+                    
+                    <div class="agent-expert-grid">
+                        <div class="expert-box">
+                            <span class="expert-hdr">RERA REGISTRATION</span>
+                            <span class="expert-val">RAJ/A/2023/2456</span>
+                        </div>
+                        <div class="expert-box">
+                            <span class="expert-hdr">SPECIALIZATION</span>
+                            <span class="expert-val">Plots, Residential, & Rentals</span>
+                        </div>
+                        <div class="expert-box">
+                            <span class="expert-hdr">AREA EXPERTISE</span>
+                            <span class="expert-val">Jodhpur District Metro</span>
+                        </div>
+                    </div>
+
+                    <blockquote class="agent-quote">
+                        "At {{CLINIC_NAME}}, we do not sell properties. We help you establish roots. Trust, clear legal paper validation, and long-term values are the cornerstones of our work."
+                    </blockquote>
+                    
+                    <div class="agent-quick-contact">
+                        <a href="https://wa.me/{{PHONE}}" class="btn btn-gold">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="mr-2"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.731-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.023-5.11-2.885-6.974C16.59 1.908 14.11 1.88 11.472 1.88c-5.437 0-9.863 4.42-9.866 9.859-.001 1.762.47 3.483 1.365 5.013l-.993 3.626 3.72-.975zm13.114-6.84c-.29-.145-1.716-.847-1.983-.944-.266-.098-.46-.145-.654.145-.193.29-.748.944-.917 1.137-.168.193-.338.217-.628.072-.29-.145-1.222-.45-2.328-1.437-.86-.767-1.44-1.716-1.61-2.006-.17-.29-.018-.447.127-.592.13-.13.29-.338.435-.507.145-.168.193-.29.29-.483.097-.193.048-.36-.024-.507-.072-.145-.654-1.57-.894-2.15-.235-.568-.475-.49-.654-.5-.168-.008-.362-.01-.555-.01-.194 0-.508.072-.774.362-.266.29-1.015.99-1.015 2.413 0 1.42 1.034 2.797 1.178 2.99.145.194 2.036 3.102 4.93 4.354.688.297 1.226.474 1.643.606.692.22 1.32.19 1.817.115.553-.083 1.717-.7 1.958-1.376.242-.677.242-1.256.17-1.376-.073-.12-.267-.194-.556-.34z"/></svg>
+                            <span>Chat with Manish</span>
+                        </a>
+                        <a href="tel:{{PHONE}}" class="btn btn-outline">Call Agent</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form Section -->
+    <section class="enquiry-section" id="enquiry-section">
+        <div class="container">
+            <div class="enquiry-layout-card">
+                <div class="enquiry-info-pane">
+                    <span class="text-gold font-medium tracking-wider uppercase text-sm block mb-2">Instant Response</span>
+                    <h2 class="text-white">Get in Touch with {{CLINIC_NAME}}</h2>
+                    <p class="text-slate-300 mb-6">Fill out the detailed form, and Manish or one of our listing coordinators will call you back within 15 minutes with verified property portfolios matching your request.</p>
+                    
+                    <div class="enquiry-contact-links">
+                        <div class="contact-link-item">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <div>
+                                <span>Call Agent Manish</span>
+                                <a href="tel:{{PHONE}}" class="block text-white font-medium hover-gold">{{PHONE}}</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-link-item">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <div>
+                                <span>Official Email Address</span>
+                                <a href="mailto:ashapurabuilcon@gmail.com" class="block text-white font-medium hover-gold">ashapurabuilcon@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="enquiry-form-pane">
+                    <form id="property-enquiry-form" class="enquiry-form-element">
+                        <div class="form-row">
+                            <div class="form-group flex-1">
+                                <label for="form-name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" id="form-name" placeholder="John Doe" required class="form-input">
+                                <span class="form-error-msg" id="err-form-name"></span>
+                            </div>
+                            <div class="form-group flex-1">
+                                <label for="form-phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" id="form-phone" placeholder="98985XXXXX" required class="form-input">
+                                <span class="form-error-msg" id="err-form-phone"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group flex-1">
+                                <label for="form-purpose" class="form-label">Looking For <span class="text-danger">*</span></label>
+                                <select id="form-purpose" required class="form-select">
+                                    <option value="">Select Purpose</option>
+                                    <option value="Buy">Buy Property</option>
+                                    <option value="Sell">Sell Property</option>
+                                    <option value="Rent">Rent Property</option>
+                                </select>
+                            </div>
+                            <div class="form-group flex-1">
+                                <label for="form-type" class="form-label">Property Type <span class="text-danger">*</span></label>
+                                <select id="form-type" required class="form-select">
+                                    <option value="">Select Type</option>
+                                    <option value="Plot">Residential Plot</option>
+                                    <option value="Apartment">Apartment / Flat</option>
+                                    <option value="Villa">Luxury Villa</option>
+                                    <option value="Shop">Commercial Shop</option>
+                                    <option value="Office">Office Space</option>
+                                    <option value="Agricultural">Agricultural Land</option>
+                                    <option value="Farmhouse">Farmhouse</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group flex-1">
+                                <label for="form-budget" class="form-label">Budget Range</label>
+                                <select id="form-budget" class="form-select">
+                                    <option value="">Select Budget Range</option>
+                                    <option value="10L-20L">₹10 Lakhs - ₹20 Lakhs</option>
+                                    <option value="20L-50L">₹20 Lakhs - ₹50 Lakhs</option>
+                                    <option value="50L-1Cr">₹50 Lakhs - ₹1 Crore</option>
+                                    <option value="1Cr-2Cr">₹1 Crore - ₹2 Crores</option>
+                                    <option value="2Cr-5Cr">₹2 Crores - ₹5 Crores</option>
+                                    <option value="5Cr+">₹5 Crores +</option>
+                                </select>
+                            </div>
+                            <div class="form-group flex-1">
+                                <label for="form-location" class="form-label">Preferred Location</label>
+                                <select id="form-location" class="form-select">
+                                    <option value="">Select Location</option>
+                                    <option value="Sardarpura">Sardarpura</option>
+                                    <option value="Shastri Nagar">Shastri Nagar</option>
+                                    <option value="Pal Road">Pal Road</option>
+                                    <option value="Circuit House Road">Circuit House Road</option>
+                                    <option value="Chopasni Housing Board">Chopasni Housing Board</option>
+                                    <option value="Ratanada">Ratanada</option>
+                                    <option value="Uchiyarda">Uchiyarda</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Your Message / Requirements</label>
+                            <textarea id="form-message" rows="4" placeholder="Mention size specifications, facing direction, preferred timing to call..." class="form-textarea"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold w-full py-3" id="btn-enquiry-submit">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Coverage & Map / Contact -->
+    <section class="contact-section" id="contact-section">
+        <div class="container">
+            <div class="contact-grid-layout">
+                <div class="contact-text-card">
+                    <span class="section-subtitle">Visit Our Office</span>
+                    <h2 class="section-title">Office & Location <span class="text-gold">Coverage</span></h2>
+                    <div class="section-separator left-aligned"></div>
+                    
+                    <div class="office-details-box">
+                        <div class="office-detail-item">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <h5>Office Address</h5>
+                                <p>4A, Circuit House Rd, opposite LIC, Hanwant Nagar, East Patel Nagar, {{ADDRESS}} 342006</p>
+                            </div>
+                        </div>
+
+                        <div class="office-detail-item">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <div>
+                                <h5>Office Timings</h5>
+                                <p>Monday - Saturday: 10:00 AM to 7:30 PM<br>Sunday: By Appointment Only</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="coverage-areas-wrap">
+                        <h5>Major Areas Served in Jodhpur</h5>
+                        <div class="areas-badge-grid">
+                            <span>Sardarpura</span>
+                            <span>Ratanada</span>
+                            <span>Shastri Nagar</span>
+                            <span>Pal Road</span>
+                            <span>Circuit House Road</span>
+                            <span>Uchiyarda</span>
+                            <span>Chopasni Housing Board</span>
+                            <span>Jhalamand</span>
+                            <span>Bhadwasia</span>
+                            <span>Banar Road</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="map-embed-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.8385208479267!2d73.0298711!3d26.2669222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c39b1a5cf3d%3A0xe54e39ec2f8b5025!2sCircuit%20House%20Rd%2C%20Jodhpur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map-iframe" title="{{CLINIC_NAME}} Location Map"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <div class="footer-brand-col">
+                    <a href="#" class="logo-link mb-4">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" class="gold-svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        </span>
+                        <div class="logo-text">
+                            <span class="logo-title text-white">ASHAPURA</span>
+                            <span class="logo-subtitle text-gold">BUILDCON</span>
+                        </div>
+                    </a>
+                    <p class="footer-brand-desc">{{CLINIC_NAME}} is a premium real estate advisory agency located in {{ADDRESS}}. We connect buyers with verified, RERA-approved residential, commercial, plot, and rental listings.</p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Quick Links</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#properties-section">Featured Properties</a></li>
+                        <li><a href="#categories-section">Property Categories</a></li>
+                        <li><a href="#services-section">Our Services</a></li>
+                        <li><a href="#projects-section">New Projects</a></li>
+                        <li><a href="#emi-section">EMI Calculator</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-col-title">Special Offerings</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="#nri-services">NRI Services</a></li>
+                        <li><a href="#categories-section">Residential Plots</a></li>
+                        <li><a href="#properties-section">Commercial Shops</a></li>
+                        <li><a href="#about-section">About Agent Manish</a></li>
+                        <li><button class="footer-valuation-btn" id="btn-footer-valuation">Free Property Valuation</button></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h5 class="footer-col-title">Contact Office</h5>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>4A, Circuit House Rd, Hanwant Nagar, East Patel Nagar, Jodhpur, RJ - 342006</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:{{PHONE}}">{{PHONE}}</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" class="gold-svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:ashapurabuilcon@gmail.com">ashapurabuilcon@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+            
+            <!-- RERA Disclaimer & Copyright -->
+            <div class="footer-bottom-row">
+                <div class="footer-rera-disclaimer" id="footer-rera-info">
+                    <p><strong>RERA DISCLAIMER:</strong> {{CLINIC_NAME}} is RERA registered under No. <strong>RAJ/A/2023/2456</strong>. All projects listed are subject to RERA compliance. Customers are advised to independently verify registry documents and permissions before financial commitments.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{CLINIC_NAME}}. All Rights Reserved. Designed with Accents.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Property Details Modal -->
+    <div class="modal-backdrop hidden" id="property-details-modal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="btn-close-modal" aria-label="Close modal">×</button>
+            <div class="modal-grid" id="modal-property-content">
+                <!-- Dynamically loaded via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Get Free Property Valuation Modal -->
+    <div class="modal-backdrop hidden" id="valuation-modal">
+        <div class="modal-container modal-small">
+            <button class="modal-close-btn" id="btn-close-val-modal" aria-label="Close valuation modal">×</button>
+            <div class="valuation-modal-content">
+                <div class="val-header">
+                    <h3 class="text-white">Request Property Valuation</h3>
+                    <p class="text-slate-300">Submit your property characteristics to receive a detailed comparative market price research analysis from Manish.</p>
+                </div>
+                <form id="valuation-enquiry-form" class="valuation-form-element mt-4">
+                    <div class="form-group">
+                        <label for="val-name" class="form-label font-small">Your Full Name *</label>
+                        <input type="text" id="val-name" required placeholder="John Doe" class="form-input val-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="val-phone" class="form-label font-small">Phone Number *</label>
+                        <input type="tel" id="val-phone" required placeholder="98985XXXXX" class="form-input val-input">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="val-type" class="form-label font-small">Property Type *</label>
+                            <select id="val-type" required class="form-select val-select">
+                                <option value="Plot">Plot / Land</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Villa">Villa / House</option>
+                                <option value="Commercial">Commercial</option>
+                            </select>
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="val-location" class="form-label font-small">Property Area/Locality *</label>
+                            <select id="val-location" required class="form-select val-select">
+                                <option value="Sardarpura">Sardarpura</option>
+                                <option value="Shastri Nagar">Shastri Nagar</option>
+                                <option value="Pal Road">Pal Road</option>
+                                <option value="Circuit House Road">Circuit House Road</option>
+                                <option value="Chopasni Housing Board">Chopasni Housing Board</option>
+                                <option value="Ratanada">Ratanada</option>
+                                <option value="Uchiyarda">Uchiyarda</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="val-size" class="form-label font-small">Size (sqft or sqyds) *</label>
+                            <input type="text" id="val-size" required placeholder="e.g., 1500 sqft" class="form-input val-input">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="val-age" class="form-label font-small">Property Age (years)</label>
+                            <input type="number" id="val-age" placeholder="e.g., New / 3 yrs" class="form-input val-input">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-gold w-full mt-2" id="btn-valuation-form-submit">Submit Valuation Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Success Notification -->
+    <div class="toast-notification hidden" id="toast-success">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="toast-text">
+                <h4 id="toast-title">Submission Successful</h4>
+                <p id="toast-desc">Agent Manish will call you back shortly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/{{PHONE}}" target="_blank" rel="noopener noreferrer" class="whatsapp-floating-widget" id="whatsapp-chat-widget" aria-label="Chat with Agent Manish on WhatsApp">
+        <span class="whatsapp-tooltip">Chat with Manish</span>
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.731-1.465L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.023-5.11-2.885-6.974C16.59 1.908 14.11 1.88 11.472 1.88c-5.437 0-9.863 4.42-9.866 9.859-.001 1.762.47 3.483 1.365 5.013l-.993 3.626 3.72-.975zm13.114-6.84c-.29-.145-1.716-.847-1.983-.944-.266-.098-.46-.145-.654.145-.193.29-.748.944-.917 1.137-.168.193-.338.217-.628.072-.29-.145-1.222-.45-2.328-1.437-.86-.767-1.44-1.716-1.61-2.006-.17-.29-.018-.447.127-.592.13-.13.29-.338.435-.507.145-.168.193-.29.29-.483.097-.193.048-.36-.024-.507-.072-.145-.654-1.57-.894-2.15-.235-.568-.475-.49-.654-.5-.168-.008-.362-.01-.555-.01-.194 0-.508.072-.774.362-.266.29-1.015.99-1.015 2.413 0 1.42 1.034 2.797 1.178 2.99.145.194 2.036 3.102 4.93 4.354.688.297 1.226.474 1.643.606.692.22 1.32.19 1.817.115.553-.083 1.717-.7 1.958-1.376.242-.677.242-1.256.17-1.376-.073-.12-.267-.194-.556-.34z"/></svg>
+    </a>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,831 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{CLINIC_NAME}} is Jodhpur's premier hardware store and contractor B2B partner. Offering pipes, fittings, electrical, paints, power tools, sanitaryware, cement, tiles, and safety equipment. Visit Near Shivalik Complex, Sardarpura, Jodhpur.">
+  <meta name="keywords" content="Hardware Store Jodhpur, {{CLINIC_NAME}}, Industrial Supplies Jodhpur, PVC Pipes Astral Supreme, Bosch Tools Jodhpur, Paints Sardarpura, Contractors Wholesale, B2B Hardware Jodhpur">
+  <title>{{CLINIC_NAME}} | Everything You Need to Build Your Dream</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION (MASTERY BRIDGE STYLE)
+       ========================================== -->
+  <header id="main-header" class="header">
+    <div class="container">
+      
+      <!-- Split/Unified Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <span class="nav-separator">&#9830;</span>
+        <a href="#categories" class="nav-link">Categories</a>
+        <span class="nav-separator">&#9830;</span>
+        <a href="#why-us" class="nav-link">Why Us</a>
+        <span class="nav-separator">&#9830;</span>
+        <a href="#products" class="nav-link">Products</a>
+        
+        <!-- Central Hanging Shield Logo -->
+        <a href="#" class="logo-shield" id="nav-logo">
+          <div class="logo-shield-badge">
+            <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}} Logo" class="logo-shield-image" style="max-width: 80px; max-height: 80px; object-fit: contain;">
+          </div>
+        </a>
+        
+        <span class="nav-separator">&#9830;</span>
+        <a href="#b2b" class="nav-link">B2B Trade</a>
+        <span class="nav-separator">&#9830;</span>
+        <a href="#enquiry" class="nav-link">Get Quote</a>
+        <span class="nav-separator">&#9830;</span>
+        <a href="#location" class="nav-link">Contact</a>
+      </nav>
+      
+      <!-- Top phone badge on the far right -->
+      <div class="header-phone-right">
+        <a href="tel:{{PHONE}}" class="nav-phone" id="header-phone-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          {{PHONE}}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <div class="mobile-toggle" id="mobile-toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION (CINEMATIC HEADER HERO)
+       ========================================== -->
+  <section id="hero" class="hero">
+    <!-- Background Image -->
+    <img src="assets/hero_construction.png" alt="Industrial Construction Materials" class="hero-bg-image">
+    
+    <div class="container">
+      <div class="hero-content">
+        <span class="badge badge-orange hero-badge">ISO 9001:2015 Certified Partner</span>
+        <h1 class="hero-title" id="main-hero-title">
+          {{CLINIC_NAME}}
+          <span>Everything You Need to Build Your Dream</span>
+        </h1>
+        <p class="hero-tagline">
+          Jodhpur's trusted distributor of high-performance steel, premium pipes, electrical cables, coatings, and heavy engineering tools for over 20 years.
+        </p>
+        
+        <div class="hero-ctas">
+          <a href="#enquiry" class="btn btn-primary" id="hero-quote-cta">Request Bulk Quote</a>
+          <a href="#location" class="btn btn-secondary" id="hero-visit-cta">Visit Jodhpur Store</a>
+        </div>
+        
+        <!-- Trust Metrics -->
+        <div class="hero-trust-badges">
+          <div class="hero-stat">
+            <span class="hero-stat-num">20<span>+</span></span>
+            <span class="hero-stat-label">Years of Trust</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">5000<span>+</span></span>
+            <span class="hero-stat-label">Stock Items</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">1200<span>+</span></span>
+            <span class="hero-stat-label">Contractors Served</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TRUST BADGES / WHY US
+       ========================================== -->
+  <section id="why-us" class="why-us section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="why-us-title">Why <span>{{CLINIC_NAME}}</span>?</h2>
+        <p class="section-subtitle">Delivering reliability and value to Jodhpur’s building sector since 2006.</p>
+      </div>
+
+      <div class="why-us-grid">
+        <!-- Badge 1: Bulk Discount -->
+        <div class="why-card heritage-border-card" id="why-bulk-discount">
+          <!-- Sale Tag Icon -->
+          <svg class="why-icon" viewBox="0 0 24 24">
+            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+          </svg>
+          <h3>Bulk Discounts</h3>
+          <p>Direct wholesale pricing scales with order size. Ideal for real estate developers and contractors.</p>
+        </div>
+
+        <!-- Badge 2: 20+ Years -->
+        <div class="why-card heritage-border-card" id="why-experience">
+          <!-- Star/Award Icon -->
+          <svg class="why-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <h3>20+ Years Legacy</h3>
+          <p>Established reliability offering technical support, genuine brands, and consistent supply lines.</p>
+        </div>
+
+        <!-- Badge 3: Products Range -->
+        <div class="why-card heritage-border-card" id="why-products">
+          <!-- Inventory/Storage Icon -->
+          <svg class="why-icon" viewBox="0 0 24 24">
+            <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
+          </svg>
+          <h3>5000+ Products</h3>
+          <p>From foundations to finishes. Complete catalogs of electrical, plumbing, sanitary, and structural steel.</p>
+        </div>
+
+        <!-- Badge 4: Free Delivery -->
+        <div class="why-card heritage-border-card" id="why-delivery">
+          <!-- Truck Icon -->
+          <svg class="why-icon" viewBox="0 0 24 24">
+            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H18V9.5h1.5zm-6 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+          </svg>
+          <h3>Free Site Delivery</h3>
+          <p>Get materials transported directly to your job site in Jodhpur on orders above ₹5,000.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PRODUCT CATEGORIES GRID
+       ========================================== -->
+  <section id="categories" class="categories section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="categories-title">Product <span>Categories</span></h2>
+        <p class="section-subtitle">We stock premium materials from authorized dealers for specialized works.</p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- Category 1: Pipes & Fittings -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-pipes">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500&q=80" alt="Pipes & Fittings" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Pipes & Fittings</h3>
+            <span class="category-brands">Astral, Supreme, Ashirvad</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Electrical -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-electrical">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=500&q=80" alt="Electrical Cables & Wires" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Electrical & Wires</h3>
+            <span class="category-brands">Finolex, Polycab, Havells</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Paints & Waterproofing -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-paints">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=500&q=80" alt="Paints & Coatings" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Paints & Waterproof</h3>
+            <span class="category-brands">Asian Paints, Dr. Fixit, Berger</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Tools & Equipment -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-tools">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=500&q=80" alt="Industrial Power Tools" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Tools & Equipment</h3>
+            <span class="category-brands">Bosch, Dewalt, Stanley</span>
+          </div>
+        </div>
+
+        <!-- Category 5: Sanitary -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-sanitary">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Sanitaryware & Bathware" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Sanitary & Bathware</h3>
+            <span class="category-brands">Jaquar, Cera, Hindware</span>
+          </div>
+        </div>
+
+        <!-- Category 6: Cement & Construction -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-cement">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=500&q=80" alt="Cement & Structural Materials" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Cement & Construction</h3>
+            <span class="category-brands">UltraTech, TATA Tiscon, JK</span>
+          </div>
+        </div>
+
+        <!-- Category 7: Tiles & Adhesives -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-tiles">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=500&q=80" alt="Tiles & Adhesives" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Tiles & Adhesives</h3>
+            <span class="category-brands">Kajaria, Somany, Roff</span>
+          </div>
+        </div>
+
+        <!-- Category 8: Safety & Protective Gear -->
+        <div class="category-card heritage-border-card" onclick="location.href='#products'" id="cat-safety">
+          <div class="category-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" alt="Safety Helmets & Equipment" class="category-img">
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">Safety Equipment</h3>
+            <span class="category-brands">3M, Honeywell, Bosch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       B2B CONTRACTORS & BUILDERS SECTION
+       ========================================== -->
+  <section id="b2b" class="b2b-section section-padding">
+    <div class="container">
+      <div class="b2b-container">
+        <!-- Content -->
+        <div class="b2b-content">
+          <span class="badge badge-orange">Exclusive Trade Program</span>
+          <h2 id="b2b-title">Contractors & Builders <span>Special Pricing</span></h2>
+          <p class="b2b-desc">
+            Streamline your procurement processes. As an official B2B trade partner, unlock specialized commercial perks designed to accelerate jobs and reduce overhead.
+          </p>
+
+          <div class="b2b-benefits">
+            <!-- Benefit 1 -->
+            <div class="b2b-benefit-item">
+              <svg class="b2b-benefit-icon" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <div class="b2b-benefit-text">
+                <h4>Flexible Credit Lines</h4>
+                <p>Commercial credit accounts available for verified builders and architectural firms.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="b2b-benefit-item">
+              <svg class="b2b-benefit-icon" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <div class="b2b-benefit-text">
+                <h4>Custom Bulk Pricing</h4>
+                <p>Volume discounts on large shipments of cement, structural steel, and CPVC piping systems.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="b2b-benefit-item">
+              <svg class="b2b-benefit-icon" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <div class="b2b-benefit-text">
+                <h4>Dedicated Account Manager</h4>
+                <p>Direct priority line for quotation updates, submittals, and material scheduling.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="b2b-benefit-item">
+              <svg class="b2b-benefit-icon" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <div class="b2b-benefit-text">
+                <h4>Priority Site Logistics</h4>
+                <p>Flatbed unloading and scheduled, multi-phase site deliveries within Jodhpur district.</p>
+              </div>
+            </div>
+          </div>
+          
+          <button class="btn btn-accent" id="register-trade-partner-btn">Register as Trade Partner</button>
+        </div>
+
+        <!-- Interactive Form Preview / Fast Quote Card -->
+        <div class="b2b-form-card heritage-border-card">
+          <h3>Quick Trade Quote</h3>
+          <p>Get a priority commercial quotation response in under 2 hours.</p>
+          <form id="b2b-quote-form" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label" for="b2b-company">Company / Firm Name</label>
+              <input type="text" id="b2b-company" class="form-input" placeholder="e.g. Jodhpur Builders & Infra" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="b2b-phone">Mobile Number (WhatsApp Preferred)</label>
+              <input type="tel" id="b2b-phone" class="form-input" placeholder="10-digit mobile number" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="b2b-material">Required Materials & Tonnage</label>
+              <textarea id="b2b-material" class="form-input form-textarea" placeholder="e.g. 500 Bags UltraTech Cement, Astral CPVC Pipes 1-inch (50 pieces)" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;" id="b2b-submit-btn">Send Wholesale Request</button>
+            <div class="form-feedback" id="b2b-form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FEATURED PRODUCTS SECTION
+       ========================================== -->
+  <section id="products" class="products section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="products-title">Featured <span>Products</span></h2>
+        <p class="section-subtitle">Premium industrial grade products available in stock for immediate dispatch.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1: Bosch Drill -->
+        <div class="product-card heritage-border-card" id="prod-bosch-drill">
+          <div class="product-image-box">
+            <span class="badge badge-orange product-tag">Best Seller</span>
+            <img src="assets/product_drill.png" alt="Bosch GSB 500 RE Smart Drill Kit" class="product-image">
+          </div>
+          <div class="product-details">
+            <span class="product-brand">BOSCH</span>
+            <h3 class="product-title">GSB 500 RE Smart Drill Kit (500W)</h3>
+            <div class="product-price-range">₹3,499 - ₹3,899 <span>/ unit</span></div>
+            <div class="product-actions">
+              <a href="tel:{{PHONE}}" class="btn btn-secondary btn-sm" style="border-color: var(--border-gold); color: var(--primary-navy);">Call</a>
+              <a href="#" class="btn btn-whatsapp btn-sm whatsapp-inquiry-btn" data-product="Bosch GSB 500 RE Smart Drill Kit">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Dr. Fixit Waterproofing -->
+        <div class="product-card heritage-border-card" id="prod-drfixit-waterproofing">
+          <div class="product-image-box">
+            <span class="badge badge-orange product-tag">Waterproofing</span>
+            <img src="assets/product_waterproofing.png" alt="Dr. Fixit Pidiproof LW+ 20L" class="product-image">
+          </div>
+          <div class="product-details">
+            <span class="product-brand">DR. FIXIT</span>
+            <h3 class="product-title">Pidiproof LW+ Concrete Waterproofing (20L)</h3>
+            <div class="product-price-range">₹2,850 - ₹3,100 <span>/ bucket</span></div>
+            <div class="product-actions">
+              <a href="tel:{{PHONE}}" class="btn btn-secondary btn-sm" style="border-color: var(--border-gold); color: var(--primary-navy);">Call</a>
+              <a href="#" class="btn btn-whatsapp btn-sm whatsapp-inquiry-btn" data-product="Dr. Fixit Pidiproof LW+ 20L">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Asian Paints Apex Ultima -->
+        <div class="product-card heritage-border-card" id="prod-asianpaints-paint">
+          <div class="product-image-box">
+            <span class="badge badge-orange product-tag">Exterior Paint</span>
+            <img src="assets/product_paint.png" alt="Asian Paints Apex Ultima White 20L" class="product-image">
+          </div>
+          <div class="product-details">
+            <span class="product-brand">ASIAN PAINTS</span>
+            <h3 class="product-title">Apex Ultima Anti-Dust Exterior Paint (20L)</h3>
+            <div class="product-price-range">₹5,400 - ₹5,800 <span>/ bucket</span></div>
+            <div class="product-actions">
+              <a href="tel:{{PHONE}}" class="btn btn-secondary btn-sm" style="border-color: var(--border-gold); color: var(--primary-navy);">Call</a>
+              <a href="#" class="btn btn-whatsapp btn-sm whatsapp-inquiry-btn" data-product="Asian Paints Apex Ultima White 20L">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Astral CPVC Pipe -->
+        <div class="product-card heritage-border-card" id="prod-astral-pipe">
+          <div class="product-image-box">
+            <span class="badge badge-orange product-tag">Plumbing</span>
+            <img src="https://images.unsplash.com/photo-1542013936-936-8848e574047a?auto=format&fit=crop&w=500&q=80" alt="Astral CPVC Pipes" class="product-image">
+          </div>
+          <div class="product-details">
+            <span class="product-brand">ASTRAL</span>
+            <h3 class="product-title">FlowGuard Gold CPVC Pipe SDR 11 (1" Class)</h3>
+            <div class="product-price-range">₹650 - ₹720 <span>/ piece (3m)</span></div>
+            <div class="product-actions">
+              <a href="tel:{{PHONE}}" class="btn btn-secondary btn-sm" style="border-color: var(--border-gold); color: var(--primary-navy);">Call</a>
+              <a href="#" class="btn btn-whatsapp btn-sm whatsapp-inquiry-btn" data-product="Astral FlowGuard Gold CPVC Pipe SDR 11 1-inch">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: UltraTech Cement Bag -->
+        <div class="product-card heritage-border-card" id="prod-ultratech-cement">
+          <div class="product-image-box">
+            <span class="badge badge-orange product-tag">Structural</span>
+            <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=500&q=80" alt="UltraTech Cement Bag" class="product-image">
+          </div>
+          <div class="product-details">
+            <span class="product-brand">ULTRATECH</span>
+            <h3 class="product-title">UltraTech Premium Grade Cement (50kg Bag)</h3>
+            <div class="product-price-range">₹410 - ₹440 <span>/ bag</span></div>
+            <div class="product-actions">
+              <a href="tel:{{PHONE}}" class="btn btn-secondary btn-sm" style="border-color: var(--border-gold); color: var(--primary-navy);">Call</a>
+              <a href="#" class="btn btn-whatsapp btn-sm whatsapp-inquiry-btn" data-product="UltraTech Premium Cement 50kg Bag">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: 3M Safety Gear -->
+        <div class="product-card heritage-border-card" id="prod-3m-safety">
+          <div class="product-image-box">
+            <span class="badge badge-orange product-tag">Safety Gear</span>
+            <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" alt="3M Safety Helmets & Goggles" class="product-image">
+          </div>
+          <div class="product-details">
+            <span class="product-brand">3M</span>
+            <h3 class="product-title">Industrial Safety Helmet & Protective Goggles Kit</h3>
+            <div class="product-price-range">₹1,299 - ₹1,499 <span>/ combo</span></div>
+            <div class="product-actions">
+              <a href="tel:{{PHONE}}" class="btn btn-secondary btn-sm" style="border-color: var(--border-gold); color: var(--primary-navy);">Call</a>
+              <a href="#" class="btn btn-whatsapp btn-sm whatsapp-inquiry-btn" data-product="3M Safety Helmet and Goggles Combo">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BRANDS WE STOCK
+       ========================================== -->
+  <section id="brands" class="brands section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="brands-title">Brands <span>We Stock</span></h2>
+        <p class="section-subtitle">We are direct trade distributors for India's leading manufacturers.</p>
+      </div>
+
+      <div class="brands-slider">
+        <!-- Brand 1: Astral -->
+        <div class="brand-logo-card" title="Astral Pipes" id="brand-astral">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M15 20 C18 17 22 23 25 20" stroke="currentColor" stroke-width="3" fill="none"/>
+            <text x="40" y="25" font-family="sans-serif" font-weight="900" font-size="12" fill="currentColor">ASTRAL</text>
+          </svg>
+        </div>
+
+        <!-- Brand 2: Bosch -->
+        <div class="brand-logo-card" title="Bosch Tools" id="brand-bosch">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <circle cx="15" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="15" cy="20" r="4" fill="currentColor"/>
+            <line x1="15" y1="8" x2="15" y2="32" stroke="currentColor" stroke-width="2"/>
+            <text x="32" y="25" font-family="sans-serif" font-weight="900" font-size="14" fill="currentColor" letter-spacing="1">BOSCH</text>
+          </svg>
+        </div>
+
+        <!-- Brand 3: Asian Paints -->
+        <div class="brand-logo-card" title="Asian Paints" id="brand-asianpaints">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <path d="M10 30 V10 H22 V20 H10" fill="none" stroke="currentColor" stroke-width="4"/>
+            <circle cx="22" cy="25" r="5" fill="currentColor"/>
+            <text x="34" y="24" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">asianpaints</text>
+          </svg>
+        </div>
+
+        <!-- Brand 4: UltraTech -->
+        <div class="brand-logo-card" title="UltraTech Cement" id="brand-ultratech">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <polygon points="10,12 30,12 25,28 5,28" fill="currentColor"/>
+            <text x="35" y="25" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">UltraTech</text>
+          </svg>
+        </div>
+
+        <!-- Brand 5: Supreme -->
+        <div class="brand-logo-card" title="Supreme Pipes" id="brand-supreme">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <path d="M12 14 L18 8 L24 14 L30 8 L36 14 V30 H12 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+            <text x="44" y="24" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">Supreme</text>
+          </svg>
+        </div>
+
+        <!-- Brand 6: Finolex -->
+        <div class="brand-logo-card" title="Finolex Cables" id="brand-finolex">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <path d="M10 20 H30 M15 15 H25 M20 10 V30" stroke="currentColor" stroke-width="3"/>
+            <text x="35" y="25" font-family="sans-serif" font-weight="900" font-size="12" fill="currentColor">Finolex</text>
+          </svg>
+        </div>
+
+        <!-- Brand 7: Havells -->
+        <div class="brand-logo-card" title="Havells Electricals" id="brand-havells">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <rect x="8" y="10" width="12" height="20" fill="currentColor"/>
+            <rect x="22" y="10" width="12" height="20" fill="none" stroke="currentColor" stroke-width="4"/>
+            <text x="40" y="25" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor">HAVELLS</text>
+          </svg>
+        </div>
+
+        <!-- Brand 8: Kajaria -->
+        <div class="brand-logo-card" title="Kajaria Tiles" id="brand-kajaria">
+          <svg class="brand-logo-svg" viewBox="0 0 100 40">
+            <polygon points="20,10 32,20 20,30 8,20" fill="none" stroke="currentColor" stroke-width="3"/>
+            <rect x="17" y="17" width="6" height="6" fill="currentColor"/>
+            <text x="38" y="25" font-family="sans-serif" font-weight="900" font-size="12" fill="currentColor">Kajaria</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       GENERAL ENQUIRY FORM & CONTACT INFO
+       ========================================== -->
+  <section id="enquiry" class="enquiry section-padding">
+    <div class="container">
+      <div class="enquiry-container">
+        
+        <!-- Info Column (Dark Charcoal badge frame) -->
+        <div class="enquiry-info-card">
+          <div>
+            <h3>Have a Project?</h3>
+            <p>Get a direct, customized price sheet for your material requirements. We support specialized tenders and commercial delivery scheduling.</p>
+          </div>
+
+          <div class="enquiry-details-list">
+            <!-- Address -->
+            <div class="enquiry-detail-item">
+              <!-- Location pin icon -->
+              <svg class="enquiry-detail-icon" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <div class="enquiry-detail-text">
+                <h5>Our Office & Depot</h5>
+                <p>{{ADDRESS}}</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="enquiry-detail-item">
+              <!-- Phone icon -->
+              <svg class="enquiry-detail-icon" viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+              </svg>
+              <div class="enquiry-detail-text">
+                <h5>Wholesale Desk</h5>
+                <p>{{PHONE}} (Call / WhatsApp)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- GST Certificate info for validation -->
+          <div class="enquiry-gst-badge" id="gst-num-copy">
+            <span class="enquiry-gst-text">GST REGISTERED</span>
+            <span class="enquiry-gst-num" title="Click to copy GST">08AAKPD6424F1ZW</span>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="enquiry-form-card heritage-border-card">
+          <h3>Request A Call Back</h3>
+          <p>Fill in details below. Our technical estimator will review and contact you with rates.</p>
+          
+          <form id="material-enquiry-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="eq-name">Full Name</label>
+                <input type="text" id="eq-name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eq-phone">Contact Number</label>
+                <input type="tel" id="eq-phone" class="form-input" placeholder="10-digit mobile number" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="eq-product">Product/Material Required</label>
+                <select id="eq-product" class="form-input" required>
+                  <option value="" disabled selected>Select Category</option>
+                  <option value="Pipes & Fittings">Pipes & Fittings</option>
+                  <option value="Electrical Cables & Wires">Electrical Cables & Wires</option>
+                  <option value="Paints & Waterproofing Chemicals">Paints & Waterproofing Chemicals</option>
+                  <option value="Power Tools & Industrial Gear">Power Tools & Industrial Gear</option>
+                  <option value="Sanitaryware & Plumbing Fittings">Sanitaryware & Plumbing Fittings</option>
+                  <option value="Structural Cement & TMT Steel">Structural Cement & TMT Steel</option>
+                  <option value="Tiles & Tile Adhesives">Tiles & Tile Adhesives</option>
+                  <option value="Safety & Fastener Equipment">Safety & Fastener Equipment</option>
+                  <option value="Other / Multiple Items">Other / Multiple Items</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eq-qty">Approx. Quantity (with Units)</label>
+                <input type="text" id="eq-qty" class="form-input" placeholder="e.g. 100 bags, 25 lengths" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="eq-message">Detailed Requirements / Delivery Site (Optional)</label>
+              <textarea id="eq-message" class="form-input form-textarea" placeholder="Describe size, brand preference, or delivery requirements..."></textarea>
+            </div>
+
+            <div class="submit-btn-wrapper">
+              <button type="submit" class="btn btn-primary" id="eq-submit-btn">Submit Enquiry</button>
+            </div>
+            
+            <div class="form-feedback" id="eq-form-feedback"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       LOCATION, TIMINGS & MAPS
+       ========================================== -->
+  <section id="location" class="location section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="location-title">Visit <span>Our Store</span></h2>
+        <p class="section-subtitle">Centrally located depot in Jodhpur's main commercial district.</p>
+      </div>
+
+      <div class="location-grid">
+        <!-- Google Map Embed -->
+        <div class="map-wrapper">
+          <iframe 
+            class="map-frame" 
+            src="https://maps.google.com/maps?q=Shivalik%20Complex,%20Gol%20Building%20Road,%201st%20C%20Road,%20Sardarpura,%20Jodhpur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- Operating Hours Card -->
+        <div class="timings-card heritage-border-card" id="timings-card">
+          <div>
+            <h3>Operating Hours</h3>
+            <div class="timings-list">
+              <div class="timing-row">
+                <span class="timing-day">Monday - Saturday</span>
+                <span class="timing-hours">8:00 AM - 8:00 PM</span>
+              </div>
+              <div class="timing-row" style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                <span class="timing-day">Sunday</span>
+                <span class="timing-hours">10:00 AM - 4:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Open/Closed Live Indicator -->
+          <div class="status-badge status-closed" id="store-status-badge">
+            <span class="status-indicator-dot"></span>
+            <span id="store-status-text">Checking Store Status...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About -->
+        <div class="footer-col footer-about">
+          <div class="footer-logo">
+            <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}} Logo" class="footer-logo-image" style="height: 28px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+            <h3>{{CLINIC_NAME}}</h3>
+          </div>
+          <p>Delivering high-integrity hardware supplies, building materials, and heavy engineering tooling to Jodhpur's contractors since 2006.</p>
+        </div>
+
+        <!-- Col 2: Categories -->
+        <div class="footer-col">
+          <h4>Materials</h4>
+          <ul class="footer-links">
+            <li><a href="#categories">Pipes & Fittings</a></li>
+            <li><a href="#categories">Electrical & Wires</a></li>
+            <li><a href="#categories">Paints & Waterproofing</a></li>
+            <li><a href="#categories">Tools & Equipment</a></li>
+            <li><a href="#categories">Sanitary & Cement</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#products">Featured Products</a></li>
+            <li><a href="#b2b">Contractor Program</a></li>
+            <li><a href="#enquiry">Bulk Enquiries</a></li>
+            <li><a href="#location">Find Our Store</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <div>{{ADDRESS}}</div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+              </svg>
+              <div><span>Mobile:</span> {{PHONE}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          &copy; 2026 <span>{{CLINIC_NAME}}</span>. All rights reserved.
+        </div>
+        <div class="footer-gst">
+          GSTIN: <span>08AAKPD6424F1ZW</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FLOATING ELEMENTS (WHATSAPP BULK)
+       ========================================== -->
+  <a href="https://wa.me/91{{PHONE}}?text=Hello%20Banshidar%20Phoolchand,%20I%20have%20a%20bulk%20enquiry%20for%20materials." class="floating-whatsapp" target="_blank" title="Chat on WhatsApp" id="floating-whatsapp-btn">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.728-1.464L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.586 1.97 14.118.946 11.5.947c-5.44 0-9.863 4.374-9.867 9.804-.001 1.73.46 3.42 1.336 4.937l-1.021 3.725 3.824-1.002c1.474.805 3.125 1.233 4.71 1.234zM17.43 14.18c-.319-.16-1.89-.933-2.189-1.042-.3-.11-.519-.16-.738.169-.22.329-.85 1.072-1.041 1.288-.19.216-.382.243-.7.082-.319-.16-1.348-.497-2.568-1.584-.949-.847-1.59-1.893-1.777-2.215-.19-.32-.02-.492.14-.651.144-.143.32-.372.48-.559.16-.186.213-.318.32-.53.106-.213.053-.4-.027-.559-.08-.16-.738-1.782-1.01-2.44-.265-.638-.535-.551-.738-.561-.19-.01-.41-.011-.63-.011-.22 0-.58.082-.883.412-.303.33-1.157 1.131-1.157 2.76 0 1.627 1.186 3.197 1.352 3.422.166.225 2.333 3.562 5.652 4.996.79.341 1.405.545 1.884.697.792.251 1.512.216 2.081.131.635-.094 1.89-.773 2.157-1.482.266-.71.266-1.317.186-1.44-.08-.124-.3-.196-.618-.356z"/>
+    </svg>
+  </a>
+
+  <!-- ==========================================
+       B2B TRADE PARTNER REGISTRATION MODAL
+       ========================================== -->
+  <div class="modal-overlay" id="b2b-modal">
+    <div class="modal-box heritage-border-card">
+      <div class="modal-close" id="b2b-modal-close">&times;</div>
+      <div class="modal-body">
+        <h3>Register As Trade Partner</h3>
+        <p>Unlock credit benefits, flatbed site unloading, and contractor pricing lists.</p>
+        
+        <form id="b2b-modal-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="modal-company">Company / Firm Name</label>
+            <input type="text" id="modal-company" class="form-input" placeholder="e.g. Jodhpur Builders & Infra" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-contact">Contact Person Name</label>
+            <input type="text" id="modal-contact" class="form-input" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="modal-phone">Phone Number</label>
+              <input type="tel" id="modal-phone" class="form-input" placeholder="10-digit mobile" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="modal-email">Email Address</label>
+              <input type="email" id="modal-email" class="form-input" placeholder="name@company.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-gst">GSTIN Number (Optional)</label>
+            <input type="text" id="modal-gst" class="form-input" placeholder="08AAKPD6424F1ZW">
+          </div>
+          
+          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 1rem;" id="modal-submit-btn">Submit Trade Registration</button>
+          <div class="form-feedback" id="modal-form-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
+

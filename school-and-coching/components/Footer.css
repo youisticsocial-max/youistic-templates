@@ -1,0 +1,240 @@
+/* ── Footer CSS ── */
+.footer {
+  background: var(--blue-950);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* CTA Banner */
+.footer-cta {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.footer-cta-text h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-xs);
+}
+
+.footer-cta-text p {
+  color: var(--gray-300);
+  font-size: var(--fs-md);
+}
+
+.footer-cta-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+/* Main Footer */
+.footer-main {
+  padding: var(--space-4xl) 0 var(--space-2xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--space-3xl);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-logo h4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.footer-logo span {
+  font-size: var(--fs-xs);
+  color: var(--saffron-400);
+}
+
+.footer-desc {
+  color: var(--gray-300);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-social a:hover {
+  background: var(--saffron-500);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(245, 107, 0, 0.3);
+}
+
+.footer-col h5 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: var(--space-xl);
+  position: relative;
+  padding-bottom: var(--space-xs);
+}
+
+.footer-col h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--saffron-500);
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-col ul a {
+  color: var(--gray-300);
+  font-size: var(--fs-sm);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-col ul a:hover {
+  color: var(--saffron-400);
+  transform: translateX(4px);
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer-contact-item {
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--gray-300);
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  color: var(--saffron-400);
+  margin-top: 4px;
+}
+
+.footer-contact-item a {
+  color: var(--gray-300);
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-item a:hover {
+  color: var(--saffron-400);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background: var(--blue-950);
+  padding: var(--space-xl) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: var(--fs-xs);
+  color: var(--gray-400);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footer-bottom-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-dot {
+  color: var(--saffron-500);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-cta-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-bottom-info {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .footer-dot {
+    display: none;
+  }
+}
