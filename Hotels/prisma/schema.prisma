@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  checkIn   String
+  checkOut  String
+  rooms     String
+  adults    String
+  children  String
+  roomType  String
+  name      String
+  phone     String
+  email     String?
+  status    String   @default("Pending") // Pending, Confirmed, Cancelled
+  createdAt DateTime @default(now())
+}
+
+model Setting {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+}

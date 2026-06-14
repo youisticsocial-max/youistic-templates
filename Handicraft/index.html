@@ -1,0 +1,960 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>{{CLINIC_NAME}} | Authentic Indian Handicrafts & Textiles, Jodhpur</title>
+  <meta name="description" content="{{CLINIC_NAME}} Jodhpur specializes in premium handblock print textiles, Jodhpur furniture, home decor, pottery, and Indian crafts. Exporting worldwide with custom bulk orders.">
+  <meta name="keywords" content="handicrafts, indian textiles, Jodhpur furniture, {{CLINIC_NAME}}, block print, export, home decor, blue pottery, handloom">
+  <meta name="author" content="{{CLINIC_NAME}}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{CLINIC_NAME}} | Authentic Indian Handicrafts & Textiles">
+  <meta property="og:description" content="Discover premium handcrafted textiles, Jodhpur furniture, and artisan goods. We export worldwide with low MOQs and bulk customization.">
+  <meta property="og:image" content="assets/hero.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="{{CLINIC_NAME}} | Authentic Indian Handicrafts">
+  <meta property="twitter:description" content="Discover premium handcrafted textiles, Jodhpur furniture, and artisan goods. We export worldwide with low MOQs.">
+  <meta property="twitter:image" content="assets/hero.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar-main">
+    <div class="announcement-content container">
+      <span><i class="fa-solid fa-globe"></i> Global Export Quality • Handcrafted in Jodhpur</span>
+      <div class="top-bar-right">
+        <a href="tel:{{PHONE}}" class="top-phone"><i class="fa-solid fa-phone"></i> +91 99999 88888</a>
+        <div class="currency-toggle-wrapper">
+          <span class="currency-label">Currency:</span>
+          <button id="currency-toggle-btn" class="currency-btn" aria-label="Toggle currency">
+            <span class="currency-badge active" id="currency-inr">₹ INR</span>
+            <span class="currency-switch"></span>
+            <span class="currency-badge" id="currency-usd">$ USD</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="header-navigation">
+    <div class="container header-container">
+      <a href="#" class="logo-area" id="logo-link">
+        <div class="logo-text">
+          <span class="brand-name">{{CLINIC_NAME}}</span>
+          <span class="brand-sub">AUTHENTIC INDIAN HANDICRAFTS</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" id="nav-menu-desktop">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#speciality" class="nav-link">Textile Specialty</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="#heritage" class="nav-link">Our Heritage</a></li>
+          <li><a href="#export" class="nav-link">Exports & Custom</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-ctas">
+        <a href="https://wa.me/{{PHONE}}" target="_blank" class="btn btn-whatsapp-header" id="whatsapp-header-cta" aria-label="Chat on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i> <span>Chat Online</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobile-navigation-drawer">
+      <div class="mobile-nav-header">
+        <span class="mobile-brand">{{CLINIC_NAME}}</span>
+        <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Navigation Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#speciality" class="mobile-link">Textile Specialty</a></li>
+        <li><a href="#categories" class="mobile-link">Categories</a></li>
+        <li><a href="#heritage" class="mobile-link">Our Heritage</a></li>
+        <li><a href="#export" class="mobile-link">Exports & Custom</a></li>
+        <li><a href="#gallery" class="mobile-link">Gallery</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <div class="mobile-currency-toggle">
+          <span>Display Currency:</span>
+          <div class="currency-toggle-wrapper">
+            <button id="mobile-currency-btn" class="currency-btn">
+              <span class="currency-badge active" id="mobile-inr">₹ INR</span>
+              <span class="currency-switch"></span>
+              <span class="currency-badge" id="mobile-usd">$ USD</span>
+            </button>
+          </div>
+        </div>
+        <a href="https://wa.me/{{PHONE}}" class="btn btn-whatsapp w-full text-center"><i class="fa-brands fa-whatsapp"></i> WhatsApp Inquiry</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge animate-on-scroll">
+          <span class="block-print-decor-mini"></span>
+          <span>ESTD. {{ADDRESS}}</span>
+          <span class="block-print-decor-mini"></span>
+        </div>
+        <h1 class="hero-title animate-on-scroll">
+          Handcrafted in India,<br>
+          <span class="accent-text">Made for the World</span>
+        </h1>
+        <p class="hero-subtitle animate-on-scroll">
+          Welcome to the house of authentic Indian artisan goods. {{CLINIC_NAME}} brings you centuries of heritage through our specialize handblock textiles, exquisite furniture, and Jodhpur crafts.
+        </p>
+        <div class="hero-actions animate-on-scroll">
+          <a href="#categories" class="btn btn-primary" id="hero-cta-shop"><i class="fa-solid fa-bag-shopping"></i> Shop Categories</a>
+          <a href="#catalogue-form-section" class="btn btn-secondary-outline" id="hero-cta-catalogue"><i class="fa-solid fa-file-pdf"></i> Request Catalogue</a>
+        </div>
+        <div class="hero-highlights animate-on-scroll">
+          <div class="hl-item">
+            <span class="hl-number">100%</span>
+            <span class="hl-text">Artisan Made</span>
+          </div>
+          <div class="hl-divider"></div>
+          <div class="hl-item">
+            <span class="hl-number">Global</span>
+            <span class="hl-text">Export Direct</span>
+          </div>
+          <div class="hl-divider"></div>
+          <div class="hl-item">
+            <span class="hl-number">Custom</span>
+            <span class="hl-text">Bulk Orders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block-print-bottom-border"></div>
+  </section>
+
+  <!-- Textile Speciality Section (Highlighting Specialty) -->
+  <section class="speciality-section" id="speciality">
+    <div class="container">
+      <div class="grid-layout speciality-grid">
+        <div class="speciality-image-wrapper animate-on-scroll">
+          <div class="pattern-overlay-block"></div>
+          <img src="{{LOGO_URL}}" alt="Indian Artisan hand-block printing textile in Jodhpur" class="speciality-image">
+          <div class="floating-badge">
+            <i class="fa-solid fa-award"></i>
+            <span>Our Speciality:<br>Premium Textiles</span>
+          </div>
+        </div>
+        <div class="speciality-content animate-on-scroll">
+          <span class="section-tag">ZAINAB SPECIALITY</span>
+          <h2 class="section-title">The Art of Handblock Printing & Fine Weaving</h2>
+          <p class="section-desc">
+            As Jodhpur's premier textile artisans, {{CLINIC_NAME}} specializes in preserving the intricate art of block-printing. Using traditional indigo, saffron, and organic earthen dyes, our artisans press hand-carved teakwood blocks onto premium cotton, linen, and silk.
+          </p>
+          <div class="features-list">
+            <div class="feature-bullet">
+              <div class="bullet-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="bullet-details">
+                <h3>Heritage Block Prints</h3>
+                <p>Dabu clay-resist printing, Bagru mud print, and classic Indigo floral prints.</p>
+              </div>
+            </div>
+            <div class="feature-bullet">
+              <div class="bullet-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="bullet-details">
+                <h3>Natural Organic Dyes</h3>
+                <p>Authentic extraction of indigo, madder root saffron, and harda yellow.</p>
+              </div>
+            </div>
+            <div class="feature-bullet">
+              <div class="bullet-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <div class="bullet-details">
+                <h3>Sustained Loom Weaving</h3>
+                <p>Support for handloom weavers keeping ancient patterns alive in Rajasthan.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#catalogue-form-section" class="btn btn-primary-dark mt-4" id="speciality-cta"><i class="fa-solid fa-envelope-open-text"></i> Request Textile Swatches</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories Section -->
+  <section class="categories-section" id="categories">
+    <div class="block-print-top-border"></div>
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="section-tag">CURATED COLLECTION</span>
+        <h2 class="section-title">Explore Our Artisan Categories</h2>
+        <p class="section-subtitle">
+          Directly from workshops in Jodhpur. Every item tells a story of generation-old skills. Toggle currency at top to view estimated prices.
+        </p>
+      </div>
+
+      <div class="categories-grid animate-on-scroll">
+        
+        <!-- Category 1: Textiles (SPECIALITY) -->
+        <div class="category-card speciality-card" id="category-textiles">
+          <div class="cat-img-wrapper">
+            <div class="speciality-ribbon">Speciality</div>
+            <img src="https://images.unsplash.com/photo-1590736969955-71cb94801759?q=80&w=600&auto=format&fit=crop" alt="Premium Textiles" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Premium Textiles</h3>
+            <p class="cat-desc">Handblock quilts, handwoven bed linens, indigo curtains, and natural dyed fabrics.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="800" data-usd="10">₹800 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Textiles">Request Textile Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 2: Jodhpur Wood Furniture -->
+        <div class="category-card" id="category-furniture">
+          <div class="cat-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1581781870027-04212e231e96?q=80&w=600&auto=format&fit=crop" alt="Jodhpur Wood Furniture" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Jodhpur Furniture</h3>
+            <p class="cat-desc">Hand-carved sheesham wood cabinets, rustic sideboards, and vintage bone inlay tables.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="8000" data-usd="100">₹8,000 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Furniture">Request Furniture Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 3: Home Decor -->
+        <div class="category-card" id="category-decor">
+          <div class="cat-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=600&auto=format&fit=crop" alt="Home Decor" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Home Decor</h3>
+            <p class="cat-desc">Vibrant hand-stitched cushions, antique mirrors, candle stands, and decorative panels.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="400" data-usd="5">₹400 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Home Decor">Request Decor Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 4: Fine Jewelry -->
+        <div class="category-card" id="category-jewelry">
+          <div class="cat-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=600&auto=format&fit=crop" alt="Fine Jewelry" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Fine Jewelry</h3>
+            <p class="cat-desc">Traditional silver craft, semi-precious stone necklaces, and handcrafted brass jewelry.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="600" data-usd="8">₹600 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Jewelry">Request Jewelry Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 5: Blue Pottery -->
+        <div class="category-card" id="category-pottery">
+          <div class="cat-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1565192647048-f997ded87ab0?q=80&w=600&auto=format&fit=crop" alt="Blue Pottery" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Blue Pottery</h3>
+            <p class="cat-desc">Glazed earthenware vases, tea sets, and tiles painted by hand in traditional blue and yellow.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="320" data-usd="4">₹320 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Pottery">Request Pottery Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 6: Heritage Paintings -->
+        <div class="category-card" id="category-paintings">
+          <div class="cat-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=600&auto=format&fit=crop" alt="Heritage Paintings" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Heritage Paintings</h3>
+            <p class="cat-desc">Bespoke Pichwai paintings, Rajasthani miniatures, and local tribal artwork.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="1200" data-usd="15">₹1,200 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Paintings">Request Paintings Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Category 7: Brass & Metal Items -->
+        <div class="category-card" id="category-brass">
+          <div class="cat-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=600&auto=format&fit=crop" alt="Brass & Metal Items" class="cat-img">
+          </div>
+          <div class="cat-details">
+            <h3 class="cat-title">Brass & Metal Items</h3>
+            <p class="cat-desc">Antique finished brass lanterns, deities, decorative bowls, and metal craft items.</p>
+            <div class="cat-price-info">
+              <span>Wholesale MOQ starts at:</span>
+              <strong class="price-val" data-inr="1600" data-usd="20">₹1,600 INR</strong>
+            </div>
+            <a href="#catalogue-form-section" class="cat-link" data-interest="Brass Items">Request Brass Price List <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Heritage Story Section -->
+  <section class="heritage-section" id="heritage">
+    <div class="container">
+      <div class="grid-layout heritage-grid">
+        <div class="heritage-content animate-on-scroll">
+          <span class="section-tag">OUR JOURNEY</span>
+          <h2 class="section-title">Generations of Craft, Supported by Hand</h2>
+          <p class="section-desc">
+            Based in the historic city of {{ADDRESS}}, {{CLINIC_NAME}} was founded with a mission to preserve traditional Indian craft methods while providing sustainable livelihoods to rural artisan communities.
+          </p>
+          <p class="section-desc">
+            We work directly with over 150 master artisans—weavers, block printers, carpenters, and metal smiths. By bypassing middle agencies, we ensure our craftspersons receive fair wages and work in safe environments, ensuring that every purchase directly supports a family and keeps a heritage craft alive for future generations.
+          </p>
+          
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">Artisan Families</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">40+</span>
+              <span class="stat-label">Years of Heritage</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Export Destinations</span>
+            </div>
+          </div>
+        </div>
+        <div class="heritage-visual animate-on-scroll">
+          <div class="heritage-image-card">
+            <img src="{{LOGO_URL}}" alt="Showcase of Jodhpur wooden furniture and blue pottery" class="heritage-img-large">
+            <div class="heritage-quote">
+              <p>"Our hands carry the patterns of our ancestors. Every print is a memory."</p>
+              <span class="quote-author">— Ram Prasad, Master Printer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Export Section -->
+  <section class="export-section" id="export">
+    <div class="block-print-top-border"></div>
+    <div class="container">
+      <div class="grid-layout export-grid">
+        <div class="export-details animate-on-scroll">
+          <span class="section-tag">GLOBAL SHIPPING</span>
+          <h2 class="section-title">We Export Worldwide</h2>
+          <p class="section-desc">
+            {{CLINIC_NAME}} is a certified export house. We deliver our premium Jodhpur handicrafts and textiles to boutiques, retail chains, interior designers, and wholesalers around the globe.
+          </p>
+          
+          <div class="moq-box">
+            <div class="moq-title">Minimum Order Quantity (MOQ)</div>
+            <div class="moq-amount" id="export-moq-display" data-inr="40000" data-usd="500">₹40,000 INR / $500 USD</div>
+            <p class="moq-note">Consolidated container loads of mixed categories are fully accepted.</p>
+          </div>
+
+          <div class="export-destinations">
+            <h3>Major Export Destinations:</h3>
+            <div class="countries-list">
+              <span><i class="fa-solid fa-circle-check"></i> United States</span>
+              <span><i class="fa-solid fa-circle-check"></i> United Kingdom</span>
+              <span><i class="fa-solid fa-circle-check"></i> Germany & France</span>
+              <span><i class="fa-solid fa-circle-check"></i> Australia & NZ</span>
+              <span><i class="fa-solid fa-circle-check"></i> UAE & Middle East</span>
+              <span><i class="fa-solid fa-circle-check"></i> Japan & East Asia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="export-logistics animate-on-scroll">
+          <div class="logistics-card">
+            <div class="logistics-header">
+              <i class="fa-solid fa-truck-fast"></i>
+              <h3>End-to-End Export Support</h3>
+            </div>
+            <ul class="logistics-features">
+              <li>
+                <strong>Fumigation & Certification:</strong> All wooden furniture is strictly fumigated and certified fit for international customs.
+              </li>
+              <li>
+                <strong>Seaworthy Packing:</strong> High-grade bubble wrap, cardboard padding, and wooden crates protect items during transit.
+              </li>
+              <li>
+                <strong>FOB / CIF Terms:</strong> Flexible shipping terms based on your port preferences. Close coordination with customs agents.
+              </li>
+              <li>
+                <strong>Custom Labeling:</strong> Barcoding and private labeling available for direct-to-retail imports.
+              </li>
+            </ul>
+            <div class="badge-row">
+              <span class="logistics-badge"><i class="fa-solid fa-shield-halved"></i> Export Certified</span>
+              <span class="logistics-badge"><i class="fa-solid fa-leaf"></i> Eco-Friendly Materials</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Orders Callout Section -->
+  <section class="custom-orders-section" id="custom-orders">
+    <div class="container text-center animate-on-scroll">
+      <div class="block-print-decor-center"></div>
+      <h2 class="section-title text-white">Customization Available for Bulk Orders</h2>
+      <p class="custom-orders-subtitle">
+        Are you a resort owner, interior designer, or bulk retailer? We custom manufacture bespoke block print textiles, corporate gifting accessories, and carved furniture in line with your design mockups.
+      </p>
+      <div class="custom-features-row">
+        <div class="c-feat">
+          <i class="fa-solid fa-palette"></i>
+          <span>Custom Patterns & Dyes</span>
+        </div>
+        <div class="c-feat">
+          <i class="fa-solid fa-ruler-combined"></i>
+          <span>Bespoke Dimensions</span>
+        </div>
+        <div class="c-feat">
+          <i class="fa-solid fa-stamp"></i>
+          <span>Private Brand Stamping</span>
+        </div>
+      </div>
+      <a href="#catalogue-form-section" class="btn btn-saffron-light mt-3" id="custom-cta"><i class="fa-solid fa-pen-ruler"></i> Start Custom Query</a>
+    </div>
+    <div class="block-print-bottom-border"></div>
+  </section>
+
+  <!-- Why Buy From Us Section -->
+  <section class="why-us-section" id="why-us">
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="section-tag">ZAINAB GUARANTEE</span>
+        <h2 class="section-title">Why Buy From {{CLINIC_NAME}}?</h2>
+        <p class="section-subtitle">Combining authenticity, reliability, and Jodhpur's finest craftsmanship</p>
+      </div>
+
+      <div class="grid-layout grid-4-col">
+        
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+          <h3>Authentic Handmade</h3>
+          <p>We supply strictly genuine handicrafts. No massive factory machines. Every minor variation represents hand-printed or hand-carved heritage.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+          <h3>Direct from Artisans</h3>
+          <p>By purchasing from us, you directly fund Jodhpur's heritage artisan communities, assuring they receive fair trade wages without intermediaries.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+          <h3>Bulk & Retail Capacities</h3>
+          <p>Whether you require a custom small-batch collection for a niche boutique or 20-foot container volumes, our workshops scale to your needs.</p>
+        </div>
+
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3>Export Quality Check</h3>
+          <p>Every textile is checked for colorfastness. Wood is cured to prevent moisture cracks. We enforce strict international retail quality checks.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="block-print-top-border"></div>
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="section-tag">PORTFOLIO & WORKSHOPS</span>
+        <h2 class="section-title">Artisan Gallery</h2>
+        <p class="section-subtitle">A glimpse into our workshop printing processes, crafted textiles, and finished wood masterpieces</p>
+      </div>
+
+      <div class="gallery-grid animate-on-scroll">
+        <!-- 8 Gallery Images with local generated and unsplash resources -->
+        <div class="gallery-item" data-src="{{LOGO_URL}}" data-title="Artisan block print tools & textiles flatlay" data-desc="A composite flatlay of hand-carved teakwood stamps and indigo dyed cotton prints at our Jodhpur textile facility.">
+          <img src="{{LOGO_URL}}" alt="Artisan print tools and indigo fabrics">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Artisan Block Stamps</h4>
+              <p>Jodhpur Textile Facility</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="{{LOGO_URL}}" data-title="Manual block print stamping" data-desc="Master artisan applying direct indigo resist print block onto pure premium cotton sheeting by hand.">
+          <img src="{{LOGO_URL}}" alt="Artisan block printing cotton by hand">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Resist Block Printing</h4>
+              <p>Handcrafted Workshop</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="{{LOGO_URL}}" data-title="Traditional sheesham furniture and blue pottery" data-desc="Finished rustic sheesham wood cabinets paired with classic hand-painted blue pottery decorative vessels.">
+          <img src="{{LOGO_URL}}" alt="Carved sheesham wood and pottery">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Jodhpur Wood & Pottery</h4>
+              <p>Showroom Display</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1590736969955-71cb94801759?q=80&w=800" data-title="Dabu block printed fabrics drying" data-desc="Stunning mud-resist block print fabrics hung to air-dry under the bright desert sun of Jodhpur.">
+          <img src="https://images.unsplash.com/photo-1590736969955-71cb94801759?q=80&w=800" alt="Textiles hanging to dry">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Sun Drying Prints</h4>
+              <p>Textile Processing Yards</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1581781870027-04212e231e96?q=80&w=800" data-title="Rustic distressed wood cabinet" data-desc="A beautifully antiqued sheesham wood sideboard cabinet displaying hand-carved floral patterns.">
+          <img src="https://images.unsplash.com/photo-1581781870027-04212e231e96?q=80&w=800" alt="Rustic sideboard wood cabinet">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Distressed Sideboards</h4>
+              <p>Carving Workshops</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1565192647048-f997ded87ab0?q=80&w=800" data-title="Hand painted blue pottery details" data-desc="Individually hand-glazed tiles and cups before kiln baking, preserving Jodhpur's signature cobalt blue shades.">
+          <img src="https://images.unsplash.com/photo-1565192647048-f997ded87ab0?q=80&w=800" alt="Cobalt blue glazed pottery details">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Cobalt Clay Glazing</h4>
+              <p>Pottery Studio Jodhpur</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800" data-title="Vintage Brass Lanterns" data-desc="Finished antique-gold brass lanterns featuring hand-hammered filigree patterns that cast gorgeous shadow figures.">
+          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800" alt="Filigree brass lanterns">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Antique Brass Lanterns</h4>
+              <p>Metal Craft Forge</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800" data-title="Beaded ethnic jewelry details" data-desc="Exquisite handcrafted tribal silver beads and turquoise necklaces curated from remote desert artisan groups.">
+          <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800" alt="Beaded ethnic turquoise jewelry">
+          <div class="gallery-hover-overlay">
+            <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            <div class="gallery-meta">
+              <h4>Artisan Beaded Jewelry</h4>
+              <p>Traditional Jewel Craft</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instagram Embed CTA -->
+      <div class="instagram-cta-box text-center animate-on-scroll">
+        <div class="insta-icon"><i class="fa-brands fa-instagram"></i></div>
+        <h3>Follow Our Daily Workshop Process</h3>
+        <p>We regularly share behind-the-scenes block printing videos, woodcarving stories, and new item launches on our social feed.</p>
+        <a href="https://instagram.com" target="_blank" class="btn btn-secondary-outline mt-2"><i class="fa-brands fa-instagram"></i> Follow @ZainabImpexJodhpur</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="block-print-top-border"></div>
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="section-tag">BUYER REVIEWS</span>
+        <h2 class="section-title">Trusted Internationally</h2>
+        <p class="section-subtitle">Hear what our retail clients and boutique partners say about {{CLINIC_NAME}}</p>
+      </div>
+
+      <div class="testimonials-slider-container animate-on-scroll">
+        <div class="testimonials-slider" id="testimonials-slider">
+          
+          <div class="testimonial-slide active">
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testi-text">
+              "We have been sourcing indigo bedding and handblock block quilts from {{CLINIC_NAME}} for three seasons. The fabrics are absolutely premium, colors are highly fast, and our customers in New York adore the genuine artisan stories. Outstanding export packing!"
+            </p>
+            <div class="testi-author">
+              <span class="author-name">Sarah Greenwald</span>
+              <span class="author-role">Founder, Earthy Home Boutique (New York, USA)</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testi-text">
+              "Ordering consolidated custom wood furniture and brass lamps was seamless. {{CLINIC_NAME}} coordinates all fumigation paperwork flawlessly. MOQ is highly achievable for growing shops. Highly recommend Zainab's textiles!"
+            </p>
+            <div class="testi-author">
+              <span class="author-name">Liam Fletcher</span>
+              <span class="author-role">Lead Buyer, Heritage & Loom Ltd (London, UK)</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testi-text">
+              "हमारे स्टोर के लिए हस्तनिर्मित ब्लू पॉटरी और ब्लॉक प्रिंट की गुणवत्ता अतुलनीय है। सीधे कारीगरों के साथ काम करना और समय पर डिलीवरी मिलना बहुत बड़ा लाभ है।"
+            </p>
+            <div class="testi-author">
+              <span class="author-name">Rajesh Mehta</span>
+              <span class="author-role">Director, Sanskriti Decor (Mumbai, India)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn prev-btn" id="prev-testi" aria-label="Previous Review"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-dots" id="slider-dots-container"></div>
+          <button class="slider-btn next-btn" id="next-testi" aria-label="Next Review"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Magnet & Catalogue Form Section -->
+  <section class="catalogue-form-section" id="catalogue-form-section">
+    <div class="block-print-top-border"></div>
+    <div class="container">
+      <div class="grid-layout form-section-grid">
+        
+        <div class="form-info-column animate-on-scroll">
+          <span class="section-tag text-white">CATALOGUE & BULK QUERY</span>
+          <h2 class="section-title text-white">Get Our Handcrafted Collections</h2>
+          <p class="form-info-desc">
+            Download our seasonal design catalogues containing wholesale price lists, artisan profiles, custom swatch options, and bulk container shipping guidelines.
+          </p>
+          <div class="lead-benefits">
+            <div class="benefit-item">
+              <i class="fa-solid fa-book-open"></i>
+              <div>
+                <h4>Complete 2026 Catalogue</h4>
+                <p>Over 500+ designs across textiles, Jodhpur furniture, and Blue pottery.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-percent"></i>
+              <div>
+                <h4>Wholesale Pricing Grid</h4>
+                <p>Get bulk discounts up to 35% on full container loads.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+              <div>
+                <h4>Custom Freight Quote</h4>
+                <p>Sea and Air door-to-door shipping estimates dynamically calculated.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-wrapper-card animate-on-scroll">
+          <div class="form-badge">Request Custom Catalogue</div>
+          <h3>Inquire / Request Pricing</h3>
+          <p class="form-card-subtitle">Fill your details below, our export desk will reply within 12 hours.</p>
+          
+          <form id="catalogue-request-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="form-name">Your Full Name <span class="required">*</span></label>
+                <input type="text" id="form-name" required placeholder="e.g. Sarah Green">
+              </div>
+              <div class="form-group">
+                <label for="form-contact">Phone or Email <span class="required">*</span></label>
+                <input type="text" id="form-contact" required placeholder="e.g. contact@email.com or +1 234...">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="form-country">Your Country <span class="required">*</span></label>
+                <input type="text" id="form-country" required placeholder="e.g. United States">
+              </div>
+              <div class="form-group">
+                <label for="form-interest">Product Interest <span class="required">*</span></label>
+                <select id="form-interest" required>
+                  <option value="" disabled selected>Select category...</option>
+                  <option value="Textiles">Textiles (Speciality)</option>
+                  <option value="Furniture">Jodhpur Wood Furniture</option>
+                  <option value="Home Decor">Home Decor Items</option>
+                  <option value="Jewelry">Fine Ethnic Jewelry</option>
+                  <option value="Pottery">Blue Pottery</option>
+                  <option value="Paintings">Heritage Paintings</option>
+                  <option value="Brass Items">Brass & Metal Items</option>
+                  <option value="Mixed Order">Mixed Container Bulk Order</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-quantity">Estimated Order Quantity</label>
+              <select id="form-quantity">
+                <option value="Sample Pack">Requesting Sample Pack</option>
+                <option value="Small Retailer">Small Boutique Order (Under $2,000)</option>
+                <option value="Medium Bulk">Medium Bulk Order ($2,000 - $10,000)</option>
+                <option value="Container Load">LCL / Full Container Load (FCL)</option>
+                <option value="Custom Bespoke">Bespoke Custom Manufacture</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="form-msg">Specific Requirements (Optional)</label>
+              <textarea id="form-msg" rows="3" placeholder="Provide design specs, custom sizes, color palettes, or target delivery dates..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary-dark w-full" id="submit-catalogue-btn">
+              <i class="fa-solid fa-paper-plane"></i> Send Catalogue Request
+            </button>
+            <p class="form-secure-note"><i class="fa-solid fa-lock"></i> Your business information is encrypted and safe with us.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Google Maps Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="grid-layout contact-grid">
+        
+        <div class="contact-details-col animate-on-scroll">
+          <span class="section-tag">GET IN TOUCH</span>
+          <h2 class="section-title">{{CLINIC_NAME}} Headquarters</h2>
+          <p class="section-desc">
+            Visit our wholesale showroom and textile block printing workshop in Jodhpur. Get in touch via WhatsApp for instant responses.
+          </p>
+
+          <div class="contact-methods">
+            <div class="c-method-item">
+              <div class="c-method-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="c-method-text">
+                <h4>Registered Address</h4>
+                <p>{{CLINIC_NAME}}, Near Clock Tower, {{ADDRESS}}, India - 342001</p>
+              </div>
+            </div>
+
+            <div class="c-method-item">
+              <div class="c-method-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <div class="c-method-text">
+                <h4>Direct Calling & Export Desk</h4>
+                <p><a href="tel:{{PHONE}}">+91 99999 88888</a> (Exporter Support Available 24/7)</p>
+              </div>
+            </div>
+
+            <div class="c-method-item">
+              <div class="c-method-icon"><i class="fa-brands fa-whatsapp-square"></i></div>
+              <div class="c-method-text">
+                <h4>WhatsApp Support</h4>
+                <p><a href="https://wa.me/{{PHONE}}" target="_blank">Chat with us on +91 99999 88888</a> for instant pricing, photos, and order tracking.</p>
+              </div>
+            </div>
+
+            <div class="c-method-item">
+              <div class="c-method-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="c-method-text">
+                <h4>Official Email Address</h4>
+                <p><a href="mailto:info@zainabimpex.com">info@zainabimpex.com</a> / <a href="mailto:exports@zainabimpex.com">exports@zainabimpex.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/{{PHONE}}" target="_blank" class="btn btn-whatsapp w-full text-center mt-3" id="whatsapp-contact-cta">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (Fastest Response)
+          </a>
+        </div>
+
+        <div class="contact-map-col animate-on-scroll">
+          <div class="map-card-wrapper">
+            <div class="map-overlay-banner">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <div>
+                <h4>Jodhpur Artisan Center</h4>
+                <span>Near Clock Tower (Ghanta Ghar)</span>
+              </div>
+            </div>
+            <!-- Google Maps Styled Embed or beautiful placeholder map with authentic styling -->
+            <div class="map-iframe-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14304.70775836882!2d73.01824419999999!3d26.290074299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i769!4f13.1!3m3!1m2!1s0x39418c39e0839e9f%3A0xe541c8fc0280eb4c!2sClock%20Tower%2C%20Ghantaghar%2C%20Jodhpur%2C%20Rajasthan%20342001!5e0!3m2!1sen!2sin!4v1717672011111!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map showing {{CLINIC_NAME}} Jodhpur Clock Tower location">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-col brand-col">
+        <span class="footer-logo">{{CLINIC_NAME}}</span>
+        <p class="footer-about">
+          Preserving India's cultural heritage through handloom textiles, carved solid wood, and artisan goods. Operating since 1986 in {{ADDRESS}}.
+        </p>
+        <div class="india-badge-footer">
+          <span class="india-flag-colors"></span>
+          <span class="india-badge-text">PROUDLY MADE IN INDIA</span>
+        </div>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4>Product Ranges</h4>
+        <ul>
+          <li><a href="#categories">Premium Textiles</a></li>
+          <li><a href="#categories">Jodhpur Furniture</a></li>
+          <li><a href="#categories">Traditional Pottery</a></li>
+          <li><a href="#categories">Fine Metalware</a></li>
+          <li><a href="#categories">Bespoke Paintings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4>Importers Support</h4>
+        <ul>
+          <li><a href="#export">Export Guidelines</a></li>
+          <li><a href="#export">Container Shipping</a></li>
+          <li><a href="#custom-orders">Custom Orders</a></li>
+          <li><a href="#catalogue-form-section">Request Catalogue</a></li>
+          <li><a href="#heritage">Artisan Fair Trade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>Contact Jodhpur</h4>
+        <p><i class="fa-solid fa-envelope"></i> info@zainabimpex.com</p>
+        <p><i class="fa-solid fa-phone"></i> +91 99999 88888</p>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="https://wa.me/{{PHONE}}" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p class="copy-text">&copy; 2026 {{CLINIC_NAME}} Jodhpur. All Rights Reserved.</p>
+        <div class="bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Export</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Gallery -->
+  <div class="lightbox-modal" id="gallery-lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Lightbox"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+    
+    <div class="lightbox-content-wrapper">
+      <img src="" alt="" class="lightbox-img" id="lightbox-main-img">
+      <div class="lightbox-caption-box">
+        <h4 id="lightbox-title">Image Title</h4>
+        <p id="lightbox-desc">Detailed explanation of the artisan craft shown.</p>
+      </div>
+    </div>
+
+    <button class="lightbox-nav lightbox-next" id="lightbox-next-btn" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Toast/Alert System -->
+  <div class="toast-notification" id="toast-message" role="alert" aria-live="polite">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-content">
+      <h4 id="toast-title">Success</h4>
+      <p id="toast-body">Your request was submitted.</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+

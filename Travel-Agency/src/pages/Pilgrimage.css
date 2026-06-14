@@ -1,0 +1,108 @@
+/* Pilgrimage page styling */
+.pilgrimage-section {
+  padding: 4rem 0;
+  background-color: var(--bg-secondary);
+}
+
+.pilgrimage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.pilgrimage-card {
+  background: var(--bg-main);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-normal);
+}
+
+.pilgrimage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pilgrimage-card .card-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.pilgrimage-card .card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.pilgrimage-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.pilgrimage-card .duration-tag {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pilgrimage-card .card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pilgrimage-card .card-pkg-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pilgrimage-card .card-destinations {
+  font-size: 0.85rem;
+  color: var(--primary-teal);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pilgrimage-card .card-highlights {
+  list-style: none;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.pilgrimage-card .card-highlights li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.pilgrimage-card .price-box {
+  margin-top: auto;
+}
+
+.pilgrimage-card .price-label {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.pilgrimage-card .price-amount {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary-teal-dark);
+}

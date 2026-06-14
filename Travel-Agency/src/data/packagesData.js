@@ -1,0 +1,112 @@
+export const packagesData = [
+  {
+    id: 1,
+    name: 'Maldives Luxury Honeymoon Escape',
+    category: 'Honeymoon',
+    duration: '4 Nights / 5 Days',
+    destinations: 'Male, Private Resort Island',
+    price: 75000,
+    highlights: ['5-Star Beach Villa stay', 'Speedboat Airport transfers', 'Private Candlelight Dinner', 'Snorkeling & Coral sightseeing'],
+    emi: true,
+    emiDetails: 'Starts at ₹6,250/mo for 12 months with No-Cost EMI options.',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 2,
+    name: 'Mesmerizing Himachal Scenic Escape',
+    category: 'Domestic',
+    duration: '6 Nights / 7 Days',
+    destinations: 'Shimla, Manali, Solang Valley',
+    price: 24500,
+    highlights: ['Shimla Mall Road & Kufri tour', 'Manali Solang Valley snow view', 'Hadimba Temple & Local sightseeing', 'Private Cab for entire tour'],
+    emi: false,
+    image: 'https://images.unsplash.com/photo-1626621340025-b26b4d360060?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 3,
+    name: 'Char Dham Yatra Sacred Pilgrimage',
+    category: 'Pilgrimage',
+    duration: '11 Nights / 12 Days',
+    destinations: 'Haridwar, Yamunotri, Gangotri, Kedarnath, Badrinath',
+    price: 48000,
+    highlights: ['Comfortable stays near temples', 'VIP Darshan booking support', 'Experienced local coordinators', 'All pure vegetarian meals'],
+    emi: true,
+    emiDetails: 'Starts at ₹4,000/mo for 12 months. Low interest finance options.',
+    image: 'https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 4,
+    name: 'Amazing Thailand City & Island Adventure',
+    category: 'International',
+    duration: '5 Nights / 6 Days',
+    destinations: 'Bangkok, Pattaya, Coral Island',
+    price: 38999,
+    highlights: ['Speedboat tour to Coral Island', 'Alcazar Cabaret Show entry', 'Bangkok Safari World tour', 'Private airport transfers'],
+    emi: true,
+    emiDetails: 'Starts at ₹3,250/mo. Easy EMI on credit cards.',
+    image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 5,
+    name: 'Kerala Backwaters & Munnar Hills',
+    category: 'Domestic',
+    duration: '5 Nights / 6 Days',
+    destinations: 'Munnar, Thekkady, Alleppey Houseboat',
+    price: 28000,
+    highlights: ['Munnar tea estate trekking', 'Periyar wildlife lake cruise', 'Private Houseboat stay with meals', 'Spice plantation guided tour'],
+    emi: false,
+    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 6,
+    name: 'Classic Rajasthan Heritage Tour',
+    category: 'Group Tour',
+    duration: '5 Nights / 6 Days',
+    destinations: 'Jaipur, Jodhpur, Jaisalmer Sand Dunes',
+    price: 19999,
+    highlights: ['Jaipur Amber Fort elephant tour', 'Mehrangarh Fort Jodhpur walk', 'Desert camp desert dunes stay', 'Camel safari & folk dancers'],
+    emi: false,
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 7,
+    name: 'Best of Swiss & Paris Premium Luxury',
+    category: 'International',
+    duration: '9 Nights / 10 Days',
+    destinations: 'Paris, Zurich, Lucerne, Interlaken',
+    price: 185000,
+    highlights: ['Eiffel Tower 2nd floor entry ticket', 'Mt. Titlis revolving cable car ride', 'Seine River Cruise in Paris', 'Premium Swiss Rail Pass included'],
+    emi: true,
+    emiDetails: 'Starts at ₹15,400/mo. No-cost options available on top banks.',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  },
+  {
+    id: 8,
+    name: 'Romantic Weekend Escape to Udaipur',
+    category: 'Weekend Getaway',
+    duration: '2 Nights / 3 Days',
+    destinations: 'Udaipur, Chittorgarh Fort',
+    price: 9999,
+    highlights: ['Lake Pichola evening boat cruise', 'City Palace & Jagdish temple visit', 'Day excursion to Chittorgarh Fort', 'Romantic Lake-side Dinner booking'],
+    emi: false,
+    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=600&q=80',
+    itinerary: [],
+    inclusions: []
+  }
+];
+
+export default packagesData;

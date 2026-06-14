@@ -1,0 +1,17 @@
+{
+  "name": "banshidar-phoolchand-website",
+  "version": "1.0.0",
+  "description": "Banshidar Phoolchand Hardware Store Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8080 -o",
+    "start": "npx http-server -p 8080 -o"
+  },
+  "keywords": [
+    "hardware",
+    "b2b",
+    "jodhpur"
+  ],
+  "author": "",
+  "license": "ISC"
+}

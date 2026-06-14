@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} | Strength in Every Sheet | Jodhpur</title>
+    <meta name="description" content="Premium Plywood & Timber dealer in Jodhpur. Wholesale & Retail. CenturyPly, Greenply, Kitply, Action Tesa, Merino.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo" id="logo-home">
+                <span class="logo-mark">AR</span>
+                <span class="logo-name">Timbers &amp; Plywood</span>
+            </a>
+            <nav class="nav-links">
+                <button class="nav-link" data-page="products">Products</button>
+                <button class="nav-link" data-page="brands">Brands</button>
+                <button class="nav-link" data-page="grades">Grades Guide</button>
+                <button class="nav-link" data-page="contact">Contact</button>
+            </nav>
+            <button class="nav-cta" data-page="quote">Get Quote</button>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HOME PAGE (Scrollable) ============ -->
+    <main id="home-page">
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Jodhpur's Premier Wood Dealer</p>
+                <h1>Strength<br><span>in Every Sheet</span></h1>
+                <p class="hero-sub">Premium Plywood & Timber — Wholesale & Retail</p>
+                <div class="hero-actions">
+                    <button class="btn-gold" data-page="quote">Get Bulk Quote</button>
+                    <button class="btn-ghost" data-page="products">Explore Products</button>
+                </div>
+            </div>
+            <div class="hero-bottom-bar">
+                <div class="hb-phone"><span class="hb-icon">📞</span><a href="tel:{{PHONE}}">+91 {{PHONE}}</a></div>
+                <div class="hb-stats">
+                    <div class="hb-stat"><strong>500+</strong> Products</div>
+                    <div class="hb-stat"><strong>15+</strong> Years</div>
+                    <div class="hb-stat"><strong>5000+</strong> Clients</div>
+                </div>
+            </div>
+            <div class="scroll-indicator"><span>Scroll</span><div class="scroll-line"></div></div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="section-why reveal">
+            <div class="sec-container">
+                <div class="sec-header">
+                    <p class="eyebrow">Why Choose Us</p>
+                    <h2>Built for Reliability</h2>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">🏅</div>
+                        <h4>ISI Certified Stock</h4>
+                        <p>100% genuine products with full quality assurance and brand warranties.</p>
+                    </div>
+                    <div class="why-card accent">
+                        <div class="why-icon">💼</div>
+                        <h4>Trade Pricing</h4>
+                        <p>Exclusive wholesale margins and volume discounts for contractors & carpenters.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">💳</div>
+                        <h4>Credit Facility</h4>
+                        <p>Flexible payment terms for long-term project partners and bulk buyers.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🚚</div>
+                        <h4>Pan-India Dispatch</h4>
+                        <p>Fast, reliable transport logistics to get your materials on-site, on time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section class="section-video reveal">
+            <div class="sec-container">
+                <div class="video-layout">
+                    <div class="video-text">
+                        <p class="eyebrow">See It In Action</p>
+                        <h2>Experience Our Quality</h2>
+                        <p class="video-desc">Take a closer look at our premium timber and plywood products that Jodhpur's builders and designers trust.</p>
+                    </div>
+                    <div class="video-player">
+                        <div class="video-thumb" id="video-thumb">
+                            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                            <button class="play-btn" id="play-btn"><span>▶</span></button>
+                        </div>
+                        <div class="video-iframe hidden" id="video-iframe">
+                            <iframe id="yt-frame" src="" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section-testimonials reveal">
+            <div class="sec-container">
+                <div class="sec-header">
+                    <p class="eyebrow">Testimonials</p>
+                    <h2>What Our Clients Say</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="tc-stars">★★★★★</div>
+                        <p class="tc-text">"Best plywood dealer in Jodhpur. Their BWP grade plywood is top quality and the trade pricing is unbeatable. Highly recommended!"</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">RK</div>
+                            <div><strong>Rajesh Kumar</strong><span>Interior Designer, Jodhpur</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">★★★★★</div>
+                        <p class="tc-text">"We've been sourcing all our materials from {{CLINIC_NAME}} for 5+ years. Reliable stock, genuine brands, and excellent credit terms."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">MS</div>
+                            <div><strong>Mohan Singh</strong><span>Building Contractor</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="tc-stars">★★★★★</div>
+                        <p class="tc-text">"The laminate collection is amazing — 2000+ designs to choose from. They also deliver across Rajasthan within 2-3 days."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">PA</div>
+                            <div><strong>Priya Agarwal</strong><span>Furniture Manufacturer</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRANDS BAR -->
+        <section class="section-brands reveal">
+            <div class="sec-container">
+                <p class="brands-label">Authorized Dealers For</p>
+                <div class="brands-row">
+                    <span>CenturyPly</span><span>Greenply</span><span>Kitply</span><span>Action Tesa</span><span>Merino</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-mark">AR</span>
+                    <div>
+                        <h3>Timbers &amp; Plywood</h3>
+                        <p>Jodhpur's premier destination for quality wood products, laminates, and architectural surfaces.</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Access</h4>
+                    <button class="footer-link" data-page="products">Our Products</button>
+                    <button class="footer-link" data-page="brands">Partner Brands</button>
+                    <button class="footer-link" data-page="grades">Grades Guide</button>
+                    <button class="footer-link" data-page="quote">Get a Quote</button>
+                </div>
+                <div class="footer-col">
+                    <h4>Reach Us</h4>
+                    <p>📍 Jwala Vihar, Jodhpur – 342008</p>
+                    <p>📞 <a href="tel:{{PHONE}}">+91 {{PHONE}}</a></p>
+                    <p>⏰ Mon–Sat: 9AM – 8PM</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Certifications</h4>
+                    <p>GST: <strong>08ABDPI0031P2ZR</strong></p>
+                    <div class="footer-badges"><span>MSME Registered</span><span>ISI Certified</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 {{CLINIC_NAME}} &amp; Plywood. All rights reserved.</p></div>
+        </footer>
+    </main>
+
+    <!-- ============ SLIDE PAGES (from right) ============ -->
+
+    <!-- PRODUCTS -->
+    <div class="slide-page" id="page-products">
+        <div class="fullpage-layout">
+            <div class="fp-image" style="background-image:url('./page-products.png')">
+                <div class="fp-image-overlay"></div>
+                <div class="fp-image-text">
+                    <button class="back-btn" data-page="home">← Back</button>
+                    <h2>Our Material<br>Range</h2>
+                    <p>Everything you need for construction, interiors & furniture.</p>
+                    <button class="btn-gold" data-page="quote">Request Quote →</button>
+                </div>
+            </div>
+            <div class="fp-sidebar"><div class="fp-sidebar-scroll">
+                <div class="fp-card"><img src="https://images.unsplash.com/photo-1628188177570-36b170fb30cb?w=400&q=80&fit=crop" alt="Plywood"><div class="fp-card-body"><h4>Plywood (BWR, BWP, MR)</h4><p>4mm – 25mm | 8×4 ft</p></div></div>
+                <div class="fp-card"><img src="https://images.unsplash.com/photo-1598928506311-c55dd7788448?w=400&q=80&fit=crop" alt="Block Board"><div class="fp-card-body"><h4>Block Board</h4><p>19mm, 25mm | 8×4 ft</p></div></div>
+                <div class="fp-card"><img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=400&q=80&fit=crop" alt="Flush Door"><div class="fp-card-body"><h4>Flush Door</h4><p>30–35mm | Standard & Custom</p></div></div>
+                <div class="fp-card"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80&fit=crop" alt="MDF"><div class="fp-card-body"><h4>MDF & HDF Boards</h4><p>2mm – 25mm | 8×4 ft</p></div></div>
+                <div class="fp-card"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=400&q=80&fit=crop" alt="Laminates"><div class="fp-card-body"><h4>Laminates & Veneer</h4><p>0.8–1.25mm | 2000+ Designs</p></div></div>
+                <div class="fp-card"><img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&q=80&fit=crop" alt="PVC"><div class="fp-card-body"><h4>PVC Foam Board</h4><p>Lightweight | Waterproof</p></div></div>
+            </div></div>
+        </div>
+    </div>
+
+    <!-- BRANDS -->
+    <div class="slide-page" id="page-brands">
+        <div class="fullpage-layout">
+            <div class="fp-image" style="background-image:url('./page-kitchen.png')">
+                <div class="fp-image-overlay"></div>
+                <div class="fp-image-text">
+                    <button class="back-btn" data-page="home">← Back</button>
+                    <h2>Partner<br>Brands</h2>
+                    <p>Authorized dealer for India's most trusted wood product brands.</p>
+                </div>
+            </div>
+            <div class="fp-sidebar"><div class="fp-sidebar-scroll">
+                <div class="fp-brand-card"><h3>CenturyPly</h3><p>India's #1 plywood brand. BWR, BWP, MR grades with full warranty.</p><span class="fp-tag">Premium Partner</span></div>
+                <div class="fp-brand-card"><h3>Greenply</h3><p>Eco-friendly range with consistent quality for all interior work.</p><span class="fp-tag">Eco Certified</span></div>
+                <div class="fp-brand-card"><h3>Kitply</h3><p>Reliable structural plywood for heavy-duty construction projects.</p><span class="fp-tag">Construction Grade</span></div>
+                <div class="fp-brand-card"><h3>Action Tesa</h3><p>Premium pre-laminated boards and engineered wood for modular furniture.</p><span class="fp-tag">Modular Range</span></div>
+                <div class="fp-brand-card"><h3>Merino Laminates</h3><p>High-pressure decorative laminates in 2000+ designs and textures.</p><span class="fp-tag">2000+ Designs</span></div>
+            </div></div>
+        </div>
+    </div>
+
+    <!-- GRADES -->
+    <div class="slide-page" id="page-grades">
+        <div class="fullpage-layout">
+            <div class="fp-image" style="background-image:url('./hero-bg.png')">
+                <div class="fp-image-overlay"></div>
+                <div class="fp-image-text">
+                    <button class="back-btn" data-page="home">← Back</button>
+                    <h2>Plywood<br>Grades Guide</h2>
+                    <p>Choose the right material for your application.</p>
+                </div>
+            </div>
+            <div class="fp-sidebar"><div class="fp-sidebar-scroll">
+                <div class="fp-grade-card"><div class="grade-dot" style="background:#9e9590"></div><div class="grade-label">MR Grade</div><h4>Moisture Resistant</h4><p>Commercial grade for interior furniture — wardrobes, beds, cabinets.</p><div class="grade-uses">✔ Furniture &nbsp; ✔ Interior</div></div>
+                <div class="fp-grade-card"><div class="grade-dot" style="background:#64b5f6"></div><div class="grade-label">BWR Grade</div><h4>Boiling Water Resistant</h4><p>Semi-waterproof with phenolic resin. Great for kitchens.</p><div class="grade-uses">✔ Kitchen &nbsp; ✔ Semi-outdoor</div></div>
+                <div class="fp-grade-card featured"><div class="grade-dot" style="background:#66bb6a"></div><div class="grade-label">BWP Grade</div><h4>Boiling Water Proof</h4><p>Marine grade — withstands prolonged water exposure.</p><div class="grade-uses">✔ Bathrooms &nbsp; ✔ Exteriors &nbsp; ✔ Marine</div></div>
+                <div class="fp-grade-card"><div class="grade-dot" style="background:#c9a96e"></div><div class="grade-label">E1 Emission</div><h4>Low Formaldehyde</h4><p>Eco-certified with minimal chemical off-gassing.</p><div class="grade-uses">✔ Bedrooms &nbsp; ✔ Kids Rooms</div></div>
+            </div></div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="slide-page" id="page-contact">
+        <div class="fullpage-layout">
+            <div class="fp-image" style="background-image:url('./page-products.png')">
+                <div class="fp-image-overlay"></div>
+                <div class="fp-image-text">
+                    <button class="back-btn" data-page="home">← Back</button>
+                    <h2>Visit<br>Our Yard</h2>
+                    <p>Chopasni Road, Jwala Vihar, Jodhpur</p>
+                    <a href="https://wa.me/{{PHONE}}" target="_blank" class="btn-wa"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="fp-sidebar"><div class="fp-sidebar-scroll">
+                <div class="contact-info-card"><div class="ci-icon">📍</div><div><h4>Address</h4><p>Near Jivan Jyoti Hospital, Chopasni Road, Jwala Vihar, Jodhpur – 342008</p></div></div>
+                <div class="contact-info-card"><div class="ci-icon">📞</div><div><h4>Phone</h4><p><a href="tel:{{PHONE}}">+91 {{PHONE}}</a></p></div></div>
+                <div class="contact-info-card"><div class="ci-icon">⏰</div><div><h4>Working Hours</h4><p>Mon – Sat: 9AM – 8PM<br>Sunday: Closed</p></div></div>
+                <div class="contact-info-card"><div class="ci-icon">📋</div><div><h4>GST</h4><p><strong>08ABDPI0031P2ZR</strong></p></div></div>
+                <div class="contact-info-card"><div class="ci-icon">🏅</div><div><h4>Certifications</h4><div class="ci-badges"><span>MSME Registered</span><span>ISI Certified</span></div></div></div>
+            </div></div>
+        </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="slide-page" id="page-quote">
+        <div class="fullpage-layout">
+            <div class="fp-image" style="background-image:url('./page-kitchen.png')">
+                <div class="fp-image-overlay"></div>
+                <div class="fp-image-text">
+                    <button class="back-btn" data-page="home">← Back</button>
+                    <h2>Get a<br>Bulk Quote</h2>
+                    <p>Fill in your requirements and we'll respond with competitive trade pricing.</p>
+                </div>
+            </div>
+            <div class="fp-sidebar"><div class="fp-sidebar-scroll">
+                <form id="quote-form" class="quote-form">
+                    <div class="qf-group"><label>Full Name / Company</label><input type="text" id="name" required placeholder="Your Name or Company"></div>
+                    <div class="qf-group"><label>Phone Number</label><input type="tel" id="phone" required placeholder="e.g. {{PHONE}}"></div>
+                    <div class="qf-group"><label>Product Type</label><select id="product" required><option value="" disabled selected>Select Product</option><option>Plywood</option><option>Block Board</option><option>Flush Door</option><option>MDF / Particle Board</option><option>Laminates / Veneer</option><option>Other</option></select></div>
+                    <div class="qf-row"><div class="qf-group"><label>Grade</label><select id="grade"><option>Not Sure</option><option>MR</option><option>BWR</option><option>BWP</option></select></div><div class="qf-group"><label>Thickness</label><input type="text" id="thickness" placeholder="e.g. 18mm"></div></div>
+                    <div class="qf-group"><label>Quantity</label><input type="text" id="quantity" required placeholder="e.g. 100 Sheets"></div>
+                    <button type="submit" class="qf-submit">Send via WhatsApp →</button>
+                </form>
+            </div></div>
+        </div>
+    </div>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-overlay" id="mobile-overlay">
+        <div class="mo-links">
+            <button data-page="home">Home</button>
+            <button data-page="products">Products</button>
+            <button data-page="brands">Brands</button>
+            <button data-page="grades">Grades Guide</button>
+            <button data-page="contact">Contact</button>
+            <button data-page="quote">Get Quote</button>
+        </div>
+    </div>
+
+    <!-- FLOATING WA -->
+    <a href="https://wa.me/{{PHONE}}" class="floating-wa" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

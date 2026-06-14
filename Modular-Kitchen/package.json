@@ -1,0 +1,16 @@
+{
+  "name": "parasvnath-interio",
+  "version": "1.0.0",
+  "description": "Premium Modular Kitchen & Interior Design website for Parasvnath Interio Jodhpur",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

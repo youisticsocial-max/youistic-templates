@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - AR Timbers & Plywood</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --sidebar-bg: #1a1a2e;
+            --sidebar-hover: #292946;
+            --sidebar-active: #32325d;
+            --sidebar-text: #e2e8f0;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --danger: #dc2626;
+            --danger-hover: #b91c1c;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* Login Screen */
+        #login-screen {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--sidebar-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .login-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        
+        .login-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Utility Classes */
+        .hidden { display: none !important; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-4 { gap: 1rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        
+        /* Layout */
+        #admin-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            z-index: 50;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--sidebar-text);
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background-color: var(--sidebar-hover);
+        }
+
+        .nav-item.active {
+            background-color: var(--sidebar-active);
+            border-left-color: var(--primary);
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .top-header {
+            background: var(--card-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .section-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .breadcrumb {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+            background-color: #fafafa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .char-counter {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: right;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .img-preview {
+            margin-top: 0.5rem;
+            max-width: 200px;
+            max-height: 150px;
+            border-radius: 4px;
+            border: 1px dashed var(--border-color);
+            display: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            gap: 0.5rem;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); }
+        .btn-outline:hover { background: #f9fafb; border-color: #d1d5db; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-danger:hover { background: var(--danger-hover); }
+        .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.8rem; }
+        .btn-block { width: 100%; padding: 0.75rem; }
+
+        /* Dynamic Lists (Tables/Cards) */
+        .list-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .list-table th, .list-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .list-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .list-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--success); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        /* Toasts */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: var(--card-bg);
+            border-left: 4px solid var(--success);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 250px;
+            animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+        }
+        
+        .toast.error { border-left-color: var(--danger); }
+        .toast.warning { border-left-color: var(--warning); }
+
+        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; display: none; } }
+
+        /* Responsive */
+        .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                height: 100%;
+                transform: translateX(-100%);
+            }
+            .sidebar.mobile-open {
+                transform: translateX(0);
+                box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            }
+            .menu-toggle { display: block; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1500;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .close-modal { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Login Screen -->
+    <div id="login-screen">
+        <div class="login-card">
+            <h2>Admin CMS</h2>
+            <p>AR Timbers & Plywood Control Panel</p>
+            <form id="login-form">
+                <div class="form-group" style="text-align: left;">
+                    <label>Username</label>
+                    <input type="text" id="login-user" class="form-control" required placeholder="admin">
+                </div>
+                <div class="form-group" style="text-align: left;">
+                    <label>Password</label>
+                    <input type="password" id="login-pass" class="form-control" required placeholder="Enter password">
+                </div>
+                <div id="login-error" class="char-counter" style="color: var(--danger); text-align: left; margin-bottom: 1rem; display: none;">Invalid credentials</div>
+                <button type="submit" class="btn btn-primary btn-block">Login to Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Admin Wrapper -->
+    <div id="admin-wrapper" class="hidden">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header flex justify-between items-center">
+                <h2>AR Timbers CMS</h2>
+                <button class="menu-toggle" id="close-sidebar" style="color:white">&times;</button>
+            </div>
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <!-- Navigation Items injected via JS -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="flex items-center gap-4">
+                    <button class="menu-toggle" id="open-sidebar">☰</button>
+                    <div>
+                        <div class="breadcrumb" id="header-breadcrumb">Admin / Dashboard</div>
+                        <h2 id="header-title" style="font-size: 1.25rem;">Dashboard Overview</h2>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="index.html" target="_blank" class="btn btn-outline btn-sm">View Live Site</a>
+                    <button id="btn-logout" class="btn btn-danger btn-sm">Logout</button>
+                </div>
+            </header>
+
+            <div class="content-area" id="content-area">
+                <!-- Section 1: Dashboard -->
+                <section id="sec-dashboard" class="section-panel">
+                    <div class="stats-grid">
+                        <div class="card stat-card">
+                            <h3>Total Categories</h3>
+                            <p id="stat-services">0</p>
+                        </div>
+                        <div class="card stat-card">
+                            <h3>Total Photos</h3>
+                            <p id="stat-photos">0</p>
+                        </div>
+                        <div class="card stat-card">
+                            <h3>Enquiries Received</h3>
+                            <p id="stat-enquiries">0</p>
+                        </div>
+                        <div class="card stat-card" style="border-left-color: var(--success)">
+                            <h3>Last Updated</h3>
+                            <p id="stat-last-update" style="font-size: 1.2rem; margin-top: 0.5rem;">Never</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="mb-4">Recent Enquiries</h3>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashboard-enquiries-list">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Business Info -->
+                <section id="sec-business" class="section-panel">
+                    <div class="card">
+                        <form id="form-business" class="auto-save-form">
+                            <h3 class="mb-4">Basic Information</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Business Name</label><input type="text" name="name" class="form-control" required></div>
+                                <div class="form-group"><label>Tagline / Slogan</label><input type="text" name="tagline" class="form-control"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Contact Person / Owner</label><input type="text" name="owner" class="form-control"></div>
+                                <div class="form-group"><label>Year Established</label><input type="text" name="year" class="form-control"></div>
+                            </div>
+                            
+                            <h3 class="mt-4 mb-4">Contact Details</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Primary Phone</label><input type="text" name="phone" class="form-control" required></div>
+                                <div class="form-group"><label>WhatsApp Number</label><input type="text" name="whatsapp" class="form-control"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Email Address</label><input type="email" name="email" class="form-control"></div>
+                                <div class="form-group"><label>GST Number</label><input type="text" name="gst" class="form-control"></div>
+                            </div>
+
+                            <h3 class="mt-4 mb-4">Location & Hours</h3>
+                            <div class="form-group"><label>Full Address</label><textarea name="address" class="form-control"></textarea></div>
+                            <div class="form-row">
+                                <div class="form-group"><label>City</label><input type="text" name="city" class="form-control"></div>
+                                <div class="form-group"><label>Pin Code</label><input type="text" name="pincode" class="form-control"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Working Hours (Mon-Sat)</label><input type="text" name="hours" class="form-control"></div>
+                                <div class="form-group"><label>Sunday Hours</label><input type="text" name="sundayHours" class="form-control"></div>
+                            </div>
+
+                            <h3 class="mt-4 mb-4">About Us</h3>
+                            <div class="form-group">
+                                <label>Short About Us (Homepage)</label>
+                                <textarea name="aboutShort" class="form-control" maxlength="200" oninput="updateCounter(this, 'aboutShortCount')"></textarea>
+                                <span class="char-counter"><span id="aboutShortCount">0</span>/200</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Long About Us (About Page)</label>
+                                <textarea name="aboutLong" class="form-control" rows="5"></textarea>
+                            </div>
+                            
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-muted" style="font-size:0.8rem" id="save-status-business"></span>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Section 3: Hero Section -->
+                <section id="sec-hero" class="section-panel">
+                    <div class="card">
+                        <form id="form-hero">
+                            <h3 class="mb-4">Homepage Hero Settings</h3>
+                            <div class="form-group"><label>Main Heading</label><input type="text" name="heading" class="form-control" required></div>
+                            <div class="form-group"><label>Sub Heading</label><input type="text" name="subHeading" class="form-control"></div>
+                            <div class="form-group"><label>Hero Badge Text (e.g. "20+ Years Trust")</label><input type="text" name="badge" class="form-control"></div>
+                            
+                            <h3 class="mt-4 mb-4">Call To Actions</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Primary Button Text</label><input type="text" name="cta1Text" class="form-control"></div>
+                                <div class="form-group"><label>Primary Button Link</label><input type="text" name="cta1Link" class="form-control"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Secondary Button Text</label><input type="text" name="cta2Text" class="form-control"></div>
+                                <div class="form-group"><label>Secondary Button Link</label><input type="text" name="cta2Link" class="form-control"></div>
+                            </div>
+
+                            <h3 class="mt-4 mb-4">Background Image</h3>
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" name="bgImage" class="form-control" oninput="previewImage(this, 'hero-preview')">
+                                <img id="hero-preview" class="img-preview" src="" alt="Hero Preview">
+                            </div>
+                            
+                            <div class="mt-4 flex justify-between items-center">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Generic List Section (Used for Services, Pricing, Testimonials, Team) -->
+                <!-- We will generate the HTML for these dynamically or define templates -->
+                <section id="sec-services" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Manage Product Categories</h3>
+                            <button class="btn btn-primary btn-sm" onclick="ListManager.openModal('services')">+ Add Category</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Name</th><th>Description</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-services"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sec-whyus" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Our Expertise / Why Choose Us</h3>
+                            <button class="btn btn-primary btn-sm" onclick="ListManager.openModal('whyChooseUs')">+ Add Point</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Icon</th><th>Title</th><th>Description</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-whyChooseUs"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sec-pricing" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Bulk Pricing / Trade Plans</h3>
+                            <button class="btn btn-primary btn-sm" onclick="ListManager.openModal('pricing')">+ Add Plan</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Plan Name</th><th>Price</th><th>Featured</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-pricing"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sec-gallery" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Wood & Timber Gallery</h3>
+                            <button class="btn btn-primary btn-sm" onclick="ListManager.openModal('gallery')">+ Add Photo</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Preview</th><th>Caption</th><th>Category</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-gallery"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sec-testimonials" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Client Testimonials</h3>
+                            <button class="btn btn-primary btn-sm" onclick="ListManager.openModal('testimonials')">+ Add Testimonial</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Name</th><th>Rating</th><th>Review</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-testimonials"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sec-team" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Our Team</h3>
+                            <button class="btn btn-primary btn-sm" onclick="ListManager.openModal('team')">+ Add Member</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Photo</th><th>Name</th><th>Designation</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-team"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Contact & Location -->
+                <section id="sec-contact" class="section-panel">
+                    <div class="card">
+                        <form id="form-contact">
+                            <h3 class="mb-4">Location Settings</h3>
+                            <div class="form-group">
+                                <label>Google Maps Embed Code (iframe)</label>
+                                <textarea name="mapIframe" class="form-control" rows="4" oninput="updateMapPreview(this.value)"></textarea>
+                                <div id="map-preview" class="mt-2" style="max-width: 100%; height: 200px; background: #eee; border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #888;">
+                                    Map Preview
+                                </div>
+                            </div>
+                            <div class="form-group"><label>Map Link URL (For "Get Directions" button)</label><input type="text" name="mapLink" class="form-control"></div>
+                            <div class="form-group"><label>Landmark</label><input type="text" name="landmark" class="form-control"></div>
+                            <button type="submit" class="btn btn-primary mt-4">Save Contact Settings</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Section: Enquiries Inbox -->
+                <section id="sec-enquiries" class="section-panel">
+                    <div class="card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3>Enquiries Inbox</h3>
+                            <div class="flex gap-2">
+                                <select id="enquiry-filter" class="form-control" style="width: auto;" onchange="renderEnquiries()">
+                                    <option value="all">All</option>
+                                    <option value="New">New</option>
+                                    <option value="Contacted">Contacted</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                                <button class="btn btn-outline btn-sm" onclick="exportEnquiriesCSV()">Export CSV</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="list-table">
+                                <thead><tr><th>Date</th><th>Name</th><th>Phone</th><th>Service / Product</th><th>Status</th><th>Actions</th></tr></thead>
+                                <tbody id="list-tbody-enquiries"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Social Media -->
+                <section id="sec-social" class="section-panel">
+                    <div class="card">
+                        <form id="form-social">
+                            <h3 class="mb-4">Social Media Profiles</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Facebook URL</label><input type="text" name="facebook" class="form-control"></div>
+                                <div class="form-group"><label>Instagram URL</label><input type="text" name="instagram" class="form-control"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>YouTube Channel</label><input type="text" name="youtube" class="form-control"></div>
+                                <div class="form-group"><label>Google Business Profile</label><input type="text" name="google" class="form-control"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Twitter / X</label><input type="text" name="twitter" class="form-control"></div>
+                                <div class="form-group"><label>LinkedIn</label><input type="text" name="linkedin" class="form-control"></div>
+                            </div>
+                            <div class="form-group"><label>JustDial / IndiaMART Link</label><input type="text" name="directory" class="form-control"></div>
+                            <button type="submit" class="btn btn-primary mt-4">Save Links</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Section: SEO Settings -->
+                <section id="sec-seo" class="section-panel">
+                    <div class="card">
+                        <form id="form-seo">
+                            <h3 class="mb-4">Search Engine Optimization</h3>
+                            <div class="form-group"><label>Meta Page Title</label><input type="text" name="title" class="form-control"></div>
+                            <div class="form-group">
+                                <label>Meta Description</label>
+                                <textarea name="description" class="form-control" maxlength="160" oninput="updateCounter(this, 'seoDescCount')"></textarea>
+                                <span class="char-counter"><span id="seoDescCount">0</span>/160</span>
+                            </div>
+                            <div class="form-group"><label>Meta Keywords (Comma separated)</label><input type="text" name="keywords" class="form-control"></div>
+                            
+                            <h3 class="mt-4 mb-4">Social Sharing (Open Graph)</h3>
+                            <div class="form-group"><label>OG Title</label><input type="text" name="ogTitle" class="form-control"></div>
+                            <div class="form-group"><label>OG Description</label><textarea name="ogDescription" class="form-control"></textarea></div>
+                            <div class="form-group">
+                                <label>OG Image URL</label>
+                                <input type="text" name="ogImage" class="form-control" oninput="previewImage(this, 'og-preview')">
+                                <img id="og-preview" class="img-preview" src="">
+                            </div>
+
+                            <h3 class="mt-4 mb-4">Tracking & Verification</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Google Analytics ID (e.g. G-XXXXX)</label><input type="text" name="gaId" class="form-control"></div>
+                                <div class="form-group"><label>Search Console Verification Code</label><input type="text" name="gscCode" class="form-control"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-4">Save SEO Settings</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Section: Site Settings & Export -->
+                <section id="sec-settings" class="section-panel">
+                    <div class="card mb-4">
+                        <form id="form-settings">
+                            <h3 class="mb-4">Theme & Appearance</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Primary Color</label><input type="color" name="primaryColor" class="form-control" style="height: 40px; padding: 2px;"></div>
+                                <div class="form-group"><label>Secondary Color</label><input type="color" name="secondaryColor" class="form-control" style="height: 40px; padding: 2px;"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Logo URL</label>
+                                    <input type="text" name="logoUrl" class="form-control" oninput="previewImage(this, 'logo-preview')">
+                                    <img id="logo-preview" class="img-preview" src="" style="max-height: 50px; margin-top:10px;">
+                                </div>
+                                <div class="form-group"><label>Favicon URL</label><input type="text" name="faviconUrl" class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Typography (Google Font)</label>
+                                <select name="font" class="form-control">
+                                    <option value="Inter">Inter (Modern)</option>
+                                    <option value="Outfit">Outfit (Geometric)</option>
+                                    <option value="Roboto">Roboto (Standard)</option>
+                                    <option value="Playfair Display">Playfair Display (Elegant/Serif)</option>
+                                </select>
+                            </div>
+                            <div class="form-group"><label>Footer Copyright Text</label><input type="text" name="copyright" class="form-control"></div>
+                            
+                            <h3 class="mt-4 mb-4">Site Status</h3>
+                            <div class="form-group flex items-center gap-2">
+                                <label class="switch">
+                                    <input type="checkbox" name="maintenanceMode">
+                                    <span class="slider"></span>
+                                </label>
+                                <span>Enable Maintenance Mode (Site Offline)</span>
+                            </div>
+                            <div class="form-group flex items-center gap-2 mt-2">
+                                <label class="switch">
+                                    <input type="checkbox" name="announcementActive">
+                                    <span class="slider"></span>
+                                </label>
+                                <span>Show Top Announcement Bar</span>
+                            </div>
+                            <div class="form-group"><label>Announcement Text</label><input type="text" name="announcementText" class="form-control"></div>
+
+                            <button type="submit" class="btn btn-primary mt-4">Save Theme Settings</button>
+                        </form>
+                    </div>
+
+                    <div class="card border-danger">
+                        <h3 class="mb-4" style="color: var(--danger)">Data Management (Export / Import)</h3>
+                        <p class="text-muted mb-4">Export your entire site configuration to a JSON file for backup, or import an existing configuration.</p>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary" onclick="exportJSON()">⬇️ Export Full Site Data (JSON)</button>
+                            <label class="btn btn-outline" style="cursor: pointer;">
+                                ⬆️ Import JSON Backup
+                                <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importJSON(event)">
+                            </label>
+                            <button class="btn btn-danger" onclick="resetData()">⚠️ Factory Reset</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals Container -->
+    <div id="modal-container" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Edit Item</h3>
+                <button class="close-modal" onclick="ListManager.closeModal()">&times;</button>
+            </div>
+            <form id="modal-form">
+                <div id="modal-body"></div>
+                <div class="flex justify-between items-center mt-4 pt-4" style="border-top: 1px solid var(--border-color);">
+                    <button type="button" class="btn btn-outline" onclick="ListManager.closeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enquiry View Modal -->
+    <div id="enquiry-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Enquiry Details</h3>
+                <button class="close-modal" onclick="closeEnquiryModal()">&times;</button>
+            </div>
+            <div id="enquiry-details" style="line-height: 1.8;"></div>
+            <div class="mt-4 pt-4 flex justify-between items-center" style="border-top: 1px solid var(--border-color);">
+                <select id="enquiry-status-update" class="form-control" style="width: 150px;">
+                    <option value="New">New</option>
+                    <option value="Contacted">Contacted</option>
+                    <option value="Closed">Closed</option>
+                </select>
+                <button class="btn btn-primary" onclick="updateEnquiryStatus()">Update Status</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toasts Container -->
+    <div id="toast-container"></div>
+
+    <script>
+        /**
+         * DEFAULT DATA STRUCTURE
+         * This acts as the schema for our site configuration.
+         */
+        const DEFAULT_DATA = {
+            businessInfo: { name: 'AR Timbers & Plywood', tagline: 'Strength in Every Sheet', owner: '', phone: '9829323339', whatsapp: '9829323339', email: '', gst: '08ABDPI0031P2ZR', address: 'Near Jivan Jyoti Hospital, Chopasni Road, Jwala Vihar', city: 'Jodhpur', pincode: '342008', hours: '9:00 AM - 8:00 PM', sundayHours: 'Closed', year: '', aboutShort: '', aboutLong: '' },
+            hero: { heading: 'Premium Plywood & Timber', subHeading: 'Wholesale & Retail', badge: '', cta1Text: 'Get Bulk Quote', cta1Link: '#quote', cta2Text: 'View Products', cta2Link: '#products', bgImage: 'https://images.unsplash.com/photo-1572089228965-fb18d4dfad80?ixlib=rb-4.0.3' },
+            services: [ // "Product Categories"
+                { id: 1, name: 'Plywood (BWR, BWP, MR)', description: 'High grade commercial and marine plywood.', icon: '🪵', isActive: true },
+                { id: 2, name: 'Block Board', description: 'Strong core block boards for furniture.', icon: '🚪', isActive: true }
+            ],
+            whyChooseUs: [ // "Our Expertise"
+                { id: 1, name: 'ISI Certified Stock', description: '100% genuine products with brand warranties.', icon: '🏅', isActive: true },
+                { id: 2, name: 'Trade Pricing', description: 'Wholesale margins for industry professionals.', icon: '💼', isActive: true }
+            ],
+            pricing: [], // "Bulk Pricing"
+            gallery: [], // "Wood Gallery"
+            testimonials: [],
+            team: [], // "Our Team"
+            contact: { mapIframe: '', mapLink: '', landmark: '' },
+            enquiries: [
+                { id: 1, date: new Date().toISOString(), name: 'John Doe', phone: '9999999999', service: 'Plywood', message: 'Need 100 sheets of 18mm.', status: 'New' }
+            ],
+            social: { facebook: '', instagram: '', youtube: '', google: '', twitter: '', linkedin: '', directory: '' },
+            seo: { title: 'AR Timbers & Plywood', description: '', keywords: 'plywood, timber, jodhpur', ogTitle: '', ogDescription: '', ogImage: '', gaId: '', gscCode: '' },
+            settings: { primaryColor: '#4a3320', secondaryColor: '#8b5a2b', logoUrl: '', faviconUrl: '', font: 'Outfit', copyright: '© 2026 AR Timbers & Plywood', maintenanceMode: false, announcementActive: false, announcementText: 'Welcome to AR Timbers' },
+            _meta: { lastUpdated: null }
+        };
+
+        // Configuration for dynamic lists
+        const LIST_CONFIGS = {
+            services: { title: 'Product Category', fields: [{name:'name', label:'Category Name', type:'text'}, {name:'description', label:'Short Description', type:'textarea'}, {name:'icon', label:'Icon/Emoji', type:'text'}, {name:'isActive', label:'Show on Site', type:'checkbox'}] },
+            whyChooseUs: { title: 'USP Point', fields: [{name:'name', label:'Title', type:'text'}, {name:'description', label:'Description', type:'text'}, {name:'icon', label:'Icon/Emoji', type:'text'}, {name:'isActive', label:'Active', type:'checkbox'}] },
+            pricing: { title: 'Trade Plan', fields: [{name:'name', label:'Plan Name', type:'text'}, {name:'price', label:'Price/Discount', type:'text'}, {name:'features', label:'Features (Comma separated)', type:'textarea'}, {name:'isFeatured', label:'Highlight Plan', type:'checkbox'}, {name:'isActive', label:'Active', type:'checkbox'}] },
+            gallery: { title: 'Gallery Photo', fields: [{name:'image', label:'Image URL', type:'text', isImage:true}, {name:'name', label:'Caption', type:'text'}, {name:'category', label:'Tag (e.g. Interior)', type:'text'}, {name:'isActive', label:'Active', type:'checkbox'}] },
+            testimonials: { title: 'Testimonial', fields: [{name:'name', label:'Customer Name', type:'text'}, {name:'location', label:'Location', type:'text'}, {name:'rating', label:'Rating (1-5)', type:'number', min:1, max:5}, {name:'review', label:'Review Text', type:'textarea'}, {name:'isActive', label:'Active', type:'checkbox'}] },
+            team: { title: 'Team Member', fields: [{name:'name', label:'Full Name', type:'text'}, {name:'designation', label:'Role', type:'text'}, {name:'bio', label:'Short Bio', type:'textarea'}, {name:'image', label:'Photo URL', type:'text', isImage:true}, {name:'isActive', label:'Active', type:'checkbox'}] },
+        };
+
+        const NAV_ITEMS = [
+            { id: 'dashboard', icon: '📊', label: 'Dashboard' },
+            { id: 'business', icon: '🏢', label: 'Business Info' },
+            { id: 'hero', icon: '🖼️', label: 'Hero Section' },
+            { id: 'services', icon: '🪵', label: 'Product Categories' },
+            { id: 'whyus', icon: '⭐', label: 'Our Expertise' },
+            { id: 'pricing', icon: '💰', label: 'Bulk Pricing' },
+            { id: 'gallery', icon: '📸', label: 'Wood Gallery' },
+            { id: 'testimonials', icon: '💬', label: 'Testimonials' },
+            { id: 'team', icon: '👥', label: 'Our Team' },
+            { id: 'contact', icon: '📍', label: 'Contact & Map' },
+            { id: 'enquiries', icon: '📥', label: 'Enquiries Inbox' },
+            { id: 'social', icon: '🔗', label: 'Social Links' },
+            { id: 'seo', icon: '🔍', label: 'SEO Settings' },
+            { id: 'settings', icon: '⚙️', label: 'Site Settings' },
+        ];
+
+        /**
+         * DATA MANAGER
+         * Handles localStorage interaction
+         */
+        const DataManager = {
+            data: {},
+            init() {
+                const stored = localStorage.getItem('siteData');
+                if (stored) {
+                    try {
+                        this.data = JSON.parse(stored);
+                    } catch (e) {
+                        console.error("Corrupted localStorage data. Resetting.");
+                        this.data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+                    }
+                } else {
+                    this.data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+                    this.save();
+                }
+            },
+            get(key) { return this.data[key]; },
+            set(key, value) {
+                this.data[key] = value;
+                this.data._meta.lastUpdated = new Date().toISOString();
+                this.save();
+            },
+            save() {
+                localStorage.setItem('siteData', JSON.stringify(this.data));
+                updateDashboardStats();
+            }
+        };
+
+        /**
+         * UI MANAGER
+         * Handles Toast, Routing, Sidebar
+         */
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `<span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.remove(); }, 3000);
+        }
+
+        function switchSection(sectionId) {
+            // Update Sidebar
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            const navEl = document.getElementById(`nav-${sectionId}`);
+            if(navEl) navEl.classList.add('active');
+
+            // Update Header
+            const navItem = NAV_ITEMS.find(i => i.id === sectionId);
+            document.getElementById('header-breadcrumb').innerText = `Admin / ${navItem.label}`;
+            document.getElementById('header-title').innerText = navItem.label;
+
+            // Update View
+            document.querySelectorAll('.section-panel').forEach(el => el.classList.remove('active'));
+            document.getElementById(`sec-${sectionId}`).classList.add('active');
+
+            // Close mobile sidebar if open
+            document.getElementById('sidebar').classList.remove('mobile-open');
+
+            // Trigger specific render if needed
+            if (sectionId === 'enquiries') renderEnquiries();
+        }
+
+        function buildSidebar() {
+            const nav = document.getElementById('sidebar-nav');
+            NAV_ITEMS.forEach(item => {
+                const a = document.createElement('a');
+                a.className = 'nav-item';
+                a.id = `nav-${item.id}`;
+                a.innerHTML = `${item.icon} &nbsp;${item.label}`;
+                a.onclick = () => switchSection(item.id);
+                nav.appendChild(a);
+            });
+        }
+
+        /**
+         * FORM BINDING
+         */
+        function bindForm(formId, dataKey) {
+            const form = document.getElementById(formId);
+            const data = DataManager.get(dataKey) || {};
+            
+            // Populate
+            Array.from(form.elements).forEach(el => {
+                if (el.name && data[el.name] !== undefined) {
+                    if (el.type === 'checkbox') el.checked = data[el.name];
+                    else el.value = data[el.name];
+                    
+                    // Trigger input event for previews/counters
+                    el.dispatchEvent(new Event('input'));
+                }
+            });
+
+            // Handle Save
+            form.onsubmit = (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const newData = { ...DataManager.get(dataKey) };
+                
+                Array.from(form.elements).forEach(el => {
+                    if (el.name) {
+                        if (el.type === 'checkbox') newData[el.name] = el.checked;
+                        else newData[el.name] = el.value;
+                    }
+                });
+
+                DataManager.set(dataKey, newData);
+                showToast(`${dataKey.toUpperCase()} settings saved successfully!`);
+            };
+        }
+
+        /**
+         * LIST MANAGER (CRUD)
+         */
+        const ListManager = {
+            currentKey: null,
+            currentEditId: null,
+
+            render(key) {
+                const tbody = document.getElementById(`list-tbody-${key}`);
+                if (!tbody) return;
+                
+                const items = DataManager.get(key) || [];
+                tbody.innerHTML = '';
+
+                if (items.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="5" class="empty-state">No items added yet. Click Add to create one.</td></tr>`;
+                    return;
+                }
+
+                items.forEach(item => {
+                    const tr = document.createElement('tr');
+                    
+                    // Customize display based on key
+                    let col1 = item.name || item.title || 'Unnamed';
+                    let col2 = item.description || item.price || item.caption || item.designation || '-';
+                    
+                    if (key === 'gallery' || key === 'team') {
+                        col1 = `<img src="${item.image || ''}" style="width:50px; height:50px; object-fit:cover; border-radius:4px;">`;
+                        col2 = item.name;
+                    }
+
+                    const statusHtml = item.isActive !== false ? `<span style="color:var(--success); font-weight:600">Active</span>` : `<span style="color:var(--text-muted)">Hidden</span>`;
+
+                    tr.innerHTML = `
+                        <td>${col1}</td>
+                        <td>${col2}</td>
+                        ${key === 'pricing' ? `<td>${item.isFeatured ? 'Yes' : 'No'}</td>` : ''}
+                        ${key === 'gallery' ? `<td>${item.category || '-'}</td>` : ''}
+                        <td>${statusHtml}</td>
+                        <td class="list-actions">
+                            <button class="btn btn-outline btn-sm" onclick="ListManager.openModal('${key}', ${item.id})">✏️</button>
+                            <button class="btn btn-danger btn-sm" onclick="ListManager.deleteItem('${key}', ${item.id})">🗑️</button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            },
+
+            openModal(key, id = null) {
+                this.currentKey = key;
+                this.currentEditId = id;
+                const config = LIST_CONFIGS[key];
+                
+                document.getElementById('modal-title').innerText = id ? `Edit ${config.title}` : `Add New ${config.title}`;
+                const body = document.getElementById('modal-body');
+                body.innerHTML = '';
+
+                let itemData = {};
+                if (id) {
+                    const items = DataManager.get(key);
+                    itemData = items.find(i => i.id === id) || {};
+                } else {
+                    itemData.isActive = true; // Default true for new
+                }
+
+                config.fields.forEach(f => {
+                    const div = document.createElement('div');
+                    div.className = 'form-group';
+                    
+                    let inputHtml = '';
+                    if (f.type === 'textarea') {
+                        inputHtml = `<textarea name="${f.name}" class="form-control">${itemData[f.name] || ''}</textarea>`;
+                    } else if (f.type === 'checkbox') {
+                        inputHtml = `
+                            <label class="switch">
+                                <input type="checkbox" name="${f.name}" ${itemData[f.name] !== false ? 'checked' : ''}>
+                                <span class="slider"></span>
+                            </label>
+                        `;
+                        div.style.display = 'flex';
+                        div.style.alignItems = 'center';
+                        div.style.gap = '10px';
+                        div.innerHTML = inputHtml + `<span>${f.label}</span>`;
+                        body.appendChild(div);
+                        return; // Skip standard label
+                    } else {
+                        inputHtml = `<input type="${f.type}" name="${f.name}" class="form-control" value="${itemData[f.name] || ''}">`;
+                    }
+
+                    div.innerHTML = `<label>${f.label}</label>${inputHtml}`;
+                    if (f.isImage) {
+                        div.innerHTML += `<img id="preview-modal-${f.name}" class="img-preview" src="${itemData[f.name] || ''}" style="${itemData[f.name] ? 'display:block' : ''}">`;
+                        // Attach preview event listener after appending
+                        setTimeout(() => {
+                            const inp = div.querySelector('input');
+                            inp.addEventListener('input', (e) => previewImage(e.target, `preview-modal-${f.name}`));
+                        }, 0);
+                    }
+                    body.appendChild(div);
+                });
+
+                document.getElementById('modal-container').classList.remove('hidden');
+                
+                // Form Submit Handler
+                document.getElementById('modal-form').onsubmit = (e) => {
+                    e.preventDefault();
+                    this.saveItem();
+                };
+            },
+
+            closeModal() {
+                document.getElementById('modal-container').classList.add('hidden');
+                document.getElementById('modal-form').reset();
+            },
+
+            saveItem() {
+                const form = document.getElementById('modal-form');
+                const formData = new FormData(form);
+                const items = DataManager.get(this.currentKey) || [];
+                const config = LIST_CONFIGS[this.currentKey];
+
+                const newItem = { id: this.currentEditId || Date.now() };
+                
+                config.fields.forEach(f => {
+                    if (f.type === 'checkbox') {
+                        newItem[f.name] = form.querySelector(`[name="${f.name}"]`).checked;
+                    } else {
+                        newItem[f.name] = formData.get(f.name);
+                    }
+                });
+
+                if (this.currentEditId) {
+                    const idx = items.findIndex(i => i.id === this.currentEditId);
+                    if (idx > -1) items[idx] = newItem;
+                } else {
+                    items.push(newItem);
+                }
+
+                DataManager.set(this.currentKey, items);
+                this.render(this.currentKey);
+                this.closeModal();
+                showToast(`${config.title} saved successfully!`);
+            },
+
+            deleteItem(key, id) {
+                if (confirm(`Are you sure you want to delete this ${LIST_CONFIGS[key].title}?`)) {
+                    let items = DataManager.get(key);
+                    items = items.filter(i => i.id !== id);
+                    DataManager.set(key, items);
+                    this.render(key);
+                    showToast('Item deleted.', 'warning');
+                }
+            }
+        };
+
+        /**
+         * ENQUIRIES SPECIFIC LOGIC
+         */
+        let currentEnquiryId = null;
+        function renderEnquiries() {
+            const tbody = document.getElementById('list-tbody-enquiries');
+            const filter = document.getElementById('enquiry-filter').value;
+            let items = DataManager.get('enquiries') || [];
+
+            if (filter !== 'all') {
+                items = items.filter(i => i.status === filter);
+            }
+
+            // Sort newest first
+            items.sort((a,b) => new Date(b.date) - new Date(a.date));
+
+            tbody.innerHTML = '';
+            if(items.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="empty-state">No enquiries found.</td></tr>`;
+                return;
+            }
+
+            items.forEach(item => {
+                const tr = document.createElement('tr');
+                const d = new Date(item.date).toLocaleDateString();
+                let statusColor = item.status === 'New' ? 'var(--danger)' : (item.status === 'Contacted' ? 'var(--warning)' : 'var(--success)');
+                
+                tr.innerHTML = `
+                    <td>${d}</td>
+                    <td><strong>${item.name}</strong></td>
+                    <td>${item.phone}</td>
+                    <td>${item.service || '-'}</td>
+                    <td><span style="background:${statusColor}; color:white; padding:2px 8px; border-radius:12px; font-size:0.8rem;">${item.status}</span></td>
+                    <td class="list-actions">
+                        <button class="btn btn-primary btn-sm" onclick="viewEnquiry(${item.id})">👁️ View</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteEnquiry(${item.id})">🗑️</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function viewEnquiry(id) {
+            const items = DataManager.get('enquiries');
+            const item = items.find(i => i.id === id);
+            if(!item) return;
+
+            currentEnquiryId = id;
+            document.getElementById('enquiry-details').innerHTML = `
+                <p><strong>Date:</strong> ${new Date(item.date).toLocaleString()}</p>
+                <p><strong>Name:</strong> ${item.name}</p>
+                <p><strong>Phone:</strong> <a href="tel:${item.phone}">${item.phone}</a></p>
+                <p><strong>Product/Service:</strong> ${item.service}</p>
+                <hr style="margin: 1rem 0; border:0; border-top:1px solid #ddd;">
+                <p><strong>Message:</strong></p>
+                <div style="background:#f9f9f9; padding:1rem; border-radius:4px; margin-top:0.5rem; white-space:pre-wrap;">${item.message || 'No message provided.'}</div>
+            `;
+            document.getElementById('enquiry-status-update').value = item.status;
+            document.getElementById('enquiry-modal').classList.remove('hidden');
+        }
+
+        function closeEnquiryModal() {
+            document.getElementById('enquiry-modal').classList.add('hidden');
+        }
+
+        function updateEnquiryStatus() {
+            const newStatus = document.getElementById('enquiry-status-update').value;
+            const items = DataManager.get('enquiries');
+            const idx = items.findIndex(i => i.id === currentEnquiryId);
+            if(idx > -1) {
+                items[idx].status = newStatus;
+                DataManager.set('enquiries', items);
+                renderEnquiries();
+                closeEnquiryModal();
+                showToast('Enquiry status updated.');
+            }
+        }
+
+        function deleteEnquiry(id) {
+            if (confirm("Delete this enquiry permanently?")) {
+                let items = DataManager.get('enquiries');
+                items = items.filter(i => i.id !== id);
+                DataManager.set('enquiries', items);
+                renderEnquiries();
+                showToast('Enquiry deleted.', 'warning');
+            }
+        }
+
+        function exportEnquiriesCSV() {
+            const items = DataManager.get('enquiries') || [];
+            if(items.length === 0) return alert("No data to export");
+            
+            const headers = ['Date', 'Name', 'Phone', 'Service', 'Message', 'Status'];
+            const rows = items.map(i => [
+                new Date(i.date).toLocaleString(), 
+                `"${i.name}"`, 
+                `"${i.phone}"`, 
+                `"${i.service || ''}"`, 
+                `"${(i.message || '').replace(/"/g, '""')}"`, 
+                i.status
+            ]);
+            
+            const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `Enquiries_${new Date().toLocaleDateString()}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        }
+
+        /**
+         * UTILS
+         */
+        function updateCounter(el, counterId) {
+            document.getElementById(counterId).innerText = el.value.length;
+        }
+
+        function previewImage(inputEl, imgId) {
+            const img = document.getElementById(imgId);
+            if(inputEl.value) {
+                img.src = inputEl.value;
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        }
+
+        function updateMapPreview(iframeStr) {
+            const preview = document.getElementById('map-preview');
+            if(iframeStr.includes('<iframe')) {
+                preview.innerHTML = iframeStr;
+                const iframe = preview.querySelector('iframe');
+                if(iframe) { iframe.width = "100%"; iframe.height = "100%"; }
+            } else {
+                preview.innerHTML = "Invalid iframe code";
+            }
+        }
+
+        function updateDashboardStats() {
+            document.getElementById('stat-services').innerText = (DataManager.get('services') || []).length;
+            document.getElementById('stat-photos').innerText = (DataManager.get('gallery') || []).length;
+            document.getElementById('stat-enquiries').innerText = (DataManager.get('enquiries') || []).length;
+            
+            const meta = DataManager.get('_meta');
+            if(meta && meta.lastUpdated) {
+                document.getElementById('stat-last-update').innerText = new Date(meta.lastUpdated).toLocaleDateString();
+            }
+        }
+
+        /**
+         * EXPORT / IMPORT
+         */
+        function exportJSON() {
+            const dataStr = JSON.stringify(DataManager.data, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            const exportFileDefaultName = `AR_Timbers_Backup_${new Date().toISOString().split('T')[0]}.json`;
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+
+        function importJSON(event) {
+            const file = event.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if(parsed.businessInfo) { // Simple validation
+                        localStorage.setItem('siteData', JSON.stringify(parsed));
+                        alert('Data imported successfully! The panel will reload.');
+                        window.location.reload();
+                    } else {
+                        alert('Invalid backup file format.');
+                    }
+                } catch(err) {
+                    alert('Error parsing JSON file.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetData() {
+            if(confirm("DANGER: This will delete all customized data and reset to defaults. Are you absolutely sure?")) {
+                localStorage.removeItem('siteData');
+                window.location.reload();
+            }
+        }
+
+        /**
+         * APP INIT
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check Session
+            const isLoggedIn = sessionStorage.getItem('admin_logged_in') === 'true';
+            
+            if(isLoggedIn) {
+                initDashboard();
+            } else {
+                document.getElementById('login-screen').classList.remove('hidden');
+            }
+
+            // Login Logic (Password protected, hardcoded as requested)
+            // Note: Replace "password123" with the actual password provided by user or set a secure one.
+            // The prompt says: "Password field: [SET YOUR PASSWORD]"
+            const ADMIN_PASSWORD = "admin"; // Very simple for demo, user should change
+            document.getElementById('login-form').onsubmit = (e) => {
+                e.preventDefault();
+                const user = document.getElementById('login-user').value;
+                const pass = document.getElementById('login-pass').value;
+                if(user === 'admin' && pass === ADMIN_PASSWORD) {
+                    sessionStorage.setItem('admin_logged_in', 'true');
+                    initDashboard();
+                } else {
+                    document.getElementById('login-error').style.display = 'block';
+                }
+            };
+        });
+
+        function initDashboard() {
+            document.getElementById('login-screen').classList.add('hidden');
+            document.getElementById('admin-wrapper').classList.remove('hidden');
+            
+            DataManager.init();
+            buildSidebar();
+            
+            // Bind Forms
+            bindForm('form-business', 'businessInfo');
+            bindForm('form-hero', 'hero');
+            bindForm('form-contact', 'contact');
+            bindForm('form-social', 'social');
+            bindForm('form-seo', 'seo');
+            bindForm('form-settings', 'settings');
+
+            // Render Lists
+            ListManager.render('services');
+            ListManager.render('whyChooseUs');
+            ListManager.render('pricing');
+            ListManager.render('gallery');
+            ListManager.render('testimonials');
+            ListManager.render('team');
+            renderEnquiries();
+            updateDashboardStats();
+
+            // Default route
+            switchSection('dashboard');
+
+            // Map Preview init
+            updateMapPreview(DataManager.get('contact').mapIframe || '');
+
+            // Mobile menu toggles
+            document.getElementById('open-sidebar').onclick = () => document.getElementById('sidebar').classList.add('mobile-open');
+            document.getElementById('close-sidebar').onclick = () => document.getElementById('sidebar').classList.remove('mobile-open');
+
+            // Logout
+            document.getElementById('btn-logout').onclick = () => {
+                sessionStorage.removeItem('admin_logged_in');
+                window.location.reload();
+            };
+        }
+    </script>
+</body>
+</html>
