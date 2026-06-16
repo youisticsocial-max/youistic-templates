@@ -789,7 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Trigger Toast Notification
         triggerToast(
             "Enquiry Submitted Successfully", 
-            `Thank you ${nameVal}! Manish will contact you shortly on ${phoneVal}.`
+            `Thank you ${nameVal}! {{CLINIC_NAME}} will contact you shortly on ${phoneVal}.`
         );
     });
 
@@ -829,7 +829,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Trigger Toast
         triggerToast(
             "Valuation Request Submitted", 
-            `Manish will call you back with a price assessment for your property in ${locationVal}.`
+            `{{CLINIC_NAME}} will call you back with a price assessment for your property in ${locationVal}.`
         );
     });
 
@@ -839,7 +839,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const project = btn.getAttribute("data-project");
             
             // Prefill form message with brochure inquiry
-            document.getElementById("form-message").value = `Hi Manish, I want to download the official floor plan layout and pricing brochure for the new developer launch: "${project}". Please share it on WhatsApp.`;
+            document.getElementById("form-message").value = `Hi {{CLINIC_NAME}}, I want to download the official floor plan layout and pricing brochure for the new developer launch: "${project}". Please share it on WhatsApp.`;
             document.getElementById("form-purpose").value = "Buy";
             document.getElementById("form-type").value = project.toLowerCase().includes("villa") ? "Villa" : "Apartment";
             
