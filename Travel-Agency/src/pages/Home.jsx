@@ -395,14 +395,14 @@ export default function Home() {
                   <div className="contact-details-icon"><Phone size={18} /></div>
                   <div className="contact-details-text">
                     <strong>Phone Helpline (24/7)</strong>
-                    <span>+91 98765 43210</span>
+                    <span>+91 {{PHONE}}</span>
                   </div>
                 </li>
                 <li>
                   <div className="contact-details-icon"><Mail size={18} /></div>
                   <div className="contact-details-text">
                     <strong>Email Address</strong>
-                    <span>info@vibequestjourneys.com</span>
+                    <span>{{EMAIL}}</span>
                   </div>
                 </li>
                 <li>

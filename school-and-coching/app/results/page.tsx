@@ -55,7 +55,7 @@ export default function ResultsPage() {
         <div className="container">
           <div className="section-header">
             <span className="section-label">Our Toppers</span>
-            <h2 className="section-title">Glory of EduVision</h2>
+            <h2 className="section-title">Glory of {{CLINIC_NAME}}</h2>
             <p className="section-subtitle">
               Meet our leading toppers who turned aspiration into achievements. Filter by exam year.
             </p>

@@ -127,7 +127,7 @@ const Booking = () => {
 
               <div className="form-group">
                 <label>Email Address (Optional)</label>
-                <input type="email" name="email" placeholder="john@example.com" onChange={handleChange} />
+                <input type="email" name="email" placeholder="{{EMAIL}}" onChange={handleChange} />
               </div>
 
               <button type="submit" className="btn btn-primary submit-btn">Submit Enquiry</button>

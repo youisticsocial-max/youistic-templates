@@ -34,11 +34,11 @@ export default function Navigation() {
           <div className="top-bar-left">
             <div className="top-bar-item">
               <Phone size={12} className="logo-accent" />
-              <a href="tel:{{PHONE}}">+91 98765 43210</a>
+              <a href="tel:{{PHONE}}">+91 {{PHONE}}</a>
             </div>
             <div className="top-bar-item">
               <Mail size={12} className="logo-accent" />
-              <a href="mailto:info@vibequestjourneys.com">info@vibequestjourneys.com</a>
+              <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
             </div>
           </div>
           <div className="top-bar-right">

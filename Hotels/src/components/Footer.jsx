@@ -4,10 +4,10 @@ import './Footer.css';
 
 const Footer = () => {
   const [settings, setSettings] = useState({
-    hotelName: 'Imperial Polo Ground Haveli',
+    hotelName: '{{CLINIC_NAME}}',
     address: '19, Shanti Vihar, Panch Batti Circle, Airport Road, Air Force Area, {{ADDRESS}}',
-    phone: '+91 99296 79515',
-    email: 'imperialhotel@gmail.com',
+    phone: '+91 {{PHONE}}',
+    email: '{{EMAIL}}',
     facebook: '#',
     instagram: '#',
     twitter: '#'

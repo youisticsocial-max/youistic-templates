@@ -77,7 +77,7 @@ export default function ContactMap() {
               </div>
               <div className="contact-text-box">
                 <h3>Email Inquiries</h3>
-                <a href="mailto:info@drrajpurohitdental.com" className="contact-email-link">info@drrajpurohitdental.com</a>
+                <a href="mailto:{{EMAIL}}" className="contact-email-link">{{EMAIL}}</a>
               </div>
             </div>
           </div>

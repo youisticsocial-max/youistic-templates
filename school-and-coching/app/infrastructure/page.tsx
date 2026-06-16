@@ -36,7 +36,7 @@ export default function InfrastructurePage() {
                 {/* Photo placeholder with CSS pattern */}
                 <div className="facility-photo-placeholder">
                   <div className="photo-badge">{fac.icon}</div>
-                  <span>EduVision {fac.name} Facility</span>
+                  <span>{{CLINIC_NAME}} {fac.name} Facility</span>
                 </div>
                 <div className="facility-details">
                   <h3>{fac.name}</h3>

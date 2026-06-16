@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let msg = `*New Bulk Enquiry*\n\n*Name:* ${n}\n*Phone:* ${p}\n*Product:* ${pr}\n*Grade:* ${g}\n`;
             if (t) msg += `*Thickness:* ${t}\n`;
             msg += `*Quantity:* ${q}\n\nPlease provide trade pricing.`;
-            window.open(`https://wa.me/919829323339?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/91{{PHONE}}?text=${encodeURIComponent(msg)}`, '_blank');
         });
     }
 });

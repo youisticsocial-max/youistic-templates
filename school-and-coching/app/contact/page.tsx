@@ -64,7 +64,7 @@ export default function ContactPage() {
         <div className="container grid-2">
           <div className="map-area card animate-fade-left">
             <iframe
-              title="EduVision Academy Campus Location Map"
+              title="{{CLINIC_NAME}} Campus Location Map"
               src={siteConfig.contact.mapEmbed}
               className="embed-map-frame"
               allowFullScreen

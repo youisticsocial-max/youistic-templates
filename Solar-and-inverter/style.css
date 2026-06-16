@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MG Solar Solution - Cinematic Dark/Glass Stylesheet (Multi-page Edition)
+   {{CLINIC_NAME}} - Cinematic Dark/Glass Stylesheet (Multi-page Edition)
    ========================================================================== */
 
 /* Import Fonts */
@@ -11,7 +11,7 @@
   --color-primary-light: #0d1e2d;   /* Steel Sky Blue */
   --color-primary-dark: #020609;    /* Jet Space Blue */
   
-  --color-secondary: #ff9f1c;       /* Solar Sun Orange */
+  --color-secondary: {{PRIMARY_COLOR}};       /* Solar Sun Orange */
   --color-secondary-light: #ffb703;  /* Solar Gold */
   --color-accent: #2ec4b6;          /* Clean Teal */
   

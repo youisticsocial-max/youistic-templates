@@ -1,5 +1,5 @@
 /* --------------------------------------------------
-   Zainab Impex - Authentic Indian Handicrafts
+   {{CLINIC_NAME}} - Authentic Indian Handicrafts
    Jodhpur, Rajasthan
    Vanilla JavaScript Interactive Core
 -------------------------------------------------- */

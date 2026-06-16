@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - AR Timbers & Plywood</title>
+    <title>Admin Panel - {{CLINIC_NAME}}</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -459,7 +459,7 @@
     <div id="login-screen">
         <div class="login-card">
             <h2>Admin CMS</h2>
-            <p>AR Timbers & Plywood Control Panel</p>
+            <p>{{CLINIC_NAME}} Control Panel</p>
             <form id="login-form">
                 <div class="form-group" style="text-align: left;">
                     <label>Username</label>
@@ -481,7 +481,7 @@
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header flex justify-between items-center">
-                <h2>AR Timbers CMS</h2>
+                <h2>{{CLINIC_NAME}} CMS</h2>
                 <button class="menu-toggle" id="close-sidebar" style="color:white">&times;</button>
             </div>
             <nav class="sidebar-nav" id="sidebar-nav">
@@ -935,7 +935,7 @@
          * This acts as the schema for our site configuration.
          */
         const DEFAULT_DATA = {
-            businessInfo: { name: 'AR Timbers & Plywood', tagline: 'Strength in Every Sheet', owner: '', phone: '9829323339', whatsapp: '9829323339', email: '', gst: '08ABDPI0031P2ZR', address: 'Near Jivan Jyoti Hospital, Chopasni Road, Jwala Vihar', city: 'Jodhpur', pincode: '342008', hours: '9:00 AM - 8:00 PM', sundayHours: 'Closed', year: '', aboutShort: '', aboutLong: '' },
+            businessInfo: { name: '{{CLINIC_NAME}}', tagline: 'Strength in Every Sheet', owner: '', phone: '{{PHONE}}', whatsapp: '{{PHONE}}', email: '', gst: '08ABDPI0031P2ZR', address: '{{ADDRESS}}', city: 'Jodhpur', pincode: '342008', hours: '9:00 AM - 8:00 PM', sundayHours: 'Closed', year: '', aboutShort: '', aboutLong: '' },
             hero: { heading: 'Premium Plywood & Timber', subHeading: 'Wholesale & Retail', badge: '', cta1Text: 'Get Bulk Quote', cta1Link: '#quote', cta2Text: 'View Products', cta2Link: '#products', bgImage: 'https://images.unsplash.com/photo-1572089228965-fb18d4dfad80?ixlib=rb-4.0.3' },
             services: [ // "Product Categories"
                 { id: 1, name: 'Plywood (BWR, BWP, MR)', description: 'High grade commercial and marine plywood.', icon: '🪵', isActive: true },
@@ -954,8 +954,8 @@
                 { id: 1, date: new Date().toISOString(), name: 'John Doe', phone: '9999999999', service: 'Plywood', message: 'Need 100 sheets of 18mm.', status: 'New' }
             ],
             social: { facebook: '', instagram: '', youtube: '', google: '', twitter: '', linkedin: '', directory: '' },
-            seo: { title: 'AR Timbers & Plywood', description: '', keywords: 'plywood, timber, jodhpur', ogTitle: '', ogDescription: '', ogImage: '', gaId: '', gscCode: '' },
-            settings: { primaryColor: '#4a3320', secondaryColor: '#8b5a2b', logoUrl: '', faviconUrl: '', font: 'Outfit', copyright: '© 2026 AR Timbers & Plywood', maintenanceMode: false, announcementActive: false, announcementText: 'Welcome to AR Timbers' },
+            seo: { title: '{{CLINIC_NAME}}', description: '', keywords: 'plywood, timber, jodhpur', ogTitle: '', ogDescription: '', ogImage: '', gaId: '', gscCode: '' },
+            settings: { primaryColor: '#4a3320', secondaryColor: '#8b5a2b', logoUrl: '', faviconUrl: '', font: 'Outfit', copyright: '© 2026 {{CLINIC_NAME}}', maintenanceMode: false, announcementActive: false, announcementText: 'Welcome to {{CLINIC_NAME}}' },
             _meta: { lastUpdated: null }
         };
 

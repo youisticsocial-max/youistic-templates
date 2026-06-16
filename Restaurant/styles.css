@@ -3,7 +3,7 @@
 /* --- DESIGN SYSTEM & TOKENS --- */
 :root {
   /* Color Palette */
-  --color-primary: hsl(24, 95%, 48%);       /* Rich Saffron */
+  --color-primary: {{PRIMARY_COLOR}};       /* Rich Saffron */
   --color-primary-dark: hsl(24, 95%, 38%);  /* Deep Saffron */
   --color-secondary: hsl(20, 42%, 10%);    /* Dark Wood Brown */
   --color-secondary-light: hsl(20, 25%, 18%);/* Lighter Wood Brown */

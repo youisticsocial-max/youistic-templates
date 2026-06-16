@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "EduVision Academy",
+  name: "{{CLINIC_NAME}}",
   tagline: "Shaping Tomorrow's Leaders Today",
   type: "School & Coaching Institute",
   established: 2005,
   affiliatedBoard: "CBSE",
   affiliationNumber: "CBSE/AFF/2305/2005-06",
-  trustName: "EduVision Educational Trust",
+  trustName: "{{CLINIC_NAME}}",
   registrationNumber: "REG/EDU/2004/1287",
 
   principal: {
@@ -15,10 +15,10 @@ export const siteConfig = {
   },
 
   contact: {
-    phone: "+91 98765 43210",
-    whatsapp: "+91 98765 43210",
-    email: "info@eduvisionacademy.edu.in",
-    admissionEmail: "admissions@eduvisionacademy.edu.in",
+    phone: "+91 {{PHONE}}",
+    whatsapp: "+91 {{PHONE}}",
+    email: "{{EMAIL}}",
+    admissionEmail: "{{EMAIL}}",
     address:
       "123, Knowledge Park, Sector 15, Near Central Mall, Jaipur, Rajasthan - 302017",
     city: "Jaipur",
@@ -28,11 +28,11 @@ export const siteConfig = {
   },
 
   social: {
-    facebook: "https://facebook.com/eduvisionacademy",
-    instagram: "https://instagram.com/eduvisionacademy",
-    twitter: "https://twitter.com/eduvisionacademy",
-    youtube: "https://youtube.com/@eduvisionacademy",
-    linkedin: "https://linkedin.com/company/eduvisionacademy",
+    facebook: "https://facebook.com/{{CLINIC_NAME}}academy",
+    instagram: "https://instagram.com/{{CLINIC_NAME}}academy",
+    twitter: "https://twitter.com/{{CLINIC_NAME}}academy",
+    youtube: "https://youtube.com/@{{CLINIC_NAME}}academy",
+    linkedin: "https://linkedin.com/company/{{CLINIC_NAME}}academy",
   },
 
   admissionYear: "2025-26",

@@ -414,7 +414,7 @@ export default function Packages() {
                   <span style={{ fontSize: '3rem' }}>🎉</span>
                   <h3 style={{ color: '#166534', margin: '1rem 0' }}>Booking Request Received!</h3>
                   <p style={{ color: 'var(--text-muted)' }}>
-                    Thank you. A travel associate will connect on WhatsApp (+91 98765 43210) to finalize payment and dispatch flight tickets.
+                    Thank you. A travel associate will connect on WhatsApp (+91 {{PHONE}}) to finalize payment and dispatch flight tickets.
                   </p>
                 </div>
               ) : (
@@ -435,7 +435,7 @@ export default function Packages() {
                     <input 
                       type="tel" 
                       className="form-control" 
-                      placeholder="e.g. +91 98765 43210" 
+                      placeholder="e.g. +91 {{PHONE}}" 
                       value={bookingData.phone}
                       onChange={(e) => setBookingData({ ...bookingData, phone: e.target.value })}
                       required 

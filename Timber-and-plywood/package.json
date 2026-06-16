@@ -1,7 +1,7 @@
 {
   "name": "ar-timbers-website",
   "version": "1.0.0",
-  "description": "AR Timbers & Plywood Website",
+  "description": "{{CLINIC_NAME}} Website",
   "main": "index.html",
   "scripts": {
     "dev": "vite",

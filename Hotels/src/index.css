@@ -3,7 +3,7 @@
 :root {
   --color-cream: #FDFBF7;
   --color-cream-dark: #F5EFE6;
-  --color-gold: #C5A059;
+  --color-gold: {{PRIMARY_COLOR}};
   --color-gold-hover: #b08d4b;
   --color-charcoal: #2A2A2A;
   --color-charcoal-light: #4A4A4A;

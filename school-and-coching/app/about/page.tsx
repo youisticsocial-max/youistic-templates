@@ -33,7 +33,7 @@ export default function About() {
             <span className="section-label">Our Heritage</span>
             <h2 className="section-title">Nurturing Excellence Since {siteConfig.established}</h2>
             <p className="lead-paragraph">
-              EduVision Academy was founded with a vision to redefine classroom teaching and competitive exam mentoring.
+              {{CLINIC_NAME}} was founded with a vision to redefine classroom teaching and competitive exam mentoring.
             </p>
             <p className="body-paragraph">
               For over two decades, we have remained committed to providing student-centric schooling along with high-impact entrance test coaching. Our structured academic pathways ensure students balance standard boards successfully while preparing for challenging exams like IIT JEE and NEET.
@@ -119,7 +119,7 @@ export default function About() {
 
             <div className="principal-signature">
               <span className="sig-name">{siteConfig.principal.name}</span>
-              <span className="sig-title">Principal, EduVision Academy</span>
+              <span className="sig-title">Principal, {{CLINIC_NAME}}</span>
             </div>
           </div>
         </div>

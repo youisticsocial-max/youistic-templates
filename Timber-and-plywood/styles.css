@@ -1,4 +1,4 @@
-﻿:root{--dark:#0e0c0b;--dark2:#1a1715;--dark3:#2a2420;--cream:#f5f0ea;--cream2:#e8e0d5;--gold:#c9a96e;--gold-dim:rgba(201,169,110,0.15);--white:#fff;--muted:#9e9590;--radius:12px;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
+﻿:root{--dark:#0e0c0b;--dark2:#1a1715;--dark3:#2a2420;--cream:#f5f0ea;--cream2:#e8e0d5;--gold:{{PRIMARY_COLOR}};--gold-dim:rgba(201,169,110,0.15);--white:#fff;--muted:#9e9590;--radius:12px;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--dark);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}

@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
               <li>
                 <Mail size={18} />
-                <a href="mailto:info@drrajpurohitdental.com">info@drrajpurohitdental.com</a>
+                <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
               </li>
             </ul>
           </div>

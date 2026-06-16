@@ -9,11 +9,11 @@ const Admin = () => {
   // Data states
   const [bookings, setBookings] = useState([]);
   const [settings, setSettings] = useState({
-    hotelName: 'Imperial Polo Ground Haveli',
+    hotelName: '{{CLINIC_NAME}}',
     address: '19, Shanti Vihar, Panch Batti Circle, Airport Road, Air Force Area, {{ADDRESS}}',
-    phone: '+91 99296 79515',
-    email: 'imperialhotel@gmail.com',
-    whatsapp: '919929679515',
+    phone: '+91 {{PHONE}}',
+    email: '{{EMAIL}}',
+    whatsapp: '{{PHONE}}',
     facebook: '#',
     instagram: '#',
     twitter: '#',
@@ -146,7 +146,7 @@ const Admin = () => {
   return (
     <div className="admin-dashboard">
       <div className="admin-sidebar">
-        <h2>Imperial Admin</h2>
+        <h2>{{CLINIC_NAME}} Admin</h2>
         <ul>
           <li className={activeTab === 'bookings' ? 'active' : ''} onClick={() => setActiveTab('bookings')}>Manage Bookings</li>
           <li className={activeTab === 'settings' ? 'active' : ''} onClick={() => setActiveTab('settings')}>Site Settings</li>
@@ -228,7 +228,7 @@ const Admin = () => {
                 </div>
               </div>
               <div className="form-group">
-                <label>WhatsApp Number (include country code, e.g., 919929679515)</label>
+                <label>WhatsApp Number (include country code, e.g., {{PHONE}})</label>
                 <input type="text" name="whatsapp" value={settings.whatsapp || ''} onChange={handleSettingChange} />
               </div>
               

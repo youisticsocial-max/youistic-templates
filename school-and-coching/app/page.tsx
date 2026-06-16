@@ -87,8 +87,8 @@ export default function Home() {
           </div>
 
           <div className="about-text animate-fade-right">
-            <span className="section-label">Welcome To EduVision</span>
-            <h2 className="section-title">Our EduVision System Inspires You More</h2>
+            <span className="section-label">Welcome To {{CLINIC_NAME}}</span>
+            <h2 className="section-title">Our {{CLINIC_NAME}} System Inspires You More</h2>
             <p className="lead-paragraph">
               Founded in {siteConfig.established}, our academy is committed to providing a nurturing environment where students are inspired to achieve their full academic potential.
             </p>
@@ -112,7 +112,7 @@ export default function Home() {
         <div className="container">
           <div className="section-header">
             <span className="section-label">Key Features</span>
-            <h2 className="section-title">Why Choose EduVision?</h2>
+            <h2 className="section-title">Why Choose {{CLINIC_NAME}}?</h2>
             <p className="section-subtitle">
               We stand apart through our comprehensive student-care systems, modern campus facilities, and proven track record.
             </p>

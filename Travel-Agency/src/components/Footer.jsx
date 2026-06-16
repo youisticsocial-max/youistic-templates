@@ -79,7 +79,7 @@ export default function Footer() {
               </li>
               <li>
                 <Phone size={16} className="footer-contact-icon" />
-                <span>Helpline: +91 98765 43210 (24/7)</span>
+                <span>Helpline: +91 {{PHONE}} (24/7)</span>
               </li>
             </ul>
             

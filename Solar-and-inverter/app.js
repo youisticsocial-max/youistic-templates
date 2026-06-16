@@ -1,5 +1,5 @@
 /**
- * MG Solar Solution - Core Javascript Logic (Multi-page Edition)
+ * {{CLINIC_NAME}} - Core Javascript Logic (Multi-page Edition)
  * Handles interactive calculators, tab switching, form submissions, toasts, 3D tilts, and dynamic nav highlights.
  */
 

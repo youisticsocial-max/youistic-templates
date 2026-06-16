@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Ashapura Buildcon - Client-side Interactive Application Engine
+   {{CLINIC_NAME}} - Client-side Interactive Application Engine
    Contains: Property data, search & filtering, EMI calculations, modal control,
              testimonial carousels, and validation mechanisms.
    ========================================================================== */
@@ -624,9 +624,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const prop = propertiesData.find(p => p.id === id);
         if (!prop) return;
         
-        const text = `Hi Ashapura Buildcon, I am interested in the following property listing:\n\n*Listing:* ${prop.title}\n*Location:* ${prop.location}, Jodhpur\n*Price:* ${prop.price}\n*RERA:* ${prop.rera}\n\nPlease share more details and a location map. Thank you.`;
+        const text = `Hi {{CLINIC_NAME}}, I am interested in the following property listing:\n\n*Listing:* ${prop.title}\n*Location:* ${prop.location}, Jodhpur\n*Price:* ${prop.price}\n*RERA:* ${prop.rera}\n\nPlease share more details and a location map. Thank you.`;
         const encodedText = encodeURIComponent(text);
-        const url = `https://wa.me/919898585474?text=${encodedText}`;
+        const url = `https://wa.me/{{PHONE}}?text=${encodedText}`;
         window.open(url, "_blank");
     };
 

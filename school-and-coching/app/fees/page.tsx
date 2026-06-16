@@ -17,13 +17,13 @@ export default function FeesPage() {
     // Generate simple text blob as a brochure simulation
     const content = `
 =============================================
-         EDUVISION ACADEMY BROCHURE
+         {{CLINIC_NAME}} BROCHURE
 =============================================
 Affiliation Number: ${siteConfig.affiliationNumber}
 Tagline: ${siteConfig.tagline}
 Address: ${siteConfig.contact.address}
 
-Established in ${siteConfig.established}, EduVision Academy is a premium
+Established in ${siteConfig.established}, {{CLINIC_NAME}} is a premium
 educational institution providing high-standard schooling and coaching.
 
 ---------------------------------------------
@@ -45,7 +45,7 @@ Email: ${siteConfig.contact.email}
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "eduvision-brochure.txt";
+    link.download = "{{CLINIC_NAME}}-brochure.txt";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -171,7 +171,7 @@ Email: ${siteConfig.contact.email}
             <div className="scholar-apply-card card section-dark">
               <h3>Admission Entrance Test</h3>
               <p>
-                Our scholarship decisions are primarily based on the **EduVision National Entrance Test (ENET)** held in July every year.
+                Our scholarship decisions are primarily based on the **{{CLINIC_NAME}} National Entrance Test (ENET)** held in July every year.
               </p>
               <div className="test-highlights">
                 <div className="th-item">

@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------
-   Ashapura Buildcon - Custom Design System & Vanilla Stylesheet
+   {{CLINIC_NAME}} - Custom Design System & Vanilla Stylesheet
    Theme: Luxury Navy Blue (#0F172A), Gold (#D4AF37), and Clean Whites
    ------------------------------------------------------------- */
 
@@ -8,7 +8,7 @@
     --primary-dark: #0f172a;    /* Deep Navy */
     --primary-mid: #1e293b;     /* Slate Navy */
     --primary-light: #334155;   /* Light Slate */
-    --accent-gold: #c5a059;     /* Premium Gold */
+    --accent-gold: {{PRIMARY_COLOR}};     /* Premium Gold */
     --accent-gold-dark: #aa7c11;/* Dark Gold */
     --accent-gold-light: #f3e5ab;/* Champagne Gold */
     --bg-light: #f8fafc;        /* Soft White */

@@ -543,7 +543,7 @@ if (sendWaOrderBtn) {
     orderMsg += `Please verify this order and let me know the estimated delivery time.`;
     
     const encodedMsg = encodeURIComponent(orderMsg);
-    const waUrl = `https://wa.me/919876543210?text=${encodedMsg}`;
+    const waUrl = `https://wa.me/{{PHONE}}?text=${encodedMsg}`;
     
     // Open in new window
     window.open(waUrl, "_blank");
@@ -599,7 +599,7 @@ if (reservationForm) {
     doubleConfirmBtn.innerHTML = `<i class="fab fa-whatsapp"></i> Double Confirm on WhatsApp`;
     
     doubleConfirmBtn.addEventListener("click", () => {
-      window.open(`https://wa.me/919876543210?text=${encodeURIComponent(waMsg)}`, "_blank");
+      window.open(`https://wa.me/{{PHONE}}?text=${encodeURIComponent(waMsg)}`, "_blank");
     });
     
     const modalContent = successModal.querySelector(".modal-content");
@@ -689,7 +689,7 @@ if (cateringForm) {
     catWaBtn.innerHTML = `<i class="fab fa-whatsapp"></i> Chat Catering Manager`;
     
     catWaBtn.addEventListener("click", () => {
-      window.open(`https://wa.me/919876543210?text=${encodeURIComponent(waMsg)}`, "_blank");
+      window.open(`https://wa.me/{{PHONE}}?text=${encodeURIComponent(waMsg)}`, "_blank");
     });
     
     const modalContent = successModal.querySelector(".modal-content");

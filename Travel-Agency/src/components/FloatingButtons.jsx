@@ -26,7 +26,7 @@ export default function FloatingButtons() {
   };
 
   const openWhatsApp = () => {
-    const phone = '919876543210';
+    const phone = '{{PHONE}}';
     const message = encodeURIComponent("Hello {{CLINIC_NAME}}! I would like to plan a tour with you. Please connect me with a travel expert.");
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };

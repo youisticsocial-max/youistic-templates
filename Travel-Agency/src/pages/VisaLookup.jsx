@@ -275,7 +275,7 @@ export default function VisaLookup() {
             <div className="visa-cta-row">
               <button className="btn btn-primary" onClick={() => {
                 const msg = `Hi! I need help applying for a ${result.type} to ${selected}. Can you assist?`;
-                window.open(`https://wa.me/919876543210?text=${encodeURIComponent(msg)}`, '_blank');
+                window.open(`https://wa.me/{{PHONE}}?text=${encodeURIComponent(msg)}`, '_blank');
               }}>
                 📲 WhatsApp for Visa Assistance
               </button>

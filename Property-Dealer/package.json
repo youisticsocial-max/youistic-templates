@@ -1,7 +1,7 @@
 {
-  "name": "ashapura-buildcon",
+  "name": "{{CLINIC_NAME}}-buildcon",
   "version": "1.0.0",
-  "description": "Premium real estate portal for Ashapura Buildcon",
+  "description": "Premium real estate portal for {{CLINIC_NAME}}",
   "main": "index.html",
   "scripts": {
     "dev": "vite",

@@ -1,12 +1,12 @@
 /* --------------------------------------------------
-   Zainab Impex - Authentic Indian Handicrafts
+   {{CLINIC_NAME}} - Authentic Indian Handicrafts
    Jodhpur, Rajasthan
    Vanilla CSS Styling System (Saffron + Indigo + Cream)
 -------------------------------------------------- */
 
 /* 1. ROOT DESIGN TOKENS */
 :root {
-  --color-saffron: #D97706;       /* Warm Earthy Saffron */
+  --color-saffron: {{PRIMARY_COLOR}};       /* Warm Earthy Saffron */
   --color-saffron-light: #F59E0B; /* Bright Gold Saffron */
   --color-saffron-pale: #FEF3C7;  /* Soft Saffron Cream */
   --color-indigo-dark: #1E1B4B;   /* Deep Royal Indigo */

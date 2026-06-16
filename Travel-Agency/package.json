@@ -1,5 +1,5 @@
 {
-  "name": "vibequest-journeys",
+  "name": "{{CLINIC_NAME}}-journeys",
   "private": true,
   "version": "1.0.0",
   "type": "module",

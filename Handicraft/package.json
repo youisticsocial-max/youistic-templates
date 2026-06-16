@@ -1,7 +1,7 @@
 {
   "name": "zainab-impex-handicrafts",
   "version": "1.0.0",
-  "description": "Zainab Impex Jodhpur Handicrafts and Textiles Website",
+  "description": "{{CLINIC_NAME}} Jodhpur Handicrafts and Textiles Website",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 8080",
@@ -13,7 +13,7 @@
     "textiles",
     "artisan"
   ],
-  "author": "Zainab Impex",
+  "author": "{{CLINIC_NAME}}",
   "license": "ISC",
   "devDependencies": {
     "http-server": "^14.1.1"

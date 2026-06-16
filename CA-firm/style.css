@@ -9,7 +9,7 @@
     --primary-700: #334155; /* Slate 700 */
     
     --brand-blue-dark: #0f2d59; /* Custom Navy */
-    --brand-blue: #1e40af; /* Blue 800 */
+    --brand-blue: {{PRIMARY_COLOR}}; /* Blue 800 */
     --brand-blue-light: #3b82f6; /* Blue 500 */
     --brand-blue-bg: #eff6ff; /* Blue 50 */
     

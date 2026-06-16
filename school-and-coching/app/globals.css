@@ -1,5 +1,5 @@
 /* =============================================
-   EduVision Academy — Global Design System
+   {{CLINIC_NAME}} — Global Design System
    ============================================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
@@ -12,7 +12,7 @@
   --blue-300: #7899d3;
   --blue-400: #5b82ca;
   --blue-500: #3e6bc0;
-  --blue-600: #3860b5;
+  --blue-600: {{PRIMARY_COLOR}};
   --blue-700: #2f51a5;
   --blue-800: #1a3c8f;
   --blue-900: #0f2460;

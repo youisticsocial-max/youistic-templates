@@ -38,7 +38,7 @@ const Home = () => {
       <section className="hero" style={{ backgroundImage: `url(${settings.heroImage})` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content text-center">
-          <h1 className="hero-title">Imperial Polo Ground Haveli</h1>
+          <h1 className="hero-title">{{CLINIC_NAME}}</h1>
           <p className="hero-tagline">The standard of stay in Jodhpur</p>
           <div className="hero-buttons">
             <button className="btn btn-outline" onClick={handleBookNow}>Check Availability</button>
@@ -52,7 +52,7 @@ const Home = () => {
         <div className="container">
           <div className="intro-icon">⚘</div>
           <p className="intro-text text-center">
-            Welcome to the legendary Imperial Polo Ground Haveli. Surrounded by the pristine beauty of Jodhpur, our Haveli offers unique accommodations with laid-back luxury, gracious hospitality, and an unforgettable stay. Create memories for generations of travelers.
+            Welcome to the legendary {{CLINIC_NAME}}. Surrounded by the pristine beauty of Jodhpur, our Haveli offers unique accommodations with laid-back luxury, gracious hospitality, and an unforgettable stay. Create memories for generations of travelers.
           </p>
         </div>
       </section>

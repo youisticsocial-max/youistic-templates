@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -40,7 +40,7 @@
     <div class="announcement-content container">
       <span><i class="fa-solid fa-globe"></i> Global Export Quality • Handcrafted in Jodhpur</span>
       <div class="top-bar-right">
-        <a href="tel:{{PHONE}}" class="top-phone"><i class="fa-solid fa-phone"></i> +91 99999 88888</a>
+        <a href="tel:{{PHONE}}" class="top-phone"><i class="fa-solid fa-phone"></i> +91 {{PHONE}}</a>
         <div class="currency-toggle-wrapper">
           <span class="currency-label">Currency:</span>
           <button id="currency-toggle-btn" class="currency-btn" aria-label="Toggle currency">
@@ -167,14 +167,14 @@
       <div class="grid-layout speciality-grid">
         <div class="speciality-image-wrapper animate-on-scroll">
           <div class="pattern-overlay-block"></div>
-          <img src="{{LOGO_URL}}" alt="Indian Artisan hand-block printing textile in Jodhpur" class="speciality-image">
+          <img src="assets/heritage.png" alt="Indian Artisan hand-block printing textile in Jodhpur" class="speciality-image">
           <div class="floating-badge">
             <i class="fa-solid fa-award"></i>
             <span>Our Speciality:<br>Premium Textiles</span>
           </div>
         </div>
         <div class="speciality-content animate-on-scroll">
-          <span class="section-tag">ZAINAB SPECIALITY</span>
+          <span class="section-tag">{{CLINIC_NAME}} SPECIALITY</span>
           <h2 class="section-title">The Art of Handblock Printing & Fine Weaving</h2>
           <p class="section-desc">
             As Jodhpur's premier textile artisans, {{CLINIC_NAME}} specializes in preserving the intricate art of block-printing. Using traditional indigo, saffron, and organic earthen dyes, our artisans press hand-carved teakwood blocks onto premium cotton, linen, and silk.
@@ -370,7 +370,7 @@
         </div>
         <div class="heritage-visual animate-on-scroll">
           <div class="heritage-image-card">
-            <img src="{{LOGO_URL}}" alt="Showcase of Jodhpur wooden furniture and blue pottery" class="heritage-img-large">
+            <img src="assets/showcase.png" alt="Showcase of Jodhpur wooden furniture and blue pottery" class="heritage-img-large">
             <div class="heritage-quote">
               <p>"Our hands carry the patterns of our ancestors. Every print is a memory."</p>
               <span class="quote-author">— Ram Prasad, Master Printer</span>
@@ -473,7 +473,7 @@
   <section class="why-us-section" id="why-us">
     <div class="container">
       <div class="text-center mb-5 animate-on-scroll">
-        <span class="section-tag">ZAINAB GUARANTEE</span>
+        <span class="section-tag">{{CLINIC_NAME}} GUARANTEE</span>
         <h2 class="section-title">Why Buy From {{CLINIC_NAME}}?</h2>
         <p class="section-subtitle">Combining authenticity, reliability, and Jodhpur's finest craftsmanship</p>
       </div>
@@ -520,8 +520,8 @@
 
       <div class="gallery-grid animate-on-scroll">
         <!-- 8 Gallery Images with local generated and unsplash resources -->
-        <div class="gallery-item" data-src="{{LOGO_URL}}" data-title="Artisan block print tools & textiles flatlay" data-desc="A composite flatlay of hand-carved teakwood stamps and indigo dyed cotton prints at our Jodhpur textile facility.">
-          <img src="{{LOGO_URL}}" alt="Artisan print tools and indigo fabrics">
+        <div class="gallery-item" data-src="assets/showcase.png" data-title="Artisan block print tools & textiles flatlay" data-desc="A composite flatlay of hand-carved teakwood stamps and indigo dyed cotton prints at our Jodhpur textile facility.">
+          <img src="assets/showcase.png" alt="Artisan print tools and indigo fabrics">
           <div class="gallery-hover-overlay">
             <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
             <div class="gallery-meta">
@@ -531,8 +531,8 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-src="{{LOGO_URL}}" data-title="Manual block print stamping" data-desc="Master artisan applying direct indigo resist print block onto pure premium cotton sheeting by hand.">
-          <img src="{{LOGO_URL}}" alt="Artisan block printing cotton by hand">
+        <div class="gallery-item" data-src="assets/heritage.png" data-title="Manual block print stamping" data-desc="Master artisan applying direct indigo resist print block onto pure premium cotton sheeting by hand.">
+          <img src="assets/heritage.png" alt="Artisan block printing cotton by hand">
           <div class="gallery-hover-overlay">
             <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
             <div class="gallery-meta">
@@ -542,8 +542,8 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-src="{{LOGO_URL}}" data-title="Traditional sheesham furniture and blue pottery" data-desc="Finished rustic sheesham wood cabinets paired with classic hand-painted blue pottery decorative vessels.">
-          <img src="{{LOGO_URL}}" alt="Carved sheesham wood and pottery">
+        <div class="gallery-item" data-src="assets/showcase.png" data-title="Traditional sheesham furniture and blue pottery" data-desc="Finished rustic sheesham wood cabinets paired with classic hand-painted blue pottery decorative vessels.">
+          <img src="assets/showcase.png" alt="Carved sheesham wood and pottery">
           <div class="gallery-hover-overlay">
             <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
             <div class="gallery-meta">
@@ -615,7 +615,7 @@
         <div class="insta-icon"><i class="fa-brands fa-instagram"></i></div>
         <h3>Follow Our Daily Workshop Process</h3>
         <p>We regularly share behind-the-scenes block printing videos, woodcarving stories, and new item launches on our social feed.</p>
-        <a href="https://instagram.com" target="_blank" class="btn btn-secondary-outline mt-2"><i class="fa-brands fa-instagram"></i> Follow @ZainabImpexJodhpur</a>
+        <a href="https://instagram.com" target="_blank" class="btn btn-secondary-outline mt-2"><i class="fa-brands fa-instagram"></i> Follow @{{CLINIC_NAME}}</a>
       </div>
     </div>
   </section>
@@ -651,7 +651,7 @@
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
             <p class="testi-text">
-              "Ordering consolidated custom wood furniture and brass lamps was seamless. {{CLINIC_NAME}} coordinates all fumigation paperwork flawlessly. MOQ is highly achievable for growing shops. Highly recommend Zainab's textiles!"
+              "Ordering consolidated custom wood furniture and brass lamps was seamless. {{CLINIC_NAME}} coordinates all fumigation paperwork flawlessly. MOQ is highly achievable for growing shops. Highly recommend {{CLINIC_NAME}}'s textiles!"
             </p>
             <div class="testi-author">
               <span class="author-name">Liam Fletcher</span>
@@ -733,7 +733,7 @@
               </div>
               <div class="form-group">
                 <label for="form-contact">Phone or Email <span class="required">*</span></label>
-                <input type="text" id="form-contact" required placeholder="e.g. contact@email.com or +1 234...">
+                <input type="text" id="form-contact" required placeholder="e.g. {{EMAIL}} or +1 234...">
               </div>
             </div>
 
@@ -810,7 +810,7 @@
               <div class="c-method-icon"><i class="fa-solid fa-phone-volume"></i></div>
               <div class="c-method-text">
                 <h4>Direct Calling & Export Desk</h4>
-                <p><a href="tel:{{PHONE}}">+91 99999 88888</a> (Exporter Support Available 24/7)</p>
+                <p><a href="tel:{{PHONE}}">+91 {{PHONE}}</a> (Exporter Support Available 24/7)</p>
               </div>
             </div>
 
@@ -818,7 +818,7 @@
               <div class="c-method-icon"><i class="fa-brands fa-whatsapp-square"></i></div>
               <div class="c-method-text">
                 <h4>WhatsApp Support</h4>
-                <p><a href="https://wa.me/{{PHONE}}" target="_blank">Chat with us on +91 99999 88888</a> for instant pricing, photos, and order tracking.</p>
+                <p><a href="https://wa.me/{{PHONE}}" target="_blank">Chat with us on +91 {{PHONE}}</a> for instant pricing, photos, and order tracking.</p>
               </div>
             </div>
 
@@ -826,7 +826,7 @@
               <div class="c-method-icon"><i class="fa-solid fa-envelope"></i></div>
               <div class="c-method-text">
                 <h4>Official Email Address</h4>
-                <p><a href="mailto:info@zainabimpex.com">info@zainabimpex.com</a> / <a href="mailto:exports@zainabimpex.com">exports@zainabimpex.com</a></p>
+                <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a> / <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
               </div>
             </div>
           </div>
@@ -903,8 +903,8 @@
 
       <div class="footer-col contact-col">
         <h4>Contact Jodhpur</h4>
-        <p><i class="fa-solid fa-envelope"></i> info@zainabimpex.com</p>
-        <p><i class="fa-solid fa-phone"></i> +91 99999 88888</p>
+        <p><i class="fa-solid fa-envelope"></i> {{EMAIL}}</p>
+        <p><i class="fa-solid fa-phone"></i> +91 {{PHONE}}</p>
         <div class="footer-social-links">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

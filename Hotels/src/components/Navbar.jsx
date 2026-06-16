@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled || !isHomePage ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          IMPERIAL
+          {{CLINIC_NAME}}
         </Link>
         
         <div className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
