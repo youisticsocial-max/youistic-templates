@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | {{CLINIC_NAME}}</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media(max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 50vh;">
+        <img src="assets/salon-interior.jpg" alt="About Us" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 3rem;">Our Story</h1>
+            <p>The journey of passion, art, and timeless beauty.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <div class="about-grid">
+                <div data-aos="fade-right">
+                    <span class="section-subtitle">Welcome to {{CLINIC_NAME}}</span>
+                    <h2 class="section-title">Where Beauty Meets Artistry</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem;">Founded with a vision to redefine luxury beauty, {{CLINIC_NAME}} has grown into a premier destination for brides, beauty enthusiasts, and those seeking transformative experiences.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem;">Our team of internationally trained makeup artists, master hair stylists, and expert aestheticians work together to bring out your most confident self. We believe beauty is not just about looks; it's about how you feel.</p>
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> Award-Winning Makeup Artists</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> Premium Global Products</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-star" style="color: var(--primary-color); margin-right: 10px;"></i> Impeccable Hygiene Standards</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" style="position: relative;">
+                    <img src="assets/transformation.jpg" alt="Our Studio" style="border-radius: 12px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

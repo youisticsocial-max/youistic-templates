@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Studio | {{CLINIC_NAME}}</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .treatment-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary-color);
+            margin-bottom: 2rem;
+            transition: var(--transition-fast);
+        }
+        .treatment-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 50vh;">
+        <img src="assets/hair-styling.jpg" alt="Hair Studio" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 3rem;">Luxury Hair Studio</h1>
+            <p>Expert cuts, transformative color, and premium treatments.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-subtitle">Your Crowning Glory</span>
+                <h2 class="section-title">Hair Treatments & Styling</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-cut" style="color: var(--primary-color); margin-right: 10px;"></i> Styling & Cuts</h3>
+                    <p style="color: var(--text-muted);">From classic trims to avant-garde transformations, our stylists craft shapes that flatter your face and lifestyle.</p>
+                </div>
+                
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-palette" style="color: var(--primary-color); margin-right: 10px;"></i> Color Mastery</h3>
+                    <p style="color: var(--text-muted);">Balayage, Ombre, Highlights, and Global Coloring using premium, damage-free global brands.</p>
+                </div>
+                
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-spa" style="color: var(--primary-color); margin-right: 10px;"></i> Spa & Keratin</h3>
+                    <p style="color: var(--text-muted);">Restore shine and strength with intense conditioning, Keratin smoothing, and scalp therapies.</p>
+                </div>
+                
+                <div class="treatment-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-crown" style="color: var(--primary-color); margin-right: 10px;"></i> Bridal Updos</h3>
+                    <p style="color: var(--text-muted);">Intricate traditional braids, floral buns, and glamorous Hollywood waves for your special day.</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;" data-aos="fade-up">
+                <a href="contact.html" class="btn btn-primary">Book a Hair Consultation</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

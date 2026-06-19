@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal & Ideas - {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            text-align: center;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            padding-bottom: 100px;
+        }
+        
+        .blog-card {
+            background: var(--bg-gray);
+            border: 1px solid var(--grid-line);
+            transition: var(--transition-slow);
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+        .blog-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 2rem;
+        }
+        .blog-category {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .blog-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-excerpt {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .blog-readmore {
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .blog-readmore::after {
+            content: ' →';
+            transition: 0.3s;
+        }
+        .blog-card:hover .blog-readmore::after {
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html" class="active">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <span class="section-subtitle">Editorial</span>
+        <h1>Journal & Design Ideas</h1>
+        <p style="color:#ccc; max-width:600px; margin: 0 auto;">Insights on interior trends, modern architecture, and luxury living.</p>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="blog-grid">
+            <!-- Post 1 -->
+            <div class="blog-card reveal-up">
+                <img src="assets/luxury-living-room.jpg" alt="Interior Trends" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Interior Trends</span>
+                    <h3 class="blog-title">The Evolution of Minimalist Luxury in 2026</h3>
+                    <p class="blog-excerpt">Exploring how clean lines and warm textures are defining the new era of high-end residential spaces.</p>
+                    <a href="#" class="blog-readmore">Read Article</a>
+                </div>
+            </div>
+            <!-- Post 2 -->
+            <div class="blog-card reveal-up" style="transition-delay: 0.1s;">
+                <img src="assets/modern-bedroom.jpg" alt="Color Psychology" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Color Psychology</span>
+                    <h3 class="blog-title">Selecting Palettes for Personal Sanctuaries</h3>
+                    <p class="blog-excerpt">How to use deep hues and muted tones to create an atmosphere of tranquility in the master bedroom.</p>
+                    <a href="#" class="blog-readmore">Read Article</a>
+                </div>
+            </div>
+            <!-- Post 3 -->
+            <div class="blog-card reveal-up" style="transition-delay: 0.2s;">
+                <img src="assets/architecture-model.jpg" alt="Modern Architecture" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Architecture</span>
+                    <h3 class="blog-title">Sustainable Luxury: Integrating Nature</h3>
+                    <p class="blog-excerpt">Design strategies for bringing the outdoors in without compromising on elegant finishes.</p>
+                    <a href="#" class="blog-readmore">Read Article</a>
+                </div>
+            </div>
+            <!-- Post 4 -->
+            <div class="blog-card reveal-up">
+                <img src="assets/material-selection.jpg" alt="Materials" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Material Guide</span>
+                    <h3 class="blog-title">The Tactile Experience: Marble vs. Quartz</h3>
+                    <p class="blog-excerpt">A comprehensive guide on choosing the right surfaces for your high-end modular kitchen.</p>
+                    <a href="#" class="blog-readmore">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} - Premium Electronics Showroom</title>
+    <meta name="description" content="Experience Technology Like Never Before at {{CLINIC_NAME}}. Premium electronics, smart appliances, and modern gadgets.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-color: {{PRIMARY_COLOR}};
+        }
+    </style>
+    <script>
+        // CMS Token Resolvers for Local Development Preview
+        document.addEventListener("DOMContentLoaded", () => {
+            const root = document.documentElement;
+            const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
+            // If token is unresolved, inject a premium cyan color
+            if (primaryColor === '{{PRIMARY_COLOR}}' || primaryColor === '') {
+                root.style.setProperty('--primary-color', '#00e5ff');
+            }
+            
+            // Resolve broken logos
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.getAttribute('src') === '{{LOGO_URL}}') {
+                    img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Sony_logo.svg/512px-Sony_logo.svg.png';
+                    img.style.objectFit = 'contain';
+                }
+                
+                // Add robust fallbacks for products if local assets fail
+                img.addEventListener('error', function() {
+                    const fallbacks = {
+                        'tv': 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800&auto=format&fit=crop',
+                        'laptop': 'https://images.unsplash.com/photo-1531297172868-b7db8a01103c?q=80&w=800&auto=format&fit=crop',
+                        'mobile': 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop',
+                        'ac': 'https://images.unsplash.com/photo-1622353381483-34e85dc6b484?q=80&w=800&auto=format&fit=crop',
+                        'fridge': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
+                        'washing': 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop',
+                        'smartwatch': 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=800&auto=format&fit=crop'
+                    };
+                    for (const key in fallbacks) {
+                        if (this.src.includes(key) || this.alt.toLowerCase().includes(key)) {
+                            this.src = fallbacks[key];
+                            return;
+                        }
+                    }
+                    // Default fallback
+                    this.src = 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=800&auto=format&fit=crop';
+                });
+            });
+        });
+    </script>
+</head>
+<body class="light-theme">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#featured" class="nav-link">Featured</a>
+                <a href="#smart-home" class="nav-link">Smart Home</a>
+                <a href="#offers" class="nav-link">Offers</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#offers" class="btn btn-outline btn-glow">Latest Deals</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo">
+            <button class="close-menu-btn" id="closeMenuBtn"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="mobile-links">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#categories" class="mobile-link">Products</a>
+            <a href="#featured" class="mobile-link">Featured</a>
+            <a href="#smart-home" class="mobile-link">Smart Home</a>
+            <a href="#offers" class="mobile-link">Offers</a>
+            <a href="#about" class="mobile-link">About Showroom</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="tel:{{PHONE}}" class="btn btn-primary mt-4"><i class="ph ph-phone"></i> Call Now</a>
+        </div>
+    </div>
+
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg">
+                <img src="assets/hero-tech-showroom.jpg" alt="Showroom" class="parallax-bg">
+                <div class="hero-overlay"></div>
+                <div class="gradient-lights"></div>
+            </div>
+            <div class="container relative-container w-100">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-text">Experience Technology<br><span class="text-gradient">Like Never Before</span></h1>
+                    <p class="hero-subtitle animate-fade-up">Discover advanced electronics, smart appliances, and modern gadgets designed for your lifestyle at {{CLINIC_NAME}}.</p>
+                    <div class="hero-buttons animate-fade-up delay-1">
+                        <a href="#categories" class="btn btn-primary btn-lg">Explore Products <i class="ph ph-arrow-right"></i></a>
+                        <a href="#offers" class="btn btn-outline btn-lg">View Latest Offers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <p>Scroll to explore</p>
+            </div>
+            
+        </section>
+
+        <!-- Brand Experience Section -->
+        <section id="brands" class="brands-section">
+            <div class="brand-slider">
+                <div class="brand-track">
+                    <div class="brand-item"><h2>SONY</h2></div>
+                    <div class="brand-item"><h2>SAMSUNG</h2></div>
+                    <div class="brand-item"><h2>LG</h2></div>
+                    <div class="brand-item"><h2>APPLE</h2></div>
+                    <div class="brand-item"><h2>DELL</h2></div>
+                    <div class="brand-item"><h2>HP</h2></div>
+                    <div class="brand-item"><h2>BOSCH</h2></div>
+                    <div class="brand-item"><h2>PANASONIC</h2></div>
+                    <!-- Duplicate for seamless scroll -->
+                    <div class="brand-item"><h2>SONY</h2></div>
+                    <div class="brand-item"><h2>SAMSUNG</h2></div>
+                    <div class="brand-item"><h2>LG</h2></div>
+                    <div class="brand-item"><h2>APPLE</h2></div>
+                    <div class="brand-item"><h2>DELL</h2></div>
+                    <div class="brand-item"><h2>HP</h2></div>
+                    <div class="brand-item"><h2>BOSCH</h2></div>
+                    <div class="brand-item"><h2>PANASONIC</h2></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section id="categories" class="categories-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title">Shop by <span class="text-gradient">Category</span></h2>
+                    <p class="section-subtitle">Premium appliances and gadgets for every need.</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card reveal-on-scroll">
+                        <div class="cat-bg"></div>
+                        <div class="cat-content">
+                            <h3>Televisions</h3>
+                            <ul class="cat-list">
+                                <li>LED TV</li><li>OLED TV</li><li>4K Smart TV</li>
+                            </ul>
+                            <a href="#" class="cat-link">View All <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                        <div class="cat-img-wrapper">
+                            <img src="assets/smart-tv.png" class="cat-img tv-anim" alt="TV">
+                        </div>
+                    </div>
+                    
+                    <div class="category-card reveal-on-scroll delay-1">
+                        <div class="cat-bg"></div>
+                        <div class="cat-content">
+                            <h3>Air Conditioning</h3>
+                            <ul class="cat-list">
+                                <li>Inverter AC</li><li>Split AC</li><li>Window AC</li>
+                            </ul>
+                            <a href="#" class="cat-link">View All <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                        <div class="cat-img-wrapper">
+                            <div class="ac-airflow"></div>
+                            <img src="assets/inverter-ac.png" class="cat-img ac-anim" alt="AC">
+                        </div>
+                    </div>
+                    
+                    <div class="category-card reveal-on-scroll delay-2">
+                        <div class="cat-bg"></div>
+                        <div class="cat-content">
+                            <h3>Refrigeration</h3>
+                            <ul class="cat-list">
+                                <li>Double Door</li><li>Side-by-Side</li><li>Single Door</li>
+                            </ul>
+                            <a href="#" class="cat-link">View All <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                        <div class="cat-img-wrapper">
+                            <div class="frost-effect"></div>
+                            <img src="assets/refrigerator.png" class="cat-img fridge-anim" alt="Fridge">
+                        </div>
+                    </div>
+                    
+                    <div class="category-card reveal-on-scroll">
+                        <div class="cat-bg"></div>
+                        <div class="cat-content">
+                            <h3>Washing Solutions</h3>
+                            <ul class="cat-list">
+                                <li>Front Load</li><li>Top Load</li><li>Dryers</li>
+                            </ul>
+                            <a href="#" class="cat-link">View All <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                        <div class="cat-img-wrapper">
+                            <img src="assets/washing-machine.png" class="cat-img drum-anim" alt="Washing Machine">
+                        </div>
+                    </div>
+                    
+                    <div class="category-card reveal-on-scroll delay-1">
+                        <div class="cat-bg"></div>
+                        <div class="cat-content">
+                            <h3>Computing</h3>
+                            <ul class="cat-list">
+                                <li>Laptop</li><li>Desktop</li><li>Accessories</li>
+                            </ul>
+                            <a href="#" class="cat-link">View All <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                        <div class="cat-img-wrapper">
+                            <img src="assets/laptop.png" class="cat-img laptop-anim" alt="Laptop">
+                        </div>
+                    </div>
+                    
+                    <div class="category-card reveal-on-scroll delay-2">
+                        <div class="cat-bg"></div>
+                        <div class="cat-content">
+                            <h3>Mobiles & Wearables</h3>
+                            <ul class="cat-list">
+                                <li>Smartphones</li><li>Smart Watches</li><li>Earbuds</li>
+                            </ul>
+                            <a href="#" class="cat-link">View All <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                        <div class="cat-img-wrapper">
+                            <img src="assets/mobile-phone.png" class="cat-img mobile-anim" alt="Mobiles">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Carousel -->
+        <section id="featured" class="featured-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title">Featured <span class="text-gradient">Innovations</span></h2>
+                    <p class="section-subtitle">Top-rated electronics trusted by our customers.</p>
+                </div>
+                
+                <div class="product-carousel-wrapper reveal-on-scroll">
+                    <button class="carousel-btn prev-btn"><i class="ph ph-caret-left"></i></button>
+                    <div class="product-carousel" id="productCarousel">
+                        <!-- Product 1 -->
+                        <div class="product-card tilt-card" data-tilt>
+                            <div class="badges">
+                                <span class="badge offer">15% OFF</span>
+                                <span class="badge emi">EMI Available</span>
+                            </div>
+                            <div class="product-img-wrapper">
+                                <div class="product-glow"></div>
+                                <img src="assets/tv-oled.png" alt="OLED TV">
+                            </div>
+                            <div class="product-info">
+                                <div class="rating"><i class="ph-fill ph-star"></i> 4.9 (124)</div>
+                                <h3 class="product-name">Premium 65" OLED 4K Smart TV</h3>
+                                <div class="product-price">
+                                    <span class="current">₹1,45,000</span>
+                                    <span class="original">₹1,70,000</span>
+                                </div>
+                                <ul class="specs">
+                                    <li>Dolby Vision IQ</li>
+                                    <li>120Hz Refresh Rate</li>
+                                </ul>
+                                <div class="warranty-badge"><i class="ph ph-shield-check"></i> 2 Year Warranty</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-outline btn-icon quick-view-btn" title="Quick View"><i class="ph ph-eye"></i></button>
+                                    <button class="btn btn-primary btn-full inquiry-btn">Send Inquiry</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="product-card tilt-card" data-tilt>
+                            <div class="badges">
+                                <span class="badge new">NEW</span>
+                            </div>
+                            <div class="product-img-wrapper">
+                                <div class="product-glow"></div>
+                                <img src="assets/laptop.png" alt="Gaming Laptop">
+                            </div>
+                            <div class="product-info">
+                                <div class="rating"><i class="ph-fill ph-star"></i> 4.8 (89)</div>
+                                <h3 class="product-name">Pro Gaming RTX 4070 Laptop</h3>
+                                <div class="product-price">
+                                    <span class="current">₹1,85,000</span>
+                                </div>
+                                <ul class="specs">
+                                    <li>Intel Core i9 14th Gen</li>
+                                    <li>32GB DDR5, 1TB NVMe</li>
+                                </ul>
+                                <div class="warranty-badge"><i class="ph ph-shield-check"></i> 1 Year Warranty</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-outline btn-icon quick-view-btn" title="Quick View"><i class="ph ph-eye"></i></button>
+                                    <button class="btn btn-primary btn-full inquiry-btn">Send Inquiry</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card tilt-card" data-tilt>
+                            <div class="badges">
+                                <span class="badge energy">5 Star</span>
+                            </div>
+                            <div class="product-img-wrapper">
+                                <div class="product-glow"></div>
+                                <img src="assets/side-by-side-fridge.png" alt="Refrigerator">
+                            </div>
+                            <div class="product-info">
+                                <div class="rating"><i class="ph-fill ph-star"></i> 4.7 (210)</div>
+                                <h3 class="product-name">650L Side-by-Side Refrigerator</h3>
+                                <div class="product-price">
+                                    <span class="current">₹85,000</span>
+                                    <span class="original">₹95,000</span>
+                                </div>
+                                <ul class="specs">
+                                    <li>InstaView Door</li>
+                                    <li>Inverter Linear Compressor</li>
+                                </ul>
+                                <div class="warranty-badge"><i class="ph ph-shield-check"></i> 10 Year Compressor</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-outline btn-icon quick-view-btn" title="Quick View"><i class="ph ph-eye"></i></button>
+                                    <button class="btn btn-primary btn-full inquiry-btn">Send Inquiry</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card tilt-card" data-tilt>
+                            <div class="badges">
+                                <span class="badge emi">No Cost EMI</span>
+                            </div>
+                            <div class="product-img-wrapper">
+                                <div class="product-glow"></div>
+                                <img src="assets/inverter-ac.png" alt="Inverter AC">
+                            </div>
+                            <div class="product-info">
+                                <div class="rating"><i class="ph-fill ph-star"></i> 4.9 (340)</div>
+                                <h3 class="product-name">1.5 Ton 5 Star AI Convertible AC</h3>
+                                <div class="product-price">
+                                    <span class="current">₹42,500</span>
+                                </div>
+                                <ul class="specs">
+                                    <li>Wi-Fi Enabled</li>
+                                    <li>Twin Rotary Compressor</li>
+                                </ul>
+                                <div class="warranty-badge"><i class="ph ph-shield-check"></i> 5 Year PCB Warranty</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-outline btn-icon quick-view-btn" title="Quick View"><i class="ph ph-eye"></i></button>
+                                    <button class="btn btn-primary btn-full inquiry-btn">Send Inquiry</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn"><i class="ph ph-caret-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Home Experience -->
+        <section id="smart-home" class="smart-home-section">
+            <div class="smart-home-bg">
+                <img src="assets/smart-home.jpg" alt="Smart Home">
+                <div class="overlay-gradient"></div>
+            </div>
+            <div class="container relative-container">
+                <div class="smart-home-content reveal-on-scroll">
+                    <h2 class="section-title">The Connected <span class="text-gradient">Future</span></h2>
+                    <p class="mb-4">Experience seamless integration with our smart home solutions. Control your TV, AC, lighting, and security from a single device.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="icon-box"><i class="ph ph-house-line"></i></div>
+                            <div class="feature-text">
+                                <h4>Home Automation</h4>
+                                <span>Voice & App Control</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon-box"><i class="ph ph-shield-check"></i></div>
+                            <div class="feature-text">
+                                <h4>Smart Security</h4>
+                                <span>Cameras & Locks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg mt-4 btn-glow">Discover Smart Solutions</button>
+                </div>
+                
+                <!-- Interactive Hotspots -->
+                <div class="hotspots-container">
+                    <div class="hotspot hotspot-1" data-info="Smart AC Control">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-core"><i class="ph ph-wind"></i></div>
+                        <div class="hotspot-card">
+                            <h4>Smart AC</h4>
+                            <p>Control temperature via voice.</p>
+                        </div>
+                    </div>
+                    <div class="hotspot hotspot-2" data-info="Smart TV Hub">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-core"><i class="ph ph-television"></i></div>
+                        <div class="hotspot-card">
+                            <h4>Entertainment Hub</h4>
+                            <p>Centralized media control.</p>
+                        </div>
+                    </div>
+                    <div class="hotspot hotspot-3" data-info="Smart Lighting">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-core"><i class="ph ph-lightbulb"></i></div>
+                        <div class="hotspot-card">
+                            <h4>Ambient Lighting</h4>
+                            <p>RGB connected lights.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers & Deals -->
+        <section id="offers" class="offers-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Exclusive <span class="text-gradient">Deals</span></h2>
+                    <p class="section-subtitle">Unbeatable prices on premium technology.</p>
+                </div>
+                <div class="offers-grid reveal-on-scroll">
+                    <div class="offer-card festival-offer">
+                        <div class="offer-glow"></div>
+                        <div class="offer-content">
+                            <span class="offer-badge">Limited Time</span>
+                            <h3>Festival Mega Sale</h3>
+                            <p>Up to 40% OFF on all home appliances. Upgrade your home today.</p>
+                            <div class="countdown" id="countdownTimer">
+                                <div class="cd-item"><span class="days">00</span><small>Days</small></div>
+                                <div class="cd-item"><span class="hours">00</span><small>Hours</small></div>
+                                <div class="cd-item"><span class="mins">00</span><small>Mins</small></div>
+                                <div class="cd-item"><span class="secs">00</span><small>Secs</small></div>
+                            </div>
+                            <button class="btn btn-primary mt-4">Claim Offer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="offer-card exchange-offer">
+                        <div class="offer-content">
+                            <span class="offer-badge">Upgrade Now</span>
+                            <h3>Smart Exchange Program</h3>
+                            <p>Get up to ₹15,000 off when you exchange your old smartphone or laptop.</p>
+                            <ul class="offer-features">
+                                <li><i class="ph ph-check-circle"></i> Instant Value Evaluation</li>
+                                <li><i class="ph ph-check-circle"></i> Doorstep Pickup</li>
+                            </ul>
+                            <button class="btn btn-outline mt-4">Check Device Value</button>
+                        </div>
+                        <img src="assets/mobile-phone.png" alt="Exchange" class="offer-floating-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="about" class="why-us-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Why Choose <span class="text-gradient">{{CLINIC_NAME}}</span></h2>
+                    <p class="section-subtitle">Your trusted technology partner.</p>
+                </div>
+                <div class="trust-grid">
+                    <div class="trust-card reveal-on-scroll tilt-card" data-tilt>
+                        <div class="trust-icon"><i class="ph ph-certificate"></i></div>
+                        <h3>Genuine Products</h3>
+                        <p>100% authentic electronics sourced directly from certified brands.</p>
+                    </div>
+                    <div class="trust-card reveal-on-scroll tilt-card delay-1" data-tilt>
+                        <div class="trust-icon"><i class="ph ph-lightning"></i></div>
+                        <h3>Latest Technology</h3>
+                        <p>Experience the newest models and cutting-edge innovations first.</p>
+                    </div>
+                    <div class="trust-card reveal-on-scroll tilt-card delay-2" data-tilt>
+                        <div class="trust-icon"><i class="ph ph-users-three"></i></div>
+                        <h3>Expert Guidance</h3>
+                        <p>Professional recommendations tailored to your specific needs.</p>
+                    </div>
+                    <div class="trust-card reveal-on-scroll tilt-card" data-tilt>
+                        <div class="trust-icon"><i class="ph ph-wrench"></i></div>
+                        <h3>Installation Support</h3>
+                        <p>Complete setup and reliable after-sales service for all appliances.</p>
+                    </div>
+                    <div class="trust-card reveal-on-scroll tilt-card delay-1" data-tilt>
+                        <div class="trust-icon"><i class="ph ph-credit-card"></i></div>
+                        <h3>EMI & Offers</h3>
+                        <p>Flexible payment solutions and exciting cashback deals available.</p>
+                    </div>
+                    <div class="trust-card reveal-on-scroll tilt-card delay-2" data-tilt>
+                        <div class="trust-icon"><i class="ph ph-shield-plus"></i></div>
+                        <h3>Warranty Assistance</h3>
+                        <p>Dedicated support for claims and extended warranty plans.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Customer <span class="text-gradient">Experience</span></h2>
+                    <p class="section-subtitle">Don't just take our word for it.</p>
+                </div>
+                
+                <div class="testimonial-slider reveal-on-scroll">
+                    <div class="testi-track">
+                        <!-- Duplicated for infinite scroll -->
+                        <div class="testi-card glass-card">
+                            <div class="testi-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                            <p class="testi-text">"Amazing showroom experience! The staff guided me perfectly to choose the right OLED TV for my home theater setup. Installation was prompt."</p>
+                            <div class="testi-user">
+                                <div class="avatar">R</div>
+                                <div>
+                                    <h4>Rahul Verma</h4>
+                                    <span>Purchased: Sony OLED TV</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-card glass-card">
+                            <div class="testi-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                            <p class="testi-text">"Got an incredible exchange deal on my laptop. {{CLINIC_NAME}} offers the best tech collection and their EMI process is incredibly smooth."</p>
+                            <div class="testi-user">
+                                <div class="avatar">S</div>
+                                <div>
+                                    <h4>Sneha Patel</h4>
+                                    <span>Purchased: Gaming Laptop</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-card glass-card">
+                            <div class="testi-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                            <p class="testi-text">"Bought a smart AC. The smart home demonstration area was fantastic. Highly recommend visiting the showroom before buying anything online."</p>
+                            <div class="testi-user">
+                                <div class="avatar">A</div>
+                                <div>
+                                    <h4>Arjun Kapoor</h4>
+                                    <span>Purchased: Smart AC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicates -->
+                        <div class="testi-card glass-card">
+                            <div class="testi-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                            <p class="testi-text">"Amazing showroom experience! The staff guided me perfectly to choose the right OLED TV for my home theater setup. Installation was prompt."</p>
+                            <div class="testi-user">
+                                <div class="avatar">R</div>
+                                <div>
+                                    <h4>Rahul Verma</h4>
+                                    <span>Purchased: Sony OLED TV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Inquiry -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info reveal-on-scroll">
+                        <h2 class="section-title">Visit <span class="text-gradient">{{CLINIC_NAME}}</span></h2>
+                        <p class="mb-4">Experience our products firsthand. Drop by our premium showroom or schedule an expert consultation today.</p>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="ph ph-map-pin"></i></div>
+                                <div>
+                                    <h4>Store Address</h4>
+                                    <p>{{ADDRESS}}</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="ph ph-phone"></i></div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="ph ph-clock"></i></div>
+                                <div>
+                                    <h4>Opening Hours</h4>
+                                    <p>Mon - Sun: 10:00 AM - 9:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-container glass-card">
+                            <div class="map-placeholder">
+                                <i class="ph ph-map-trifold"></i>
+                                <span>Interactive Map Integration Area</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container glass-card reveal-on-scroll delay-1">
+                        <h3>Product Inquiry</h3>
+                        <p class="form-desc">Fill out the form below and our tech experts will get back to you shortly.</p>
+                        <form class="inquiry-form" id="inquiryForm">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" required placeholder="Enter your name">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" required placeholder="Enter mobile number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="Enter email address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Interested In</label>
+                                <select class="custom-select">
+                                    <option value="" disabled selected>Select Category</option>
+                                    <option>Televisions</option>
+                                    <option>Air Conditioning</option>
+                                    <option>Refrigerators</option>
+                                    <option>Washing Machines</option>
+                                    <option>Laptops & PCs</option>
+                                    <option>Mobiles & Wearables</option>
+                                    <option>Smart Home Solutions</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Budget Range</label>
+                                <div class="range-wrapper">
+                                    <input type="range" min="10000" max="500000" value="50000" class="styled-slider" id="budgetRange">
+                                    <div class="range-values">
+                                        <span>₹10K</span>
+                                        <span id="budgetValue" class="current-val">₹50,000</span>
+                                        <span>₹5L+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Inquire about EMI options
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Request Installation Service
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea rows="3" placeholder="Tell us more about what you're looking for..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg btn-glow">Send Inquiry <i class="ph ph-paper-plane-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-circuit-bg"></div>
+        <div class="container relative-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="footer-logo">
+                    <p class="footer-desc">The ultimate destination for premium electronics, smart home solutions, and cutting-edge appliances. Upgrading lifestyles through technology.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="#" class="social-btn"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" class="social-btn"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#" class="social-btn"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> Televisions</a></li>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> Air Conditioning</a></li>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> Refrigeration</a></li>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> Laptops</a></li>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> Smartphones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about"><i class="ph ph-caret-right"></i> About {{CLINIC_NAME}}</a></li>
+                        <li><a href="#offers"><i class="ph ph-caret-right"></i> Latest Offers</a></li>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> EMI Options</a></li>
+                        <li><a href="#"><i class="ph ph-caret-right"></i> Warranty Details</a></li>
+                        <li><a href="#contact"><i class="ph ph-caret-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="c-icon"><i class="ph ph-phone"></i></div>
+                            <a href="tel:{{PHONE}}">{{PHONE}}</a>
+                        </li>
+                        <li>
+                            <div class="c-icon"><i class="ph ph-map-pin"></i></div>
+                            <span>{{ADDRESS}}</span>
+                        </li>
+                    </ul>
+                    <div class="newsletter">
+                        <h5>Subscribe for Tech Updates</h5>
+                        <form class="news-form" onsubmit="event.preventDefault();">
+                            <input type="email" placeholder="Email address" required>
+                            <button type="submit"><i class="ph ph-paper-plane-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> {{CLINIC_NAME}}. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal Placeholder -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal-content glass-card">
+            <button class="close-modal" id="closeModal"><i class="ph ph-x"></i></button>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <!-- 360 viewer placeholder -->
+                    <div class="viewer-360-placeholder">
+                        <i class="ph ph-arrows-out-line-horizontal"></i>
+                        <span>Drag to rotate 360°</span>
+                        <img src="assets/laptop.png" alt="Product">
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <span class="badge new mb-2 d-inline-block">In Stock</span>
+                    <h3>Product Name Example</h3>
+                    <div class="product-price mb-3">
+                        <span class="current">₹XX,XXX</span>
+                    </div>
+                    <p class="mb-4">Brief description of the product highlighting the key features and technology used to make it premium.</p>
+                    <ul class="specs-list mb-4">
+                        <li><i class="ph ph-check text-primary"></i> Premium Build Quality</li>
+                        <li><i class="ph ph-check text-primary"></i> Advanced Features</li>
+                        <li><i class="ph ph-check text-primary"></i> 1 Year Warranty</li>
+                    </ul>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary btn-lg btn-block" onclick="document.getElementById('closeModal').click(); window.location.href='#contact'">Inquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

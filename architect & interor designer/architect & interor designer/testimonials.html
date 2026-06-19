@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            text-align: center;
+        }
+        
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .testimonial-card {
+            width: 450px;
+            background: var(--bg-glass);
+            border: 1px solid var(--grid-line);
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        .client-meta h4 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+        .client-meta p { font-size: 0.8rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 1px; }
+        
+        .rating { color: #f5c518; font-size: 1.2rem; margin-bottom: 1rem; }
+        .experience { font-style: italic; font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+
+        @media (max-width: 768px) {
+            .testimonial-card { width: 300px; padding: 2rem; }
+            .experience { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="testimonials.html" class="active">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <span class="section-subtitle">Client Voices</span>
+        <h1>What Our Clients Say</h1>
+        <p style="color:#ccc; max-width:600px; margin: 0 auto;">Experiences and stories from those who have entrusted us with their spaces.</p>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="carousel-container reveal-up">
+            <div class="carousel-track">
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <img src="assets/designer-team.jpg" alt="Client" class="client-img">
+                        <div class="client-meta">
+                            <h4>James Harrington</h4>
+                            <p>Luxury Villa Project</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="experience">"{{CLINIC_NAME}} transformed our vision into a breathtaking reality. Their attention to detail and ability to source the finest materials made the entire process seamless."</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <img src="assets/designer-team.jpg" alt="Client" class="client-img">
+                        <div class="client-meta">
+                            <h4>Elena Rostova</h4>
+                            <p>Apartment Renovation</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="experience">"The interior design team understood my aesthetic perfectly. The custom furniture and lighting selections created an atmosphere of pure elegance."</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <img src="assets/designer-team.jpg" alt="Client" class="client-img">
+                        <div class="client-meta">
+                            <h4>Michael Chen</h4>
+                            <p>Corporate Office Space</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="experience">"Professionalism at its peak. The turnkey execution meant we could focus on our business while they handled every aspect of the office build-out."</p>
+                </div>
+                <!-- Card 4 (Duplicate for smooth scroll) -->
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <img src="assets/designer-team.jpg" alt="Client" class="client-img">
+                        <div class="client-meta">
+                            <h4>James Harrington</h4>
+                            <p>Luxury Villa Project</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="experience">"{{CLINIC_NAME}} transformed our vision into a breathtaking reality. Their attention to detail and ability to source the finest materials made the entire process seamless."</p>
+                </div>
+                <!-- Card 5 (Duplicate for smooth scroll) -->
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <img src="assets/designer-team.jpg" alt="Client" class="client-img">
+                        <div class="client-meta">
+                            <h4>Elena Rostova</h4>
+                            <p>Apartment Renovation</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="experience">"The interior design team understood my aesthetic perfectly. The custom furniture and lighting selections created an atmosphere of pure elegance."</p>
+                </div>
+                 <!-- Card 6 (Duplicate for smooth scroll) -->
+                 <div class="testimonial-card">
+                    <div class="client-info">
+                        <img src="assets/designer-team.jpg" alt="Client" class="client-img">
+                        <div class="client-meta">
+                            <h4>Michael Chen</h4>
+                            <p>Corporate Office Space</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="experience">"Professionalism at its peak. The turnkey execution meant we could focus on our business while they handled every aspect of the office build-out."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

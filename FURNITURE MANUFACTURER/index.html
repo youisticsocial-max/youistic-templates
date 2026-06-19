@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover premium handcrafted furniture, bespoke custom designs, and luxury collections for modern living spaces at {{CLINIC_NAME}}.">
+    <title>{{CLINIC_NAME}} | Premium Handcrafted Luxury Furniture</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Inline style to initially set custom primary color if token is replaced, falls back to style.css root variables -->
+    <style>
+        :root {
+            --primary-color: {{PRIMARY_COLOR}};
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Background Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#/" class="logo-link">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img">
+                <span class="logo-text">{{CLINIC_NAME}}</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#/" class="nav-item active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#/collections" class="nav-item dropdown-toggle">Collections <i data-lucide="chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-grid">
+                                <div class="mega-col">
+                                    <h3>Living Room</h3>
+                                    <a href="#/collections?category=living&sub=sofas">Sofas & Sectionals</a>
+                                    <a href="#/collections?category=living&sub=lounge">Lounge Chairs</a>
+                                    <a href="#/collections?category=living&sub=tables">Coffee & Side Tables</a>
+                                    <a href="#/collections?category=living&sub=consoles">TV Units & Consoles</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h3>Dining & Bedroom</h3>
+                                    <a href="#/collections?category=dining&sub=sets">Dining Sets</a>
+                                    <a href="#/collections?category=bedroom&sub=beds">Luxury Beds</a>
+                                    <a href="#/collections?category=bedroom&sub=wardrobes">Modular Wardrobes</a>
+                                    <a href="#/collections?category=bedroom&sub=dressers">Dressers & Sideboards</a>
+                                </div>
+                                <div class="mega-col font-highlight">
+                                    <h3>Bespoke Customization</h3>
+                                    <p>Craft a unique piece tailored to your home layout, materials, and fabric tastes.</p>
+                                    <a href="#/custom" class="btn btn-outline btn-xs">Start Designing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#/custom" class="nav-item">Custom Design</a></li>
+                    <li><a href="#/process" class="nav-item">Our Craft</a></li>
+                    <li><a href="#/contact" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="search-btn" class="icon-btn" aria-label="Search Catalog"><i data-lucide="search"></i></button>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="#/" class="logo-link">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img">
+                <span class="logo-text">{{CLINIC_NAME}}</span>
+            </a>
+            <button id="mobile-nav-close" class="icon-btn" aria-label="Close Menu"><i data-lucide="x"></i></button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#/" class="mobile-nav-item active">Home</a></li>
+            <li><a href="#/about" class="mobile-nav-item">About Us</a></li>
+            <li><a href="#/collections" class="mobile-nav-item">Collections</a></li>
+            <li><a href="#/custom" class="mobile-nav-item">Custom Design</a></li>
+            <li><a href="#/process" class="mobile-nav-item">Our Craft</a></li>
+            <li><a href="#/gallery" class="mobile-nav-item">Gallery Showcase</a></li>
+            <li><a href="#/testimonials" class="mobile-nav-item">Testimonials</a></li>
+            <li><a href="#/blog" class="mobile-nav-item">Blog & Inspiration</a></li>
+            <li><a href="#/contact" class="mobile-nav-item">Contact Us</a></li>
+            <li><a href="#/admin" class="mobile-nav-item admin-link-item"><i data-lucide="lock"></i> Admin CMS</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="tel:{{PHONE}}" class="contact-link"><i data-lucide="phone"></i> {{PHONE}}</a>
+            <p class="address-text"><i data-lucide="map-pin"></i> {{ADDRESS}}</p>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Search premium sofas, dining tables, lounge chairs...">
+                <button id="search-close" class="icon-btn" aria-label="Close Search"><i data-lucide="x"></i></button>
+            </div>
+            <div class="search-results" id="search-results">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dynamic Application Content Container -->
+    <main id="app">
+        <!-- Rendered Dynamically by app.js depending on Route -->
+    </main>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="tel:{{PHONE}}" class="action-btn call-btn" title="Call Showroom">
+            <i data-lucide="phone"></i>
+        </a>
+        <a href="https://wa.me/{{PHONE}}" target="_blank" rel="noopener noreferrer" class="action-btn whatsapp-btn" title="WhatsApp Chat">
+            <i data-lucide="message-square"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-grain-bg"></div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#/" class="logo-link">
+                        <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img">
+                        <span class="logo-text">{{CLINIC_NAME}}</span>
+                    </a>
+                    <p class="brand-desc">Indulge in unmatched craftsmanship. We manufacture and curate luxurious, bespoke furniture collections that merge structural integrity, modern comfort, and timeless aesthetics.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-btn" aria-label="Pinterest"><i data-lucide="pinterest"></i></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Furniture Collections</h3>
+                    <ul>
+                        <li><a href="#/collections?category=living">Living Room Suite</a></li>
+                        <li><a href="#/collections?category=dining">Bespoke Dining</a></li>
+                        <li><a href="#/collections?category=bedroom">Chamber & Beds</a></li>
+                        <li><a href="#/collections?category=modular">Modular Wardrobes</a></li>
+                        <li><a href="#/collections?category=office">Premium Office</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#/about">Our Brand Story</a></li>
+                        <li><a href="#/process">Crafting Process</a></li>
+                        <li><a href="#/gallery">Showcase Gallery</a></li>
+                        <li><a href="#/testimonials">Customer Reviews</a></li>
+                        <li><a href="#/contact">Book a Designer Visit</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h3>Showroom & HQ</h3>
+                    <p class="contact-info-item"><i data-lucide="map-pin"></i> <span>{{ADDRESS}}</span></p>
+                    <p class="contact-info-item"><i data-lucide="phone"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p class="contact-info-item"><i data-lucide="mail"></i> <span>concierge@{{CLINIC_NAME}}.com</span></p>
+                    <div class="newsletter-box">
+                        <h4>Subscribe to Collection Catalogues</h4>
+                        <form id="newsletter-form" class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required aria-label="Newsletter Email">
+                            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe"><i data-lucide="send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year">2026</span> {{CLINIC_NAME}} Studio. All Rights Reserved. Crafted for elegant lifestyles.</p>
+                <div class="footer-meta-links">
+                    <a href="#/admin" class="admin-login-link"><i data-lucide="lock"></i> Admin Portal</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickview-modal">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="quickview-close" aria-label="Close Modal"><i data-lucide="x"></i></button>
+            <div class="quickview-grid" id="quickview-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="modal" id="lightbox-modal">
+        <div class="modal-content lightbox-content">
+            <button class="modal-close" id="lightbox-close" aria-label="Close Lightbox"><i data-lucide="x"></i></button>
+            <div class="lightbox-img-wrapper">
+                <img src="" alt="" id="lightbox-img">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core App Engine Script -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

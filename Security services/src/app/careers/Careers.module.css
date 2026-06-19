@@ -1,0 +1,269 @@
+.wrapper {
+  padding-top: 80px;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  padding: 120px 0 80px;
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-silver) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerDesc {
+  font-size: 16px;
+  color: var(--color-gray-300);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+}
+
+.openingsCol {}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.openingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.jobCard {
+  padding: 32px;
+}
+
+.jobLocation {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.jobTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.jobDesc {
+  font-size: 14px;
+  color: var(--color-gray-400);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.jobReqsBlock {}
+
+.reqsTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-gray-300);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.reqsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reqsList li {
+  font-size: 13px;
+  color: var(--color-gray-400);
+}
+
+/* Form Column */
+.formCol {}
+
+.formSticky {
+  position: sticky;
+  top: 120px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.formHeaderTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.formHeaderDesc {
+  font-size: 13px;
+  color: var(--color-gray-400);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-gray-300);
+}
+
+.input, .select, .textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.select option {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.fileInput {
+  color: var(--color-gray-400);
+  font-size: 13px;
+}
+
+.fileInput::file-selector-button {
+  background: var(--color-gray-800);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-right: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.fileInput::file-selector-button:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
+}
+
+.uploadingText {
+  font-size: 12px;
+  color: var(--color-gold);
+}
+
+.uploadedText {
+  font-size: 12px;
+  color: #2ecc71;
+}
+
+.uploadError {
+  font-size: 12px;
+  color: #e74c3c;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.successBox {
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-size: 13.5px;
+  color: #2ecc71;
+  line-height: 1.5;
+}
+
+.errorBox {
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-size: 13.5px;
+  color: #e74c3c;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .formSticky {
+    position: static;
+  }
+}

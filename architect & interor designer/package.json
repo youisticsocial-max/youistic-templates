@@ -1,0 +1,13 @@
+{
+  "name": "architect-interior-designer-template",
+  "version": "1.0.0",
+  "description": "Luxury Architecture & Interior Design Template",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

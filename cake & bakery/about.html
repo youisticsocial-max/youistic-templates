@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(45,35,35,0.6), rgba(45,35,35,0.6)), url('assets/bakery-interior.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 4px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left { left: 0; }
+        .right { left: 50%; }
+        
+        .left::after { right: -10px; }
+        .right::after { left: -10px; }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background: var(--surface-solid);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container navbar-container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About Us</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="custom-cakes.html" class="nav-link">Custom Cakes</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Order Now</a>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="about-hero">
+        <div class="container reveal">
+            <h1 class="hero-title">Our Story</h1>
+            <p class="hero-subtitle">The passion and philosophy behind {{CLINIC_NAME}}.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="reveal">
+                    <h2 class="section-title">The Art of Baking</h2>
+                    <p>At {{CLINIC_NAME}}, we believe that a cake is more than just a dessert; it's a centerpiece of celebration, a symbol of happiness, and an edible work of art.</p>
+                    <p>Our journey started with a simple philosophy: use only the finest ingredients, bake with love, and craft designs that leave a lasting impression. Every slice tells a story of our dedication to craftsmanship and flavor.</p>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <img src="assets/chef-making-cake.jpg" alt="Chef making a cake" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);" onerror="this.src='https://images.unsplash.com/photo-1556217646-601e3b5e43a9?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baking Journey Timeline -->
+    <section class="section-padding" style="background-color: var(--surface-dark);">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Our Baking Journey</h2>
+                <p class="section-subtitle">How we create magic in our kitchen.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h3>1. Premium Ingredients</h3>
+                        <p>We source the finest Belgian chocolate, Madagascar vanilla, and fresh local fruits.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <h3>2. Fresh Dough & Batter</h3>
+                        <p>Prepared daily in small batches to ensure maximum freshness and moisture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h3>3. Precision Baking</h3>
+                        <p>Baked to perfection in our state-of-the-art ovens by artisan bakers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <h3>4. Artistic Decoration</h3>
+                        <p>Hand-piped frosting, delicate sugar flowers, and custom artwork.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h3>5. Safe Packaging</h3>
+                        <p>Carefully boxed in luxury packaging to ensure it reaches your celebration safely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 {{CLINIC_NAME}}. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

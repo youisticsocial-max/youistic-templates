@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover premium lighting designs, smart electrical solutions, and trusted products for luxury homes and commercial spaces at {{CLINIC_NAME}}.">
+    <title>{{CLINIC_NAME}} | Premium Lighting & Electrical Experience Center</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Ambient Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#/" class="logo-link">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img">
+                <span class="logo-text">{{CLINIC_NAME}}</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#/" class="nav-item active">Home</a></li>
+                    <li><a href="#/about" class="nav-item">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#/lighting" class="nav-item dropdown-toggle">Lighting <i data-lucide="chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-grid">
+                                <div class="mega-col">
+                                    <h3>Decorative Lighting</h3>
+                                    <a href="#/lighting?category=decorative&sub=chandeliers">Chandeliers</a>
+                                    <a href="#/lighting?category=decorative&sub=pendants">Pendant Lights</a>
+                                    <a href="#/lighting?category=decorative&sub=walls">Wall Lights</a>
+                                    <a href="#/lighting?category=decorative&sub=tables">Table Lamps</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h3>LED & Commercial</h3>
+                                    <a href="#/lighting?category=commercial&sub=led-panels">LED Panels</a>
+                                    <a href="#/lighting?category=commercial&sub=spots">Spot Lights</a>
+                                    <a href="#/lighting?category=commercial&sub=tracks">Track Lights</a>
+                                    <a href="#/lighting?category=commercial&sub=industrial">Industrial Lights</a>
+                                </div>
+                                <div class="mega-col font-highlight">
+                                    <h3>Experience Center</h3>
+                                    <p>Discover our designer chandeliers and interactive home automation showrooms.</p>
+                                    <a href="#/contact" class="btn btn-outline btn-xs">Schedule Visit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#/electrical" class="nav-item dropdown-toggle">Electrical <i data-lucide="chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-grid">
+                                <div class="mega-col">
+                                    <h3>Switches & Accessories</h3>
+                                    <a href="#/electrical?category=switches&sub=modular">Modular Switches</a>
+                                    <a href="#/electrical?category=switches&sub=boards">Switchboards</a>
+                                    <a href="#/electrical?category=switches&sub=sockets">Sockets & Sockets</a>
+                                    <a href="#/electrical?category=switches&sub=regulators">Regulators</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h3>Cables & Protection</h3>
+                                    <a href="#/electrical?category=cables&sub=wiring">House Wiring</a>
+                                    <a href="#/electrical?category=cables&sub=power">Power Cables</a>
+                                    <a href="#/electrical?category=protection&sub=mcbs">MCBs & DBs</a>
+                                    <a href="#/electrical?category=protection&sub=boards">Distribution Boards</a>
+                                </div>
+                                <div class="mega-col font-highlight">
+                                    <h3>Safety Standards</h3>
+                                    <p>Fire-retardant cables and high-performance protection systems certified for safety.</p>
+                                    <a href="#/electrical" class="btn btn-outline btn-xs">View Catalog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#/smart-solutions" class="nav-item">Smart Home</a></li>
+                    <li><a href="#/gallery" class="nav-item">Gallery</a></li>
+                    <li><a href="#/blog" class="nav-item">Blog</a></li>
+                    <li><a href="#/testimonials" class="nav-item">Reviews</a></li>
+                    <li><a href="#/contact" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="search-btn" class="icon-btn" aria-label="Search"><i data-lucide="search"></i></button>
+                <a href="#/contact" class="btn btn-primary nav-cta">Get Consultation</a>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="#/" class="logo-link">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img">
+                <span class="logo-text">{{CLINIC_NAME}}</span>
+            </a>
+            <button id="mobile-nav-close" class="icon-btn"><i data-lucide="x"></i></button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#/" class="mobile-nav-item active">Home</a></li>
+            <li><a href="#/about" class="mobile-nav-item">About Us</a></li>
+            <li><a href="#/lighting" class="mobile-nav-item">Lighting Collections</a></li>
+            <li><a href="#/electrical" class="mobile-nav-item">Electrical Products</a></li>
+            <li><a href="#/smart-solutions" class="mobile-nav-item">Smart Home Solutions</a></li>
+            <li><a href="#/gallery" class="mobile-nav-item">Projects & Gallery</a></li>
+            <li><a href="#/blog" class="mobile-nav-item">Blog & Inspiration</a></li>
+            <li><a href="#/testimonials" class="mobile-nav-item">Testimonials</a></li>
+            <li><a href="#/contact" class="mobile-nav-item">Contact Us</a></li>
+            <li><a href="#/admin" class="mobile-nav-item admin-link-item"><i data-lucide="lock"></i> Admin CMS</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="tel:{{PHONE}}" class="contact-link"><i data-lucide="phone"></i> {{PHONE}}</a>
+            <p class="address-text"><i data-lucide="map-pin"></i> {{ADDRESS}}</p>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Search decorative lighting, switches, cables...">
+                <button id="search-close" class="icon-btn"><i data-lucide="x"></i></button>
+            </div>
+            <div class="search-results" id="search-results">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dynamic Application Content Container -->
+    <main id="app">
+        <!-- Rendered Dynamically by app.js depending on Route -->
+    </main>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="tel:{{PHONE}}" class="action-btn call-btn" title="Call Now">
+            <i data-lucide="phone"></i>
+        </a>
+        <a href="https://wa.me/{{PHONE}}" target="_blank" rel="noopener noreferrer" class="action-btn whatsapp-btn" title="WhatsApp Inquiry">
+            <i data-lucide="message-square"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-circuit-bg"></div>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#/" class="logo-link">
+                        <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img">
+                        <span class="logo-text">{{CLINIC_NAME}}</span>
+                    </a>
+                    <p class="brand-desc">A premium luxury showroom and electrical store. Experience state-of-the-art designer lights, modular smart solutions, and trusted electrical accessories under one roof.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-btn"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-btn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-btn"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Collections</h3>
+                    <ul>
+                        <li><a href="#/lighting?category=decorative">Decorative Lighting</a></li>
+                        <li><a href="#/lighting?category=commercial">LED & Commercial</a></li>
+                        <li><a href="#/smart-solutions">Smart Home Systems</a></li>
+                        <li><a href="#/electrical?category=switches">Modular Switches</a></li>
+                        <li><a href="#/electrical?category=cables">Cables & Wires</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#/about">Our Journey</a></li>
+                        <li><a href="#/gallery">Featured Projects</a></li>
+                        <li><a href="#/blog">Design Blog</a></li>
+                        <li><a href="#/testimonials">Customer Reviews</a></li>
+                        <li><a href="#/contact">Book Showroom Visit</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h3>Experience Center</h3>
+                    <p class="contact-info-item"><i data-lucide="map-pin"></i> <span>{{ADDRESS}}</span></p>
+                    <p class="contact-info-item"><i data-lucide="phone"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p class="contact-info-item"><i data-lucide="mail"></i> <span>info@{{CLINIC_NAME}}.com</span></p>
+                    <div class="newsletter-box">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form id="newsletter-form" class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary btn-sm"><i data-lucide="send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 {{CLINIC_NAME}} Luxury Experience Center. All Rights Reserved. Designed for Luxury Lifestyles.</p>
+                <div class="footer-meta-links">
+                    <a href="#/admin" class="admin-login-link"><i data-lucide="lock"></i> Admin Portal</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickview-modal">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="quickview-close"><i data-lucide="x"></i></button>
+            <div class="quickview-grid" id="quickview-body">
+                <!-- Rendered dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="modal" id="lightbox-modal">
+        <div class="modal-content lightbox-content">
+            <button class="modal-close" id="lightbox-close"><i data-lucide="x"></i></button>
+            <div class="lightbox-img-wrapper">
+                <img src="" alt="" id="lightbox-img">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses — {{CLINIC_NAME}}</title>
+    <meta name="description" content="Explore our diverse range of creative courses including music, dance, and visual arts at {{CLINIC_NAME}}">
+    <link rel="icon" type="image/png" href="{{LOGO_URL}}">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="page-transition"></div>
+
+<!-- NAV -->
+<nav class="navbar" id="main-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img"></a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="courses.html" class="nav-link active">Courses</a></li>
+            <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Book A Free Trial</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <h1>Our <span class="text-primary">Programs</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="separator">›</span><span class="current">Courses</span></div>
+</section>
+
+<!-- Courses Section -->
+<section class="section">
+    <div class="container">
+        <!-- Music Section -->
+        <div class="section-header reveal" id="music" style="margin-top:0;">
+            <span class="section-badge">🎵 Music Academy</span>
+            <h2>Vocal & Instrumental</h2>
+        </div>
+        <div class="courses-grid stagger-children" style="margin-bottom:var(--space-5xl);">
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/singing-class.jpg" alt="Vocal Training" loading="lazy">
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎤</div>
+                    <h4>Vocal Training</h4>
+                    <p>Classical ragas, light vocal, Bollywood melodies, and western vocal coaching.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/guitar-class.jpg" alt="Guitar Classes" loading="lazy">
+                    <span class="course-level">Beginner to Pro</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎸</div>
+                    <h4>Guitar Classes</h4>
+                    <p>Acoustic and electric guitar. Learn chords, fingerpicking, and composition.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/piano-class.jpg" alt="Piano & Keyboard" loading="lazy">
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎹</div>
+                    <h4>Piano & Keyboard</h4>
+                    <p>Structured piano lessons from basics to advanced performance techniques.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dance Section -->
+        <div class="section-header reveal" id="dance">
+            <span class="section-badge">💃 Dance Studio</span>
+            <h2>Classical & Contemporary</h2>
+        </div>
+        <div class="courses-grid stagger-children" style="margin-bottom:var(--space-5xl);">
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/classical-dance.jpg" alt="Classical Dance" loading="lazy">
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🩰</div>
+                    <h4>Classical Dance</h4>
+                    <p>Bharatanatyam and Kathak with traditionally trained gurus.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/hero-music-dance.jpg" alt="Bollywood Dance" loading="lazy">
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🌟</div>
+                    <h4>Bollywood Dance</h4>
+                    <p>Energetic Bollywood choreography for fitness and stage performances.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Art Section -->
+        <div class="section-header reveal" id="art">
+            <span class="section-badge">🎨 Visual Arts</span>
+            <h2>Painting & Creativity</h2>
+        </div>
+        <div class="courses-grid stagger-children">
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/painting-class.jpg" alt="Painting Classes" loading="lazy">
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🖌️</div>
+                    <h4>Painting & Drawing</h4>
+                    <p>Sketching, watercolor, acrylics, and oil painting techniques.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card reveal">
+                <div class="course-card-img">
+                    <img src="assets/painting-class.jpg" alt="Kids Art" loading="lazy" style="filter: hue-rotate(90deg);">
+                    <span class="course-level">Kids Only</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎈</div>
+                    <h4>Kids Creative Workshops</h4>
+                    <p>Fun and engaging art and craft activities designed specifically for young minds.</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-art"></div>
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+        <div class="footer-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img"><p>{{CLINIC_NAME}} is a premier creative academy.</p></div>
+        <div class="footer-col"><h5>Contact Us</h5>
+            <div class="footer-contact-item"><div class="footer-contact-icon">📍</div><p>{{ADDRESS}}</p></div>
+            <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><p><a href="tel:{{PHONE}}">{{PHONE}}</a></p></div></div>
+    </div></div></div>
+    <div class="container"><div class="footer-bottom"><p>© 2024 {{CLINIC_NAME}}. All rights reserved.</p></div></div>
+</footer>
+
+<div class="floating-buttons">
+    <a href="tel:{{PHONE}}" class="float-btn float-btn-call" aria-label="Call">📞</a>
+    <a href="https://wa.me/{{PHONE}}" class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp">💬</a>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

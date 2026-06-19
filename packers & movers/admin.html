@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics CMS Dashboard | {{CLINIC_NAME}}</title>
+    
+    <!-- CDNs: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Admin Page CSS -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-cubes"></i>
+            <span>Logistics CMS</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item active" data-target="panel-dashboard">
+                <a href="#"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+            </li>
+            <li class="sidebar-menu-item" data-target="panel-quotes">
+                <a href="#"><i class="fas fa-file-invoice-dollar"></i> <span>Quotes & Inquiries</span></a>
+            </li>
+            <li class="sidebar-menu-item" data-target="panel-services">
+                <a href="#"><i class="fas fa-boxes"></i> <span>Manage Services</span></a>
+            </li>
+            <li class="sidebar-menu-item" data-target="panel-fleet">
+                <a href="#"><i class="fas fa-truck"></i> <span>Fleet Management</span></a>
+            </li>
+            <li class="sidebar-menu-item" data-target="panel-content">
+                <a href="#"><i class="fas fa-edit"></i> <span>Content & SEO</span></a>
+            </li>
+            <li class="sidebar-menu-item" data-target="panel-media">
+                <a href="#"><i class="fas fa-images"></i> <span>Media Library</span></a>
+            </li>
+            <li class="sidebar-menu-item" data-target="panel-logs">
+                <a href="#"><i class="fas fa-shield-alt"></i> <span>Activity Logs</span></a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div>Logged in as: <strong>Admin</strong></div>
+            <div style="font-size:0.75rem; margin-top:0.25rem;">Template CRM v1.0</div>
+        </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT AREA -->
+    <main class="main-content">
+        
+        <!-- Header Panel -->
+        <header class="header-panel">
+            <div class="header-title">
+                <h1 id="cms-main-title">Logistics Management Dashboard</h1>
+                <p>Manage shipment requests, fleet availability, service pricing, and content properties for <strong>{{CLINIC_NAME}}</strong>.</p>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <div style="font-size:0.9rem;">
+                    <div style="font-weight:700;">Site Administrator</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted);">Master Role</div>
+                </div>
+                <a href="index.html" class="btn-admin btn-admin-secondary" style="padding:0.4rem 0.8rem; font-size:0.8rem;" title="Go to Website Preview" target="_blank"><i class="fas fa-external-link-alt"></i> Preview</a>
+            </div>
+        </header>
+
+        <!-- STATS COUNTER GRID -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Total Inquiries</h3>
+                    <div class="stat-value" id="stat-total-quotes">-</div>
+                </div>
+                <div class="stat-icon"><i class="fas fa-file-signature"></i></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Pending Actions</h3>
+                    <div class="stat-value" id="stat-pending-quotes">-</div>
+                </div>
+                <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Active Fleet</h3>
+                    <div class="stat-value" id="stat-active-fleet">-</div>
+                </div>
+                <div class="stat-icon"><i class="fas fa-truck-moving"></i></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Active Services</h3>
+                    <div class="stat-value" id="stat-total-services">-</div>
+                </div>
+                <div class="stat-icon"><i class="fas fa-network-wired"></i></div>
+            </div>
+        </section>
+
+        <!-- CMS SECTIONS (TAB TOGGLED) -->
+
+        <!-- 1. DASHBOARD OVERVIEW -->
+        <div class="cms-section active" id="panel-dashboard">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Website Traffic & Analytics Summary</h2>
+                    <span style="font-size:0.85rem; color:var(--text-muted);"><i class="fas fa-sync-alt"></i> Live Counter</span>
+                </div>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:2rem; text-align:center; padding:1rem 0;">
+                    <div>
+                        <div style="font-size:2.2rem; font-weight:700; color:var(--primary-color);">14,285</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; margin-top:0.25rem;">Total Visitors</div>
+                    </div>
+                    <div>
+                        <div style="font-size:2.2rem; font-weight:700; color:var(--accent-green);">86.4%</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; margin-top:0.25rem;">Conversion Rate</div>
+                    </div>
+                    <div>
+                        <div style="font-size:2.2rem; font-weight:700; color:var(--accent-purple);">18 Secs</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; margin-top:0.25rem;">Server Response Time</div>
+                    </div>
+                    <div>
+                        <div style="font-size:2.2rem; font-weight:700; color:var(--accent-orange);">48 Min</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; margin-top:0.25rem;">Avg Call Response</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2>Recent Quote Requests</h2>
+                    <a href="#" class="btn-admin btn-admin-secondary" onclick="document.querySelector('[data-target=panel-quotes]').click()"><i class="fas fa-list"></i> See All</a>
+                </div>
+                <div style="font-size:0.9rem; color:var(--text-muted);">
+                    Navigate to the "Quotes & Inquiries" tab in the sidebar to review detailed shipping manifests, manage process statuses, and export database tables.
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. QUOTES & INQUIRY CRM -->
+        <div class="cms-section" id="panel-quotes">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Customer Quotations & Relocation Inquiries</h2>
+                    <div style="display:flex; gap:0.5rem;">
+                        <button class="btn-admin btn-admin-secondary" onclick="adminCMS.exportInquiriesCSV()"><i class="fas fa-file-export"></i> Export CSV</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Inquiry ID</th>
+                                <th>Customer Details</th>
+                                <th>Route & Type</th>
+                                <th>Timeline</th>
+                                <th>Current Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inquiries-tbody">
+                            <!-- JS populated rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SERVICES CMS -->
+        <div class="cms-section" id="panel-services">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Active Service Catalog</h2>
+                    <button class="btn-admin btn-admin-primary" onclick="adminCMS.openAddServiceModal()"><i class="fas fa-plus"></i> Create Service</button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>Service Title</th>
+                                <th>Category</th>
+                                <th>Description Summary</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="services-list-tbody">
+                            <!-- JS loaded rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. FLEET CMS -->
+        <div class="cms-section" id="panel-fleet">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Logistics Carrier Fleet</h2>
+                    <button class="btn-admin btn-admin-primary" onclick="adminCMS.openAddFleetModal()"><i class="fas fa-plus"></i> Add Vehicle</button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Vehicle Name</th>
+                                <th>Carrier Type</th>
+                                <th>Weight Capacity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fleet-list-tbody">
+                            <!-- JS loaded rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. CONTENT MANAGEMENT & THEME SETTINGS -->
+        <div class="cms-section" id="panel-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Homepage Banner Settings</h2>
+                </div>
+                <form id="form-edit-settings" class="admin-form">
+                    <div class="form-group">
+                        <label for="set-hero-headline">Hero Title Headline</label>
+                        <input type="text" id="set-hero-headline" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="set-hero-subheading">Hero Description Subtitle</label>
+                        <textarea id="set-hero-subheading" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn-admin btn-admin-primary"><i class="fas fa-save"></i> Save Headline Changes</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2>Theme Palette & Developer Settings</h2>
+                </div>
+                <div class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>White-Label Primary Color Token</label>
+                            <div style="display:flex; gap:1rem; align-items:center;">
+                                <div style="width:40px; height:40px; border-radius:6px; border:1px solid var(--border-color); background-color:var(--primary-color);"></div>
+                                <span style="font-family:monospace; font-size:1rem;">{{PRIMARY_COLOR}}</span>
+                            </div>
+                            <span style="font-size:0.8rem; color:var(--text-muted); margin-top:0.25rem;">Note: This color value represents the dynamic layout placeholder replaced automatically by the system compiler.</span>
+                        </div>
+                        
+                        <div class="form-group" style="justify-content:flex-end;">
+                            <button class="btn-admin btn-admin-secondary" id="btn-reset-db" style="background:#fef2f2; color:#ef4444; border-color:#fca5a5; width:max-content;"><i class="fas fa-trash-restore"></i> Reset Template Database</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. MEDIA LIBRARY -->
+        <div class="cms-section" id="panel-media">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Template Media Assets</h2>
+                    <span style="font-size:0.85rem; color:var(--text-muted);"><i class="fas fa-info-circle"></i> Local Repository</span>
+                </div>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="assets/hero-truck.jpg" alt="Hero Truck">
+                        <div class="media-item-name">hero-truck.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/house-shifting.jpg" alt="House Shifting">
+                        <div class="media-item-name">house-shifting.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/office-moving.jpg" alt="Office Shifting">
+                        <div class="media-item-name">office-moving.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/loading-team.jpg" alt="Loading Team">
+                        <div class="media-item-name">loading-team.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/transport-fleet.jpg" alt="Transport Fleet">
+                        <div class="media-item-name">transport-fleet.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/warehouse.jpg" alt="Warehouse depot">
+                        <div class="media-item-name">warehouse.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/cargo-delivery.jpg" alt="Cargo Deliveries">
+                        <div class="media-item-name">cargo-delivery.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/packing-material.jpg" alt="Packing Boxes">
+                        <div class="media-item-name">packing-material.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/logistics-center.jpg" alt="Logistics Center">
+                        <div class="media-item-name">logistics-center.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/truck-driver.jpg" alt="Driver profile">
+                        <div class="media-item-name">truck-driver.jpg</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. SECURITY LOGS -->
+        <div class="cms-section" id="panel-logs">
+            <div class="card">
+                <div class="card-header">
+                    <h2>CMS Security Audits & Access Logs</h2>
+                    <span style="font-size:0.85rem; color:var(--text-muted);"><i class="fas fa-lock"></i> Protected View</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>System User</th>
+                                <th>Activity Event</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logs-tbody">
+                            <!-- JS loaded rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MODAL 1: ADD SERVICE -->
+    <div class="modal" id="add-service-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="adminCMS.closeAddServiceModal()">&times;</button>
+            <h2 style="font-family:'Outfit',sans-serif; margin-bottom:1.5rem;"><i class="fas fa-boxes" style="color:var(--primary-color);"></i> Create New Service</h2>
+            <form id="form-add-service" class="admin-form">
+                <div class="form-group">
+                    <label for="ser-title">Service Name</label>
+                    <input type="text" id="ser-title" class="form-control" placeholder="e.g. Pet Relocation Shifting" required>
+                </div>
+                <div class="form-group">
+                    <label for="ser-cat">Category Class</label>
+                    <select id="ser-cat" class="form-control" required>
+                        <option value="relocation">Relocation Services</option>
+                        <option value="transport">Transportation & Fleet</option>
+                        <option value="logistics">Logistics & Storage</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ser-icon">Icon Class (FontAwesome name)</label>
+                    <input type="text" id="ser-icon" class="form-control" placeholder="e.g. fa-dog, fa-truck-monster" required>
+                </div>
+                <div class="form-group">
+                    <label for="ser-desc">Detailed Description</label>
+                    <textarea id="ser-desc" class="form-control" rows="3" placeholder="Provide details of safety pack, custom equipment, prices etc..." required></textarea>
+                </div>
+                <button type="submit" class="btn-admin btn-admin-primary" style="justify-content:center; padding:0.8rem;">Publish Service <i class="fas fa-upload"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: ADD VEHICLE -->
+    <div class="modal" id="add-fleet-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="adminCMS.closeAddFleetModal()">&times;</button>
+            <h2 style="font-family:'Outfit',sans-serif; margin-bottom:1.5rem;"><i class="fas fa-truck" style="color:var(--primary-color);"></i> Add Fleet Vehicle</h2>
+            <form id="form-add-fleet" class="admin-form">
+                <div class="form-group">
+                    <label for="flt-name">Vehicle Model / Fleet Name</label>
+                    <input type="text" id="flt-name" class="form-control" placeholder="e.g. Chota Hathi Mini Truck" required>
+                </div>
+                <div class="form-group">
+                    <label for="flt-type">Carrier Category</label>
+                    <select id="flt-type" class="form-control" required>
+                        <option value="Mini Truck">Mini Truck</option>
+                        <option value="Container Vehicle">Container Vehicle</option>
+                        <option value="Truck Fleet">Truck Fleet</option>
+                        <option value="Specialized Carrier">Specialized Carrier</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flt-capacity">Payload Capacity (Tons)</label>
+                    <input type="text" id="flt-capacity" class="form-control" placeholder="e.g. 2.5 Tons" required>
+                </div>
+                <div class="form-group">
+                    <label for="flt-use">Best Suit Case Description</label>
+                    <textarea id="flt-use" class="form-control" rows="2" placeholder="Describe when to use (e.g. local shifting, 1 BHK moves)..." required></textarea>
+                </div>
+                <button type="submit" class="btn-admin btn-admin-primary" style="justify-content:center; padding:0.8rem;">Register Vehicle <i class="fas fa-check"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin dashboard controller -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

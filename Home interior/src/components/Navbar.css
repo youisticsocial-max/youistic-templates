@@ -1,0 +1,133 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-md) 0;
+}
+
+.navbar.transparent {
+  background: transparent;
+  color: #fff;
+}
+
+.navbar.solid {
+  background: var(--surface-color);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-sm) 0;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.transparent .brand-logo img {
+  filter: brightness(0) invert(1);
+}
+
+.mobile-toggle {
+  display: none;
+  color: inherit;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.action-btn {
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+.action-btn:hover {
+  color: var(--primary-color);
+}
+
+.mobile-nav-header {
+  display: none;
+}
+
+.mobile-overlay {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .desktop-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--surface-color);
+    color: var(--text-primary);
+    padding: var(--spacing-lg);
+    transition: left var(--transition-normal);
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  .desktop-nav.mobile-open {
+    left: 0;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .mobile-nav-header .brand-logo img {
+    filter: none; /* Always normal in mobile menu */
+  }
+
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem 0;
+            background: var(--surface-dark);
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--surface-solid);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more:hover {
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container navbar-container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="custom-cakes.html" class="nav-link">Custom Cakes</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="hero-title" style="color: var(--text-color); font-size: 3.5rem;">Sweet Journal</h1>
+            <p class="section-subtitle">Recipes, baking tips, and behind the scenes from our kitchen.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <div class="blog-card reveal">
+                    <img src="assets/chocolate-drip.jpg" alt="Chocolate tempering" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop'">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Oct 15, 2024</span>
+                            <span><i class="far fa-folder"></i> Tips</span>
+                        </div>
+                        <h3 class="blog-title">The Art of Tempering Chocolate</h3>
+                        <p class="blog-excerpt">Discover the secrets behind perfectly glossy, snappy chocolate decorations for your homemade desserts.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" style="transition-delay: 0.1s;">
+                    <img src="assets/cake-decoration.jpg" alt="Cake decorating" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1556217646-601e3b5e43a9?q=80&w=800&auto=format&fit=crop'">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Sep 28, 2024</span>
+                            <span><i class="far fa-folder"></i> Behind the Scenes</span>
+                        </div>
+                        <h3 class="blog-title">A Day in the Life of a Pastry Chef</h3>
+                        <p class="blog-excerpt">Step into our kitchen at 4 AM to see how we prepare the fresh daily batches of artisan breads and pastries.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card reveal" style="transition-delay: 0.2s;">
+                    <img src="assets/macaron.jpg" alt="Macarons" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1569864358642-9d1684040f43?q=80&w=800&auto=format&fit=crop'">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Sep 10, 2024</span>
+                            <span><i class="far fa-folder"></i> Recipes</span>
+                        </div>
+                        <h3 class="blog-title">Foolproof French Macarons</h3>
+                        <p class="blog-excerpt">Our simplified recipe for achieving the perfect 'feet' and smooth shells for French macarons at home.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 {{CLINIC_NAME}}. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

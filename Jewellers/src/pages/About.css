@@ -1,0 +1,106 @@
+/* About Page */
+.about-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-hero-image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  margin-top: 100px;
+}
+
+.about-hero-content h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-xl {
+  gap: var(--space-xl);
+}
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.text-secondary { color: var(--text-secondary); }
+.text-sm { font-size: 0.9rem; }
+.bg-surface { background-color: var(--surface-color); }
+
+.image-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  height: 600px;
+}
+
+.custom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  color: var(--text-secondary);
+}
+
+.custom-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.team-image-container {
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grayscale-hover {
+  filter: grayscale(100%);
+  transition: var(--transition-smooth);
+}
+
+.team-member:hover .grayscale-hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .gap-xl { gap: var(--space-lg); }
+  .image-card { height: 400px; }
+  .order-1 { order: 1; }
+  .order-2 { order: 2; }
+}

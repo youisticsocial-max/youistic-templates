@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | {{CLINIC_NAME}}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: {{PRIMARY_COLOR}};
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f1f5f9;
+            --sidebar-bg: #0f172a;
+            --sidebar-hover: #1e293b;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background-color: var(--sidebar-bg);
+            color: white;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sidebar-header img {
+            height: 32px;
+            filter: brightness(0) invert(1);
+        }
+
+        .nav-item {
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: var(--sidebar-hover);
+            color: white;
+            border-left-color: var(--primary-color);
+        }
+
+        .nav-title {
+            padding: 1.5rem 1.5rem 0.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            min-height: 100vh;
+        }
+
+        .topbar {
+            height: 70px;
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .content-area {
+            padding: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: color-mix(in srgb, var(--primary-color) 15%, white);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-details p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Tables & Lists */
+        .panel {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .badge-pending { background: #fef3c7; color: #d97706; }
+        .badge-processing { background: #e0f2fe; color: #0284c7; }
+        .badge-completed { background: #dcfce7; color: #16a34a; }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-primary { background: var(--primary-color); color: white; }
+        .btn-outline { border: 1px solid var(--border-color); background: transparent; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+        </div>
+        
+        <div class="nav-title">Main</div>
+        <a href="#" class="nav-item active"><i class="fas fa-home w-5"></i> Dashboard</a>
+        
+        <div class="nav-title">Store Management</div>
+        <a href="#" class="nav-item"><i class="fas fa-shopping-cart w-5"></i> Orders <span style="margin-left:auto; background:var(--primary-color); padding: 2px 6px; border-radius: 10px; font-size: 0.7rem;">12</span></a>
+        <a href="#" class="nav-item"><i class="fas fa-boxes w-5"></i> Products</a>
+        <a href="#" class="nav-item"><i class="fas fa-tags w-5"></i> Categories</a>
+        <a href="#" class="nav-item"><i class="fas fa-file-prescription w-5"></i> Prescriptions</a>
+        
+        <div class="nav-title">CMS & Content</div>
+        <a href="#" class="nav-item"><i class="fas fa-images w-5"></i> Gallery / Media</a>
+        <a href="#" class="nav-item"><i class="fas fa-bullhorn w-5"></i> Offers & Banners</a>
+        <a href="#" class="nav-item"><i class="fas fa-file-alt w-5"></i> Pages & Content</a>
+        
+        <div class="nav-title">Settings</div>
+        <a href="#" class="nav-item"><i class="fas fa-cog w-5"></i> Store Settings</a>
+        <a href="#" class="nav-item"><i class="fas fa-paint-brush w-5"></i> Theme Customization</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h2 style="font-size: 1.25rem;">Pharmacy Dashboard</h2>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="btn btn-outline"><i class="fas fa-bell"></i></button>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                        A
+                    </div>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="stat-details">
+                        <h3>24</h3>
+                        <p>New Orders Today</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #16a34a; background: #dcfce7;"><i class="fas fa-file-prescription"></i></div>
+                    <div class="stat-details">
+                        <h3>8</h3>
+                        <p>Prescriptions to Review</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #8b5cf6; background: #ede9fe;"><i class="fas fa-boxes"></i></div>
+                    <div class="stat-details">
+                        <h3>1,420</h3>
+                        <p>Total Products</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #f59e0b; background: #fef3c7;"><i class="fas fa-users"></i></div>
+                    <div class="stat-details">
+                        <h3>142</h3>
+                        <p>Website Visitors Today</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Recent Orders & Inquiries</h3>
+                    <button class="btn btn-primary">View All</button>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-8923</td>
+                                <td>John Doe<br><small class="text-light">+1 234 567 890</small></td>
+                                <td>Prescription Upload</td>
+                                <td>Today, 10:23 AM</td>
+                                <td><span class="badge badge-pending">New Inquiry</span></td>
+                                <td><button class="btn btn-outline" style="padding: 0.25rem 0.5rem;"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8922</td>
+                                <td>Sarah Smith<br><small class="text-light">+1 987 654 321</small></td>
+                                <td>Medicine Request</td>
+                                <td>Today, 09:15 AM</td>
+                                <td><span class="badge badge-processing">Processing</span></td>
+                                <td><button class="btn btn-outline" style="padding: 0.25rem 0.5rem;"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8921</td>
+                                <td>Mike Johnson<br><small class="text-light">+1 555 123 456</small></td>
+                                <td>General Order</td>
+                                <td>Yesterday</td>
+                                <td><span class="badge badge-completed">Delivered</span></td>
+                                <td><button class="btn btn-outline" style="padding: 0.25rem 0.5rem;"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Low Stock Alert</h3>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <ul style="list-style: none;">
+                            <li style="display: flex; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
+                                <div>
+                                    <h4 style="margin-bottom: 0.25rem;">Daily Multivitamins</h4>
+                                    <span class="text-light" style="font-size: 0.85rem;">SKU: VIT-001</span>
+                                </div>
+                                <span style="color: var(--danger-color); font-weight: 600;">5 left</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
+                                <div>
+                                    <h4 style="margin-bottom: 0.25rem;">Digital Thermometer</h4>
+                                    <span class="text-light" style="font-size: 0.85rem;">SKU: MED-042</span>
+                                </div>
+                                <span style="color: var(--danger-color); font-weight: 600;">2 left</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Quick Links</h3>
+                    </div>
+                    <div style="padding: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <button class="btn btn-outline" style="flex: 1; min-width: 150px; text-align: left;"><i class="fas fa-plus"></i> Add Product</button>
+                        <button class="btn btn-outline" style="flex: 1; min-width: 150px; text-align: left;"><i class="fas fa-image"></i> Update Hero Banner</button>
+                        <button class="btn btn-outline" style="flex: 1; min-width: 150px; text-align: left;"><i class="fas fa-cog"></i> Change Contact Info</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

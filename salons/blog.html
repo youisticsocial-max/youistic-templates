@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Blog & Tips | {{CLINIC_NAME}}</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .blog-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast);
+        }
+        .blog-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+        .blog-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 2rem;
+        }
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .blog-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 40vh;">
+        <img src="assets/makeup-tools.jpg" alt="Beauty Blog" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 3rem;">Beauty Journal</h1>
+            <p>Trends, tips, and inspiration from our experts.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/bridal-makeup.jpg" alt="Blog" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> Oct 15, 2026</span>
+                            <span><i class="fas fa-tag"></i> Bridal Prep</span>
+                        </div>
+                        <h3 class="blog-title">The Ultimate 6-Month Bridal Beauty Checklist</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Everything you need to know to get that flawless glowing skin before your big day, from diet changes to essential facials.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/skin-care.jpg" alt="Blog" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> Sep 28, 2026</span>
+                            <span><i class="fas fa-tag"></i> Skin Care</span>
+                        </div>
+                        <h3 class="blog-title">HD vs. Airbrush Makeup: Which is Right For You?</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Confused about the different makeup techniques? Our experts break down the pros and cons to help you decide.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/hair-styling.jpg" alt="Blog" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> Sep 10, 2026</span>
+                            <span><i class="fas fa-tag"></i> Hair Trends</span>
+                        </div>
+                        <h3 class="blog-title">Top Wedding Hairstyles Trending This Season</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">From messy boho braids to sleek Hollywood waves, discover the hottest hairstyles brides are requesting this year.</p>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">Read More</a>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

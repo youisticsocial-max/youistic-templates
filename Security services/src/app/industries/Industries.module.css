@@ -1,0 +1,83 @@
+.wrapper {
+  padding-top: 80px;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  padding: 120px 0 80px;
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-silver) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerDesc {
+  font-size: 16px;
+  color: var(--color-gray-300);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  padding: 40px 32px;
+  height: 100%;
+}
+
+.cardIcon {
+  font-size: 44px;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background: var(--color-gold);
+  margin: 16px 0;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--color-gray-400);
+  line-height: 1.6;
+}

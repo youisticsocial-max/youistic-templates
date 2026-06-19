@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections & Menu | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem 0;
+            background: var(--surface-dark);
+            text-align: center;
+        }
+        
+        .filter-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--border-radius-pill);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-family: var(--font-body);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .dietary-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .badge-eggless { background: #E8F5E9; color: #2E7D32; }
+        .badge-vegan { background: #E0F2F1; color: #00695C; }
+        .badge-sugarfree { background: #FFF3E0; color: #EF6C00; }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed rgba(45,35,35,0.2);
+            padding-bottom: 1rem;
+        }
+
+        .menu-item h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .menu-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container navbar-container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="collections.html" class="nav-link active">Collections</a></li>
+                <li><a href="custom-cakes.html" class="nav-link">Custom Cakes</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="hero-title" style="color: var(--text-color); font-size: 3.5rem;">Cake Collections</h1>
+            <p class="section-subtitle">Explore our signature designs for your special moments.</p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="filter-menu reveal">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Birthday</button>
+                <button class="filter-btn">Wedding</button>
+                <button class="filter-btn">Chocolate</button>
+                <button class="filter-btn">Designer</button>
+            </div>
+
+            <div class="product-grid">
+                <!-- Cake 1 -->
+                <div class="product-card reveal">
+                    <div class="product-img-wrapper">
+                        <img src="assets/chocolate-cake.jpg" alt="Triple Chocolate Fudge" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'">
+                    </div>
+                    <h3 class="product-title">Triple Chocolate Fudge <span class="dietary-badge badge-eggless">Eggless</span></h3>
+                    <p>Rich Belgian chocolate layers with ganache.</p>
+                    <div class="product-price">{{CURRENCY_SYMBOL}}45.00</div>
+                    <button class="btn btn-outline">Quick View</button>
+                </div>
+                <!-- Cake 2 -->
+                <div class="product-card reveal" style="transition-delay: 0.1s;">
+                    <div class="product-img-wrapper">
+                        <img src="assets/wedding-cake.jpg" alt="Floral Vanilla Cascade" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=1000&auto=format&fit=crop'">
+                    </div>
+                    <h3 class="product-title">Floral Vanilla Cascade</h3>
+                    <p>Three-tier vanilla sponge with buttercream flowers.</p>
+                    <div class="product-price">{{CURRENCY_SYMBOL}}180.00</div>
+                    <button class="btn btn-outline">Quick View</button>
+                </div>
+                <!-- Cake 3 -->
+                <div class="product-card reveal" style="transition-delay: 0.2s;">
+                    <div class="product-img-wrapper">
+                        <img src="assets/cupcake.jpg" alt="Assorted Cupcakes" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=1000&auto=format&fit=crop'">
+                    </div>
+                    <h3 class="product-title">Assorted Cupcakes <span class="dietary-badge badge-vegan">Vegan</span></h3>
+                    <p>Box of 6 premium flavored cupcakes.</p>
+                    <div class="product-price">{{CURRENCY_SYMBOL}}24.00</div>
+                    <button class="btn btn-outline">Quick View</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bakery Menu Section -->
+    <section class="section-padding" style="background-color: var(--surface-dark);">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Daily Bakery Menu</h2>
+                <p class="section-subtitle">Freshly baked pastries, breads, and everyday treats.</p>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-item reveal">
+                    <div>
+                        <h4>Almond Croissant</h4>
+                        <p style="margin-bottom: 0;">Flaky butter pastry with almond frangipane.</p>
+                    </div>
+                    <div class="menu-price">{{CURRENCY_SYMBOL}}4.50</div>
+                </div>
+                <div class="menu-item reveal">
+                    <div>
+                        <h4>New York Cheesecake <span class="dietary-badge badge-eggless">Eggless</span></h4>
+                        <p style="margin-bottom: 0;">Classic baked cheesecake with berry compote.</p>
+                    </div>
+                    <div class="menu-price">{{CURRENCY_SYMBOL}}6.00</div>
+                </div>
+                <div class="menu-item reveal">
+                    <div>
+                        <h4>Sourdough Loaf <span class="dietary-badge badge-vegan">Vegan</span></h4>
+                        <p style="margin-bottom: 0;">Artisan slow-fermented crusty bread.</p>
+                    </div>
+                    <div class="menu-price">{{CURRENCY_SYMBOL}}8.00</div>
+                </div>
+                <div class="menu-item reveal">
+                    <div>
+                        <h4>Keto Walnut Brownie <span class="dietary-badge badge-sugarfree">Sugar-Free</span></h4>
+                        <p style="margin-bottom: 0;">Rich chocolate brownie made with almond flour and stevia.</p>
+                    </div>
+                    <div class="menu-price">{{CURRENCY_SYMBOL}}5.50</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 {{CLINIC_NAME}}. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

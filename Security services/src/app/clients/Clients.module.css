@@ -1,0 +1,117 @@
+.wrapper {
+  padding-top: 80px;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  padding: 120px 0 80px;
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-silver) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerDesc {
+  font-size: 16px;
+  color: var(--color-gray-300);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.logoCard {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  height: 160px;
+}
+
+.logoImage {
+  max-height: 60px;
+  width: auto;
+  filter: grayscale(1) brightness(0.8);
+  opacity: 0.6;
+  transition: all var(--transition-base);
+}
+
+.logoCard:hover .logoImage {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.logoName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color var(--transition-fast);
+}
+
+.logoCard:hover .logoName {
+  color: var(--color-gold);
+}
+
+/* CTA Box */
+.ctaBox {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.ctaDesc {
+  font-size: 15px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+}

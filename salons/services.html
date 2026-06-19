@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Beauty Services | {{CLINIC_NAME}}</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 50vh;">
+        <img src="assets/luxury-salon.jpg" alt="Salon Interior" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 3rem;">Signature Services</h1>
+            <p>Experience the ultimate luxury in beauty, hair, and styling.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <!-- Bridal Section -->
+            <div class="mb-4" id="bridal" data-aos="fade-up">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h2>Bridal & Makeup Artistry</h2>
+                    <a href="bridal.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">View Gallery</a>
+                </div>
+                <div class="services-grid" style="margin-top: 1rem;">
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/bridal-makeup.jpg" alt="Bridal"></div>
+                        <div class="service-content">
+                            <h3>HD Bridal Makeup</h3>
+                            <p>Flawless, long-lasting high-definition makeup.</p>
+                            <span style="color: var(--primary-color); font-weight: 500;">Starting from {{PRICE_PLACEHOLDER}}</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/party-makeup.jpg" alt="Party"></div>
+                        <div class="service-content">
+                            <h3>Airbrush Makeup</h3>
+                            <p>Lightweight, water-resistant silicone based makeup.</p>
+                            <span style="color: var(--primary-color); font-weight: 500;">Starting from {{PRICE_PLACEHOLDER}}</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/makeup-tools.jpg" alt="Tools"></div>
+                        <div class="service-content">
+                            <h3>Party/Guest Makeup</h3>
+                            <p>Elegant and subtle looks for family and guests.</p>
+                            <span style="color: var(--primary-color); font-weight: 500;">Starting from {{PRICE_PLACEHOLDER}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hair Section -->
+            <div class="mb-4" id="hair" data-aos="fade-up">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h2>Hair Studio</h2>
+                    <a href="hair.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">View Styles</a>
+                </div>
+                <div class="services-grid" style="margin-top: 1rem;">
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/hair-styling.jpg" alt="Styling"></div>
+                        <div class="service-content">
+                            <h3>Advanced Styling</h3>
+                            <p>Contemporary haircuts and blow-dry styling.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/hair-color.jpg" alt="Color"></div>
+                        <div class="service-content">
+                            <h3>Global Color & Highlights</h3>
+                            <p>Balayage, Ombre, and premium global coloring.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/transformation.jpg" alt="Treatment"></div>
+                        <div class="service-content">
+                            <h3>Keratin & Spa</h3>
+                            <p>Deep conditioning, Keratin, and smoothening therapies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mehndi Section -->
+            <div class="mb-4" id="mehndi" data-aos="fade-up">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h2>Mehndi Art</h2>
+                    <a href="mehndi.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">View Designs</a>
+                </div>
+                <div class="services-grid" style="margin-top: 1rem;">
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/mehndi-design.jpg" alt="Bridal Mehndi"></div>
+                        <div class="service-content">
+                            <h3>Bridal Mehndi</h3>
+                            <p>Intricate, full hand & leg traditional bridal designs.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/mehndi-design.jpg" alt="Arabic"></div>
+                        <div class="service-content">
+                            <h3>Arabic & Indo-Arabic</h3>
+                            <p>Elegant flowing patterns with floral motifs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skin & Nails Section -->
+            <div class="mb-4" id="skin" data-aos="fade-up">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h2>Skin & Nail Aesthetics</h2>
+                </div>
+                <div class="services-grid" style="margin-top: 1rem;">
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/skin-care.jpg" alt="Facial"></div>
+                        <div class="service-content">
+                            <h3>Premium Facials</h3>
+                            <p>Hydra-facials, Gold & Diamond luxury skin treatments.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/nail-art.jpg" alt="Nails"></div>
+                        <div class="service-content">
+                            <h3>Nail Studio</h3>
+                            <p>Acrylic/Gel extensions, classic French, and custom nail art.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-wrapper"><img src="assets/spa-treatment.jpg" alt="Spa"></div>
+                        <div class="service-content">
+                            <h3>Manicure & Pedicure</h3>
+                            <p>Relaxing spa therapies for your hands and feet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/{{PHONE}}" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:{{PHONE}}" class="float-btn float-call" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="portfolio.html">Transformations</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Beauty Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Specialties</h4>
+                    <ul>
+                        <li><a href="bridal.html">Bridal Collection</a></li>
+                        <li><a href="hair.html">Hair Studio</a></li>
+                        <li><a href="mehndi.html">Mehndi Gallery</a></li>
+                        <li><a href="services.html#nail">Nail & Grooming</a></li>
+                        <li><a href="services.html#skin">Skin & Spa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.3); margin-top: 1rem; padding: 0.5rem 1.5rem;">Book Appointment</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

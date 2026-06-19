@@ -1,0 +1,236 @@
+.wrapper {
+  padding-top: 80px;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  padding: 120px 0 80px;
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-silver) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerDesc {
+  font-size: 16px;
+  color: var(--color-gray-300);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services List */
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.serviceItem {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.serviceItem.reverse {
+  grid-template-columns: 1.2fr 1.1fr;
+}
+
+.serviceItem.reverse .imageCol {
+  order: 2;
+}
+
+.serviceItem.reverse .contentCol {
+  order: 1;
+}
+
+/* Image */
+.imageCol {}
+
+.imageContainer {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(11, 11, 11, 0.7));
+  z-index: 2;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16/11;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.03);
+}
+
+/* Content */
+.contentCol {}
+
+.serviceCategory {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.serviceName {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 42px);
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.longDesc {
+  font-size: 15px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.sectionBlock {
+  margin-bottom: 24px;
+}
+
+.blockTitle {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.featureList, .benefitList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.featureItem, .benefitItem {
+  font-size: 13.5px;
+  color: var(--color-gray-400);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bullet {
+  color: var(--color-gold);
+  font-weight: 800;
+}
+
+.ctaRow {
+  margin-top: 32px;
+}
+
+/* Matrix Table */
+.matrixWrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(11, 11, 11, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.matrixTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 800px;
+}
+
+.matrixTable th, .matrixTable td {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+}
+
+.matrixTable th {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.needCell {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-gray-200);
+}
+
+.highlightBest {
+  color: var(--color-gold);
+  font-weight: 700;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.highlightGood {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.avoid {
+  color: var(--color-gray-600);
+}
+
+@media (max-width: 1024px) {
+  .serviceItem, .serviceItem.reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .serviceItem.reverse .imageCol {
+    order: 0;
+  }
+  .serviceItem.reverse .contentCol {
+    order: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .featureList, .benefitList {
+    grid-template-columns: 1fr;
+  }
+}

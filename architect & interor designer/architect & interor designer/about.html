@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About {{CLINIC_NAME}} - Our Journey</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            background: var(--bg-dark);
+            text-align: center;
+            border-bottom: 1px solid var(--grid-line);
+        }
+        .page-header h1 { margin-bottom: 1rem; }
+        .page-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+        .about-content h2 { margin-bottom: 2rem; }
+        .about-content p { margin-bottom: 1.5rem; color: #ccc; }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--grid-line);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        .timeline-content {
+            background: var(--bg-gray);
+            padding: 2rem;
+            width: 90%;
+            border: 1px solid var(--grid-line);
+            position: relative;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+        .timeline-year {
+            color: var(--primary-color);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .team-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+            transition: var(--transition-fast);
+        }
+        .team-card:hover img { filter: grayscale(0%); }
+        .team-card h4 { font-family: var(--font-body); font-size: 1.2rem; }
+        .team-card p { color: var(--primary-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { justify-content: flex-start; padding-left: 50px; padding-right: 0; }
+            .timeline-content { width: 100%; }
+            .timeline-item::after { left: 20px; }
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="interior-design.html">Interiors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <h1>About Studio</h1>
+        <p>The vision, philosophy, and creative minds behind {{CLINIC_NAME}}.</p>
+    </header>
+
+    <section class="section">
+        <div class="about-grid">
+            <div class="reveal-left">
+                <img src="assets/architecture-model.jpg" alt="Design Sketches" class="about-image">
+            </div>
+            <div class="about-content reveal-right">
+                <span class="section-subtitle">Our Philosophy</span>
+                <h2>Designing with Purpose</h2>
+                <p>At {{CLINIC_NAME}}, we believe that architecture and interior design are more than just aesthetics—they are about creating environments that elevate the human experience. We blend minimal luxury with functional precision.</p>
+                <p>Every line drawn, every material selected, and every space carved out is tailored to reflect the unique identity and lifestyle of our clients.</p>
+                <img src="assets/designer-team.jpg" alt="Studio Team" style="width: 100%; height: 200px; object-fit: cover; margin-top: 2rem;">
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light grid-bg-light">
+        <div class="section-header reveal-up">
+            <span class="section-subtitle">Our Journey</span>
+            <h2>The Evolution of {{CLINIC_NAME}}</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal-left">
+                <div class="timeline-content">
+                    <div class="timeline-year">The Beginning</div>
+                    <h3>Studio Founded</h3>
+                    <p>Started with a vision to redefine luxury residential architecture.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal-right">
+                <div class="timeline-content">
+                    <div class="timeline-year">Expansion</div>
+                    <h3>Commercial Excellence</h3>
+                    <p>Expanded our portfolio into high-end commercial interiors and turnkey solutions.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal-left">
+                <div class="timeline-content">
+                    <div class="timeline-year">Recognition</div>
+                    <h3>Award Winning Designs</h3>
+                    <p>Recognized globally for our innovative approach to sustainable luxury spaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header reveal-up">
+            <span class="section-subtitle">The Minds</span>
+            <h2>Our Creative Team</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-card reveal-up">
+                <img src="assets/designer-team.jpg" alt="Principal Architect">
+                <h4>Alexander Wright</h4>
+                <p>Principal Architect</p>
+            </div>
+            <div class="team-card reveal-up" style="transition-delay: 0.1s;">
+                <img src="assets/designer-team.jpg" alt="Head of Interiors">
+                <h4>Sarah Jenkins</h4>
+                <p>Head of Interiors</p>
+            </div>
+            <div class="team-card reveal-up" style="transition-delay: 0.2s;">
+                <img src="assets/designer-team.jpg" alt="Lead 3D Artist">
+                <h4>David Chen</h4>
+                <p>Lead 3D Visualizer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                <p>Designing elegant, timeless spaces with precision.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="architecture.html">Architecture</a></li>
+                    <li><a href="interior-design.html">Interior Design</a></li>
+                    <li><a href="process.html">Turnkey Execution</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

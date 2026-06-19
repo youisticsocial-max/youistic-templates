@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} | Trusted Health & Wellness Partner</title>
+    <meta name="description" content="Providing authentic medicines, healthcare products, and expert support for your family’s everyday wellness at {{CLINIC_NAME}}.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}} Logo">
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#categories">Medicines</a>
+                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <button class="btn btn-primary" onclick="location.href='#contact'">Order Medicines</button>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="assets/hero-pharmacy.jpg" alt="Modern Pharmacy Interior">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content fade-up">
+                <span class="hero-subtitle">
+                    <i class="fas fa-heartbeat"></i> Professional Healthcare Services
+                </span>
+                <h1 class="hero-title">Your Trusted Partner for Health & Wellness</h1>
+                <p class="hero-text">Providing authentic medicines, healthcare products, and expert support for your family’s everyday wellness at {{CLINIC_NAME}}.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-prescription-bottle-alt"></i> Order Medicines
+                    </a>
+                    <a href="#products" class="btn btn-outline">
+                        Explore Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-20">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Medicine & Product Categories</h2>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Prescription -->
+                <div class="category-card fade-up">
+                    <div class="category-icon">
+                        <i class="fas fa-file-prescription"></i>
+                    </div>
+                    <h3 class="category-title">Prescription Medicines</h3>
+                    <p class="category-desc">Regular medicines, chronic care, and specialty pharmaceutical products.</p>
+                    <a href="#contact" class="btn btn-outline">Upload Prescription</a>
+                </div>
+                
+                <!-- OTC -->
+                <div class="category-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="category-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3 class="category-title">OTC Products</h3>
+                    <p class="category-desc">Pain relief, cold & flu, digestive care, and first aid essentials.</p>
+                    <a href="#products" class="btn btn-outline">Explore OTC</a>
+                </div>
+                
+                <!-- Health & Wellness -->
+                <div class="category-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="category-title">Health & Wellness</h3>
+                    <p class="category-desc">Vitamins, supplements, immunity boosters, and personal care items.</p>
+                    <a href="#products" class="btn btn-outline">Shop Wellness</a>
+                </div>
+                
+                <!-- Medical Equipment -->
+                <div class="category-card fade-up" style="transition-delay: 0.3s;">
+                    <div class="category-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="category-title">Medical Equipment</h3>
+                    <p class="category-desc">BP monitors, glucometers, thermometers, and nebulizers.</p>
+                    <a href="#products" class="btn btn-outline">View Devices</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Showcase -->
+    <section id="products" class="py-20 bg-light">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-subtitle">Featured Items</span>
+                <h2 class="section-title">Premium Healthcare Products</h2>
+            </div>
+            
+            <div class="products-slider fade-up" id="productsSlider">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <span class="product-badge">Best Seller</span>
+                        <img src="assets/vitamins.jpg" alt="Multivitamins" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-brand">WellnessBrand</div>
+                        <h3 class="product-title">Daily Multivitamins Complex</h3>
+                        <div class="product-price">$24.99</div>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="assets/blood-pressure-machine.jpg" alt="BP Monitor" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-brand">MedTech</div>
+                        <h3 class="product-title">Digital BP Monitor Pro</h3>
+                        <div class="product-price">$59.99</div>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <span class="product-badge">New</span>
+                        <img src="assets/ayurvedic-products.jpg" alt="Ayurvedic Drops" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-brand">NatureCare</div>
+                        <h3 class="product-title">Herbal Immunity Drops</h3>
+                        <div class="product-price">$19.50</div>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="assets/diabetes-care.jpg" alt="Glucometer" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-brand">LifeCheck</div>
+                        <h3 class="product-title">Smart Glucometer Kit</h3>
+                        <div class="product-price">$34.99</div>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-subtitle">Our Promise</span>
+                <h2 class="section-title">Why Choose {{CLINIC_NAME}}</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <div class="feature-icon"><i class="fas fa-check-shield"></i></div>
+                    <div>
+                        <h3>Genuine Medicines</h3>
+                        <p class="text-light">100% authentic products sourced directly from trusted pharmaceutical suppliers.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon"><i class="fas fa-user-md"></i></div>
+                    <div>
+                        <h3>Experienced Pharmacists</h3>
+                        <p class="text-light">Professional guidance, consultation, and healthcare support for your family.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon"><i class="fas fa-boxes"></i></div>
+                    <div>
+                        <h3>Wide Product Range</h3>
+                        <p class="text-light">Medicines, wellness items, and surgical products all under one roof.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <div>
+                        <h3>Home Delivery</h3>
+                        <p class="text-light">Fast, safe, and convenient medicine delivery right to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthcare Services -->
+    <section id="services" class="services-section py-20">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-subtitle">Beyond Pharmacy</span>
+                <h2 class="section-title">Healthcare Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <i class="fas fa-motorcycle service-icon"></i>
+                    <h3>Medicine Home Delivery</h3>
+                    <p>Get your prescribed medicines delivered safely to your home within hours.</p>
+                </div>
+                <div class="service-card fade-up" style="transition-delay: 0.1s;">
+                    <i class="fas fa-clipboard-list service-icon"></i>
+                    <h3>Prescription Assistance</h3>
+                    <p>Upload your prescription and let our experts organize your dosage schedule.</p>
+                </div>
+                <div class="service-card fade-up" style="transition-delay: 0.2s;">
+                    <i class="fas fa-sync-alt service-icon"></i>
+                    <h3>Repeat Orders</h3>
+                    <p>Automated refill reminders for chronic medication so you never run out.</p>
+                </div>
+                <div class="service-card fade-up" style="transition-delay: 0.3s;">
+                    <i class="fas fa-heart service-icon"></i>
+                    <h3>Health Check-ups</h3>
+                    <p>Regular vitals monitoring and basic health check-up camps at our store.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Showcase -->
+    <section class="brand-slider">
+        <div class="brand-track">
+            <!-- Repeated for infinite scroll -->
+            <div class="brand-item"><h3>PharmaCorp</h3></div>
+            <div class="brand-item"><h3>WellnessPlus</h3></div>
+            <div class="brand-item"><h3>HealthLife</h3></div>
+            <div class="brand-item"><h3>MediCare</h3></div>
+            <div class="brand-item"><h3>NatureMeds</h3></div>
+            <!-- Duplicated -->
+            <div class="brand-item"><h3>PharmaCorp</h3></div>
+            <div class="brand-item"><h3>WellnessPlus</h3></div>
+            <div class="brand-item"><h3>HealthLife</h3></div>
+            <div class="brand-item"><h3>MediCare</h3></div>
+            <div class="brand-item"><h3>NatureMeds</h3></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="fade-up">
+                    <img src="assets/pharmacist.jpg" alt="Pharmacist" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+                <div class="fade-up">
+                    <span class="section-subtitle">About {{CLINIC_NAME}}</span>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Caring for Your Health Since Day One</h2>
+                    <p class="text-light" style="margin-bottom: 1.5rem;">At {{CLINIC_NAME}}, we believe that healthcare should be accessible, reliable, and compassionate. Our modern digital pharmacy bridges the gap between traditional care and modern convenience.</p>
+                    <p class="text-light" style="margin-bottom: 2rem;">Led by a team of professional pharmacists, we ensure that every product you receive meets the highest standards of safety and authenticity.</p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <h3 style="color: var(--primary-color); font-size: 2rem;">10k+</h3>
+                            <p class="text-light">Happy Customers</p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--primary-color); font-size: 2rem;">5000+</h3>
+                            <p class="text-light">Products</p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--primary-color); font-size: 2rem;">24/7</h3>
+                            <p class="text-light">Support</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Order Medicines & Contact Us</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem;">
+                <!-- Contact Info -->
+                <div class="fade-up">
+                    <div class="feature-card" style="flex-direction: column; padding: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;">Pharmacy Details</h3>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--primary-color); font-size: 1.25rem; margin-top: 0.25rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Address</h4>
+                                <p class="text-light">{{ADDRESS}}</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+                            <i class="fas fa-phone-alt" style="color: var(--primary-color); font-size: 1.25rem; margin-top: 0.25rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Phone</h4>
+                                <p class="text-light">{{PHONE}}</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+                            <i class="fas fa-envelope" style="color: var(--primary-color); font-size: 1.25rem; margin-top: 0.25rem;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Email</h4>
+                                <p class="text-light">contact@pharmacy.com</p>
+                            </div>
+                        </div>
+                        
+                        <a href="tel:{{PHONE}}" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Order Form -->
+                <div class="fade-up">
+                    <form class="feature-card" style="flex-direction: column;" onsubmit="event.preventDefault(); alert('Order inquiry submitted!');">
+                        <h3 style="margin-bottom: 1.5rem;">Quick Order / Inquiry</h3>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" required placeholder="Your contact number">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">What do you need?</label>
+                            <textarea class="form-control" rows="4" placeholder="List the medicines or products you are looking for..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Upload Prescription (Optional)</label>
+                            <input type="file" class="form-control" accept="image/*,.pdf">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Delivery Address</label>
+                            <input type="text" class="form-control" placeholder="Complete address for home delivery">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/{{PHONE}}" class="action-btn whatsapp-btn" target="_blank" title="Order on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:{{PHONE}}" class="action-btn call-btn" title="Call Pharmacy">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" style="height: 40px; margin-bottom: 1.5rem; filter: brightness(0) invert(1);">
+                    <p style="color: #a0aec0; margin-bottom: 1.5rem;">Your trusted partner for authentic medicines, wellness products, and professional healthcare advice.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Pharmacy</a>
+                        <a href="#categories">Medicine Categories</a>
+                        <a href="#services">Healthcare Services</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <div class="footer-links">
+                        <a href="#">Prescription Medicines</a>
+                        <a href="#">OTC Products</a>
+                        <a href="#">Vitamins & Supplements</a>
+                        <a href="#">Ayurvedic & Herbal</a>
+                        <a href="#">Medical Devices</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Details</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>{{ADDRESS}}</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>{{PHONE}}</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@pharmacy.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 {{CLINIC_NAME}}. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Intersection Observer for Fade Up Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Products Slider Drag to Scroll
+        const slider = document.getElementById('productsSlider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
+        
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
+        
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>

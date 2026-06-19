@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{CLINIC_NAME}} – Premium Furniture</title>
+  <meta name="description" content="Luxury handcrafted furniture by {{CLINIC_NAME}}. Discover premium collections, custom designs, and timeless elegance." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <!-- Floating Call / WhatsApp Buttons -->
+  <div class="floating-call">
+    <a href="tel:{{PHONE}}" title="Call {{CLINIC_NAME}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.5 2.53.77 3.88.77a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 3.5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.26 2.67.77 3.88a1 1 0 01-.21 1.11l-2.44 2.44z"/></svg></a>
+  </div>
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/{{PHONE}}" target="_blank" title="WhatsApp {{CLINIC_NAME}}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M20.52 3.48A11.86 11.86 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.55 4.14 1.5 5.93L0 24l6.31-1.64A11.88 11.88 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.13-3.48-8.52zM12 22c-1.73 0-3.42-.44-4.91-1.24l-.35-.2-3.75 1 1-3.66-.22-.38A9.86 9.86 0 012 12c0-5.51 4.49-10 10-10s10 4.49 10 10c0 5.51-4.49 10-10 10zm5.6-7.73c-.3-.15-1.78-.88-2.06-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.94 1.18-.17.2-.34.23-.64.08-.3-.15-1.27-.46-2.42-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.61-.92-2.21-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.35-.27.27-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.07 4.48.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.09 1.78-.73 2.03-1.44.25-.71.25-1.32.17-1.44-.07-.12-.27-.2-.57-.35z"/></svg></a>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" />
+      </a>
+      <div class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="custom.html">Custom</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content container fade-in">
+      <h1>Crafting Spaces That Reflect Your Lifestyle</h1>
+      <p>Discover beautifully designed furniture crafted with precision, comfort, and timeless elegance.</p>
+      <a href="collections.html" class="btn btn-primary">Explore Collections</a>
+      <a href="custom.html" class="btn btn-secondary">Customize Your Furniture</a>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="section container" id="categories">
+    <h2 class="section-title">Featured Categories</h2>
+    <div class="categories">
+      <div class="category-card fade-in">
+        <img src="../assets/living-room.jpg" alt="Living Room Furniture" />
+        <div class="info">
+          <h3>Living Room</h3>
+        </div>
+      </div>
+      <div class="category-card fade-in">
+        <img src="../assets/bedroom.jpg" alt="Bedroom Furniture" />
+        <div class="info"><h3>Bedroom</h3></div>
+      </div>
+      <div class="category-card fade-in">
+        <img src="../assets/dining-table.jpg" alt="Dining Collection" />
+        <div class="info"><h3>Dining</h3></div>
+      </div>
+      <div class="category-card fade-in">
+        <img src="../assets/office-furniture.jpg" alt="Office Furniture" />
+        <div class="info"><h3>Office</h3></div>
+      </div>
+      <div class="category-card fade-in">
+        <img src="../assets/modular-kitchen.jpg" alt="Modular Furniture" />
+        <div class="info"><h3>Modular</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section why-us container" id="why-us">
+    <h2 class="section-title">Why Choose {{CLINIC_NAME}}</h2>
+    <div class="why-us-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;">
+      <div class="why-card fade-in">
+        <h3>Expert Craftsmanship</h3>
+        <p>Furniture made with attention to every detail.</p>
+      </div>
+      <div class="why-card fade-in">
+        <h3>Premium Materials</h3>
+        <p>High‑quality wood, fabrics, and hardware.</p>
+      </div>
+      <div class="why-card fade-in">
+        <h3>Custom Designs</h3>
+        <p>Tailored to customer requirements.</p>
+      </div>
+      <div class="why-card fade-in">
+        <h3>Modern Manufacturing</h3>
+        <p>Advanced technology combined with craftsmanship.</p>
+      </div>
+      <div class="why-card fade-in">
+        <h3>Durable Quality</h3>
+        <p>Long‑lasting furniture built for everyday use.</p>
+      </div>
+      <div class="why-card fade-in">
+        <h3>Professional Support</h3>
+        <p>Design consultation and customer assistance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div>
+        <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" style="max-height:60px;" />
+        <p>{{CLINIC_NAME}} – Luxury Furniture</p>
+        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+        <p>{{ADDRESS}}</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Pinterest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="text-align:center;margin-top:2rem;">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> {{CLINIC_NAME}}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

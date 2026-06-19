@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Order | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem 0;
+            background: var(--surface-dark);
+            text-align: center;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media(max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info-card {
+            background: var(--surface-solid);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-body);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #eee;
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container navbar-container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="custom-cakes.html" class="nav-link">Custom Cakes</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="hero-title" style="color: var(--text-color); font-size: 3.5rem;">Let's Talk Cake</h1>
+            <p class="section-subtitle">Place an order, request a custom cake, or just say hello.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container contact-container">
+            
+            <div class="reveal">
+                <h2>Contact Information</h2>
+                <p style="margin-bottom: 2rem;">Visit our bakery or reach out for inquiries.</p>
+                
+                <div class="contact-info-card">
+                    <i class="fas fa-store contact-icon"></i>
+                    <h3>{{CLINIC_NAME}} Bakery</h3>
+                    <p>{{ADDRESS}}</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <i class="fas fa-phone-alt contact-icon"></i>
+                    <h3>Call or WhatsApp</h3>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <a href="https://wa.me/{{PHONE}}" class="btn btn-outline" style="margin-top: 1rem;"><i class="fab fa-whatsapp"></i> Chat with Us</a>
+                </div>
+
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i> Google Maps Placeholder for {{ADDRESS}}
+                </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <div class="contact-info-card" style="margin-bottom: 0;">
+                    <h2>Place an Order</h2>
+                    <p>Fill out the form below to order from our collection or request a custom cake.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" placeholder="Phone number" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="Email address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Inquiry Type</label>
+                            <select class="form-control">
+                                <option>Order from Collection</option>
+                                <option>Custom Cake Request</option>
+                                <option>Event / Wedding Booking</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <label class="form-label">Required Date</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div>
+                                <label class="form-label">Time / Quantity</label>
+                                <input type="text" class="form-control" placeholder="E.g. 2 PM / 1 Cake">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Delivery Address (If applicable)</label>
+                            <input type="text" class="form-control" placeholder="Full address or leave blank for pickup">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message / Cake Details</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell us about the flavor, theme, message on cake, etc."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 {{CLINIC_NAME}}. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

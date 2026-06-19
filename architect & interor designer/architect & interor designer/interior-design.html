@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design - {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            background: url('assets/luxury-living-room.jpg') center/cover;
+            position: relative;
+            text-align: center;
+        }
+        .page-header::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        .page-header * { position: relative; z-index: 2; }
+        
+        .room-transformation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+        .room-transformation:nth-child(even) {
+            direction: rtl;
+        }
+        .room-transformation:nth-child(even) > * {
+            direction: ltr;
+        }
+        .room-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            position: relative;
+        }
+        .room-info h3 { margin-bottom: 1rem; font-size: 2.5rem; }
+        .room-info p { color: var(--text-muted); margin-bottom: 2rem; }
+        
+        @media (max-width: 768px) {
+            .room-transformation, .room-transformation:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
+            .room-img { height: 300px; }
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="interior-design.html" class="active">Interiors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <span class="section-subtitle">Services</span>
+        <h1>Interior Design</h1>
+        <p style="color:#ccc; max-width:600px; margin: 0 auto;">Crafting immersive environments that harmonise aesthetics, luxury, and functionality.</p>
+    </header>
+
+    <section class="section">
+        <div class="room-transformation reveal-up">
+            <img src="assets/luxury-living-room.jpg" alt="Living Room" class="room-img">
+            <div class="room-info">
+                <h3>Living Room Design</h3>
+                <p>Curating spaces for gathering and relaxation with bespoke furniture, lighting, and luxurious material palettes.</p>
+                <ul style="list-style:none; color:#ccc; margin-bottom:2rem; line-height:2;">
+                    <li>— Custom Furniture Placement</li>
+                    <li>— Ambient & Accent Lighting</li>
+                    <li>— High-end Finishes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="room-transformation reveal-up">
+            <img src="assets/modern-bedroom.jpg" alt="Bedroom" class="room-img">
+            <div class="room-info">
+                <h3>Bedroom Retreats</h3>
+                <p>Designing personal sanctuaries focused on comfort, tranquility, and elegant styling.</p>
+            </div>
+        </div>
+
+        <div class="room-transformation reveal-up">
+            <img src="assets/modular-kitchen.jpg" alt="Kitchen" class="room-img">
+            <div class="room-info">
+                <h3>Modular Kitchens</h3>
+                <p>Highly functional, ergonomically designed culinary spaces featuring premium appliances and durable luxury surfaces.</p>
+            </div>
+        </div>
+        
+        <div class="room-transformation reveal-up">
+            <img src="assets/office-interior.jpg" alt="Office" class="room-img">
+            <div class="room-info">
+                <h3>Commercial & Office Spaces</h3>
+                <p>Inspiring workspaces that boost productivity and reflect your corporate identity with sophisticated layouts.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

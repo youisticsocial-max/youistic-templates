@@ -1,0 +1,86 @@
+/* Premium Luxury Furniture Template Styles */
+:root {
+  --primary-color: {{PRIMARY_COLOR}};
+  --bg-dark: #f5f5f5;
+  --bg-card: #ffffff;
+  --text-normal: #333333;
+  --text-muted: #777777;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; font-size:16px; }
+body { font-family: var(--font-sans); color: var(--text-normal); background: var(--bg-dark); overflow-x:hidden; }
+img { max-width:100%; height:auto; display:block; }
+ul { list-style:none; }
+a { color:inherit; text-decoration:none; transition: var(--transition-fast); }
+
+/* Container */
+.container { width:90%; max-width:1200px; margin:auto; }
+
+/* Header / Nav */
+header { position:fixed; top:0; left:0; width:100%; background:#fff; box-shadow: var(--shadow-sm); z-index:100; transition: var(--transition-normal); }
+.nav { display:flex; align-items:center; justify-content:space-between; height:80px; }
+.logo img { max-height:48px; }
+.nav-links { display:flex; gap:1.5rem; }
+.nav-links a { font-weight:600; padding:0.5rem 0; position:relative; }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:2px; background:var(--primary-color); transform:scaleX(0); transition: var(--transition-fast); }
+.nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+.mobile-toggle { display:none; flex-direction:column; gap:4px; cursor:pointer; }
+.mobile-toggle span { width:24px; height:2px; background:#333; transition: var(--transition-fast); }
+
+@media (max-width:768px) {
+  .nav-links { position:absolute; top:100%; left:0; width:100%; background:#fff; flex-direction:column; transform:translateY(-100%); transition: var(--transition-normal); }
+  .nav-links.open { transform:translateY(0); }
+  .mobile-toggle { display:flex; }
+}
+
+/* Hero */
+.hero { position:relative; min-height:90vh; display:flex; align-items:center; justify-content:center; color:#fff; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:url('../assets/hero-luxury-sofa.jpg') center/cover no-repeat; filter:brightness(0.6) contrast(1.1); }
+.hero-content { position:relative; text-align:center; max-width:800px; z-index:1; }
+.hero h1 { font-family: var(--font-serif); font-size:3rem; margin-bottom:1rem; }
+.hero p { font-size:1.2rem; margin-bottom:2rem; }
+.hero .btn { background:var(--primary-color); color:#fff; padding:0.8rem 2rem; border-radius:4px; font-weight:600; }
+.hero .btn:hover { background:#000; }
+
+/* Section */
+.section { padding:5rem 0; }
+.section-title { font-family: var(--font-serif); font-size:2.5rem; text-align:center; margin-bottom:2rem; position:relative; }
+.section-title::after { content:''; width:50px; height:3px; background:var(--primary-color); position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); }
+
+/* Category Cards */
+.categories { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+.category-card { position:relative; overflow:hidden; border-radius:8px; box-shadow: var(--shadow-sm); background:#fff; }
+.category-card img { width:100%; height:200px; object-fit:cover; transition: var(--transition-normal); }
+.category-card:hover img { transform:scale(1.05); }
+.category-card .info { padding:1rem; text-align:center; }
+.category-card .info h3 { font-size:1.1rem; margin-bottom:0.5rem; }
+
+/* Footer */
+footer { background:#222; color:#ddd; padding:3rem 0; }
+footer .footer-top { display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; }
+footer a { color:#ddd; }
+footer a:hover { color:#fff; }
+
+/* Floating Buttons */
+.floating-call, .floating-whatsapp { position:fixed; right:1.5rem; bottom:1.5rem; background:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow-md); z-index:200; }
+.floating-call a, .floating-whatsapp a { display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+.floating-whatsapp { bottom:8rem; background:#25d366; color:#fff; }
+
+/* Animations */
+.fade-in { opacity:0; transform:translateY(20px); transition: var(--transition-normal); }
+.fade-in.visible { opacity:1; transform:none; }
+
+/* Responsive */
+@media (max-width:576px) {
+  .hero h1 { font-size:2rem; }
+  .hero p { font-size:1rem; }
+}

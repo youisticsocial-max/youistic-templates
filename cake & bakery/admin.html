@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body { background-color: #f4f6f9; color: #333; }
+        
+        /* Admin Layout */
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .admin-sidebar {
+            width: 250px;
+            background: var(--text-color);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .admin-brand {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .admin-brand img {
+            height: 40px;
+            margin: 0 auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .admin-nav {
+            flex: 1;
+            padding: 1rem 0;
+            overflow-y: auto;
+        }
+
+        .admin-nav-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition-fast);
+        }
+
+        .admin-nav-item:hover, .admin-nav-item.active {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .admin-nav-item i {
+            width: 25px;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        .admin-main {
+            flex: 1;
+            margin-left: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .admin-header {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .admin-content {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        /* Dashboard Widgets */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .admin-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th, .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .status-new { background: #E3F2FD; color: #1976D2; }
+        .status-prep { background: #FFF3E0; color: #F57C00; }
+        .status-ready { background: #E8F5E9; color: #388E3C; }
+    </style>
+</head>
+<body>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-shopping-cart"></i> Orders</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-magic"></i> Custom Requests</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-box-open"></i> Products Catalog</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-images"></i> Gallery</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-star"></i> Reviews</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-tags"></i> Offers & Promo</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-cog"></i> Store Settings</a>
+            </nav>
+            <div style="padding: 1rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+                <a href="index.html" class="btn btn-outline" style="color: white; border-color: white; padding: 0.5rem 1rem; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> View Store</a>
+            </div>
+        </aside>
+
+        <!-- Main Area -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <div>
+                    <h2 style="margin: 0; font-family: var(--font-body);">Welcome back, Admin!</h2>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <i class="fas fa-bell" style="font-size: 1.2rem; color: #999; cursor: pointer;"></i>
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                        A
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="admin-content">
+                
+                <!-- Quick Stats -->
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                        <div>
+                            <h3 style="margin: 0;">12</h3>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">New Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-magic"></i></div>
+                        <div>
+                            <h3 style="margin: 0;">4</h3>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">Custom Requests</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div>
+                            <h3 style="margin: 0;">{{CURRENCY_SYMBOL}}1,240</h3>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">Sales Today</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                        <div>
+                            <h3 style="margin: 0;">342</h3>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">Store Visitors</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="margin: 0; font-family: var(--font-body);">Recent Orders</h3>
+                        <button class="btn btn-outline" style="padding: 0.4rem 1rem;">View All</button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Item</th>
+                                <th>Delivery Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-1045</td>
+                                <td>Sarah Jenkins</td>
+                                <td>Wedding Cake (3 Tier)</td>
+                                <td>Oct 20, 2024</td>
+                                <td><span class="status-badge status-prep">In Prep</span></td>
+                                <td><a href="#" style="color: var(--primary-color);">Manage</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1046</td>
+                                <td>Michael Torres</td>
+                                <td>Custom Dino Cake</td>
+                                <td>Oct 18, 2024</td>
+                                <td><span class="status-badge status-new">New</span></td>
+                                <td><a href="#" style="color: var(--primary-color);">Manage</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1047</td>
+                                <td>Emily Roberts</td>
+                                <td>Assorted Cupcakes Box</td>
+                                <td>Oct 16, 2024</td>
+                                <td><span class="status-badge status-ready">Ready</span></td>
+                                <td><a href="#" style="color: var(--primary-color);">Manage</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Theme Customization Sneak Peek -->
+                <div class="admin-card">
+                    <h3 style="margin-top: 0; font-family: var(--font-body);">Quick Theme Settings</h3>
+                    <p>Update your dynamic tokens here.</p>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <label>Primary Brand Color:</label>
+                        <input type="color" value="#D4AF37" style="border: none; padding: 0; background: none; width: 40px; height: 40px; cursor: pointer;">
+                        <code>{{PRIMARY_COLOR}}</code>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

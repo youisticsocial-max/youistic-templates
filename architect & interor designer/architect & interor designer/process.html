@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Process - {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            text-align: center;
+        }
+        
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .process-container::before {
+            content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+            background: var(--primary-color); opacity: 0.3; transform: translateX(-50%);
+        }
+        
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+        .process-step:nth-child(even) {
+            direction: rtl;
+        }
+        .process-step:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .step-number {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .step-content {
+            background: var(--bg-gray);
+            padding: 3rem;
+            border: 1px solid var(--grid-line);
+            position: relative;
+        }
+        .step-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .process-container::before { left: 20px; }
+            .process-step, .process-step:nth-child(even) { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <span class="section-subtitle">How We Work</span>
+        <h1>The Design Process</h1>
+        <p style="color:#ccc; max-width:600px; margin: 0 auto;">A structured journey from conceptual vision to final execution, ensuring precision at every step.</p>
+    </header>
+
+    <section class="section">
+        <div class="process-container">
+            <!-- Step 1 -->
+            <div class="process-step reveal-up">
+                <div class="step-content">
+                    <div class="step-number">01</div>
+                    <h3>Consultation & Discovery</h3>
+                    <p>Understanding client vision, lifestyle needs, budget, and property constraints.</p>
+                </div>
+                <img src="assets/designer-team.jpg" alt="Consultation" class="step-img">
+            </div>
+            <!-- Step 2 -->
+            <div class="process-step reveal-up">
+                <div class="step-content">
+                    <div class="step-number">02</div>
+                    <h3>Concept & Planning</h3>
+                    <p>Creating layouts, mood boards, and architectural flow to establish the design language.</p>
+                </div>
+                <img src="assets/architecture-model.jpg" alt="Planning" class="step-img">
+            </div>
+            <!-- Step 3 -->
+            <div class="process-step reveal-up">
+                <div class="step-content">
+                    <div class="step-number">03</div>
+                    <h3>3D Visualization</h3>
+                    <p>Providing highly realistic 3D previews to experience the space before physical work begins.</p>
+                </div>
+                <img src="assets/3d-render.jpg" alt="3D Render" class="step-img">
+            </div>
+            <!-- Step 4 -->
+            <div class="process-step reveal-up">
+                <div class="step-content">
+                    <div class="step-number">04</div>
+                    <h3>Material Selection</h3>
+                    <p>Choosing premium finishes, lighting, and textures that define the tactile luxury of the space.</p>
+                </div>
+                <img src="assets/material-selection.jpg" alt="Materials" class="step-img">
+            </div>
+            <!-- Step 5 -->
+            <div class="process-step reveal-up">
+                <div class="step-content">
+                    <div class="step-number">05</div>
+                    <h3>Execution & Supervision</h3>
+                    <p>Transforming blueprints into reality with rigorous site supervision and quality control.</p>
+                </div>
+                <img src="assets/site-execution.jpg" alt="Execution" class="step-img">
+            </div>
+            <!-- Step 6 -->
+            <div class="process-step reveal-up">
+                <div class="step-content">
+                    <div class="step-number">06</div>
+                    <h3>Final Styling & Handover</h3>
+                    <p>Delivering the complete experience with curated furniture, art, and decor placement.</p>
+                </div>
+                <img src="assets/luxury-living-room.jpg" alt="Handover" class="step-img">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

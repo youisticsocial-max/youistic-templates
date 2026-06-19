@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} - Luxury Architecture & Interior Design</title>
+    <meta name="description" content="Experience world-class architecture and premium interior design with {{CLINIC_NAME}}. We design spaces that define your lifestyle.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Specific Home Page Styles */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: url('assets/hero-villa.jpg') center/cover no-repeat;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(10,10,10,0.9));
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .hero h1 {
+            margin-bottom: 2rem;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .hero-text {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .service-card {
+            background: var(--bg-gray);
+            border: 1px solid var(--grid-line);
+            padding: 3rem 2rem;
+            transition: var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('assets/architecture-model.jpg') center/cover;
+            opacity: 0;
+            transition: var(--transition-slow);
+            z-index: 0;
+        }
+        .service-card:nth-child(2)::before { background-image: url('assets/modern-bedroom.jpg'); }
+        .service-card:nth-child(3)::before { background-image: url('assets/site-execution.jpg'); }
+        
+        .service-card:hover::before { opacity: 0.2; }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary-color); }
+        .service-content {
+            position: relative;
+            z-index: 1;
+        }
+        .service-card h3 { margin-bottom: 1rem; }
+        .service-card p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .service-card ul { list-style: none; color: #ccc; margin-bottom: 2rem; font-size: 0.9rem; line-height: 2; }
+        .service-card ul li::before { content: '—'; color: var(--primary-color); margin-right: 10px; }
+        
+        /* Projects Slider */
+        .projects-wrapper {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        .projects-wrapper::-webkit-scrollbar { display: none; }
+        
+        .project-card {
+            min-width: 400px;
+            height: 550px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        .project-info {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition-fast);
+        }
+        .project-card:hover .project-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .project-category {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-meta {
+            font-size: 0.8rem;
+            color: #aaa;
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Before/After Slider */
+        .ba-slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .ba-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .ba-after {
+            width: 50%; /* Initial state */
+            overflow: hidden;
+            z-index: 2;
+            border-right: 2px solid var(--primary-color);
+        }
+        .ba-after img {
+            width: 1000px; /* Must match container max-width to keep image fixed relative to container */
+            height: 600px;
+            object-fit: cover;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50%;
+            width: 40px;
+            margin-left: -20px;
+            z-index: 3;
+            cursor: ew-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ba-handle-btn {
+            width: 40px; height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+        .ba-label {
+            position: absolute;
+            top: 20px;
+            padding: 5px 15px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 4;
+            backdrop-filter: blur(5px);
+        }
+        .label-before { right: 20px; }
+        .label-after { left: 20px; }
+
+        /* Trust Cards */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .trust-card {
+            padding: 2.5rem;
+            background: var(--bg-light);
+            border: 1px solid var(--grid-line-dark);
+            text-align: center;
+        }
+        .trust-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        .trust-card h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .trust-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; }
+            .project-card { min-width: 300px; height: 400px; }
+            .ba-slider-container { height: 400px; }
+            .ba-after img { width: 100vw; height: 400px; } /* Adjust for mobile viewport if needed */
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="interior-design.html">Interiors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="tel:{{PHONE}}" class="float-btn" aria-label="Call Us"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+        <a href="https://wa.me/{{PHONE}}" class="float-btn float-whatsapp" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content reveal-up">
+            <span class="hero-subtitle">Welcome to {{CLINIC_NAME}}</span>
+            <h1>Designing Spaces That Define Your Lifestyle</h1>
+            <p class="hero-text">Creating timeless architecture and elegant interiors with creativity, precision, and attention to every detail.</p>
+            <div class="hero-buttons">
+                <a href="portfolio.html" class="btn-primary">Explore Projects</a>
+                <a href="contact.html" class="btn-outline">Book Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Signature Services -->
+    <section class="section">
+        <div class="section-header reveal-up">
+            <span class="section-subtitle">Our Expertise</span>
+            <h2>Signature Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal-left">
+                <div class="service-content">
+                    <h3>Architecture</h3>
+                    <p>Structural brilliance meeting modern aesthetics.</p>
+                    <ul>
+                        <li>Residential Design & Villas</li>
+                        <li>Floor Planning & Elevations</li>
+                        <li>3D Visualization</li>
+                    </ul>
+                    <a href="architecture.html" class="btn-outline" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Discover More</a>
+                </div>
+            </div>
+            <div class="service-card reveal-up">
+                <div class="service-content">
+                    <h3>Interior Design</h3>
+                    <p>Transforming spaces into elegant living experiences.</p>
+                    <ul>
+                        <li>Living Room & Bedroom Design</li>
+                        <li>Modular Kitchens</li>
+                        <li>Office & Commercial Interiors</li>
+                    </ul>
+                    <a href="interior-design.html" class="btn-outline" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Discover More</a>
+                </div>
+            </div>
+            <div class="service-card reveal-right">
+                <div class="service-content">
+                    <h3>Turnkey Solutions</h3>
+                    <p>End-to-end execution with meticulous precision.</p>
+                    <ul>
+                        <li>Planning & Material Selection</li>
+                        <li>Execution & Supervision</li>
+                        <li>Final Styling & Handover</li>
+                    </ul>
+                    <a href="process.html" class="btn-outline" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section section-light grid-bg-light">
+        <div class="section-header reveal-up">
+            <span class="section-subtitle">Portfolio</span>
+            <h2>Featured Projects</h2>
+        </div>
+        <div class="projects-wrapper">
+            <!-- Project 1 -->
+            <div class="project-card tilt-card reveal-left">
+                <img src="assets/luxury-living-room.jpg" alt="Luxury Living Room" class="project-image">
+                <div class="project-info">
+                    <span class="project-category">Residential Interior</span>
+                    <h3 class="project-title">The Minimalist Haven</h3>
+                    <div class="project-meta">
+                        <span>New York</span>
+                        <span>|</span>
+                        <span>4,500 sq ft</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card tilt-card reveal-up">
+                <img src="assets/hero-villa.jpg" alt="Modern Villa" class="project-image">
+                <div class="project-info">
+                    <span class="project-category">Architecture</span>
+                    <h3 class="project-title">Skyline Luxury Villa</h3>
+                    <div class="project-meta">
+                        <span>Los Angeles</span>
+                        <span>|</span>
+                        <span>12,000 sq ft</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card tilt-card reveal-right">
+                <img src="assets/office-interior.jpg" alt="Office Interior" class="project-image">
+                <div class="project-info">
+                    <span class="project-category">Commercial</span>
+                    <h3 class="project-title">Tech Hub Workspace</h3>
+                    <div class="project-meta">
+                        <span>San Francisco</span>
+                        <span>|</span>
+                        <span>8,000 sq ft</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card tilt-card reveal-right">
+                <img src="assets/modular-kitchen.jpg" alt="Modular Kitchen" class="project-image">
+                <div class="project-info">
+                    <span class="project-category">Renovation</span>
+                    <h3 class="project-title">Elegant Culinary Space</h3>
+                    <div class="project-meta">
+                        <span>Chicago</span>
+                        <span>|</span>
+                        <span>800 sq ft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 4rem;" class="reveal-up">
+            <a href="portfolio.html" class="btn-primary">View All Projects</a>
+        </div>
+    </section>
+
+    <!-- Before/After Transformation -->
+    <section class="section">
+        <div class="section-header reveal-up">
+            <span class="section-subtitle">Transformations</span>
+            <h2>Experience The Change</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0;">Slide to compare the spatial transformation from bare structure to luxurious living space.</p>
+        </div>
+        
+        <div class="ba-slider-container ba-slider reveal-up">
+            <!-- Before Image -->
+            <img src="assets/site-execution.jpg" alt="Before Construction" class="ba-image">
+            <span class="ba-label label-before">Before</span>
+            
+            <!-- After Image -->
+            <div class="ba-after ba-image">
+                <img src="assets/3d-render.jpg" alt="After 3D Render">
+                <span class="ba-label label-after">After</span>
+            </div>
+            
+            <!-- Slider Handle -->
+            <div class="ba-handle">
+                <div class="ba-handle-btn">↔</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-light">
+        <div class="section-header reveal-up">
+            <span class="section-subtitle">Our Promise</span>
+            <h2>Why Choose {{CLINIC_NAME}}</h2>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-card reveal-up">
+                <div class="trust-icon">✧</div>
+                <h4>Creative Design</h4>
+                <p>Unique spaces tailored to your lifestyle and vision.</p>
+            </div>
+            <div class="trust-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="trust-icon">⬡</div>
+                <h4>3D Visualization</h4>
+                <p>Experience your space in realistic 3D before execution.</p>
+            </div>
+            <div class="trust-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="trust-icon">◈</div>
+                <h4>Premium Materials</h4>
+                <p>Curated selections of the highest quality finishes.</p>
+            </div>
+            <div class="trust-card reveal-up" style="transition-delay: 0.3s;">
+                <div class="trust-icon">◱</div>
+                <h4>Transparent Process</h4>
+                <p>Clear communication, timelines, and project management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                <p>Designing elegant, timeless spaces with precision. From architecture to interior execution.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="architecture.html">Architecture</a></li>
+                    <li><a href="interior-design.html">Interior Design</a></li>
+                    <li><a href="process.html">Turnkey Execution</a></li>
+                    <li><a href="portfolio.html">3D Visualization</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    <li><a href="contact.html">Book Consultation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 {{CLINIC_NAME}}. All Rights Reserved.</p>
+            <p>Admin Login: <a href="admin.html" style="color:var(--primary-color);">Dashboard</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

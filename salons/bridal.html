@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridal Collection | {{CLINIC_NAME}}</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .bridal-style-card {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+        .bridal-style-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .bridal-img {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .bridal-content {
+            flex: 1;
+        }
+        .bridal-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        @media(max-width: 768px) {
+            .bridal-style-card, .bridal-style-card:nth-child(even) {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 60vh;">
+        <img src="assets/bridal-makeup.jpg" alt="Bridal Collection Header" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 4rem; font-family: var(--font-heading); font-style: italic;">Bridal Collection</h1>
+            <p>Crafting timeless beauty for your most unforgettable moments.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-subtitle">Bridal Journeys</span>
+                <h2 class="section-title">A Look for Every Bride</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">From traditional royal weddings to modern minimalist ceremonies, our bridal makeup artistry is tailored to match your vision, culture, and personality.</p>
+            </div>
+
+            <div class="bridal-styles">
+                <!-- Royal Traditional -->
+                <div class="bridal-style-card" data-aos="fade-up">
+                    <div class="bridal-img">
+                        <img src="assets/bride-portrait.jpg" alt="Traditional Royal Bridal Makeup">
+                    </div>
+                    <div class="bridal-content">
+                        <h3>Royal Traditional</h3>
+                        <p>Embrace the grandeur of classic weddings with bold eyes, flawless base, and vibrant lips. We use long-lasting HD makeup to ensure you look perfect from the ceremony to the reception.</p>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 1rem; color: var(--text-muted);">
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Heavy Jewelry Styling</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Complex Dupatta Draping</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Waterproof & HD Finish</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="margin-top: 2rem;">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Modern Minimalist -->
+                <div class="bridal-style-card" data-aos="fade-up">
+                    <div class="bridal-img">
+                        <img src="assets/transformation.jpg" alt="Modern Minimalist Bridal Makeup">
+                    </div>
+                    <div class="bridal-content">
+                        <h3>Modern Minimalist</h3>
+                        <p>For the contemporary bride. Think dewy skin, soft blush, and a natural glow. Our airbrush technique provides a seamless, "no-makeup" makeup look that feels feather-light.</p>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 1rem; color: var(--text-muted);">
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Airbrush Flawless Base</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Glass Skin Finish</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Soft Glam Eyes</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="margin-top: 2rem;">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Engagement & Reception -->
+                <div class="bridal-style-card" data-aos="fade-up">
+                    <div class="bridal-img">
+                        <img src="assets/party-makeup.jpg" alt="Reception Makeup">
+                    </div>
+                    <div class="bridal-content">
+                        <h3>Engagement & Reception</h3>
+                        <p>Glamorous, high-fashion looks designed for the spotlight. We experiment with dramatic eyes, glitter, and chic hairstyles to give you an editorial bridal aesthetic.</p>
+                        <ul style="list-style: none; padding-left: 0; margin-top: 1rem; color: var(--text-muted);">
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Smokey Eyes & Glitter</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> Hollywood Waves Styling</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> High-Glam Contouring</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="margin-top: 2rem;">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/{{PHONE}}" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:{{PHONE}}" class="float-btn float-call" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="portfolio.html">Transformations</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Beauty Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Specialties</h4>
+                    <ul>
+                        <li><a href="bridal.html">Bridal Collection</a></li>
+                        <li><a href="hair.html">Hair Studio</a></li>
+                        <li><a href="mehndi.html">Mehndi Gallery</a></li>
+                        <li><a href="services.html#nail">Nail & Grooming</a></li>
+                        <li><a href="services.html#skin">Skin & Spa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.3); margin-top: 1rem; padding: 0.5rem 1.5rem;">Book Appointment</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

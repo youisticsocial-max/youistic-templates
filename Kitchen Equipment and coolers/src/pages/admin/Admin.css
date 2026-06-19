@@ -1,0 +1,25 @@
+/* Admin Styles */
+.admin-wrapper {
+  font-family: var(--font-sans);
+}
+
+.admin-sidebar {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
+.admin-sidebar a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}

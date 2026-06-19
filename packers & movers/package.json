@@ -1,0 +1,19 @@
+{
+  "name": "packers-movers-transport-template",
+  "version": "1.0.0",
+  "description": "Premium Packers, Movers & Transportation template for white-label builder platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8080",
+    "start": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "logistics",
+    "packers",
+    "movers",
+    "transportation",
+    "template"
+  ],
+  "author": "White-Label Builder",
+  "license": "ISC"
+}

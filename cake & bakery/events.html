@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrations & Events | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem 0;
+            background: var(--surface-dark);
+            text-align: center;
+        }
+
+        .event-card {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .event-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @media(max-width: 768px) {
+            .event-card, .event-card:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+        }
+
+        .event-img {
+            flex: 1;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .event-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .event-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .event-content {
+            flex: 1;
+        }
+
+        .event-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container navbar-container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="custom-cakes.html" class="nav-link">Custom Cakes</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="hero-title" style="color: var(--text-color); font-size: 3.5rem;">Celebrations & Events</h1>
+            <p class="section-subtitle">Making your special moments sweeter with our catering and custom event services.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            
+            <div class="event-card reveal">
+                <div class="event-img">
+                    <img src="assets/wedding-cake.jpg" alt="Weddings" onerror="this.src='https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+                <div class="event-content">
+                    <h3>Luxury Weddings</h3>
+                    <p>Your wedding day deserves a centerpiece as unique and beautiful as your love story. We work closely with couples to design breathtaking, multi-tier wedding cakes that taste as incredible as they look.</p>
+                    <ul style="list-style: none; margin-bottom: 1.5rem; color: var(--text-light);">
+                        <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Cake tasting sessions</li>
+                        <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Floral and structural design</li>
+                        <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Safe venue delivery and setup</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Book a Consultation</a>
+                </div>
+            </div>
+
+            <div class="event-card reveal">
+                <div class="event-img">
+                    <img src="assets/birthday-cake.jpg" alt="Birthday Parties" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8892ebe6fd?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+                <div class="event-content">
+                    <h3>Birthday Parties</h3>
+                    <p>From whimsical children's themes to elegant milestone birthdays, we create custom cakes, cupcakes, and dessert tables that will delight your guests of all ages.</p>
+                    <a href="collections.html" class="btn btn-outline">View Birthday Collection</a>
+                </div>
+            </div>
+
+            <div class="event-card reveal">
+                <div class="event-img">
+                    <img src="assets/pastry.jpg" alt="Corporate Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+                <div class="event-content">
+                    <h3>Corporate & Brand Events</h3>
+                    <p>Impress your clients and team with premium branded desserts. We offer customized cupcakes with edible logos, luxury dessert boxes, and large-scale catering for corporate galas.</p>
+                    <a href="contact.html" class="btn btn-outline">Inquire for Corporate</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 {{CLINIC_NAME}}. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

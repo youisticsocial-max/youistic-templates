@@ -1,0 +1,11 @@
+{
+  "name": "cake-and-bakery-template",
+  "version": "1.0.0",
+  "description": "Premium Luxury Cake & Bakery Template",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

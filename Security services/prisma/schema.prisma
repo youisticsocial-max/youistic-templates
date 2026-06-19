@@ -1,0 +1,132 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Admin {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  passwordHash String
+  role         String   @default("ADMIN") // SUPER_ADMIN, ADMIN
+  createdAt    DateTime @default(now())
+}
+
+model SiteSettings {
+  id             String   @id @default("default")
+  companyName    String   @default("Indian Black Panther Security Services")
+  phoneNumber    String   @default("9845209643")
+  emergencyPhone String   @default("9845209643")
+  email          String   @default("info@ibpss.in")
+  address        String   @default("Office Number 56, Shravan Deep Apartment, 4th Floor, High Court Colony Road, Near Residency Hotel, Ratanada Road, Jodhpur - 342011")
+  mapUrl         String   @default("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.834789520038!2d73.018903!3d26.275114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635e80cd234c93%3A0xe543e0618ff7e42d!2sRatanada%2C%20Jodhpur%2C%20Rajasthan%20342001!5e0!3m2!1sen!2sin!4v1718610000000!5m2!1sen!2sin")
+  whatsappNumber String   @default("9845209643")
+  facebookUrl    String   @default("https://facebook.com")
+  instagramUrl   String   @default("https://instagram.com")
+  twitterUrl     String   @default("https://twitter.com")
+  linkedinUrl    String   @default("https://linkedin.com")
+  seoTitle       String   @default("Indian Black Panther Security Services | Elite Security Solutions")
+  seoDescription String   @default("Elite Security Solutions With Highly Trained Guards, Professional Bouncers, Armed Gunmen & Personal Security Officers.")
+  colorsJson     String   @default("{\"primary\":\"#D4AF37\",\"secondary\":\"#101827\",\"background\":\"#0B0B0B\",\"text\":\"#FFFFFF\"}")
+  updatedAt      DateTime @updatedAt
+}
+
+model Inquiry {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String
+  subject   String
+  message   String
+  status    String   @default("NEW") // NEW, CONTACTED, CONVERTED
+  createdAt DateTime @default(now())
+}
+
+model JobOpening {
+  id           String   @id @default(uuid())
+  title        String   // Security Guard, Bouncer, Gunman, PSO, etc.
+  department   String   @default("Operations")
+  description  String
+  requirements String   // Bullet points separated by newlines
+  type         String   @default("Full-Time") // Full-Time, Part-Time, Contract
+  location     String   @default("Jodhpur")
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+}
+
+model JobApplication {
+  id                String   @id @default(uuid())
+  fullName          String
+  mobileNumber      String
+  address           String
+  experience        String
+  preferredPosition String
+  resumePath        String
+  status            String   @default("NEW") // NEW, REVIEWED, SELECTED, REJECTED
+  createdAt         DateTime @default(now())
+}
+
+model Service {
+  id               String   @id @default(uuid())
+  name             String
+  slug             String   @unique
+  icon             String   // Name of lucide icon
+  shortDescription String
+  longDescription  String
+  features         String   // Pipe-separated features
+  benefits         String   // Pipe-separated benefits
+  category         String   @default("MANPOWER") // MANPOWER, VIP, EVENT
+  image            String
+  createdAt        DateTime @default(now())
+}
+
+model GalleryItem {
+  id        String   @id @default(uuid())
+  type      String   @default("IMAGE") // IMAGE, VIDEO
+  url       String
+  category  String   // GUARDS, BOUNCERS, EVENTS, VIP, TRAINING
+  title     String
+  createdAt DateTime @default(now())
+}
+
+model ClientLogo {
+  id        String   @id @default(uuid())
+  name      String
+  imageUrl  String
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(uuid())
+  clientName  String
+  company     String
+  rating      Int      @default(5)
+  feedback    String
+  clientImage String
+  videoUrl    String?
+  createdAt   DateTime @default(now())
+}
+
+model BlogPost {
+  id        String   @id @default(uuid())
+  title     String
+  slug      String   @unique
+  content   String
+  author    String   @default("IBPSS Command Center")
+  excerpt   String
+  image     String
+  category  String   @default("Security Tips") // Security Tips, Event Safety, Personal Protection, Industry Updates
+  readTime  String   @default("5 min read")
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model FAQ {
+  id        String   @id @default(uuid())
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+}

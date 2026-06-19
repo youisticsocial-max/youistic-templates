@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | {{CLINIC_NAME}}</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 6rem;
+            color: rgba(212, 175, 55, 0.2); /* Goldish */
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: var(--font-heading);
+            line-height: 1;
+        }
+        .client-info {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .client-info img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 40vh;">
+        <img src="assets/bridal-makeup.jpg" alt="Client Love" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 3rem;">Client Love</h1>
+            <p>Real stories and experiences from our beautiful clients.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div style="color: #FFD700; margin-bottom: 1rem; font-size: 1.2rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.1rem;">"My bridal makeup was absolutely flawless! The team at {{CLINIC_NAME}} made me feel like a queen on my wedding day. The makeup didn't budge despite all the crying and dancing!"</p>
+                    <div class="client-info">
+                        <img src="assets/bride-portrait.jpg" alt="Client">
+                        <h4>Priya Sharma</h4>
+                        <span style="color: var(--primary-color); font-size: 0.9rem;">Bridal Client</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div style="color: #FFD700; margin-bottom: 1rem; font-size: 1.2rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.1rem;">"The hair color transformation was magical. They understood exactly what I wanted and delivered results that exceeded my expectations. Highly recommended!"</p>
+                    <div class="client-info">
+                        <img src="assets/hair-color.jpg" alt="Client">
+                        <h4>Aisha Khan</h4>
+                        <span style="color: var(--primary-color); font-size: 0.9rem;">Hair Color & Styling</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div style="color: #FFD700; margin-bottom: 1rem; font-size: 1.2rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.1rem;">"The mehndi artist was incredibly talented. The intricate designs were so beautiful and the stain was super dark. Such a premium experience overall."</p>
+                    <div class="client-info">
+                        <img src="assets/mehndi-design.jpg" alt="Client">
+                        <h4>Neha Gupta</h4>
+                        <span style="color: var(--primary-color); font-size: 0.9rem;">Mehndi Art</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

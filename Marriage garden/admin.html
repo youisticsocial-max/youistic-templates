@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Console | Venue Management Dashboard</title>
+    <!-- Font Awesome for admin icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Admin Styling sheet -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- 1. AUTHENTICATION WRAPPER (Login Screen) -->
+    <div id="auth-wrapper" class="login-body">
+        <div class="login-card">
+            <!-- Dynamic Logo -->
+            <h2 class="theme-color-resolve" style="font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase;">{{CLINIC_NAME}}</h2>
+            <h2>Venue CMS Login</h2>
+            <form id="admin-login-form">
+                <div class="admin-form-group" style="text-align: left;">
+                    <label>Username</label>
+                    <input type="text" name="username" required value="admin">
+                </div>
+                <div class="admin-form-group" style="text-align: left;">
+                    <label>Password</label>
+                    <input type="password" name="password" required value="admin">
+                </div>
+                <button type="submit" class="admin-btn admin-btn-primary" style="width: 100%; padding: 0.8rem; margin-top: 1rem;">Sign In</button>
+            </form>
+            <div style="margin-top: 2rem; font-size: 0.75rem; color: var(--text-admin-muted); line-height: 1.4;">
+                🔒 Secure White-Label Admin Console<br>
+                <strong>Demo Hint:</strong> Use username <code style="background:#f1f5f9; padding:2px 4px;">admin</code> and password <code style="background:#f1f5f9; padding:2px 4px;">admin</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. DASHBOARD MAIN WRAPPER (Private Portal) -->
+    <div id="dashboard-wrapper" class="sidebar-wrapper" style="display: none; width: 100%;">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-crown" style="color: var(--admin-primary, var(--admin-primary-fallback)); font-size: 1.4rem;"></i>
+                <h2>Operator Console</h2>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item active" data-target="panel-dashboard">
+                    <a href="#"><i class="fa-solid fa-chart-line"></i> <span>Dashboard</span></a>
+                </li>
+                <li class="sidebar-menu-item" data-target="panel-inquiries">
+                    <a href="#"><i class="fa-solid fa-envelope-open-text"></i> <span>Inquiries</span></a>
+                </li>
+                <li class="sidebar-menu-item" data-target="panel-venues">
+                    <a href="#"><i class="fa-solid fa-tree"></i> <span>Venue Spaces</span></a>
+                </li>
+                <li class="sidebar-menu-item" data-target="panel-packages">
+                    <a href="#"><i class="fa-solid fa-tags"></i> <span>Packages & Pricing</span></a>
+                </li>
+                <li class="sidebar-menu-item" data-target="panel-rooms">
+                    <a href="#"><i class="fa-solid fa-bed"></i> <span>Rooms & Suites</span></a>
+                </li>
+                <li class="sidebar-menu-item" data-target="panel-content">
+                    <a href="#"><i class="fa-solid fa-pen-to-square"></i> <span>Branding & Tokens</span></a>
+                </li>
+                <li class="sidebar-menu-item" data-target="panel-settings">
+                    <a href="#"><i class="fa-solid fa-sliders"></i> <span>System Settings</span></a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" id="admin-logout-btn" style="color: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Topbar header -->
+            <div class="top-header">
+                <div>
+                    <h1 id="dynamic-venue-title-header">Venue Management Console</h1>
+                    <p style="font-size: 0.8rem; color: var(--text-admin-muted); margin-top: 0.2rem;">Live Sync with Website Template</p>
+                </div>
+                
+                <div class="user-profile">
+                    <div class="user-info">
+                        <div class="user-name">Curator Manager</div>
+                        <div class="user-role">Estate Admin</div>
+                    </div>
+                    <div class="user-avatar">C</div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: OVERVIEW DASHBOARD -->
+            <!-- ========================================== -->
+            <div id="panel-dashboard" class="admin-panel active-panel">
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3>Total Inquiries</h3>
+                            <div class="metric-value" id="stat-total-inquiries">0</div>
+                            <div class="metric-trend trend-up">↑ 12% This Month</div>
+                        </div>
+                        <div class="metric-icon"><i class="fa-solid fa-envelope"></i></div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3>Confirmed Weddings</h3>
+                            <div class="metric-value" id="stat-confirmed-bookings">0</div>
+                            <div class="metric-trend trend-up">↑ 4 New Bookings</div>
+                        </div>
+                        <div class="metric-icon"><i class="fa-solid fa-ring"></i></div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3>Upcoming Events</h3>
+                            <div class="metric-value" id="stat-upcoming-events">0</div>
+                            <div class="metric-trend text-admin-muted">Next 30 Days</div>
+                        </div>
+                        <div class="metric-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3>Projected Revenue</h3>
+                            <div class="metric-value" id="stat-expected-revenue">$0</div>
+                            <div class="metric-trend trend-up">Based on packages</div>
+                        </div>
+                        <div class="metric-icon"><i class="fa-solid fa-wallet"></i></div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Details row -->
+                <div class="dashboard-row">
+                    <!-- Recent Inquiries Table card -->
+                    <div class="panel-card" style="margin-bottom: 0;">
+                        <div class="panel-card-header">
+                            <h2>Recent Booking Inquiries</h2>
+                            <a href="#" onclick="document.querySelector('[data-target=panel-inquiries]').click();" style="font-size:0.8rem; color:var(--admin-primary, var(--admin-primary-fallback)); font-weight:500;">View All</a>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Event Type</th>
+                                        <th>Event Date</th>
+                                        <th>Selected Package</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-inquiries-body">
+                                    <!-- Populated dynamically by admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Quick stats card -->
+                    <div class="panel-card" style="margin-bottom: 0;">
+                        <div class="panel-card-header">
+                            <h2>Status Breakdown</h2>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:1rem; padding-top: 1rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.85rem; font-weight:500;"><span class="badge badge-new" style="margin-right:0.5rem; padding:0.25rem 0.5rem;">●</span> New Requests</span>
+                                <span style="font-weight:bold; font-size:0.9rem;">Fresh</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.85rem; font-weight:500;"><span class="badge badge-contacted" style="margin-right:0.5rem; padding:0.25rem 0.5rem;">●</span> Contacted / Sent Quote</span>
+                                <span style="font-weight:bold; font-size:0.9rem;">Follow up</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.85rem; font-weight:500;"><span class="badge badge-visit" style="margin-right:0.5rem; padding:0.25rem 0.5rem;">●</span> Tour Scheduled</span>
+                                <span style="font-weight:bold; font-size:0.9rem;">In-Person</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.85rem; font-weight:500;"><span class="badge badge-confirmed" style="margin-right:0.5rem; padding:0.25rem 0.5rem;">●</span> Confirmed Booking</span>
+                                <span style="font-weight:bold; font-size:0.9rem; color:#10b981;">Secured</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: BOOKING INQUIRIES -->
+            <!-- ========================================== -->
+            <div id="panel-inquiries" class="admin-panel">
+                <div class="panel-card">
+                    <div class="panel-card-header">
+                        <h2>Manage Event Inquiries & Reservations</h2>
+                        <button class="admin-btn admin-btn-primary" id="export-csv-btn">
+                            <i class="fa-solid fa-file-csv"></i> Export Customer CSV
+                        </button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Client Details</th>
+                                    <th>Event & Date</th>
+                                    <th>Attendance</th>
+                                    <th>Process Status</th>
+                                    <th>Inquiry Notes</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inquiries-table-body">
+                                <!-- Populated dynamically by admin.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: VENUE SPACES -->
+            <!-- ========================================== -->
+            <div id="panel-venues" class="admin-panel">
+                <div class="panel-card">
+                    <div class="panel-card-header">
+                        <h2>Wedding Lawn & Hall Directory</h2>
+                        <button class="admin-btn admin-btn-primary" id="add-new-space-btn">
+                            <i class="fa-solid fa-plus"></i> Add Event Space
+                        </button>
+                    </div>
+                    
+                    <div class="spaces-grid" id="venues-spaces-list">
+                        <!-- Populated dynamically by admin.js -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: PACKAGES & PRICING -->
+            <!-- ========================================== -->
+            <div id="panel-packages" class="admin-panel">
+                <div class="panel-card">
+                    <div class="panel-card-header">
+                        <h2>Wedding Inclusions & Packages Customizer</h2>
+                        <button class="admin-btn admin-btn-primary" id="add-new-pkg-btn">
+                            <i class="fa-solid fa-plus"></i> Create Package
+                        </button>
+                    </div>
+                    
+                    <div id="packages-editor-list">
+                        <!-- Populated dynamically by admin.js -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: ROOMS & SUITES -->
+            <!-- ========================================== -->
+            <div id="panel-rooms" class="admin-panel">
+                <div class="panel-card">
+                    <div class="panel-card-header">
+                        <h2>Guest Accommodations & Amenities Directory</h2>
+                        <button class="admin-btn admin-btn-primary" id="add-new-room-btn">
+                            <i class="fa-solid fa-plus"></i> Add Room Category
+                        </button>
+                    </div>
+                    
+                    <div class="spaces-grid" id="rooms-cms-grid">
+                        <!-- Populated dynamically by admin.js -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: BRANDING CONTENT & TOKENS -->
+            <!-- ========================================== -->
+            <div id="panel-content" class="admin-panel">
+                <div class="panel-card">
+                    <div class="panel-card-header">
+                        <h2>Branding Identity & Token Customizer</h2>
+                    </div>
+
+                    <form id="content-cms-form">
+                        <div class="admin-form-group">
+                            <label>Venue Title (Clinic Name Token) - <code>{{CLINIC_NAME}}</code></label>
+                            <input type="text" name="clinic_name" required>
+                        </div>
+                        
+                        <div class="admin-form-row">
+                            <div class="admin-form-group">
+                                <label>Telephone Reservations - <code>{{PHONE}}</code></label>
+                                <input type="text" name="phone" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>Theme Primary Color - <code>{{PRIMARY_COLOR}}</code></label>
+                                <div class="theme-picker-wrapper">
+                                    <input type="text" name="primary_color" placeholder="e.g. #c5a880" required>
+                                    <div class="color-preview" id="picker-color-preview"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-form-group">
+                            <label>Logo Asset Address / URL - <code>{{LOGO_URL}}</code></label>
+                            <input type="text" name="logo_url" required>
+                        </div>
+
+                        <div class="admin-form-group">
+                            <label>Physical Address - <code>{{ADDRESS}}</code></label>
+                            <input type="text" name="address" required>
+                        </div>
+
+                        <button type="submit" class="admin-btn admin-btn-primary" style="padding:0.75rem 2rem;">Save Branding Tokens</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PANEL: SYSTEM SETTINGS -->
+            <!-- ========================================== -->
+            <div id="panel-settings" class="admin-panel">
+                <div class="dashboard-row">
+                    <!-- Backup card -->
+                    <div class="panel-card" style="margin-bottom:0;">
+                        <div class="panel-card-header">
+                            <h2>Database Backups & Recovery</h2>
+                        </div>
+                        <p style="font-size:0.85rem; color:var(--text-admin-muted); margin-bottom:1.5rem; line-height:1.5;">
+                            Save your entire wedding catalog configuration (venues, prices, suites, client inquiries) to a local backup file, or restore default factory data.
+                        </p>
+                        
+                        <div style="display:flex; flex-direction:column; gap:1rem;">
+                            <button class="admin-btn admin-btn-secondary" id="backup-json-btn" style="justify-content:flex-start;">
+                                <i class="fa-solid fa-download"></i> Download Local Database (.json)
+                            </button>
+                            <button class="admin-btn admin-btn-danger" id="reset-system-btn" style="justify-content:flex-start; margin-top: 1rem;">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Reset Catalog to Default Factory Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Password card -->
+                    <div class="panel-card" style="margin-bottom:0;">
+                        <div class="panel-card-header">
+                            <h2>Change Operator Password</h2>
+                        </div>
+                        <form id="admin-password-form">
+                            <div class="admin-form-group">
+                                <label>Current Password</label>
+                                <input type="password" name="current_pass" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>New Password</label>
+                                <input type="password" name="new_pass" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" name="confirm_pass" required>
+                            </div>
+                            <button type="submit" class="admin-btn admin-btn-primary" style="width:100%;">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- DYNAMIC CMS DIALOG MODAL -->
+    <!-- ========================================== -->
+    <div id="details-modal" class="admin-modal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3 id="modal-title-text">Record Properties</h3>
+                <button class="admin-modal-close">&times;</button>
+            </div>
+            <div class="admin-modal-body" id="modal-body-container">
+                <!-- Dynamically populated forms or descriptions -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin JS Control script -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

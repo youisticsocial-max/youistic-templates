@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            text-align: center;
+        }
+        
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding-bottom: 5px;
+            position: relative;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--primary-color);
+        }
+        .filter-btn::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 1px;
+            background: var(--primary-color); transition: 0.3s;
+        }
+        .filter-btn.active::after, .filter-btn:hover::after { width: 100%; }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 2rem;
+            padding: 0 4rem 100px;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        .masonry-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+        .masonry-item:hover .masonry-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .masonry-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .item-category { color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .item-title { font-family: var(--font-heading); font-size: 1.2rem; }
+
+        @media (max-width: 992px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 768px) { .masonry-grid { column-count: 1; padding: 0 2rem 50px; } }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="interior-design.html">Interiors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <span class="section-subtitle">Our Work</span>
+        <h1>Featured Projects</h1>
+    </header>
+
+    <div class="filter-nav reveal-up">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Residential</button>
+        <button class="filter-btn">Villas</button>
+        <button class="filter-btn">Commercial</button>
+        <button class="filter-btn">Renovation</button>
+    </div>
+
+    <div class="masonry-grid reveal-up">
+        <!-- Item 1 -->
+        <div class="masonry-item">
+            <img src="assets/hero-villa.jpg" alt="Project">
+            <div class="masonry-overlay">
+                <div class="item-category">Architecture</div>
+                <div class="item-title">Skyline Villa</div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="masonry-item">
+            <img src="assets/luxury-living-room.jpg" alt="Project">
+            <div class="masonry-overlay">
+                <div class="item-category">Residential</div>
+                <div class="item-title">Minimalist Haven</div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="masonry-item">
+            <img src="assets/modern-bedroom.jpg" alt="Project">
+            <div class="masonry-overlay">
+                <div class="item-category">Residential</div>
+                <div class="item-title">Serene Bedroom</div>
+                <div style="font-size:0.8rem; color:#aaa; margin-top:5px;">[360° Tour Available]</div>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="masonry-item">
+            <img src="assets/office-interior.jpg" alt="Project">
+            <div class="masonry-overlay">
+                <div class="item-category">Commercial</div>
+                <div class="item-title">Tech Hub Workspace</div>
+            </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="masonry-item">
+            <img src="assets/modular-kitchen.jpg" alt="Project">
+            <div class="masonry-overlay">
+                <div class="item-category">Renovation</div>
+                <div class="item-title">Elegant Culinary Space</div>
+            </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="masonry-item">
+            <img src="assets/commercial-space.jpg" alt="Project">
+            <div class="masonry-overlay">
+                <div class="item-category">Commercial</div>
+                <div class="item-title">Luxury Boutique</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

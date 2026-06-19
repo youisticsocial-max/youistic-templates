@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} | Luxury Wedding Resort & Event Venue</title>
+    <meta name="description" content="Experience royal elegance and grand hospitality at {{CLINIC_NAME}}. Discover premium marriage gardens, grand banquet halls, and destination wedding suites.">
+    <!-- Font Awesome for luxury UI icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sparkles Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Rose Petals Canvas Foreground Layer -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- Transparent Sticky Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo theme-color-resolve" style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;">
+                {{CLINIC_NAME}}
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#venues">Venues</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#pricing">Packages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-gold btn-outline light">Book Tour</a>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Full Screen Navigation Overlay -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#venues">Wedding Venues</a></li>
+            <li><a href="#events">Events & Celebrations</a></li>
+            <li><a href="#rooms">Rooms & Resort</a></li>
+            <li><a href="#gallery">Media Gallery</a></li>
+            <li><a href="#pricing">Packages & Cost</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blog">Wedding Blog</a></li>
+            <li><a href="#contact">Contact & Booking</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Book A Venue Visit</a>
+    </nav>
+
+    <!-- Floating Call & WhatsApp Booking Shortcut Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/{{PHONE}}" target="_blank" class="float-btn float-whatsapp" aria-label="Inquire via WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:{{PHONE}}" class="float-btn float-call" aria-label="Call Venue Direct">
+            <i class="fa fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- MAIN TEMPLATE PAGE CONTENT (Routed Sections) -->
+    <main>
+
+        <!-- 1. HOME SECTION -->
+        <section id="home-page" class="app-section active-page">
+            <!-- Cinematic Hero -->
+            <div class="hero">
+                <!-- Slider Wrapper populated by app.js -->
+                <div class="hero-slider" id="hero-slider-container">
+                    <div class="hero-slide active" style="background-image: url('assets/hero-wedding-resort.jpg');"></div>
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="serif-text">Where Your Dream Celebrations Become Timeless Memories</h1>
+                    <p>Experience unforgettable weddings, royal celebrations, and premium hospitality in a venue designed for your special moments.</p>
+                    <div class="hero-ctas">
+                        <a href="#contact" class="btn btn-primary">Book A Venue Tour</a>
+                        <a href="#pricing" class="btn btn-outline light">Explore Packages</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Inquiry Widget Bar -->
+            <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+                <div class="glass-dark" style="padding: 2rem; border-radius: var(--border-radius); border: 1px solid rgba(197, 168, 128, 0.25);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+                        <div style="color: #fff; flex-grow: 1;">
+                            <h3 style="font-size: 1.4rem; font-weight: 400; margin-bottom: 0.2rem;">Plan Your Dream Royal Wedding</h3>
+                            <p style="font-size: 0.8rem; color: var(--text-muted-light);">Get personalized quotes and check venue availability dates instantly.</p>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" style="padding: 0.8rem 1.8rem;">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Venue Showcase Section -->
+            <div class="page-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Signature Venue Showcase</h2>
+                        <p>Explore our majestic outdoor lawns, grand halls, and premium settings curated for your memories.</p>
+                    </div>
+                    <!-- Grid dynamically populated from localStorage -->
+                    <div class="card-grid" id="showcase-venues-grid"></div>
+                    <div style="text-align: center; margin-top: 4rem;">
+                        <a href="#venues" class="btn btn-gold btn-outline">View All Venues</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Section -->
+            <div class="page-section alternate">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Why Choose {{CLINIC_NAME}}</h2>
+                        <p>A heritage-infused experience of grandeur, safety, and bespoke customer hospitality.</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-hotel"></i></div>
+                            <h3>Royal Ambience</h3>
+                            <p>Stunning arches, marble pillars, and water features inspired by majestic royal heritage palaces.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                            <h3>Spacious Venue</h3>
+                            <p>Expansive event lawns and grand ballroom spaces capable of hosting grand parties of up to 1,500 guests.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+                            <h3>Premium Catering</h3>
+                            <p>Customized gourmet dining experiences curated by master chefs offering traditional and global cuisines.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-bed"></i></div>
+                            <h3>Luxury Accommodation</h3>
+                            <p>Bespoke suites and executive rooms fully equipped with 5-star amenities for your family and guests.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <h3>Event Management Support</h3>
+                            <p>Dedicated on-site operations team assisting in guest welcomes, vendors coordination, and decor setups.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-square-parking"></i></div>
+                            <h3>Ample Parking & Security</h3>
+                            <p>Secure double parking spaces for up to 300 cars, equipped with round-the-clock CCTV surveillance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Types Section -->
+            <div class="page-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Event Types & Celebrations</h2>
+                        <p>From traditional ritual ceremonies to grand social receptions, we host them with majestic grace.</p>
+                    </div>
+                    
+                    <div class="events-grid">
+                        <div class="event-type-card scroll-reveal">
+                            <img src="assets/couple-entry.jpg" alt="Weddings" loading="lazy">
+                            <div class="event-type-overlay">
+                                <h3>Royal Weddings</h3>
+                                <p>Grand, romantic ceremonies and receptions tailored to reflect your unique love story.</p>
+                            </div>
+                        </div>
+                        <div class="event-type-card scroll-reveal">
+                            <img src="assets/bridal-setup.jpg" alt="Haldi & Mehndi" loading="lazy">
+                            <div class="event-type-overlay">
+                                <h3>Haldi & Mehndi</h3>
+                                <p>Colorful, intimate outdoor gatherings with traditional sit-downs and floral setups.</p>
+                            </div>
+                        </div>
+                        <div class="event-type-card scroll-reveal">
+                            <img src="assets/night-lighting.jpg" alt="Receptions" loading="lazy">
+                            <div class="event-type-overlay">
+                                <h3>Grand Receptions</h3>
+                                <p>Majestic dining and dancing nights illuminated by custom royal lighting fixtures.</p>
+                            </div>
+                        </div>
+                        <div class="event-type-card scroll-reveal">
+                            <img src="assets/royal-stage.jpg" alt="Corporate & Cultural" loading="lazy">
+                            <div class="event-type-overlay">
+                                <h3>Corporate Galas</h3>
+                                <p>Professional conferences, team meetings, corporate launches, and premium award ceremonies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accommodation Preview -->
+            <div class="page-section alternate">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Rooms & Guest Accommodations</h2>
+                        <p>Bespoke rooms for the wedding party, guaranteeing premium resort comfort during your stay.</p>
+                    </div>
+                    <div class="card-grid" id="showcase-rooms-grid"></div>
+                    <div style="text-align: center; margin-top: 4rem;">
+                        <a href="#rooms" class="btn btn-gold btn-outline">Explore All Suites</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT US SECTION -->
+        <section id="about-page" class="app-section page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Royal Heritage Story</h2>
+                    <p>Uncompromising service standards and magnificent structures established to honor your sacred vows.</p>
+                </div>
+                
+                <div class="about-split">
+                    <div class="about-text scroll-reveal">
+                        <h3>Bespoke Hospitality Since 2012</h3>
+                        <p>Established as a premier destination for luxury events, {{CLINIC_NAME}} combines traditional heritage architecture with state-of-the-art modern resort comforts. Our property represents a sanctuary of royal elegance, curated to turn every celebration into a historical memoir.</p>
+                        <p>Our philosophy is built around guest hospitality. Our event curators work directly with families, managing every detail of catering, lighting, safety, and logistics. When you step into our estate, you enter a legacy of celebrations and memories.</p>
+                    </div>
+                    <div class="about-visuals scroll-reveal">
+                        <div class="about-img-box"><img src="assets/hero-wedding-resort.jpg" alt="Palace Entrance"></div>
+                        <div class="about-img-box"><img src="assets/event-decoration.jpg" alt="Event Details"></div>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item scroll-reveal">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-year">2012</div>
+                        <div class="timeline-content">
+                            <h4>Foundation Laid</h4>
+                            <p>The estate ground was purchased and designed by award-winning architects, drawing inspiration from heritage palaces.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-year">2016</div>
+                        <div class="timeline-content">
+                            <h4>Grand Ballroom Inauguration</h4>
+                            <p>We completed construction of the 800-capacity Grand Ballroom, equipped with imported Italian crystal chandeliers.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h4>Luxury Suites Expansion</h4>
+                            <p>Added 15 new luxury suites, plunge pool cabanas, and fully integrated the poolside cocktail lounge.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">
+                            <h4>Gold Star Hospitality Award</h4>
+                            <p>{{CLINIC_NAME}} was named the "Best Luxury Wedding Destination Venue of the Year" by Hospitality Index.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. WEDDING VENUES SECTION -->
+        <section id="venues-page" class="app-section page-section alternate">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Magnificent Venue Spaces</h2>
+                    <p>Bespoke indoor and outdoor event locations designed to accommodate gatherings of any scale.</p>
+                </div>
+                <div class="card-grid" id="venues-grid-render"></div>
+            </div>
+        </section>
+
+        <!-- 4. EVENTS SECTION -->
+        <section id="events-page" class="app-section page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Events & Celebrations</h2>
+                    <p>Bespoke planning, coordination, and styling for a wide range of social and corporate affairs.</p>
+                </div>
+                
+                <div class="card-grid">
+                    <div class="luxury-card scroll-reveal">
+                        <div class="card-img-wrapper">
+                            <img src="assets/couple-entry.jpg" alt="Wedding ceremonies">
+                        </div>
+                        <div class="card-content">
+                            <h3>Bespoke Wedding Ceremonies</h3>
+                            <p class="card-desc">From mandap details, seating, flower arches to the entry procession. We design weddings that capture traditional splendor and personal stories.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="luxury-card scroll-reveal">
+                        <div class="card-img-wrapper">
+                            <img src="assets/poolside-event.jpg" alt="Pre-wedding parties">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pre-Wedding Celebrations</h3>
+                            <p class="card-desc">Host high-energy Sangeet nights, intimate Haldi functions, and Mehndi lunches around our premium poolside or manicured terraces.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="luxury-card scroll-reveal">
+                        <div class="card-img-wrapper">
+                            <img src="assets/royal-stage.jpg" alt="Corporate Galas">
+                        </div>
+                        <div class="card-content">
+                            <h3>Corporate Dinners & Meetings</h3>
+                            <p class="card-desc">Deliver professional branding in our modern conference suites, coupled with high-end catering and state-of-the-art multimedia systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ROOMS SECTION -->
+        <section id="rooms-page" class="app-section page-section alternate">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Luxury Rooms & Suites</h2>
+                    <p>Enjoy premium hospitality during your wedding celebrations. Experience 5-star comfort and premium amenities.</p>
+                </div>
+                <div class="card-grid" id="rooms-grid-render"></div>
+            </div>
+        </section>
+
+        <!-- 6. GALLERY SECTION -->
+        <section id="gallery-page" class="app-section page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Cinematic Gallery</h2>
+                    <p>A visual curation of beautiful moments, setup decor, floral designs, and celebrations captured at our venue.</p>
+                </div>
+                
+                <div class="gallery-filters" id="gallery-filters-render">
+                    <button class="filter-btn active" data-filter="all">All Photos</button>
+                    <button class="filter-btn" data-filter="gardens">Gardens</button>
+                    <button class="filter-btn" data-filter="banquet">Banquet Hall</button>
+                    <button class="filter-btn" data-filter="decorations">Decorations</button>
+                    <button class="filter-btn" data-filter="rooms">Rooms</button>
+                    <button class="filter-btn" data-filter="weddings">Weddings</button>
+                    <button class="filter-btn" data-filter="food">Catering</button>
+                </div>
+                
+                <div class="gallery-grid" id="gallery-grid-render"></div>
+            </div>
+        </section>
+
+        <!-- 7. PACKAGES SECTION -->
+        <section id="pricing-page" class="app-section page-section alternate">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Bespoke Wedding Packages</h2>
+                    <p>Select from our pre-curated collections or contact our coordinators to customize your own experience.</p>
+                </div>
+                <div class="pricing-grid" id="packages-grid-render"></div>
+            </div>
+        </section>
+
+        <!-- 8. TESTIMONIALS SECTION -->
+        <section id="testimonials-page" class="app-section bg-royal-dark page-section">
+            <div class="container">
+                <div class="section-header dark">
+                    <h2>Guest Love & Stories</h2>
+                    <p>Read emotional memoirs and feedback from families who celebrated their milestones on our grounds.</p>
+                </div>
+                
+                <div class="testimonials-slider" id="testimonials-slider-render"></div>
+                <div class="slider-dots" id="testimonials-dots-render"></div>
+            </div>
+        </section>
+
+        <!-- 9. BLOG SECTION -->
+        <section id="blog-page" class="app-section page-section alternate">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Wedding Inspiration & Editorial Ideas</h2>
+                    <p>Discover design tips, catering configurations, and seasonal suggestions from our design planners.</p>
+                </div>
+                <div class="blog-grid" id="blog-grid-render"></div>
+            </div>
+        </section>
+
+        <!-- 10. CONTACT SECTION -->
+        <section id="contact-page" class="app-section page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Book Your Royal Experience</h2>
+                    <p>Connect with a wedding curator, schedule a private tour of the lawns, and secure your booking dates.</p>
+                </div>
+                
+                <div class="contact-split">
+                    <!-- Info Col -->
+                    <div class="contact-info scroll-reveal">
+                        <h3>Get in Touch</h3>
+                        <p style="color:var(--text-muted-dark); margin-bottom: 2rem;">Have questions about pricing, inclusions, or seasonal dates? Our sales coordinators are available to help you plan your itinerary.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <div class="contact-detail-text">
+                                    <h4>Resort Address</h4>
+                                    <p>{{ADDRESS}}</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                                <div class="contact-detail-text">
+                                    <h4>Phone Reservations</h4>
+                                    <p>{{PHONE}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-placeholder">
+                            <span><i class="fa-solid fa-map-pin" style="color:var(--primary-color, var(--primary-fallback)); font-size:1.5rem; margin-bottom: 0.5rem; display:block; text-align:center;"></i> Google Maps Venue Location</span>
+                        </div>
+                    </div>
+
+                    <!-- Form Col -->
+                    <div class="contact-form-wrapper scroll-reveal">
+                        <form id="booking-inquiry-form">
+                            <h3 class="serif-text" style="font-size: 1.8rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 1rem;">Venue Inquiry Form</h3>
+                            
+                            <div class="form-group">
+                                <label>Your Full Name</label>
+                                <input type="text" name="name" required placeholder="e.g. Eleanor Vance">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" name="email" required placeholder="e.g. eleanor@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" name="phone" required placeholder="e.g. +1 (555) 769-2575">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Event Date</label>
+                                    <input type="date" name="event_date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Expected Guests</label>
+                                    <input type="number" name="guests" required placeholder="e.g. 250" min="10">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Event Type</label>
+                                    <select name="event_type" required>
+                                        <option value="">Select event...</option>
+                                        <option value="Wedding">Wedding Ceremony</option>
+                                        <option value="Haldi / Mehndi">Haldi & Mehndi Ceremony</option>
+                                        <option value="Reception">Grand Reception</option>
+                                        <option value="Anniversary">Anniversary Gala</option>
+                                        <option value="Corporate">Corporate Conference / Dinner</option>
+                                        <option value="Other">Other Social Gathering</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Select Package</label>
+                                    <select name="package_id">
+                                        <!-- Populated dynamically by app.js -->
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Special Inquiries / Notes</label>
+                                <textarea name="notes" rows="4" placeholder="Detail any floral, catering, or room accommodation requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Submit Inquiry & Book Tour</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <img src="" alt="View Large Photo">
+            <div class="lightbox-title serif-text" style="color: #fff; margin-top: 1rem; text-align: center; font-size: 1.25rem;"></div>
+        </div>
+    </div>
+
+    <!-- Luxury Hospitality Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col footer-about">
+                    <h3 class="theme-color-resolve" style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem;">{{CLINIC_NAME}}</h3>
+                    <p>A 5-star wedding destination estate built to host events of grand scale and elegance. Experience rich traditions and contemporary luxury hospitality.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>Venue Spaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="#venues">Royal Wedding Garden</a></li>
+                        <li><a href="#venues">Grand Ballroom Hall</a></li>
+                        <li><a href="#venues">Imperial Poolside Lawn</a></li>
+                        <li><a href="#venues">Heritage Courtyard</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>Bespoke Packages</h4>
+                    <ul class="footer-links">
+                        <li><a href="#pricing">Silver Package</a></li>
+                        <li><a href="#pricing">Gold Royal Package</a></li>
+                        <li><a href="#pricing">Platinum Grand Package</a></li>
+                        <li><a href="#contact">Custom Quotations</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>Reservations</h4>
+                    <p style="color: var(--text-muted-light); font-size: 0.85rem; margin-bottom: 1.5rem;">Subscribe to our newsletter for season rates and wedding trends guides.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Bespoke newsletter subscription confirmed.'); this.reset();">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa fa-envelope"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 {{CLINIC_NAME}}. All Rights Reserved. | <a href="admin.html" target="_blank" style="color: var(--primary-color, var(--primary-fallback)); text-decoration: underline;">Operator Console</a>
+                </div>
+                <div>
+                    📍 {{ADDRESS}} | 📞 {{PHONE}}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS Application script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

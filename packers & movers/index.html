@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} | Premium Relocation, Logistics & Transport Solutions</title>
+    
+    <!-- Meta Descriptions -->
+    <meta name="description" content="Professional household shifting, office relocation, vehicle transport, warehousing, and nationwide industrial logistics by {{CLINIC_NAME}}. Secure handling, timely delivery.">
+    <meta name="keywords" content="packers and movers, logistics, cargo transport, freight carrier, warehouse storage, household shifting, commercial relocation">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="{{CLINIC_NAME}} | Nationwide Logistics & Relocation">
+    <meta property="og:description" content="Professional moving services and cargo carriers. Real-time GPS tracking, premium safety packing.">
+    <meta property="og:type" content="website">
+    
+    <!-- CDNs: FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css?v=1.2">
+</head>
+<body>
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#/" class="logo">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img" style="display:none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                <div class="logo-svg-wrapper">
+                    <svg class="logo-svg" width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 10H23V24H5V10Z" fill="var(--primary-color)" />
+                        <path d="M23 15H29L32 19V24H23V15Z" fill="#38bdf8" />
+                        <circle cx="10" cy="28" r="3.5" fill="#ffffff" />
+                        <circle cx="26" cy="28" r="3.5" fill="#ffffff" />
+                        <text x="42" y="27" font-family="Outfit" font-size="20" font-weight="800" fill="#ffffff">APEX</text>
+                        <text x="94" y="27" font-family="Outfit" font-size="20" font-weight="400" fill="#38bdf8">LOGISTICS</text>
+                    </svg>
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#/" class="nav-link">Home</a></li>
+                <li><a href="#/about" class="nav-link">About Us</a></li>
+                <li><a href="#/services" class="nav-link">Services</a></li>
+                <li><a href="#/fleet" class="nav-link">Our Fleet</a></li>
+                <li class="nav-desktop-hide"><a href="#/how-we-work" class="nav-link">How We Work</a></li>
+                <li class="nav-desktop-hide"><a href="#/gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#/tracking" class="nav-link">Tracking</a></li>
+                <li class="nav-desktop-hide"><a href="#/testimonials" class="nav-link">Reviews</a></li>
+                <li class="nav-desktop-hide"><a href="#/faqs" class="nav-link">FAQs</a></li>
+                <li><a href="#/contact" class="nav-link">Contact</a></li>
+                <li><a href="#/contact" class="nav-cta">Get Free Quote</a></li>
+            </ul>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Floating Quick Triggers -->
+    <div class="floating-widgets">
+        <a href="tel:{{PHONE}}" class="floating-btn btn-call" title="Call Now">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/{{PHONE}}" class="floating-btn btn-whatsapp" title="WhatsApp Chat" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- MAIN APP ROUTER CONTENT -->
+    <main id="app-content">
+
+        <!-- 1. HOME VIEW -->
+        <div class="page-view" id="page-home">
+            <section class="hero-section">
+                <div class="hero-bg">
+                    <img src="assets/hero-truck.jpg" alt="Logistics Freight Fleet">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="fas fa-shield-check"></i> ISO 9001:2015 Certified Logistics
+                        </div>
+                        <h1 class="hero-title" id="hero-headline">Moving Your World With Safety & Trust</h1>
+                        <p class="hero-subtitle" id="hero-subheading">Professional relocation, transportation, and logistics solutions with secure handling and timely delivery.</p>
+                        <div class="hero-actions">
+                            <a href="#/contact" class="btn btn-primary">Get Free Quote <i class="fas fa-calculator"></i></a>
+                            <a href="#/tracking" class="btn btn-secondary">Track Shipment <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Quote Form -->
+                    <div class="quote-card">
+                        <h3>Get an Instant <span>Quote</span></h3>
+                        <form id="hero-quote-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="quote-name">Full Name</label>
+                                    <input type="text" id="quote-name" name="name" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-phone">Phone Number</label>
+                                    <input type="tel" id="quote-phone" name="phone" class="form-control" placeholder="Enter phone number" required>
+                                </div>
+                                <div class="form-row-2col">
+                                    <div class="form-group">
+                                        <label for="quote-from">From City</label>
+                                        <input type="text" id="quote-from" name="movingFrom" class="form-control" placeholder="City or Pincode" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="quote-to">To City</label>
+                                        <input type="text" id="quote-to" name="movingTo" class="form-control" placeholder="City or Pincode" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-service">Service Required</label>
+                                    <select id="quote-service" name="serviceType" class="form-control" required>
+                                        <option value="" disabled selected>Select service</option>
+                                        <option value="Household Shifting">Household Shifting</option>
+                                        <option value="Office Shifting">Office Shifting</option>
+                                        <option value="Vehicle Transit">Vehicle Transportation</option>
+                                        <option value="Warehousing">Warehouse Storage</option>
+                                        <option value="Industrial Logistics">Industrial Logistics</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-date">Moving Date</label>
+                                    <input type="date" id="quote-date" name="movingDate" class="form-control" required>
+                                </div>
+                            </div>
+                            <button type="submit">Submit Request <i class="fas fa-paper-plane"></i></button>
+                            <div class="alert-msg"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Services Section -->
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Key Capabilities</span>
+                        <h2 class="section-title">Our Premium Shifting & Relocation Services</h2>
+                        <p>We combine heavy-duty fleet infrastructure with highly trained personnel to ensure complete peace of mind.</p>
+                    </div>
+                    <div class="services-grid" id="home-services-grid">
+                        <!-- Dynamic Home Services Rendered Here -->
+                    </div>
+                    <div style="text-align:center; margin-top:4rem;">
+                        <a href="#/services" class="btn btn-primary">View All Services <i class="fas fa-cubes"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trust Badge Section (Why Choose Us) -->
+            <section class="section section-dark">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Standard of Excellence</span>
+                        <h2 class="section-title">Why Choose {{CLINIC_NAME}}?</h2>
+                        <p>We go the extra mile to guarantee safe transit and professional relocation compliance.</p>
+                    </div>
+                    <div class="choose-grid">
+                        <div class="choose-card scroll-reveal">
+                            <div class="choose-icon-box"><i class="fas fa-user-shield"></i></div>
+                            <h3 class="choose-card-title">Experienced Packers</h3>
+                            <p class="choose-card-text">Specialized packaging teams trained to pack breakables, valuables, antiques, and heavy equipment with expert safety layers.</p>
+                        </div>
+                        <div class="choose-card scroll-reveal">
+                            <div class="choose-icon-box"><i class="fas fa-boxes"></i></div>
+                            <h3 class="choose-card-title">Safe Multi-Layer Packaging</h3>
+                            <p class="choose-card-text">We use moisture-resistant cartons, edge protectors, heavy-duty bubble wraps, and custom wood crates for high-risk assets.</p>
+                        </div>
+                        <div class="choose-card scroll-reveal">
+                            <div class="choose-icon-box"><i class="fas fa-map-marked-alt"></i></div>
+                            <h3 class="choose-card-title">GPS Tracker Integration</h3>
+                            <p class="choose-card-text">All our cargo carriers and fleet container trucks are fitted with GPS tracking systems for real-time shipment transparency.</p>
+                        </div>
+                        <div class="choose-card scroll-reveal">
+                            <div class="choose-icon-box"><i class="fas fa-shipping-fast"></i></div>
+                            <h3 class="choose-card-title">Timely Delivery Commit</h3>
+                            <p class="choose-card-text">Route optimization, fleet standby options, and dedicated logistics coordinators ensure we deliver within schedules.</p>
+                        </div>
+                        <div class="choose-card scroll-reveal">
+                            <div class="choose-icon-box"><i class="fas fa-tags"></i></div>
+                            <h3 class="choose-card-title">Affordable Pricing</h3>
+                            <p class="choose-card-text">No hidden fees or surprises. Detailed breakdown of taxes, toll fees, packing material charges, and labor cost upfront.</p>
+                        </div>
+                        <div class="choose-card scroll-reveal">
+                            <div class="choose-icon-box"><i class="fas fa-headset"></i></div>
+                            <h3 class="choose-card-title">24/7 Dedicated Support</h3>
+                            <p class="choose-card-text">Direct customer support hotline and email tickets to help you clarify doubts or check status updates any time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scroll Journey Process Section -->
+            <section class="section section-light" id="journey-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">How It Works</span>
+                        <h2 class="section-title">The Shifting Journey Process</h2>
+                        <p>A step-by-step layout of how we execute relocations from pickup request to door delivery.</p>
+                    </div>
+                    
+                    <div class="process-timeline-container scroll-reveal">
+                        <div class="process-line">
+                            <div class="process-line-active"></div>
+                        </div>
+                        <!-- Floating animated truck -->
+                        <div class="timeline-truck">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number-box">01</div>
+                                <h3 class="process-step-title">Quote Request</h3>
+                                <p class="process-step-desc">Fill out details online or schedule a free physical inspection.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number-box">02</div>
+                                <h3 class="process-step-title">Planning Survey</h3>
+                                <p class="process-step-desc">Determine logistics plan, packaging list, and fleet type.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number-box">03</div>
+                                <h3 class="process-step-title">Secure Packing</h3>
+                                <p class="process-step-desc">Premium packing and safe loading into container trucks.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number-box">04</div>
+                                <h3 class="process-step-title">Safe Transit</h3>
+                                <p class="process-step-desc">GPS-monitored transportation across routes and borders.</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number-box">05</div>
+                                <h3 class="process-step-title">Safe Delivery</h3>
+                                <p class="process-step-desc">Unloading, unpacking, and positioning goods in your new location.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Home Testimonials Carousel -->
+            <section class="section section-light" style="border-top:1px solid var(--border-color);">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Client Reviews</span>
+                        <h2 class="section-title">What Our Customers Say</h2>
+                        <p>Read experiences from corporate managers, home builders, and vehicle shippers who used our services.</p>
+                    </div>
+                    
+                    <div class="testimonial-carousel-container scroll-reveal">
+                        <div class="testimonial-track" id="testimonial-track">
+                            <!-- JS Carousel Items -->
+                        </div>
+                        <div class="carousel-indicators" id="carousel-indicators">
+                            <!-- Navigation dots -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 2. ABOUT US VIEW -->
+        <div class="page-view" id="page-about">
+            <div class="page-intro">
+                <h1>About Us</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>About Us</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="about-grid">
+                        <div class="about-images scroll-reveal">
+                            <img src="assets/warehouse.jpg" alt="Logistics Center Operations" class="about-img-main">
+                            <img src="assets/house-shifting.jpg" alt="Relocation Specialists" class="about-img-sub">
+                        </div>
+                        <div class="about-content scroll-reveal">
+                            <span class="section-badge">Corporate Profile</span>
+                            <h2>Trusted Partner for Nationwide Logistics & Shifting</h2>
+                            <p>Founded on principles of extreme safety, speed, and punctuality, {{CLINIC_NAME}} has grown into one of the most reliable and premium logistics operators in the country.</p>
+                            <p>We own and run a comprehensive fleet of containers, open body trucks, cargo vans, and heavy-duty industrial trailers, enabling us to handle all kinds of relocations—from a small studio apartment to giant corporate office complexes and multi-ton industrial setups.</p>
+                            
+                            <h3 style="font-size:1.3rem; margin-top:2rem; margin-bottom:1rem;">Our Mission</h3>
+                            <p>To redefine transportation security and client convenience by deploying modern scheduling systems, GPS tracking terminals, robust packaging standards, and responsive support specialists.</p>
+                            
+                            <div class="about-features">
+                                <div class="about-feat-item"><i class="fas fa-check-circle"></i> Nationwide Permit Carrier</div>
+                                <div class="about-feat-item"><i class="fas fa-check-circle"></i> Trained Moving Crew</div>
+                                <div class="about-feat-item"><i class="fas fa-check-circle"></i> 100% Insured Operations</div>
+                                <div class="about-feat-item"><i class="fas fa-check-circle"></i> Tech-enabled Tracking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Company Timeline -->
+            <section class="section section-dark">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Our Journey</span>
+                        <h2 class="section-title">Evolution of {{CLINIC_NAME}}</h2>
+                        <p>How we scaled our network, fleet capacity, and delivery performance over time.</p>
+                    </div>
+                    
+                    <div class="faq-accordion scroll-reveal" style="max-width:900px;">
+                        <div style="border-left:3px solid var(--primary-color); padding-left:2rem; margin-bottom:3rem; position:relative;">
+                            <span style="font-weight:800; font-size:1.8rem; color:var(--primary-color); display:block; margin-bottom:0.5rem;">Phase 1: Humble Beginnings</span>
+                            <p style="color:var(--text-light);">Started as a local goods carrier with a single mini truck. Focused purely on household shifting with premium packaging techniques that earned immediate customer trust.</p>
+                        </div>
+                        <div style="border-left:3px solid var(--primary-color); padding-left:2rem; margin-bottom:3rem; position:relative;">
+                            <span style="font-weight:800; font-size:1.8rem; color:var(--primary-color); display:block; margin-bottom:0.5rem;">Phase 2: Fleet Expansion & Inter-State Operations</span>
+                            <p style="color:var(--text-light);">Added container trucks, warehouse depots in 5 central cities, and started full truckload inter-state commercial transport services.</p>
+                        </div>
+                        <div style="border-left:3px solid var(--primary-color); padding-left:2rem; position:relative;">
+                            <span style="font-weight:800; font-size:1.8rem; color:var(--primary-color); display:block; margin-bottom:0.5rem;">Phase 3: Digital Integration & Industrial Rigging</span>
+                            <p style="color:var(--text-light);">Introduced custom client booking portals, real-time shipment monitoring, specialized heavy industrial transportation setups, and automated status networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 3. SERVICES VIEW -->
+        <div class="page-view" id="page-services">
+            <div class="page-intro">
+                <h1>Our Services</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>Services</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Scope of Operations</span>
+                        <h2 class="section-title">Specialized Relocation & Logistics Solutions</h2>
+                        <p>We provide versatile freight and transport solutions designed to scale with your shifting needs.</p>
+                    </div>
+                    
+                    <div class="services-grid" id="services-page-grid">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 4. OUR FLEET VIEW -->
+        <div class="page-view" id="page-fleet">
+            <div class="page-intro">
+                <h1>Our Transportation Fleet</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>Our Fleet</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Carrier Capabilities</span>
+                        <h2 class="section-title">Built for Safety, Range & Volume</h2>
+                        <p>A diverse fleet of modern vehicles regularly maintained to meet emission codes and cargo safety rules.</p>
+                    </div>
+                    
+                    <div class="fleet-grid" id="fleet-page-grid">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 5. HOW WE WORK VIEW -->
+        <div class="page-view" id="page-how-we-work">
+            <div class="page-intro">
+                <h1>How We Work</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>How We Work</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container" style="max-width:900px;">
+                    <div class="section-header">
+                        <span class="section-badge">Workflow Policy</span>
+                        <h2 class="section-title">Engineered For Stress-Free Transitions</h2>
+                        <p>Clear milestones that dictate how we handle packaging safety, customs clearances, loading, and transit protection.</p>
+                    </div>
+                    
+                    <div class="faq-accordion" style="gap:2rem;">
+                        <div style="background:var(--bg-white); border:1px solid var(--border-color); border-radius:12px; padding:2.5rem; display:flex; gap:2rem; align-items:flex-start;" class="scroll-reveal">
+                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); line-height:1; background:rgba(15,82,186,0.1); width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</span>
+                            <div>
+                                <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Site Survey & Material Assessment</h3>
+                                <p style="color:var(--text-muted); font-size:0.95rem;">Our logistics executive visits your site (or schedules a video survey) to evaluate the volume of goods, count fragile items, check lift heights, and plan optimal carton sizes.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background:var(--bg-white); border:1px solid var(--border-color); border-radius:12px; padding:2.5rem; display:flex; gap:2rem; align-items:flex-start;" class="scroll-reveal">
+                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); line-height:1; background:rgba(15,82,186,0.1); width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</span>
+                            <div>
+                                <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Premium Packaging Deployment</h3>
+                                <p style="color:var(--text-muted); font-size:0.95rem;">On shifting day, our crew arrives with bubble wraps, corrugated sheets, foam rolls, and heavy boxes. Items are individually cataloged, packaged, and labeled for tracking.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background:var(--bg-white); border:1px solid var(--border-color); border-radius:12px; padding:2.5rem; display:flex; gap:2rem; align-items:flex-start;" class="scroll-reveal">
+                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); line-height:1; background:rgba(15,82,186,0.1); width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</span>
+                            <div>
+                                <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Stacking & Weight Distribution Loading</h3>
+                                <p style="color:var(--text-muted); font-size:0.95rem;">Heavier items go at the base of the container, securely tied with cargo straps to avoid sliding. Fragile packages sit at the top. The load is locked and sealed under supervision.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background:var(--bg-white); border:1px solid var(--border-color); border-radius:12px; padding:2.5rem; display:flex; gap:2rem; align-items:flex-start;" class="scroll-reveal">
+                            <span style="font-size:2rem; font-weight:800; color:var(--primary-color); line-height:1; background:rgba(15,82,186,0.1); width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">4</span>
+                            <div>
+                                <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Real-time GPS Monitored Transit</h3>
+                                <p style="color:var(--text-muted); font-size:0.95rem;">The fleet moves along optimized corridors. Clients can check shipment locations dynamically on our website tracker using their assigned tracking ID.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 6. GALLERY VIEW -->
+        <div class="page-view" id="page-gallery">
+            <div class="page-intro">
+                <h1>Media Gallery</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>Gallery</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Visuals of Trust</span>
+                        <h2 class="section-title">Our Operational Showcase</h2>
+                        <p>A look at our packing standards, transport fleets, cargo handling crew, and warehouse depots.</p>
+                    </div>
+                    
+                    <!-- Filter Navigation -->
+                    <div class="gallery-filter" id="gallery-filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Photos</button>
+                        <button class="filter-btn" data-filter="packing">Packing</button>
+                        <button class="filter-btn" data-filter="loading">Loading & Crew</button>
+                        <button class="filter-btn" data-filter="vehicles">Fleets</button>
+                        <button class="filter-btn" data-filter="warehouses">Storage</button>
+                        <button class="filter-btn" data-filter="deliveries">Deliveries</button>
+                    </div>
+                    
+                    <!-- Masonry Grid -->
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- JS Rendered Items -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 7. TRACKING VIEW -->
+        <div class="page-view" id="page-tracking">
+            <div class="page-intro">
+                <h1>Shipment Tracking & Support</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>Tracking & Support</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Real-time Dashboard</span>
+                        <h2 class="section-title">Track Your Shipment Location</h2>
+                        <p>Enter your 10-digit Tracking Order ID (e.g. TRK-123456 or Request ID) to view shipping status.</p>
+                    </div>
+                    
+                    <div class="tracking-wrapper scroll-reveal">
+                        <div class="tracking-search">
+                            <input type="text" id="shipment-id-input" placeholder="Enter Tracking ID (e.g., TRK-123456)" aria-label="Shipment Tracking Number">
+                            <button class="btn btn-primary" id="btn-track-shipment" style="padding:1rem 2.5rem; justify-content:center;">Find Shipment <i class="fas fa-search"></i></button>
+                        </div>
+                        
+                        <!-- Tracking Result Details (Initially Hidden) -->
+                        <div class="tracking-result-box" id="tracking-result-box">
+                            <div class="tracking-meta">
+                                <div>
+                                    <span style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Shipment ID</span>
+                                    <strong id="trk-val-id" style="font-size:1.2rem; color:var(--text-main);">-</strong>
+                                </div>
+                                <div>
+                                    <span style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Current Status</span>
+                                    <strong id="trk-val-status" style="font-size:1.2rem; color:var(--primary-color);">-</strong>
+                                </div>
+                                <div>
+                                    <span style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Route Log</span>
+                                    <strong id="trk-val-route" style="font-size:1.1rem; color:var(--text-main);">-</strong>
+                                </div>
+                                <div>
+                                    <span style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Service Carrier</span>
+                                    <strong id="trk-val-type" style="font-size:1.1rem; color:var(--text-main);">-</strong>
+                                </div>
+                                <div>
+                                    <span style="display:block; font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Booking Date</span>
+                                    <strong id="trk-val-date" style="font-size:1.1rem; color:var(--text-main);">-</strong>
+                                </div>
+                            </div>
+                            
+                            <!-- Visual Progress Bar -->
+                            <div class="tracking-status-flow">
+                                <div class="tracking-flow-line">
+                                    <div class="tracking-flow-active"></div>
+                                </div>
+                                
+                                <div class="tracking-node" id="node-0">
+                                    <div class="tracking-node-icon"><i class="fas fa-file-invoice"></i></div>
+                                    <span class="tracking-node-label">Booking Placed</span>
+                                    <div class="tracking-node-time">Step 1</div>
+                                </div>
+                                
+                                <div class="tracking-node" id="node-1">
+                                    <div class="tracking-node-icon"><i class="fas fa-clipboard-list"></i></div>
+                                    <span class="tracking-node-label">Contacted</span>
+                                    <div class="tracking-node-time">Step 2</div>
+                                </div>
+                                
+                                <div class="tracking-node" id="node-2">
+                                    <div class="tracking-node-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                                    <span class="tracking-node-label">Quote Sent</span>
+                                    <div class="tracking-node-time">Step 3</div>
+                                </div>
+                                
+                                <div class="tracking-node" id="node-3">
+                                    <div class="tracking-node-icon"><i class="fas fa-truck-loading"></i></div>
+                                    <span class="tracking-node-label">Confirmed & Loaded</span>
+                                    <div class="tracking-node-time">Step 4</div>
+                                </div>
+                                
+                                <div class="tracking-node" id="node-4">
+                                    <div class="tracking-node-icon"><i class="fas fa-home"></i></div>
+                                    <span class="tracking-node-label">Completed & Delivered</span>
+                                    <div class="tracking-node-time">Step 5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 8. TESTIMONIALS VIEW -->
+        <div class="page-view" id="page-testimonials">
+            <div class="page-intro">
+                <h1>Client Testimonials</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>Testimonials</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Client Stories</span>
+                        <h2 class="section-title">100% Happy Relocations</h2>
+                        <p>Read about how we deliver security, speed, and safety in every shifting operation.</p>
+                    </div>
+                    
+                    <div class="services-grid" id="testimonials-page-grid">
+                        <!-- JS Loaded Items -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 9. FAQs VIEW -->
+        <div class="page-view" id="page-faqs">
+            <div class="page-intro">
+                <h1>Frequently Asked Questions</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>FAQs</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="section-header">
+                        <span class="section-badge">Got Questions?</span>
+                        <h2 class="section-title">Common Logistics Queries Solved</h2>
+                        <p>Everything you need to know about shifting rates, packing procedures, policies, and timelines.</p>
+                    </div>
+                    
+                    <div class="faq-accordion" id="faqs-page-accordion">
+                        <!-- JS Accordion items -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 10. CONTACT US VIEW -->
+        <div class="page-view" id="page-contact">
+            <div class="page-intro">
+                <h1>Contact Us</h1>
+                <div class="breadcrumbs">
+                    <a href="#/">Home</a> <span>/</span> <span>Contact Us</span>
+                </div>
+            </div>
+            
+            <section class="section section-light">
+                <div class="section-container">
+                    <div class="contact-grid">
+                        
+                        <!-- Free Quote Inquiry Form -->
+                        <div class="contact-card-box scroll-reveal">
+                            <h3>Send Us a <span>Message</span></h3>
+                            <form id="contact-page-form">
+                                <div class="form-grid">
+                                    <div class="form-row-2col">
+                                        <div class="form-group">
+                                            <label for="c-name">Full Name</label>
+                                            <input type="text" id="c-name" name="name" class="form-control" placeholder="Enter your name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="c-phone">Phone Number</label>
+                                            <input type="tel" id="c-phone" name="phone" class="form-control" placeholder="Phone number" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row-2col">
+                                        <div class="form-group">
+                                            <label for="c-from">From Address / City</label>
+                                            <input type="text" id="c-from" name="movingFrom" class="form-control" placeholder="Source location" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="c-to">To Address / City</label>
+                                            <input type="text" id="c-to" name="movingTo" class="form-control" placeholder="Destination location" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-service">Service Category</label>
+                                        <select id="c-service" name="serviceType" class="form-control" required>
+                                            <option value="" disabled selected>Select service</option>
+                                            <option value="Household Relocation">Household Relocation</option>
+                                            <option value="Office Shifting">Office Shifting</option>
+                                            <option value="Vehicle Transit">Vehicle Transit</option>
+                                            <option value="Freight Logistics">Goods Carrier Freight</option>
+                                            <option value="Storage Space">Warehouse Storage</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-msg">Relocation / Cargo Details</label>
+                                        <textarea id="c-msg" name="message" class="form-control" rows="4" placeholder="List key items or special requirements (e.g. piano shifting, 3rd floor no lift)..." required></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit">Submit Inquiry <i class="fas fa-check-double"></i></button>
+                                <div class="alert-msg"></div>
+                            </form>
+                        </div>
+                        
+                        <!-- Contact Detail Cards -->
+                        <div class="contact-info-panel scroll-reveal">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-building"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>Headquarters</h4>
+                                    <p>{{ADDRESS}}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>Call Operations</h4>
+                                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                    <p style="font-size:0.85rem; font-weight:normal; color:var(--text-muted); margin-top:0.25rem;">Toll Free Support Available 24/7</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>WhatsApp Support</h4>
+                                    <p><a href="https://wa.me/{{PHONE}}" target="_blank" rel="noopener noreferrer">Message Operations</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Branch Office Info -->
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-network-wired"></i></div>
+                                <div class="contact-info-details">
+                                    <h4>Nationwide Network</h4>
+                                    <p style="font-size:1rem; font-weight:normal; color:var(--text-muted); line-height:1.5;">Branches in Mumbai, Delhi, Bengaluru, Chennai, Hyderabad, and Kolkata logistics zones.</p>
+                                </div>
+                            </div>
+
+                            <!-- Google Map Embed Placeholder -->
+                            <div class="map-placeholder">
+                                <iframe src="https://www.google.com/maps/embed?pb=!11m18!1m12!1m3!1d3770.7818471465225!2d72.8776559!3d19.0759837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c87c0a2f5f2d%3A0xe54d4ff7e7740000!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map location of {{CLINIC_NAME}} headquarters"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- FOOTER Section -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#/" class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="logo-img" style="display:none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" onerror="this.style.display='none';">
+                    <div class="logo-svg-wrapper" style="margin-bottom:1.5rem;">
+                        <svg class="logo-svg" width="160" height="35" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 10H23V24H5V10Z" fill="var(--primary-color)" />
+                            <path d="M23 15H29L32 19V24H23V15Z" fill="#38bdf8" />
+                            <circle cx="10" cy="28" r="3.5" fill="#ffffff" />
+                            <circle cx="26" cy="28" r="3.5" fill="#ffffff" />
+                            <text x="42" y="27" font-family="Outfit" font-size="20" font-weight="800" fill="#ffffff">APEX</text>
+                            <text x="94" y="27" font-family="Outfit" font-size="20" font-weight="400" fill="#38bdf8">LOGISTICS</text>
+                        </svg>
+                    </div>
+                </a>
+                <p class="footer-about-text">Premium nationwide logistics, packers, movers, and cargo delivery network. Safeguarding your household belongings, vehicles, and industrial goods with professional packaging compliance.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Facebook Link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter Link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn Link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram Link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#/about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#/services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#/fleet"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
+                    <li><a href="#/how-we-work"><i class="fas fa-chevron-right"></i> How We Work</a></li>
+                    <li><a href="#/gallery"><i class="fas fa-chevron-right"></i> Photo Gallery</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Customer Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#/tracking"><i class="fas fa-chevron-right"></i> Track Shipment</a></li>
+                    <li><a href="#/testimonials"><i class="fas fa-chevron-right"></i> Verified Reviews</a></li>
+                    <li><a href="#/faqs"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                    <li><a href="#/contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="admin.html" target="_blank"><i class="fas fa-cog"></i> Admin Dashboard</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Head Office</h4>
+                <div class="footer-contact-list">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span class="footer-contact-text">{{ADDRESS}}</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="footer-contact-text">
+                            Phone Support:<br>
+                            <a href="tel:{{PHONE}}">{{PHONE}}</a>
+                        </span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="footer-contact-text">
+                            Subscribe to Newsletter:<br>
+                            <form class="newsletter-form" style="margin-top:0.5rem;" id="newsletter-form">
+                                <input type="email" placeholder="Your Email" aria-label="Newsletter Email Input" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 {{CLINIC_NAME}} Logistics Network. All rights reserved.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#/faqs">Privacy Policy</a>
+                <a href="#/faqs">Terms & Conditions</a>
+                <a href="#/faqs">Insurance Coverage Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX VIEWPORT FOR GALLERY -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Core Javascript Router -->
+    <script src="js/app.js"></script>
+</body>
+</html>

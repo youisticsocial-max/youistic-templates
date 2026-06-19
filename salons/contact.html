@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Booking | {{CLINIC_NAME}}</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-form-container {
+            flex: 2;
+            min-width: 300px;
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); /* Assuming gold primary */
+        }
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .info-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        .info-details h4 {
+            margin-bottom: 0.5rem;
+        }
+        .info-details p, .info-details a {
+            color: var(--text-muted);
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #eee;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sleek Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: #fff;">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="hero" style="height: 40vh;">
+        <img src="assets/salon-interior.jpg" alt="Contact Us" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-size: 3rem;">Contact & Booking</h1>
+            <p>Reserve your appointment at our luxury beauty studio.</p>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            
+            <div class="contact-wrapper">
+                
+                <!-- Contact Information -->
+                <div class="contact-info" data-aos="fade-right">
+                    <h2 class="mb-4">Get In Touch</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-details">
+                            <h4>Studio Location</h4>
+                            <p>{{ADDRESS}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-details">
+                            <h4>Phone & WhatsApp</h4>
+                            <a href="tel:{{PHONE}}">{{PHONE}}</a><br>
+                            <a href="https://wa.me/{{PHONE}}" target="_blank">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-details">
+                            <h4>Email Us</h4>
+                            <a href="mailto:{{EMAIL}}">hello@{{CLINIC_NAME}}.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-details">
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Sunday<br>10:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Form -->
+                <div class="contact-form-container" data-aos="fade-left">
+                    <h3 class="mb-4">Book an Appointment</h3>
+                    <form action="#" method="POST">
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="Your Phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Service Required</label>
+                            <select class="form-control" required>
+                                <option value="">Select a Service</option>
+                                <option value="bridal">Bridal Makeup</option>
+                                <option value="party">Party / Guest Makeup</option>
+                                <option value="hair">Hair Styling / Cut / Color</option>
+                                <option value="mehndi">Mehndi Art</option>
+                                <option value="skin">Skin / Facial Treatments</option>
+                                <option value="nails">Nail Art</option>
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label>Preferred Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label>Preferred Time</label>
+                                <input type="time" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Event Location (If applicable)</label>
+                            <input type="text" class="form-control" placeholder="Venue Address (For Home/Venue Services)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Booking Request</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Google Maps Placeholder -->
+            <div class="map-placeholder" data-aos="fade-up">
+                <div class="text-center">
+                    <i class="fas fa-map" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3>Google Maps Integration</h3>
+                    <p>Map showing {{ADDRESS}} will load here.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/{{PHONE}}" target="_blank" class="float-btn float-whatsapp" title="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:{{PHONE}}" class="float-btn float-call" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Luxury Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+                    <p>A premium luxury beauty studio providing exceptional bridal, hair, and makeup services tailored to perfection.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 1.5rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="portfolio.html">Transformations</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Beauty Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Specialties</h4>
+                    <ul>
+                        <li><a href="bridal.html">Bridal Collection</a></li>
+                        <li><a href="hair.html">Hair Studio</a></li>
+                        <li><a href="mehndi.html">Mehndi Gallery</a></li>
+                        <li><a href="services.html#nail">Nail & Grooming</a></li>
+                        <li><a href="services.html#skin">Skin & Spa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> {{ADDRESS}}</li>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary-color);"></i> <a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.3); margin-top: 1rem; padding: 0.5rem 1.5rem;">Book Appointment</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="current-year"></span> {{CLINIC_NAME}}. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

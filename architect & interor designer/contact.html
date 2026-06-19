@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Consultation - {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 150px 4rem 100px;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            background: var(--bg-gray);
+            padding: 3rem;
+            border: 1px solid var(--grid-line);
+        }
+        .contact-info h3 { margin-bottom: 2rem; }
+        .info-block { margin-bottom: 2rem; }
+        .info-block span { color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.5rem; }
+        .info-block p { font-size: 1.1rem; }
+        
+        .contact-form {
+            background: var(--bg-light);
+            padding: 3rem;
+            color: var(--text-dark);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--grid-line-dark);
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .range-slider {
+            width: 100%;
+            accent-color: var(--primary-color);
+            margin-top: 0.5rem;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            margin-top: 2rem;
+            border: 1px solid var(--grid-line-dark);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="navbar-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <a href="contact.html" class="nav-btn">Start Project</a>
+    </nav>
+
+    <header class="page-header reveal-up">
+        <span class="section-subtitle">Get In Touch</span>
+        <h1>Book a Consultation</h1>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="contact-grid">
+            <div class="contact-info reveal-left">
+                <h3>Studio Details</h3>
+                <div class="info-block">
+                    <span>Studio Name</span>
+                    <p>{{CLINIC_NAME}}</p>
+                </div>
+                <div class="info-block">
+                    <span>Direct Contact</span>
+                    <p><a href="tel:{{PHONE}}" style="color:var(--text-light);">{{PHONE}}</a></p>
+                </div>
+                <div class="info-block">
+                    <span>Location</span>
+                    <p>{{ADDRESS}}</p>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <a href="https://wa.me/{{PHONE}}" class="btn-outline" style="border-color: #25D366; color: #25D366;">WhatsApp Us</a>
+                </div>
+            </div>
+
+            <div class="contact-form reveal-right">
+                <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 2rem;">Start Your Project</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="+1 234 567 8900">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Project Type</label>
+                        <select class="form-control">
+                            <option>Residential Architecture</option>
+                            <option>Commercial Interior</option>
+                            <option>Villa Renovation</option>
+                            <option>Modular Kitchen</option>
+                            <option>Turnkey Execution</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Property Size (sq ft)</label>
+                        <input type="number" class="form-control" placeholder="e.g. 2500">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Estimated Budget</label>
+                        <input type="range" class="range-slider" min="50000" max="1000000" step="10000">
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:#888; margin-top:5px;">
+                            <span>$50k</span>
+                            <span>$1M+</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Style</label>
+                        <select class="form-control">
+                            <option>Minimal Luxury</option>
+                            <option>Modern Contemporary</option>
+                            <option>Classic Elegance</option>
+                            <option>Industrial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Upload Floor Plan / Reference</label>
+                        <input type="file" class="form-control" style="padding: 0.7rem;">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message Details</label>
+                        <textarea class="form-control" rows="4" placeholder="Tell us about your vision..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Inquiry</button>
+                </form>
+                
+                <div class="map-placeholder">
+                    [Google Maps Embedded View: {{ADDRESS}}]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li>{{ADDRESS}}</li>
+                    <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

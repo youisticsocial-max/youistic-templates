@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CLINIC_NAME}} — Premium Art, Music & Dance Academy</title>
+    <meta name="description" content="{{CLINIC_NAME}} offers professional training in music, dance, and visual arts. Expert mentors, inspiring creative spaces, and stage performance opportunities.">
+    <meta name="keywords" content="music academy, dance classes, art school, painting classes, guitar lessons, piano training, vocal classes">
+    <link rel="icon" type="image/png" href="{{LOGO_URL}}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<!-- Page Transition Overlay -->
+<div class="page-transition"></div>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════ -->
+<nav class="navbar transparent" data-transparent="true" id="main-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-fallback" style="display:none; font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 1px; color: var(--white);">
+                <span style="color: var(--primary-color);">Creative</span> Academy
+            </div>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-dropdown">
+                <a href="courses.html" class="nav-link nav-dropdown-trigger">
+                    Courses
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="mega-menu">
+                    <div class="mega-menu-grid">
+                        <a href="courses.html#music" class="mega-menu-item">
+                            <div class="mega-menu-icon">🎵</div>
+                            <div>
+                                <h5>Music Classes</h5>
+                                <p>Vocal, Guitar, Piano, Drums & more</p>
+                            </div>
+                        </a>
+                        <a href="courses.html#dance" class="mega-menu-item">
+                            <div class="mega-menu-icon">💃</div>
+                            <div>
+                                <h5>Dance Classes</h5>
+                                <p>Classical, Bollywood, Contemporary</p>
+                            </div>
+                        </a>
+                        <a href="courses.html#art" class="mega-menu-item">
+                            <div class="mega-menu-icon">🎨</div>
+                            <div>
+                                <h5>Art & Craft</h5>
+                                <p>Drawing, Painting, Digital Art</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="contact.html" class="nav-cta">Book A Free Trial</a>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="courses.html" class="mobile-link">Courses</a>
+    <a href="faculty.html" class="mobile-link">Faculty</a>
+    <a href="gallery.html" class="mobile-link">Gallery</a>
+    <a href="events.html" class="mobile-link">Events</a>
+    <a href="achievements.html" class="mobile-link">Achievements</a>
+    <a href="testimonials.html" class="mobile-link">Testimonials</a>
+    <a href="blog.html" class="mobile-link">Blog</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+    <a href="contact.html" class="btn btn-primary mobile-cta">Book A Free Trial</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+    <div class="hero-slides">
+        <div class="hero-slide active">
+            <img src="assets/hero-music-dance.jpg" alt="Performing arts stage">
+        </div>
+        <div class="hero-slide">
+            <img src="assets/classical-dance.jpg" alt="Classical dance performance">
+        </div>
+        <div class="hero-slide">
+            <img src="assets/piano-class.jpg" alt="Piano class">
+        </div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <!-- Floating Musical Notes -->
+    <div class="hero-particles">
+        <span class="floating-note">♪</span>
+        <span class="floating-note">♫</span>
+        <span class="floating-note">🎨</span>
+        <span class="floating-note">♩</span>
+        <span class="floating-note">🎭</span>
+        <span class="floating-note">♬</span>
+        <span class="floating-note">✦</span>
+        <span class="floating-note">🎶</span>
+    </div>
+
+    <!-- Paint Splash Effects -->
+    <div class="paint-splash"></div>
+    <div class="paint-splash"></div>
+    <div class="paint-splash"></div>
+
+    <div class="hero-content">
+        <p class="hero-tagline text-script" style="color: var(--primary-color); font-size: var(--fs-2xl); margin-bottom: -10px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Welcome to {{CLINIC_NAME}}</p>
+        <h1 class="hero-title">Discover Your <span class="highlight">Passion</span><br>Express Your <span class="text-outline">Art</span></h1>
+        <p class="hero-subtitle">Professional training in music, dance, and visual arts with experienced mentors and inspiring creative spaces.</p>
+        <div class="hero-buttons">
+            <a href="courses.html" class="btn btn-primary btn-lg">Explore Courses</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">Book A Free Trial Class</a>
+        </div>
+    </div>
+
+    <div class="hero-scroll">
+        <div class="scroll-mouse"></div>
+        <span>Scroll</span>
+    </div>
+
+    <div class="hero-dots">
+        <div class="hero-dot active" data-slide="0"></div>
+        <div class="hero-dot" data-slide="1"></div>
+        <div class="hero-dot" data-slide="2"></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     COURSE CATEGORIES
+     ═══════════════════════════════════════════ -->
+<section class="section" id="courses">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-badge">✦ Our Programs</span>
+            <h2>Explore Creative <span class="text-primary">Courses</span></h2>
+            <p>From classical melodies to contemporary art, discover the perfect program to nurture your creative passion.</p>
+            <div class="accent-line"></div>
+        </div>
+
+        <div class="category-tabs reveal">
+            <button class="category-tab active" data-filter="all">All Courses</button>
+            <button class="category-tab" data-filter="music">Music</button>
+            <button class="category-tab" data-filter="dance">Dance</button>
+            <button class="category-tab" data-filter="art">Art & Craft</button>
+        </div>
+
+        <div class="courses-grid stagger-children">
+            <!-- Music Courses -->
+            <div class="course-card reveal" data-category="music">
+                <div class="course-card-img">
+                    <img src="assets/singing-class.jpg" alt="Vocal Training" loading="lazy">
+                    <span class="course-badge">Popular</span>
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎤</div>
+                    <h4>Vocal Training</h4>
+                    <p>Master your voice with professional vocal coaching covering classical ragas, Bollywood melodies, and western styles.</p>
+                    <div class="course-meta">
+                        <span>👤 Ages 8+</span>
+                        <span>⏱ Flexible Batches</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+
+            <div class="course-card reveal" data-category="music">
+                <div class="course-card-img">
+                    <img src="assets/guitar-class.jpg" alt="Guitar Classes" loading="lazy">
+                    <span class="course-badge">Trending</span>
+                    <span class="course-level">Beginner to Pro</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎸</div>
+                    <h4>Guitar Classes</h4>
+                    <p>Learn acoustic and electric guitar from scratch, covering chords, fingerpicking, strumming, and music composition.</p>
+                    <div class="course-meta">
+                        <span>👤 Ages 10+</span>
+                        <span>⏱ Weekend & Weekday</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+
+            <div class="course-card reveal" data-category="music">
+                <div class="course-card-img">
+                    <img src="assets/piano-class.jpg" alt="Piano & Keyboard" loading="lazy">
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎹</div>
+                    <h4>Piano & Keyboard</h4>
+                    <p>Explore the world of keys with structured piano lessons from basics to advanced performance techniques.</p>
+                    <div class="course-meta">
+                        <span>👤 Ages 6+</span>
+                        <span>⏱ Individual Sessions</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Dance Courses -->
+            <div class="course-card reveal" data-category="dance">
+                <div class="course-card-img">
+                    <img src="assets/classical-dance.jpg" alt="Classical Dance" loading="lazy">
+                    <span class="course-badge">Featured</span>
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🩰</div>
+                    <h4>Classical Dance</h4>
+                    <p>Immerse in the elegance of Bharatanatyam, Kathak, and Odissi with traditionally trained gurus.</p>
+                    <div class="course-meta">
+                        <span>👤 Ages 5+</span>
+                        <span>⏱ Graded Program</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+
+            <div class="course-card reveal" data-category="dance">
+                <div class="course-card-img">
+                    <img src="assets/hero-music-dance.jpg" alt="Bollywood Dance" loading="lazy">
+                    <span class="course-badge">Popular</span>
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">💃</div>
+                    <h4>Bollywood & Contemporary</h4>
+                    <p>Express yourself through energetic Bollywood choreography and fluid contemporary dance movements.</p>
+                    <div class="course-meta">
+                        <span>👤 Ages 8+</span>
+                        <span>⏱ Weekend Batches</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Art Courses -->
+            <div class="course-card reveal" data-category="art">
+                <div class="course-card-img">
+                    <img src="assets/painting-class.jpg" alt="Painting & Drawing" loading="lazy">
+                    <span class="course-badge">New</span>
+                    <span class="course-level">All Levels</span>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-card-icon">🎨</div>
+                    <h4>Painting & Drawing</h4>
+                    <p>Develop your artistic skills through sketching, watercolor, acrylics, oil painting, and mixed media techniques.</p>
+                    <div class="course-meta">
+                        <span>👤 Ages 5+</span>
+                        <span>⏱ Flexible Schedule</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: var(--space-3xl);">
+            <a href="courses.html" class="btn btn-dark btn-lg">View All Courses →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHY CHOOSE US
+     ═══════════════════════════════════════════ -->
+<section class="section section-cream" id="why-us">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-badge">✦ Why Choose Us</span>
+            <h2>Why <span class="text-primary">{{CLINIC_NAME}}</span></h2>
+            <p>We create an environment where creativity thrives and every student discovers their unique artistic voice.</p>
+            <div class="accent-line"></div>
+        </div>
+
+        <div class="features-grid stagger-children">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🎓</div>
+                <h4>Experienced Mentors</h4>
+                <p>Professional artists and certified trainers with years of performance and teaching experience.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">👤</div>
+                <h4>Personalized Attention</h4>
+                <p>Small batches and individual guidance ensuring every student gets focused mentorship.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🏛️</div>
+                <h4>Creative Environment</h4>
+                <p>An inspiring studio space designed to nurture artistic growth and creative expression.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🎭</div>
+                <h4>Stage Performances</h4>
+                <p>Regular events, concerts, exhibitions, and showcases for real-world performance experience.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">📜</div>
+                <h4>Certification Programs</h4>
+                <p>Recognized training with completion certificates and graded examination programs.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">⏰</div>
+                <h4>Flexible Timings</h4>
+                <p>Convenient class schedules suitable for children, teens, working professionals, and adults.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS COUNTERS
+     ═══════════════════════════════════════════ -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <span class="stat-icon">🎓</span>
+                <div class="stat-number"><span data-counter="5000" data-suffix="+">0</span></div>
+                <div class="stat-label">Students Trained</div>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-icon">🎭</span>
+                <div class="stat-number"><span data-counter="200" data-suffix="+">0</span></div>
+                <div class="stat-label">Stage Performances</div>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-icon">🏆</span>
+                <div class="stat-number"><span data-counter="50" data-suffix="+">0</span></div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-icon">👨‍🏫</span>
+                <div class="stat-number"><span data-counter="15" data-suffix="+">0</span></div>
+                <div class="stat-label">Expert Mentors</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════ -->
+<section class="section" id="testimonials">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-badge">✦ Testimonials</span>
+            <h2>What Our <span class="text-primary">Students Say</span></h2>
+            <p>Hear from our students and their parents about their transformative creative journey with us.</p>
+            <div class="accent-line"></div>
+        </div>
+    </div>
+    <div style="overflow: hidden;">
+        <div class="testimonial-track">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">My daughter's confidence has transformed completely. The stage performances gave her a platform to shine. The mentors are truly passionate.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">P</div>
+                    <div>
+                        <h5>Priya Sharma</h5>
+                        <span>Parent — Classical Dance</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">I went from zero knowledge to performing on stage in just 8 months. The guitar course is brilliantly structured with real musical projects.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div>
+                        <h5>Rahul Verma</h5>
+                        <span>Student — Guitar Classes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">The painting workshops are magical. My kids come home excited after every class. The creative environment is truly inspiring and nurturing.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">A</div>
+                    <div>
+                        <h5>Anita Desai</h5>
+                        <span>Parent — Kids Art Classes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">Best music academy! The vocal training program helped me clear my Grade 5 music examination with distinction. Professional mentors.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <h5>Sneha Patel</h5>
+                        <span>Student — Vocal Training</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicated for infinite scroll -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">My daughter's confidence has transformed completely. The stage performances gave her a platform to shine. The mentors are truly passionate.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">P</div>
+                    <div>
+                        <h5>Priya Sharma</h5>
+                        <span>Parent — Classical Dance</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">I went from zero knowledge to performing on stage in just 8 months. The guitar course is brilliantly structured with real musical projects.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div>
+                        <h5>Rahul Verma</h5>
+                        <span>Student — Guitar Classes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">The painting workshops are magical. My kids come home excited after every class. The creative environment is truly inspiring and nurturing.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">A</div>
+                    <div>
+                        <h5>Anita Desai</h5>
+                        <span>Parent — Kids Art Classes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">Best music academy! The vocal training program helped me clear my Grade 5 music examination with distinction. Professional mentors.</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <h5>Sneha Patel</h5>
+                        <span>Student — Vocal Training</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA SECTION
+     ═══════════════════════════════════════════ -->
+<section class="section section-dark" style="text-align:center;">
+    <div class="container">
+        <div class="reveal" style="max-width:700px;margin:0 auto;">
+            <p class="text-script" style="font-size:var(--fs-xl);color:var(--primary-color);margin-bottom:var(--space-lg);">Begin Your Creative Journey</p>
+            <h2 style="color:var(--white);margin-bottom:var(--space-xl);">Ready to Unlock Your <span class="text-primary">Artistic Potential?</span></h2>
+            <p style="color:var(--dark-text-muted);font-size:var(--fs-md);margin-bottom:var(--space-2xl);">Join {{CLINIC_NAME}} and discover the artist within you. Book a free trial class today and experience the magic of creative learning.</p>
+            <div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
+                <a href="contact.html" class="btn btn-primary btn-lg">Book A Free Trial</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary btn-lg">📞 Call Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="footer" id="footer">
+    <div class="footer-art"></div>
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img">
+                    <p>{{CLINIC_NAME}} is a premier creative academy offering professional training in music, dance, and visual arts. We nurture talent, inspire creativity, and build confident performers.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="about.html">About Academy</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="faculty.html">Faculty & Mentors</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="courses.html#music">Vocal Training</a></li>
+                        <li><a href="courses.html#music">Guitar Classes</a></li>
+                        <li><a href="courses.html#music">Piano & Keyboard</a></li>
+                        <li><a href="courses.html#dance">Classical Dance</a></li>
+                        <li><a href="courses.html#dance">Bollywood Dance</a></li>
+                        <li><a href="courses.html#art">Painting & Drawing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Contact Us</h5>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📍</div>
+                        <p>{{ADDRESS}}</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📞</div>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    </div>
+                    <div class="footer-newsletter">
+                        <p>Subscribe to our newsletter</p>
+                        <form class="newsletter-form" onsubmit="event.preventDefault();">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">Join</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2024 {{CLINIC_NAME}}. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons">
+    <a href="tel:{{PHONE}}" class="float-btn float-btn-call" aria-label="Call Now" title="Call Now">📞</a>
+    <a href="https://wa.me/{{PHONE}}" class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp" title="WhatsApp Inquiry">💬</a>
+</div>
+
+<script src="js/main.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — {{CLINIC_NAME}}</title>
+    <meta name="description" content="Learn about {{CLINIC_NAME}}'s journey, vision, teaching philosophy, and the passionate mentors behind our creative academy.">
+    <link rel="icon" type="image/png" href="{{LOGO_URL}}">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="page-transition"></div>
+
+<!-- NAV (same as index) -->
+<nav class="navbar" id="main-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img"></a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link active">About</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Book A Free Trial</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-link">Home</a><a href="about.html" class="mobile-link">About</a>
+    <a href="courses.html" class="mobile-link">Courses</a><a href="faculty.html" class="mobile-link">Faculty</a>
+    <a href="gallery.html" class="mobile-link">Gallery</a><a href="events.html" class="mobile-link">Events</a>
+    <a href="achievements.html" class="mobile-link">Achievements</a><a href="testimonials.html" class="mobile-link">Testimonials</a>
+    <a href="blog.html" class="mobile-link">Blog</a><a href="contact.html" class="mobile-link">Contact</a>
+    <a href="contact.html" class="btn btn-primary mobile-cta">Book A Free Trial</a>
+</div>
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <h1>About <span class="text-primary">{{CLINIC_NAME}}</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="separator">›</span><span class="current">About</span></div>
+</section>
+
+<!-- Story Section -->
+<section class="section">
+    <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4xl);align-items:center;">
+            <div class="reveal-left">
+                <span class="section-badge">✦ Our Story</span>
+                <h2>The Journey of <span class="text-primary">{{CLINIC_NAME}}</span></h2>
+                <p style="margin-top:var(--space-lg);">{{CLINIC_NAME}} was born from a deep passion for the performing and visual arts. What started as a small music studio has grown into a premier creative academy that has transformed the lives of over 5,000 students.</p>
+                <p>Our vision is to create a world-class institution where every individual — regardless of age or background — can discover, develop, and celebrate their creative talents in a nurturing and professional environment.</p>
+                <p>We believe that art education is not just about technique; it's about building confidence, fostering self-expression, and creating lifelong connections through the universal language of creativity.</p>
+                <a href="courses.html" class="btn btn-primary" style="margin-top:var(--space-lg);">Explore Our Programs</a>
+            </div>
+            <div class="reveal-right" style="position:relative;">
+                <img src="assets/painting-class.jpg" alt="Academy Studio" style="border-radius:var(--border-radius-lg);box-shadow:var(--shadow-xl);">
+                <div style="position:absolute;bottom:-20px;right:-20px;background:var(--primary-color);color:var(--white);padding:var(--space-xl) var(--space-2xl);border-radius:var(--border-radius-lg);text-align:center;box-shadow:var(--shadow-lg);">
+                    <div style="font-family:var(--font-display);font-size:var(--fs-3xl);font-weight:700;">15+</div>
+                    <div style="font-size:var(--fs-sm);">Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-badge">✦ Our Purpose</span>
+            <h2>Vision & <span class="text-primary">Mission</span></h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3xl);max-width:1000px;margin:0 auto;">
+            <div class="reveal" style="padding:var(--space-3xl);background:var(--dark-card);border-radius:var(--border-radius-lg);border:1px solid var(--dark-border);">
+                <div style="font-size:48px;margin-bottom:var(--space-lg);">🎯</div>
+                <h3 style="margin-bottom:var(--space-lg);">Our Vision</h3>
+                <p>To be the leading creative academy that inspires artistic excellence, nurtures diverse talents, and empowers individuals to express themselves through music, dance, and visual arts on a global stage.</p>
+            </div>
+            <div class="reveal" style="padding:var(--space-3xl);background:var(--dark-card);border-radius:var(--border-radius-lg);border:1px solid var(--dark-border);">
+                <div style="font-size:48px;margin-bottom:var(--space-lg);">🚀</div>
+                <h3 style="margin-bottom:var(--space-lg);">Our Mission</h3>
+                <p>To provide world-class creative education through experienced mentors, personalized training methods, state-of-the-art facilities, and regular performance opportunities that build confidence and character.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-badge">✦ Milestones</span>
+            <h2>Our <span class="text-primary">Journey</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2009</div>
+                <h4>The Beginning</h4>
+                <p>{{CLINIC_NAME}} started as a small music studio with just 3 students and a dream to make quality arts education accessible.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2013</div>
+                <h4>Dance Division Launched</h4>
+                <p>Added classical and contemporary dance programs, expanding our creative offerings to a broader audience.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2016</div>
+                <h4>Art & Visual Arts Wing</h4>
+                <p>Opened our dedicated art studio for painting, sketching, and digital art, completing our creative trifecta.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2019</div>
+                <h4>1000+ Students Milestone</h4>
+                <p>Crossed 1,000 active students and hosted our first international cultural exchange program.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2024</div>
+                <h4>New State-of-the-Art Campus</h4>
+                <p>Inaugurated our new campus with professional recording studios, performance halls, and art galleries.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Teaching Philosophy -->
+<section class="section section-cream">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-badge">✦ Our Approach</span>
+            <h2>Teaching <span class="text-primary">Philosophy</span></h2>
+        </div>
+        <div class="features-grid stagger-children">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🌱</div>
+                <h4>Nurture Over Pressure</h4>
+                <p>We create a supportive environment where students learn at their own pace without competitive stress.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🎯</div>
+                <h4>Goal-Oriented Training</h4>
+                <p>Structured curriculum with clear milestones, graded examinations, and measurable progress tracking.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🌍</div>
+                <h4>Cultural Diversity</h4>
+                <p>Embracing both Indian classical traditions and western contemporary forms for holistic artistic education.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" style="text-align:center;">
+    <div class="container">
+        <div class="reveal" style="max-width:700px;margin:0 auto;">
+            <h2 style="color:var(--white);margin-bottom:var(--space-xl);">Ready to Start Your <span class="text-primary">Creative Journey?</span></h2>
+            <p style="color:var(--dark-text-muted);margin-bottom:var(--space-2xl);">Visit {{CLINIC_NAME}} and experience the magic of learning arts from the best mentors.</p>
+            <div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
+                <a href="contact.html" class="btn btn-primary btn-lg">Book A Free Trial</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary btn-lg">📞 Call Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-art"></div>
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+        <div class="footer-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img"><p>{{CLINIC_NAME}} is a premier creative academy offering professional training in music, dance, and visual arts.</p>
+            <div class="footer-social"><a href="#">f</a><a href="#">📷</a><a href="#">▶</a><a href="#">𝕏</a></div></div>
+        <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="about.html">About</a></li><li><a href="courses.html">Courses</a></li><li><a href="faculty.html">Faculty</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li></ul></div>
+        <div class="footer-col"><h5>Courses</h5><ul><li><a href="courses.html">Vocal Training</a></li><li><a href="courses.html">Guitar</a></li><li><a href="courses.html">Piano</a></li><li><a href="courses.html">Classical Dance</a></li><li><a href="courses.html">Painting</a></li></ul></div>
+        <div class="footer-col"><h5>Contact Us</h5>
+            <div class="footer-contact-item"><div class="footer-contact-icon">📍</div><p>{{ADDRESS}}</p></div>
+            <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><p><a href="tel:{{PHONE}}">{{PHONE}}</a></p></div></div>
+    </div></div></div>
+    <div class="container"><div class="footer-bottom"><p>© 2024 {{CLINIC_NAME}}. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div>
+</footer>
+
+<div class="floating-buttons">
+    <a href="tel:{{PHONE}}" class="float-btn float-btn-call" aria-label="Call">📞</a>
+    <a href="https://wa.me/{{PHONE}}" class="float-btn float-btn-whatsapp" target="_blank" aria-label="WhatsApp">💬</a>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

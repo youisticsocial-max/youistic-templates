@@ -1,0 +1,114 @@
+/* ============================================
+   ART, MUSIC & DANCE ACADEMY — Design Tokens
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+
+:root {
+    /* ── Dynamic Brand Token (Defaulted for preview) ── */
+    --primary-color: #d4af37; /* REPLACE WITH {{PRIMARY_COLOR}} IN PRODUCTION */
+
+    /* ── Derived Palette ── */
+    --primary-light: color-mix(in srgb, var(--primary-color) 30%, #fff);
+    --primary-dark: color-mix(in srgb, var(--primary-color) 70%, #000);
+    --primary-glow: color-mix(in srgb, var(--primary-color) 40%, transparent);
+    --primary-bg: color-mix(in srgb, var(--primary-color) 8%, #fff);
+    --primary-bg-dark: color-mix(in srgb, var(--primary-color) 12%, #0a0a0f);
+
+    /* ── Neutrals ── */
+    --white: #ffffff;
+    --off-white: #faf9f7;
+    --cream: #f5f0eb;
+    --gray-50: #f8f7f6;
+    --gray-100: #eee9e4;
+    --gray-200: #d5cec6;
+    --gray-300: #b5ada4;
+    --gray-400: #8e857c;
+    --gray-500: #6b6259;
+    --gray-600: #504840;
+    --gray-700: #3a332d;
+    --gray-800: #231e1a;
+    --gray-900: #141210;
+
+    /* ── Dark Sections ── */
+    --dark-bg: #0a0a0f;
+    --dark-surface: #141418;
+    --dark-card: #1c1c22;
+    --dark-border: rgba(255, 255, 255, 0.08);
+    --dark-text: rgba(255, 255, 255, 0.85);
+    --dark-text-muted: rgba(255, 255, 255, 0.5);
+
+    /* ── Accent Colors ── */
+    --accent-gold: #d4a853;
+    --accent-rose: #e84393;
+    --accent-violet: #6c5ce7;
+    --accent-teal: #00cec9;
+    --accent-coral: #ff6b6b;
+    --accent-amber: #fdcb6e;
+
+    /* ── Artistic Gradients ── */
+    --gradient-creative: linear-gradient(135deg, var(--primary-color), var(--accent-violet), var(--accent-rose));
+    --gradient-warm: linear-gradient(135deg, #d4af37, #b5852a);
+    --gradient-dark: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(10,10,15,0.4) 0%, rgba(10,10,15,0.95) 100%);
+    --gradient-card: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+
+    /* ── Typography ── */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-script: 'Great Vibes', cursive;
+
+    --fs-xs: clamp(0.7rem, 0.6rem + 0.3vw, 0.8rem);
+    --fs-sm: clamp(0.8rem, 0.75rem + 0.3vw, 0.9rem);
+    --fs-base: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
+    --fs-md: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+    --fs-lg: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+    --fs-xl: clamp(1.3rem, 1.1rem + 0.8vw, 1.75rem);
+    --fs-2xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+    --fs-3xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+    --fs-4xl: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+    --fs-hero: clamp(2.8rem, 2rem + 4vw, 5.5rem);
+
+    /* ── Spacing ── */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+
+    /* ── Layout ── */
+    --container-max: 1320px;
+    --container-narrow: 900px;
+    --nav-height: 80px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 32px;
+    --border-radius-full: 9999px;
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+    --shadow-xl: 0 16px 60px rgba(0,0,0,0.18);
+    --shadow-glow: 0 0 30px var(--primary-glow);
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+
+    /* ── Transitions ── */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --transition-fast: 200ms var(--ease-smooth);
+    --transition-base: 350ms var(--ease-smooth);
+    --transition-slow: 600ms var(--ease-smooth);
+
+    /* ── Z-Index ── */
+    --z-nav: 1000;
+    --z-modal: 2000;
+    --z-float: 900;
+    --z-overlay: 1500;
+}

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Administrator Console | Adv. Tanwar Singh</title>
+    <meta name="description" content="Secure administrative panel for managing chamber content, gallery, contacts, and legal intake submissions.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Auth Guard Lockscreen -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="lock-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                </div>
+                <h2>Adv. Tanwar Singh Chambers</h2>
+                <p>Secure Administrator Access Only</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="admin-passphrase">Enter Secure Passphrase</label>
+                    <input type="password" id="admin-passphrase" required placeholder="••••••••" autocomplete="current-password">
+                    <span class="auth-error-msg" id="auth-error">Incorrect passphrase. Access denied.</span>
+                </div>
+                <button type="submit" class="btn btn-gold btn-block" id="login-btn">
+                    <span>Unlock Dashboard</span>
+                </button>
+            </form>
+            <div class="login-footer">
+                <p>Default Passphrase: <strong>admin123</strong></p>
+                <p>Access attempts are logged for security audits.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Admin App Shell -->
+    <div id="admin-app" class="admin-app hidden">
+        
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-title">ADV. TANWAR SINGH</span>
+                <span class="brand-subtitle">Chambers Admin</span>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="#dashboard" class="sidebar-link active" data-tab="dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="10" rx="1"/><rect width="7" height="5" x="3" y="14" rx="1"/></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="#intakes" class="sidebar-link" data-tab="intakes">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+                    <span>Chamber Intakes</span>
+                    <span class="badge badge-accent" id="intake-badge-count">0</span>
+                </a>
+                <a href="#content" class="sidebar-link" data-tab="content">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                    <span>Content Editor</span>
+                </a>
+                <a href="#links" class="sidebar-link" data-tab="links">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    <span>Links Manager</span>
+                </a>
+                <a href="#settings" class="sidebar-link" data-tab="settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1-2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn-desktop" class="btn btn-outline-gold btn-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="logout-icon"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                    <span>Log Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Bottom Navigation Bar (Mobile-First Dashboard Layout) -->
+        <nav class="bottom-nav">
+            <a href="#dashboard" class="bottom-nav-link active" data-tab="dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="10" rx="1"/><rect width="7" height="5" x="3" y="14" rx="1"/></svg>
+                <span>Overview</span>
+            </a>
+            <a href="#intakes" class="bottom-nav-link" data-tab="intakes">
+                <div class="badge-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+                    <span class="badge badge-accent" id="intake-badge-count-mobile">0</span>
+                </div>
+                <span>Intakes</span>
+            </a>
+            <a href="#content" class="bottom-nav-link" data-tab="content">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                <span>Content</span>
+            </a>
+            <a href="#links" class="bottom-nav-link" data-tab="links">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/></svg>
+                <span>Links</span>
+            </a>
+            <button class="bottom-nav-link" id="mobile-drawer-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-icon"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <span>More</span>
+            </button>
+        </nav>
+
+        <!-- Mobile Drawer Overlay (Slide-Out Hamburger Menu) -->
+        <div id="mobile-drawer" class="mobile-drawer">
+            <div class="drawer-content">
+                <div class="drawer-header">
+                    <h3>Chambers Admin</h3>
+                    <button class="drawer-close" id="mobile-drawer-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="close-icon"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                    </button>
+                </div>
+                <div class="drawer-body">
+                    <a href="#settings" class="drawer-link" data-tab="settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="drawer-icon"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Change Passphrase</span>
+                    </a>
+                    <a href="index.html" target="_blank" class="drawer-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="drawer-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                        <span>View Chambers Website</span>
+                    </a>
+                    <hr class="drawer-divider">
+                    <button id="logout-btn-mobile" class="btn btn-outline-danger btn-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="logout-icon"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                        <span>Log Out Panel</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Body Content Area -->
+        <main class="main-content">
+            
+            <!-- Global Top Bar (Header) -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard Overview</h1>
+                </div>
+                <div class="header-right">
+                    <span class="user-greeting">Welcome, Admin</span>
+                    <a href="index.html" target="_blank" class="btn btn-outline-gold btn-sm header-website-link">
+                        <span>View Website</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="tab-panels">
+                
+                <!-- PANEL 1: DASHBOARD OVERVIEW -->
+                <section id="panel-dashboard" class="tab-panel active">
+                    <!-- Quick Stats Cards Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Total Submissions</span>
+                                <h3 class="stat-value" id="stat-total">0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-warning">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Pending Review</span>
+                                <h3 class="stat-value text-warning" id="stat-pending">0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-label">Reviewed/Archived</span>
+                                <h3 class="stat-value text-success" id="stat-resolved">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Welcome & Quick Action Card -->
+                    <div class="card welcome-card">
+                        <div class="card-body">
+                            <h2>Advocate Tanwar Singh Portal Manager</h2>
+                            <p>Use this central portal to verify credentials requests, view client case briefs, update office details, or edit links and photos. Securely stored and locally synced.</p>
+                            <div class="action-buttons-group">
+                                <button class="btn btn-gold" id="btn-quick-intake">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                                    <span>Process Intakes</span>
+                                </button>
+                                <button class="btn btn-outline-gold" id="btn-quick-gallery">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.08-3.08a2 2 0 0 0-2.82 0L6 21"/></svg>
+                                    <span>Update Gallery</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Section -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Actions Log</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="activity-log-list" id="activity-log">
+                                <li class="log-item empty">No recent actions logged.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PANEL 2: CHAMBER INTAKE PORTAL -->
+                <section id="panel-intakes" class="tab-panel">
+                    <div class="card">
+                        <!-- Filters Header -->
+                        <div class="filter-bar">
+                            <div class="search-input-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+                                <input type="text" id="intake-search" placeholder="Search by Employee Name or Phone...">
+                            </div>
+                            <div class="filter-inputs">
+                                <select id="intake-filter-status">
+                                    <option value="all">All Statuses</option>
+                                    <option value="new">New (Pending)</option>
+                                    <option value="in-progress">In Progress</option>
+                                    <option value="resolved">Resolved / Archived</option>
+                                </select>
+                                <button class="btn btn-gold btn-icon-only" id="btn-export-csv" title="Export as CSV/Excel">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                    <span>Export CSV</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Data List (Desktop Table / Mobile Stacked Cards) -->
+                        <div class="data-table-wrapper" id="intake-list-wrapper">
+                            <!-- Table Skeleton Loading -->
+                            <div class="skeleton-loader-table" id="intakes-skeleton">
+                                <div class="skeleton-row skeleton-header"></div>
+                                <div class="skeleton-row"></div>
+                                <div class="skeleton-row"></div>
+                                <div class="skeleton-row"></div>
+                            </div>
+                            
+                            <!-- Real Data Container -->
+                            <table class="data-table hidden" id="intakes-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date Submitted</th>
+                                        <th>Employee Name</th>
+                                        <th>Contact Number</th>
+                                        <th>Sector</th>
+                                        <th>Issue Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="intakes-tbody">
+                                    <!-- Dynamic rows injected by JS -->
+                                </tbody>
+                            </table>
+
+                            <div class="empty-state hidden" id="intakes-empty-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="empty-icon"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="9" x2="15" y1="9" y2="15"/><line x1="15" x2="9" y1="9" y2="15"/></svg>
+                                <h3>No Intakes Found</h3>
+                                <p>Try adjusting your search query or filters.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PANEL 3: DYNAMIC CONTENT MANAGEMENT -->
+                <section id="panel-content" class="tab-panel">
+                    <div class="panel-sub-nav">
+                        <button class="sub-nav-btn active" data-subtab="contact-subtab">Contact Coordinates</button>
+                        <button class="sub-nav-btn" data-subtab="gallery-subtab">Photo Gallery</button>
+                        <button class="sub-nav-btn" data-subtab="text-subtab">Chamber CMS Text</button>
+                    </div>
+
+                    <!-- SUBTAB 1: Contact Details -->
+                    <div id="contact-subtab" class="subtab-panel active">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Edit Contact Details</h3>
+                            </div>
+                            <div class="card-body">
+                                <form id="form-contact-details" class="admin-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cms-phone">Primary Contact Phone</label>
+                                            <input type="text" id="cms-phone" required placeholder="+91 96362 03889">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cms-email">Chambers Email Address</label>
+                                            <input type="email" id="cms-email" required placeholder="contact@advtanwarsingh.in">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cms-address">Office Address (Physical Chambers)</label>
+                                        <textarea id="cms-address" rows="3" required placeholder="Advocate Tanwar Singh Chambers, Court Road, Jodhpur, Rajasthan, 342001"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cms-maps-link">Google Maps Embed Link (iframe src)</label>
+                                        <input type="text" id="cms-maps-link" placeholder="https://www.google.com/maps/embed?...">
+                                        <small class="helper-text">Put the direct URL inside the maps iframe src attribute.</small>
+                                    </div>
+                                    <div class="form-footer">
+                                        <button type="submit" class="btn btn-gold">
+                                            <span>Save Contact Coordinates</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBTAB 2: Photo Gallery -->
+                    <div id="gallery-subtab" class="subtab-panel">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Chamber Gallery Manager</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Drag & Drop Target -->
+                                <div class="drag-drop-zone" id="gallery-drop-zone">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="upload-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                                    <h3>Drag & Drop Photo Here</h3>
+                                    <p>or click to browse local files</p>
+                                    <input type="file" id="gallery-file-input" accept="image/*" class="hidden-input">
+                                </div>
+
+                                <!-- Photo Metadata form (shown when image is selected) -->
+                                <div id="gallery-meta-form" class="gallery-meta-form hidden">
+                                    <div class="preview-thumbnail-wrapper">
+                                        <img id="upload-preview" src="" alt="Thumbnail preview">
+                                    </div>
+                                    <div class="meta-inputs">
+                                        <div class="form-group">
+                                            <label for="upload-caption">Image Caption (Optional)</label>
+                                            <input type="text" id="upload-caption" placeholder="e.g. Jodhpur Principal Seat High Court Complex">
+                                        </div>
+                                        <div class="upload-actions">
+                                            <button type="button" class="btn btn-sm btn-gold" id="btn-save-upload">Upload Photo</button>
+                                            <button type="button" class="btn btn-sm btn-outline" id="btn-cancel-upload">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="gallery-section-title">Current Gallery Grid</h3>
+                                <div class="gallery-grid" id="admin-gallery-grid">
+                                    <!-- Dynamic Gallery Cards here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBTAB 3: Homepage CMS Text content -->
+                    <div id="text-subtab" class="subtab-panel">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Website Content CMS</h3>
+                            </div>
+                            <div class="card-body">
+                                <form id="form-text-cms" class="admin-form">
+                                    <div class="form-group">
+                                        <label for="cms-hero-title">Homepage Banner / Hero Title</label>
+                                        <input type="text" id="cms-hero-title" required placeholder="Service Matter & Administrative Law Advocacy">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cms-hero-subtitle">Homepage Banner Description</label>
+                                        <textarea id="cms-hero-subtitle" rows="3" required placeholder="Dedicated legal representation for Central Government, State Government, Defense, and PSU employees..."></textarea>
+                                    </div>
+                                    
+                                    <hr class="form-divider">
+                                    
+                                    <div class="form-group">
+                                        <label>Chambers Profile ("About Us" Text)</label>
+                                        <!-- Rich Text Editor Helper Actions -->
+                                        <div class="editor-toolbar">
+                                            <button type="button" class="toolbar-btn" data-tag="b" title="Bold"><strong>B</strong></button>
+                                            <button type="button" class="toolbar-btn" data-tag="i" title="Italic"><em>I</em></button>
+                                            <button type="button" class="toolbar-btn" data-tag="point" title="Add list point">Add Point</button>
+                                        </div>
+                                        <textarea id="cms-about-text" rows="8" required placeholder="The chambers of Advocate Tanwar Singh offer legal counsel..."></textarea>
+                                        <small class="helper-text">You can click toolbar items to insert HTML helper tags (e.g. &lt;b&gt;, &lt;i&gt;) at your cursor.</small>
+                                    </div>
+
+                                    <div class="form-footer">
+                                        <button type="submit" class="btn btn-gold">
+                                            <span>Publish Updates</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PANEL 4: LINKS MANAGER -->
+                <section id="panel-links" class="tab-panel">
+                    <div class="grid-split-2">
+                        <!-- Add Link Form -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 id="link-form-title">Add/Edit Resource Link</h3>
+                            </div>
+                            <div class="card-body">
+                                <form id="form-links-manager" class="admin-form">
+                                    <input type="hidden" id="link-edit-id" value="">
+                                    <div class="form-group">
+                                        <label for="link-title">Link Title</label>
+                                        <input type="text" id="link-title" required placeholder="e.g. Bar Council of Rajasthan Status">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="link-url">Destination URL</label>
+                                        <input type="url" id="link-url" required placeholder="e.g. https://www.barcouncilofrajasthan.org">
+                                    </div>
+                                    <div class="form-footer">
+                                        <button type="submit" class="btn btn-gold btn-block" id="btn-save-link">
+                                            <span>Add Resource Link</span>
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-block hidden" id="btn-cancel-link-edit">Cancel Edit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Active Links List -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Active Custom & Social Links</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="links-list" id="links-list-container">
+                                    <!-- Injected by JS -->
+                                </ul>
+                                <div class="empty-state hidden" id="links-empty-state">
+                                    <p>No links configured yet. Use the form to add useful resource links.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PANEL 5: SECURITY SETTINGS -->
+                <section id="panel-settings" class="tab-panel">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Change Admin Passphrase</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="form-security-settings" class="admin-form">
+                                <div class="form-group">
+                                    <label for="current-passphrase">Current Passphrase</label>
+                                    <input type="password" id="current-passphrase" required placeholder="••••••••">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-passphrase">New Secure Passphrase</label>
+                                    <input type="password" id="new-passphrase" required placeholder="••••••••">
+                                    <small class="helper-text">Choose a secure, easy to remember phrase. Avoid spaces/obvious words.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-passphrase">Confirm New Passphrase</label>
+                                    <input type="password" id="confirm-passphrase" required placeholder="••••••••">
+                                </div>
+                                <div class="form-footer">
+                                    <button type="submit" class="btn btn-gold">
+                                        <span>Change Access Key</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- INTAKE DETAILS MODAL -->
+    <div id="intake-detail-modal" class="modal-overlay hidden">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2 id="modal-intake-name">Employee Case Intake Detail</h2>
+                <button class="modal-close" id="btn-close-intake-modal" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="close-icon"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="details-grid">
+                    <div class="detail-group">
+                        <span class="detail-label">Status Action</span>
+                        <div class="status-action-row">
+                            <select id="modal-intake-status" class="status-dropdown">
+                                <option value="new">New / Pending Review</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="resolved">Resolved / Archived</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <span class="detail-label">Date Submitted</span>
+                        <p class="detail-val" id="modal-intake-date">June 4, 2026, 9:30 PM</p>
+                    </div>
+                    <div class="detail-group">
+                        <span class="detail-label">Employee Phone</span>
+                        <p class="detail-val"><a href="tel:" id="modal-intake-phone">+91 94140 12345</a></p>
+                    </div>
+                    <div class="detail-group">
+                        <span class="detail-label">Service Sector</span>
+                        <p class="detail-val" id="modal-intake-sector">Central Government</p>
+                    </div>
+                    <div class="detail-group">
+                        <span class="detail-label">Administrative Issue Category</span>
+                        <p class="detail-val" id="modal-intake-category">Suspension & inquiry</p>
+                    </div>
+                    <div class="detail-group span-2">
+                        <span class="detail-label">Description of Administrative Dispute</span>
+                        <div class="brief-box" id="modal-intake-brief">
+                            Suspended since March 10th. Inquiring officer has not been appointed. Seeking reinstatement.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="btn-modal-close-foot">Close View</button>
+                <button type="button" class="btn btn-danger" id="btn-modal-delete">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+                    <span>Delete Record</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Containment Area -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Admin Logic JavaScript -->
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

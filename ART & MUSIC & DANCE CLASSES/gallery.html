@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — {{CLINIC_NAME}}</title>
+    <meta name="description" content="View our vibrant gallery of performances, classes, events, and artistic creations at {{CLINIC_NAME}}">
+    <link rel="icon" type="image/png" href="{{LOGO_URL}}">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<div class="page-transition"></div>
+
+<!-- NAV -->
+<nav class="navbar" id="main-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img"></a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="courses.html" class="nav-link">Courses</a></li>
+            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Book A Free Trial</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <h1>Our <span class="text-primary">Gallery</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="separator">›</span><span class="current">Gallery</span></div>
+</section>
+
+<!-- Gallery Section -->
+<section class="section">
+    <div class="container">
+        
+        <div class="category-tabs reveal">
+            <button class="category-tab active" data-filter="all">All</button>
+            <button class="category-tab" data-filter="dance">Dance</button>
+            <button class="category-tab" data-filter="music">Music</button>
+            <button class="category-tab" data-filter="art">Art & Craft</button>
+            <button class="category-tab" data-filter="events">Events</button>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item reveal" data-category="dance">
+                <img src="assets/hero-music-dance.jpg" alt="Dance Performance">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+            <div class="gallery-item reveal" data-category="music">
+                <img src="assets/piano-class.jpg" alt="Piano Class">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+            <div class="gallery-item reveal" data-category="art">
+                <img src="assets/painting-class.jpg" alt="Painting Session">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+            <div class="gallery-item reveal" data-category="dance">
+                <img src="assets/classical-dance.jpg" alt="Classical Dance">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+            <div class="gallery-item reveal" data-category="music">
+                <img src="assets/guitar-class.jpg" alt="Guitar Performance">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+            <div class="gallery-item reveal" data-category="music">
+                <img src="assets/singing-class.jpg" alt="Vocal Recording">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+            <div class="gallery-item reveal" data-category="art" style="filter:hue-rotate(45deg);">
+                <img src="assets/painting-class.jpg" alt="Art Exhibition">
+                <div class="gallery-item-overlay"><span>🔍</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close">✕</div>
+    <img src="" alt="" id="lightbox-img">
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-art"></div>
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+        <div class="footer-brand"><img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}" class="nav-logo-img"><p>{{CLINIC_NAME}} is a premier creative academy.</p></div>
+        <div class="footer-col"><h5>Contact Us</h5>
+            <div class="footer-contact-item"><div class="footer-contact-icon">📍</div><p>{{ADDRESS}}</p></div>
+            <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><p><a href="tel:{{PHONE}}">{{PHONE}}</a></p></div></div>
+    </div></div></div>
+    <div class="container"><div class="footer-bottom"><p>© 2024 {{CLINIC_NAME}}. All rights reserved.</p></div></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | {{CLINIC_NAME}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem 0;
+            background: var(--surface-dark);
+            text-align: center;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--surface-solid);
+            padding: 2rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.1); /* Gold faint */
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .rating {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .occasion-tag {
+            display: inline-block;
+            background: var(--surface-dark);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--border-radius-pill);
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container navbar-container">
+            <a href="index.html" class="nav-brand">
+                <img src="{{LOGO_URL}}" alt="{{CLINIC_NAME}}">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="collections.html" class="nav-link">Collections</a></li>
+                <li><a href="custom-cakes.html" class="nav-link">Custom Cakes</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="hero-title" style="color: var(--text-color); font-size: 3.5rem;">Sweet Words</h1>
+            <p class="section-subtitle">What our wonderful customers are saying about their experiences.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="reviews-grid">
+                
+                <div class="review-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="reviewer-info">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="reviewer-img">
+                        <div>
+                            <h4 style="margin: 0;">Sarah Jenkins</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"The wedding cake was absolutely breathtaking! Not only did it look exactly like the sketch we agreed upon, but the flavor was out of this world. Every guest asked where it was from."</p>
+                    <span class="occasion-tag">Wedding Cake</span>
+                </div>
+
+                <div class="review-card reveal" style="transition-delay: 0.1s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="reviewer-info">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="reviewer-img">
+                        <div>
+                            <h4 style="margin: 0;">Michael Torres</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Ordered a custom dinosaur theme cake for my son's 5th birthday. The detail on the fondant figures was incredible. It was a massive hit. Highly recommend {{CLINIC_NAME}}."</p>
+                    <span class="occasion-tag">Birthday Cake</span>
+                </div>
+
+                <div class="review-card reveal" style="transition-delay: 0.2s;">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="reviewer-info">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily R." class="reviewer-img">
+                        <div>
+                            <h4 style="margin: 0;">Emily Roberts</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Their daily pastries are my guilty pleasure. The almond croissants are the best I've had outside of Paris. The staff is always so welcoming and sweet."</p>
+                    <span class="occasion-tag">Daily Bakery</span>
+                </div>
+                
+                <div class="review-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="reviewer-info">
+                        <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Jessica L." class="reviewer-img">
+                        <div>
+                            <h4 style="margin: 0;">Jessica Lee</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"We got the eggless chocolate truffle cake for an anniversary and couldn't even tell it was eggless. Super moist, rich, and beautifully decorated with gold flakes."</p>
+                    <span class="occasion-tag">Anniversary</span>
+                </div>
+
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="#" class="btn btn-primary">Leave a Review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 {{CLINIC_NAME}}. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

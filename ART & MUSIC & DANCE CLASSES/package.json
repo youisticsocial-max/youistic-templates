@@ -1,0 +1,14 @@
+{
+  "name": "art-music-dance-academy",
+  "version": "1.0.0",
+  "description": "Premium static website template for a creative academy",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node \"node_modules/live-server/live-server.js\" --port=3000"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
